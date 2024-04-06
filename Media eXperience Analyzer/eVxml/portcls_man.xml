@@ -1,0 +1,380 @@
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
+	<assemblyIdentity version="1.0.0.0" processorArchitecture="x86" name="?????" type="win32"/>  
+    <memberships>  
+        <categoryMembership>  
+            <id name="Microsoft.Windows.Event" version="1.0.0.0" publicKeyToken="################" />  
+            <categoryInstance subcategory="{########-####-####-####-############}">  
+            </categoryInstance>  
+            <eventData>  
+                <globalChannel name="Application"/>  
+                <applicationChannel name="Operational"/>  
+            </eventData>  
+        </categoryMembership>  
+    </memberships>  
+    <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">  
+        <events componentType="application">  
+            <eventSubTypes>  
+                <subType name="_STOP" value="1" />  
+                <subType name="_ACQUIRE" value="2" />  
+                <subType name="_PAUSE" value="3" />  
+                <subType name="_RUN" value="4" />  
+                <subType name="_CREATED" value="5" />  
+                <subType name="_CLOSED" value="6" />  
+  
+                <subType name="_RECEIVED" value="16" />  
+                <subType name="_COMPLETED" value="17" />  
+                <subType name="_CANCELLED" value="18" />  
+                <subType name="_MAPPING_ACQUIRED" value="19" />  
+                <subType name="_MAPPING_RELEASED" value="20" />  
+                <subType name="_CALL_INTO_DRIVER" value="21" />  
+                <subType name="_CALL_EXIT_DRIVER" value="22" />  
+  
+                <subType name="_D0" value="32" />  
+                <subType name="_D1" value="33" />  
+                <subType name="_D2" value="34" />  
+                <subType name="_D3" value="35" />  
+  
+                <subType name="_PIN" value="48" />  
+                <subType name="_DEVICE" value="49" />  
+  
+                <subType name="_REGISTERED" value="64" />  
+                <subType name="_UNREGISTERED" value="65" />  
+  
+                <subType name="_DPC_CALLED" value="80" />  
+                <subType name="_DPC_DONE" value="81" />  
+  
+                <subType name="_MINIPORT_MINIPORT_DEFINED" value="96" />  
+                <subType name="_MINIPORT_BUFFER_COMPLETE_EVENT" value="97" />  
+                <subType name="_MINIPORT_PIN_STATE" value="98" />  
+                <subType name="_MINIPORT_GET_STREAM_POS" value="99" />  
+                <subType name="_MINIPORT_SET_WAVERT_WRITE_POS" value="100" />  
+                <subType name="_MINIPORT_GET_PRESENTATION_POS" value="101" />  
+                <subType name="_MINIPORT_PROGRAM_DMA" value="102" />  
+                <subType name="_MINIPORT_GLITCH_REPORT" value="103" />  
+                <subType name="_MINIPORT_LAST_BUFFER_RENDERED" value="104" />
+                <subType name="_MINIPORT_PROCESSING_MODE" value="105" />
+                <subType name="_MINIPORT_FX_CLSID" value="106" />
+  
+                <subType name="_LPE_NOTIFICATION" value="112" />  
+                <subType name="_D3_EXIT_LATENCY_CHANGE" value="113" />  
+  
+            </eventSubTypes>  
+              
+            <event eventID="101" message="$(string.PC)" guid="{ad04e508-145c-40af-8f6a-e6a270c74838}" level="#">  
+                <diagnosticInstance version="0">  
+                    <classification subType="_STOP" />        <!-- 1 -->  
+                    <classification subType="_ACQUIRE" />     <!-- 2 -->  
+                    <classification subType="_PAUSE" />       <!-- 3 -->  
+                    <classification subType="_RUN" />         <!-- 4 -->  
+                    <classification subType="_CLOSED" />      <!-- 6 -->  
+                    <template>  
+                        <PC_PIN>  
+                            <EventType>%UInt32;</EventType>  
+                            <pPinObject>%Pointer;</pPinObject>  
+                        </PC_PIN>  
+                    </template>                      
+                    <classification subType="_CREATED" />     <!-- 5 -->  
+                    <template>  
+                        <PC_PIN>  
+                            <EventType>%UInt32;</EventType>  
+                            <pPinObject>%Pointer;</pPinObject>  
+                            <pPortObject>%Pointer;</pPortObject>  
+                            <PinType>%UInt32;</PinType>  
+                            <ntStatus>%UInt32;</ntStatus>  
+                        </PC_PIN>  
+                    </template>                      
+                </diagnosticInstance>  
+            </event>  
+  
+            <event eventID="102" message="$(string.PC)" guid="{54aecb26-b9c2-42d7-95d1-cc3710e2aecf}" level="#">  
+                <diagnosticInstance version="0">  
+                    <classification subType="_RECEIVED" />         <!-- 16 -->  
+                    <classification subType="_COMPLETED" />        <!-- 17 -->  
+                    <classification subType="_CANCELLED" />        <!-- 18 -->  
+                    <template>  
+                        <PC_IRP>  
+                            <EventType>%UInt32;</EventType>  
+                            <pIrp>%Pointer;</pIrp>  
+                            <pIrpStream>%Pointer;</pIrpStream>  
+                            <ntStatus>%UInt32;</ntStatus>  
+                        </PC_IRP>  
+                    </template>  
+                    <classification subType="_MAPPING_ACQUIRED" /> <!-- 19 -->  
+                    <classification subType="_MAPPING_RELEASED" /> <!-- 20 -->  
+                  <template>  
+                        <PC_IRP>  
+                            <EventType>%UInt32;</EventType>  
+                            <pIrpStream>%Pointer;</pIrpStream>  
+                            <pIrp>%Pointer;</pIrp>  
+                            <ulMapBytes>%UInt32;</ulMapBytes>  
+                            <ulMapsOutstanding>%UInt32;</ulMapsOutstanding>  
+                            <pvTag>%Pointer;</pvTag>  
+                        </PC_IRP>  
+                    </template>  
+                    <classification subType="_WAVECYC_DPC_ENTRY" /> <!-- 21 -->  
+                    <template>  
+                         <PC_IRP>  
+                             <EventTYpe>%Uint32;</EventTYpe>  
+                         </PC_IRP>  
+                    </template>  
+                    <classification subType="_WAVECYC_DPC_EXIT" /> <!-- 22 -->  
+                  <template>  
+                    <PC_IRP>  
+                      <EventType>%UInt32;</EventType>  
+                      <DmaBufferSize>%Pointer;</DmaBufferSize>  
+                      <CompletePosition>%Pointer;</CompletePosition>  
+                      <DmaPosition>%UInt32;</DmaPosition>  
+                      <CopyPosition>%UInt32;</CopyPosition>  
+                      <BytesCompleted>%Pointer;</BytesCompleted>  
+                    </PC_IRP>  
+                  </template>  
+                  <classification subType="_WAVECYC_GLITCH" /> <!-- 23 -->  
+                <template>  
+                  <PC_IRP>  
+                    <EventType>%UInt32;</EventType>  
+                    <StarvationCount>%Pointer;</StarvationCount>  
+                    <TotalStarvationBytes>%Pointer;</TotalStarvationBytes>  
+                    <CurrentStarvationBytes>%UInt32;</CurrentStarvationBytes>  
+                  </PC_IRP>  
+                </template>  
+  
+                </diagnosticInstance>  
+              </event>  
+  
+              <event eventID="103" message="$(string.PC)" guid="{2914c71d-777c-4b42-847a-891b21893def}" level="#">  
+                <diagnosticInstance version="0">  
+                    <classification subType="_D0" />                        <!-- 32 -->  
+                    <classification subType="_D1" />                        <!-- 33 -->  
+                    <classification subType="_D2" />                        <!-- 34 -->  
+                    <classification subType="_D3" />                        <!-- 35 -->  
+                    <template>  
+                        <PC_PWR>  
+                            <EventType>%UInt64;</EventType>  
+                            <pDeviceObject>%UInt64;</pDeviceObject>  
+                            <NewValue>%UInt64;</NewValue>  
+                            <Complete>%UInt64;</Complete>  
+                            <ExitLatency>%UInt64;</ExitLatency>  
+                        </PC_PWR>  
+                    </template>  
+                </diagnosticInstance>  
+            </event>  
+  
+            <event eventID="104" message="$(string.PC)" guid="{93bb152d-df9e-4282-b709-1696392f2557}" level="#">  
+                <diagnosticInstance version="0">  
+                    <classification subType="_PIN" />          <!-- 48 -->  
+                    <template>  
+                        <PC_POS>  
+                            <EventType>%UInt32;</EventType>  
+                            <pPinObject>%Pointer;</pPinObject>  
+                            <WritePos>%Pointer;</WritePos>  
+                            <ntStatus>%UInt32;</ntStatus>  
+                            <unused>%UInt32;</unused>  
+                            <PlayPos>%Pointer;</PlayPos>  
+                        </PC_POS>  
+                    </template>  
+                    <classification subType="_DEVICE" />       <!-- 49 -->  
+                    <template>  
+                        <PC_POS>  
+                            <EventType>%UInt32;</EventType>  
+                            <pPinObject>%Pointer;</pPinObject>  
+                            <DevicePos>%Pointer;</DevicePos>  
+                            <ntStatus>%UInt32;</ntStatus>  
+                        </PC_POS>  
+                    </template>  
+                </diagnosticInstance>  
+            </event>  
+  
+            <event eventID="105" message="$(string.PC)" guid="{a366e409-7bdc-4991-886d-d2cfdd99e2bc}" level="#">  
+                <diagnosticInstance version="0">  
+                    <classification subType="_REGISTERED" />   <!-- 64 -->  
+                    <classification subType="_UNREGISTERED" /> <!-- 65 -->  
+                    <template>  
+                        <PC_SUBDEV>  
+                            <EventType>%UInt32;</EventType>  
+                            <pDeviceObject>%Pointer;</pDeviceObject>  
+                            <pSubDevice>%Pointer;</pSubDevice>  
+                            <ntStatus>%UInt32;</ntStatus>  
+                        </PC_SUBDEV>  
+                    </template>  
+                </diagnosticInstance>  
+            </event>  
+            <event eventID="106" message="$(string.PC)" guid="{E1E2F5E7-D23F-4fca-A0AE-071A4E03F5A5}" level="#">  
+            <diagnosticInstance version="0">  
+              <classification subType="_DPC_CALLED" />   <!-- 80 -->  
+              <classification subType="_DPC_DONE" />     <!-- 81 -->  
+              <template>  
+                <PC_SG>  
+                  <EventType>%UInt32;</EventType>  
+                  <Param1>%Pointer;</Param1>  
+                  <Param2>%Pointer;</Param2>  
+                  <Param3>%UInt32;</Param3>  
+                  <Param4>%UInt32;</Param4>  
+                  <Param5>%Pointer;</Param5>  
+                </PC_SG>  
+              </template>  
+            </diagnosticInstance>  
+          </event>  
+          <event eventID="107" message="$(string.PC)" guid="{97BCD203-6286-4974-801D-A293B921F84B}" level="#">  
+            <diagnosticInstance version="0">  
+  
+              <classification subType="_MINIPORT_MINIPORT_DEFINED" />  
+              <!-- 96 -->  
+              <template>  
+                <AE_EVENT>  
+                  <Tag>%UInt64;</Tag>  
+                  <Parameter1>%UInt64;</Parameter1>  
+                  <Parameter2>%UInt64;</Parameter2>  
+                  <Parameter3>%UInt64;</Parameter3>  
+                  <Parameter4>%UInt64;</Parameter4>  
+                </AE_EVENT>  
+              </template>                
+              <classification subType="_MINIPORT_BUFFER_COMPLETE_EVENT" />  
+              <!-- 97 -->  
+              <template>  
+                <AE_EVENT>  
+                  <Tag>%UInt64;</Tag>  
+                  <LinearBufPos>%UInt64;</LinearBufPos>  
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>  
+                  <DataLen>%UInt64;</DataLen>  
+                  <Reserved>%UInt64;</Reserved>  
+                </AE_EVENT>  
+              </template>  
+                
+              <classification subType="_MINIPORT_PIN_STATE" />  
+              <!-- 98 -->  
+              <template>  
+                <AE_EVENT>  
+                  <Tag>%UInt64;</Tag>  
+                  <LinearBufPos>%UInt64;</LinearBufPos>  
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>  
+                  <PinState>%UInt64;</PinState>  
+                  <Reserved>%UInt64;</Reserved>  
+                </AE_EVENT>  
+              </template>  
+                
+              <classification subType="_MINIPORT_GET_STREAM_POS" />  
+              <!-- 99 -->  
+              <template>  
+                <AE_EVENT>  
+                  <Tag>%UInt64;</Tag>  
+                  <LinearBufPos>%UInt64;</LinearBufPos>  
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>  
+                  <Reserved>%UInt64;</Reserved>  
+                  <Reserved>%UInt64;</Reserved>  
+                </AE_EVENT>  
+              </template>                
+                
+                
+              <classification subType="_MINIPORT_SET_WAVERT_WRITE_POS" />  
+              <!-- 100 -->  
+              <template>  
+                <AE_EVENT>  
+                  <Tag>%UInt64;</Tag>  
+                  <LinearBufPos>%UInt64;</LinearBufPos>  
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>  
+                  <TargetWaveRtBuffWrtPos>%UInt64;</TargetWaveRtBuffWrtPos>  
+                  <Reserved>%UInt64;</Reserved>  
+                </AE_EVENT>  
+              </template>  
+  
+  
+              <classification subType="_MINIPORT_GET_PRESENTATION_POS" />  
+              <!-- 101 -->  
+              <template>  
+                <AE_EVENT>  
+                  <Tag>%UInt64;</Tag>  
+                  <LinearBufPos>%UInt64;</LinearBufPos>  
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>  
+                  <PresentationPos>%UInt64;</PresentationPos>  
+                  <Reserved>%UInt64;</Reserved>  
+                </AE_EVENT>  
+              </template>  
+                
+              <classification subType="_MINIPORT_PROGRAM_DMA" />  
+              <!-- 102 -->  
+              <template>  
+                <AE_EVENT>  
+                  <Tag>%UInt64;</Tag>  
+                  <LinearBufPos>%UInt64;</LinearBufPos>  
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>  
+                  <StartingOffset>%UInt64;</StartingOffset>  
+                  <DataLen>%UInt64;</DataLen>  
+                </AE_EVENT>  
+              </template>  
+  
+              <classification subType="_MINIPORT_GLITCH_REPORT" />  
+              <!-- 103 -->  
+              <template>  
+                <AE_EVENT>  
+                  <Tag>%UInt64;</Tag>  
+                  <LinearBufPos>%UInt64;</LinearBufPos>  
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>  
+                  <GlitchType>%UInt64;</GlitchType>  
+                  <Reserved>%UInt64;</Reserved>  
+                </AE_EVENT>  
+              </template>  
+                
+              <classification subType="_MINIPORT_LAST_BUFFER_RENDERED" />
+              <!-- 104 -->
+              <template>
+                <AE_EVENT>
+                  <Tag>%UInt64;</Tag>
+                  <LinearBufPos>%UInt64;</LinearBufPos>
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>
+                  <Reserved0>%UInt64;</Reserved0>
+                  <Reserved1>%UInt64;</Reserved1>
+                </AE_EVENT>
+              </template>
+
+              <classification subType="_MINIPORT_PROCESSING_MODE" />
+              <!-- 105 -->
+              <template>
+                <AE_EVENT>
+                  <Tag>%UInt64;</Tag>
+                  <LinearBufPos>%UInt64;</LinearBufPos>
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>
+                  <Guid0>%UInt64;</Guid0>
+                  <Guid1>%UInt64;</Guid1>
+                </AE_EVENT>
+              </template>
+
+              <classification subType="_MINIPORT_FX_CLSID" />
+              <!-- 106 -->
+              <template>
+                <AE_EVENT>
+                  <Tag>%UInt64;</Tag>
+                  <LinearBufPos>%UInt64;</LinearBufPos>
+                  <WaveRtBuffWrtPos>%UInt64;</WaveRtBuffWrtPos>
+                  <Clsid0>%UInt64;</Clsid0>
+                  <Clsid1>%UInt64;</Clsid1>
+                </AE_EVENT>
+              </template>
+
+
+            </diagnosticInstance>  
+          </event>  
+          <event eventID="108" message="$(string.PC)" guid="{47C74B10-D1C0-4E50-ACD1-116E1BD44D3B}" level="#">  
+            <diagnosticInstance version="0">  
+              <classification subType="_LPE_NOTIFICATION" />            <!-- 112 -->  
+              <template>  
+                <PC_PWR_POLICY>  
+                  <EventType>%UInt64;</EventType>  
+                  <pDeviceObject>%UInt64;</pDeviceObject>  
+                  <NewValue>%UInt64;</NewValue>  
+                  <Complete>%UInt64;</Complete>  
+                </PC_PWR_POLICY>  
+              </template>  
+              <classification subType="_D3_EXIT_LATENCY_CHANGE" />    <!-- 113 -->  
+              <template>  
+                <PC_PWR_POLICY>  
+                  <EventType>%UInt64;</EventType>  
+                  <pDeviceObject>%UInt64;</pDeviceObject>  
+                  <NewD3ExitLatency>%UInt64;</NewD3ExitLatency>  
+                  <Complete>%UInt64;</Complete>  
+                </PC_PWR_POLICY>  
+              </template>  
+            </diagnosticInstance>  
+          </event>    
+        </events>  
+    </instrumentation>  
+</assembly>  

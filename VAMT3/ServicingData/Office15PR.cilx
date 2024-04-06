@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="89DF20EF-BC4D-4442-B9F0-B0E1A41C182F">
+  <VamtSystemData>
+<SupportedGVLKs>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) AccessVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>DJBH8-RGN7Q-836KD-DMP3M-DM9MF</KeyValue>
+        <SupportedEditions>AccessVL</SupportedEditions>
+        <SupportedSku>44B538E2-FB34-4732-81E4-644C17D2E746</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) ExcelVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>Q3BNP-3WXDT-GG8HF-24KMW-HMDBK</KeyValue>
+        <SupportedEditions>ExcelVL</SupportedEditions>
+        <SupportedSku>9373BFA0-97B3-4587-AB73-30934461D55C</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) GrooveVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>WVCGG-NK4FG-7XKXM-BD4WF-3C624</KeyValue>
+        <SupportedEditions>GrooveVL</SupportedEditions>
+        <SupportedSku>AA286EB4-556F-4EEB-967C-C1B771B7673E</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) InfoPathVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>7KPJJ-N8TT7-CK3KR-QTV98-YPVXQ</KeyValue>
+        <SupportedEditions>InfoPathVL</SupportedEditions>
+        <SupportedSku>7CCC8256-FBAA-49C6-B2A9-F5AFB4257CD2</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) MondoVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>GCGCN-6FJRM-TR9Q3-BGMWJ-78KQV</KeyValue>
+        <SupportedEditions>MondoVL</SupportedEditions>
+        <SupportedSku>2816A87D-E1ED-4097-B311-E2341C57B179</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) OneNoteVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>VYNYX-8GPBC-7FQMD-D6B7B-7MDFD</KeyValue>
+        <SupportedEditions>OneNoteVL</SupportedEditions>
+        <SupportedSku>67C0F908-184F-4F64-8250-12DB797AB3C3</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) OutlookVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>X2KNB-FRRG2-WXDPH-739DM-DM9RH</KeyValue>
+        <SupportedEditions>OutlookVL</SupportedEditions>
+        <SupportedSku>7BCE4E7A-DD80-4682-98FA-F993725803D2</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) PowerPointVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>B8CT8-BTNFQ-XQXBK-BFWV8-HMDFQ</KeyValue>
+        <SupportedEditions>PowerPointVL</SupportedEditions>
+        <SupportedSku>1EC10C0A-54F6-453E-B85A-6FA1BBFEA9B7</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) ProjectProVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>NFKVM-DVG7F-TYWYR-3RPHY-F872K</KeyValue>
+        <SupportedEditions>ProjectProVL</SupportedEditions>
+        <SupportedSku>3CFE50A9-0E03-4B29-9754-9F193F07B71F</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) ProjectStdVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>N89QF-GGB8J-BKD28-C4V28-W4XTK</KeyValue>
+        <SupportedEditions>ProjectStdVL</SupportedEditions>
+        <SupportedSku>39E49E57-AE68-4EE3-B098-26480DF3DA96</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) ProPlusVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>PGD67-JN23K-JGVWV-KTHP4-GXR9G</KeyValue>
+        <SupportedEditions>ProPlusVL</SupportedEditions>
+        <SupportedSku>87D2B5BF-D47B-41FB-AF62-71C382F5CC85</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) PublisherVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>NB67P-J8XP4-XDK9B-V73VH-M4CKR</KeyValue>
+        <SupportedEditions>PublisherVL</SupportedEditions>
+        <SupportedSku>15AA2117-8F79-49A8-8317-753026D6A054</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) LyncVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>XNVD3-RYC7T-7R6BT-WX6CF-8BYH7</KeyValue>
+        <SupportedEditions>LyncVL</SupportedEditions>
+        <SupportedSku>C53DFE17-CC00-4967-B188-A088A965494D</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) VisioProVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>B3C7Q-D6NH2-2VRFW-HHWDG-FVQB6</KeyValue>
+        <SupportedEditions>VisioProVL</SupportedEditions>
+        <SupportedSku>CFBFD60E-0B5F-427D-917C-A4DF42A80E44</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) VisioStdVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>9MKNF-J9XQ6-JV4XB-FJQPY-43F43</KeyValue>
+        <SupportedEditions>VisioStdVL</SupportedEditions>
+        <SupportedSku>7012CC81-8887-42E9-B17D-4E5E42760F0D</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 15 (Pre-Release) WordVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>JBGD4-3JNG7-JWWGV-CR6TP-DC62Q</KeyValue>
+        <SupportedEditions>WordVL</SupportedEditions>
+        <SupportedSku>DE9C7EB6-5A85-420D-9703-FFF11BDD4D43</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+</SupportedGVLKs>
+
+    <SupportedVolumeApplications>
+      <VolumeApplication>
+        <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+        <ApplicationName>Office</ApplicationName>
+        <OnlineHelpUri></OnlineHelpUri>
+      </VolumeApplication>
+    </SupportedVolumeApplications>
+
+    <ProductMappings>
+      <ProductMapping>
+        <Sku>8EA85E20-E9D5-4651-A4AF-A69DFB2F9DC0</Sku>
+        <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+        <KmsId>AA4C7968-B9DA-4680-92B6-ACB25E2F866C</KmsId>
+        <VersionName>15 (Pre-Release)</VersionName>
+        <SupportsAd>1</SupportsAd>
+        <ProductName></ProductName>
+        <ProductFamily></ProductFamily>
+        <Edition></Edition>
+      </ProductMapping>
+    </ProductMappings>
+
+  </VamtSystemData>
+</VolumeActivationManagementToolData>

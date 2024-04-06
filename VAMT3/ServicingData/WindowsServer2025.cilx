@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="E8AFB237-3344-4F46-8C7F-DE9198DD0D1F">
+  <VamtSystemData>
+    <SupportedGVLKs>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2025 RTM ServerStandard Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>DPNXD-67YY9-WWFJJ-RYH99-RM832</KeyValue>
+        <SupportedEditions>ServerStandard</SupportedEditions>
+        <SupportedSku>7dc26449-db21-4e09-ba37-28f2958506a6</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2025 RTM ServerDatacenter Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>CNFDQ-2BW8H-9V4WM-TKCPD-MD2QF</KeyValue>
+        <SupportedEditions>ServerDatacenter</SupportedEditions>
+        <SupportedSku>c052f164-cdf6-409a-a0cb-853ba0f0f55a</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2025 RTM ServerAzureCor Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>QN7G3-4RM92-MT6QR-PR966-FVYV7</KeyValue>
+        <SupportedEditions>ServerAzureCor</SupportedEditions>
+        <SupportedSku>45b5aff2-60a0-42f2-bc4b-ec6e5f7b527e</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2025 RTM ServerTurbine Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>NQ8HH-FTDTM-6VGY7-TQ3DV-XFBV2</KeyValue>
+        <SupportedEditions>ServerTurbine</SupportedEditions>
+        <SupportedSku>c2e946d1-cfa2-4523-8c87-30bc696ee584</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+    </SupportedGVLKs>
+  </VamtSystemData>
+</VolumeActivationManagementToolData>
+

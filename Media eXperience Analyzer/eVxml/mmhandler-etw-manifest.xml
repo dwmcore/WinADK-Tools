@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <eventSubTypes>
+
+        <!-- Property Handler events -->
+        <subType name="Init_Start" value="1"/>
+        <subType name="Init_End" value="2"/>
+        <subType name="GetValue_Start" value="3"/>
+        <subType name="GetValue_End" value="4"/>
+        <subType name="SetValue_Start" value="5"/>
+        <subType name="SetValue_End" value="6"/>
+        <subType name="Commit_Start" value="7"/>
+        <subType name="Commit_End" value="8"/>
+
+      </eventSubTypes>
+
+
+      <!-- Property Handler Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{f10b8a8a-9062-4aeb-8b00-a6735e279cfc}" level="1">
+        <diagnosticInstance version="0">
+
+        <!-- Property Handler events -->
+        <classification subType="Init_Start"/>
+        <classification subType="Init_End"/>
+        <classification subType="Commit_Start"/>
+        <classification subType="Commit_End"/>
+
+          <template>
+            <PropertyHandler_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <dwContentType>%UInt32;</dwContentType>
+            </PropertyHandler_>
+          </template>
+
+        </diagnosticInstance>
+
+        <diagnosticInstance version="0">
+
+        <classification subType="GetValue_Start"/>
+        <classification subType="GetValue_End"/>
+        <classification subType="SetValue_Start"/>
+        <classification subType="SetValue_End"/>
+
+          <template>
+            <PropertyHandler_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <dwContentType>%UInt32;</dwContentType>
+                <KeyGuid>%GUID;</KeyGuid>
+                <KeyPid>%Uint32;</KeyPid>
+            </PropertyHandler_>
+          </template>
+
+        </diagnosticInstance>
+
+      </event>
+
+ </events>
+
+</instrumentation>
+
+</assembly>
+

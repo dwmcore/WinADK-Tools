@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+      <eventSubTypes>
+        <!-- Add an "subType" element for each non-standard subtype name.  Attribute "name" specifies the subtype name and attribute "value" attribute the corresponding numerical value. -->
+
+        <subType name="BitmapStart"     value="56" />
+        <subType name="BitmapEnd"       value="57" />
+        <subType name="RectangleStart"  value="58" />
+        <subType name="RectangleEnd"    value="59" />
+        <subType name="GeometryStart"   value="60" />
+        <subType name="GeometryEnd"     value="61" />
+        <subType name="ImageStart"      value="62" />
+        <subType name="ImageEnd"        value="63" />
+        <subType name="GlyphRunStart"   value="64" />
+        <subType name="GlyphRunEnd"     value="65" />
+        <subType name="GlassStart"      value="66" />
+        <subType name="GlassEnd"        value="67" />
+        <subType name="BeginLayerStart" value="68" />
+        <subType name="BeginLayerEnd"   value="69" />
+        <subType name="EndLayerStart"   value="70" />
+        <subType name="EndLayerEnd"     value="71" />
+
+        <subType name="Mesh2DStart"     value="72" />
+        <subType name="Mesh2DEnd"       value="73" />
+        <subType name="Scene3DStart"    value="74" />
+        <subType name="Scene3DEnd"      value="75" />
+        <subType name="SurfaceStart"    value="76" />
+        <subType name="SurfaceEnd"      value="77" />
+        <subType name="ClippedBitmapStart" value="78" />
+        <subType name="ClippedBitmapEnd"   value="79" />
+
+        <subType name="SetPresentParameters" value="80"/>
+        <subType name="SourceFrameChange"    value="81"/>
+        <subType name="Buffer"     value="82"/>
+
+
+        <subType name="DxUpdatePending"     value="84"/>
+        <subType name="DxUpdateComplete"     value="85"/>
+
+
+      </eventSubTypes>
+
+
+      <!-- Add an "event" element for each old ETW event.  Attribute "guid" specifies the event guid (in the {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX} format) for old ETW events.  Attributes "eventId" and "message" are ignored by XPerfInfo for old ETW events, but they are required for fullfledged application manifests. -->
+
+      <event eventID="1" message="$(string.ImageId)" guid="{a7f1ef9d-9bb9-4c7d-93ad-11919b122fa2}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info" />
+          <template>
+            <DrawBitmap>
+              <Bitmap>%Pointer;</Bitmap>
+              <width>%UInt32;</width>
+              <height>%UInt32;</height>
+            </DrawBitmap>
+          </template>
+       </diagnosticInstance>
+      </event>
+
+     <event eventID="1" message="$(string.ImageId)" guid="{5c02c62f-aec1-4f0c-b4a7-511d280184fd}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info" />
+          <template>
+            <BitmapCopy>
+              <width>%UInt32;</width>
+              <height>%UInt32;</height>
+            </BitmapCopy>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+
+      <event eventID="1" message="$(string.ImageId)" guid="{6acaf5f0-d340-4373-a851-fea1267aa210}" level="1">
+
+        <diagnosticInstance version="0">
+
+          <classification subType="Info" />
+          <template>
+          <SetClip>
+            <left>%UInt32;</left>
+            <top>%UInt32;</top>
+            <right>%UInt32;</right>
+            <bottom>%UInt32;</bottom>
+          </SetClip>
+          </template>
+        </diagnosticInstance>
+
+      </event>
+
+
+      <event eventID="1" message="$(string.ImageId)" guid="{C2F63E38-BFD3-4142-89B2-3595D38F73F3}" level="1">
+
+        <diagnosticInstance version="0">
+
+          <classification subType="Start" />
+          <template>
+            <DWMDraw_CopyFrontToBack>
+               <InvalidRegions>%UInt32;</InvalidRegions>
+               <PixelsCopied>%UInt32;</PixelsCopied>
+            </DWMDraw_CopyFrontToBack>
+          </template>
+
+          <classification subType="End" />
+          <template>
+            <DWMDraw_CopyFrontToBack>
+            </DWMDraw_CopyFrontToBack>
+          </template>
+
+        </diagnosticInstance>
+
+      </event>
+
+
+
+        <event eventID="1" message="$(string.ImageId)" guid="{a4cb774b-f41b-4f2a-af77-92080267f27e}" level="1">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+
+        <diagnosticInstance version="0">
+
+          <classification subType="Info" />
+          <template>
+            <DirtyRegion>
+              <id>%UInt32;</id>
+              <Z>%Int32;</Z>
+              <left>%Float;</left>
+              <top>%Float;</top>
+              <right>%Float;</right>
+              <bottom>%Float;</bottom>
+            </DirtyRegion>
+          </template>
+
+        </diagnosticInstance>
+
+      </event>
+
+        <event eventID="1" message="$(string.ImageId)" guid="{c8960930-bf29-4c06-8574-d4be803f13f9}" level="1">
+
+          <diagnosticInstance version="0">
+
+            <classification subType="Start" />
+            <classification subType="End" />
+            <template>
+              <DWMDraw_Clear>
+                <left>%Float;</left>
+                <top>%Float;</top>
+                <right>%Float;</right>
+                <bottom>%Float;</bottom>
+              </DWMDraw_Clear>
+            </template>
+
+          </diagnosticInstance>
+
+        </event>
+
+    <event eventID="1" message="$(string.ImageId)" guid="{4dc76f9c-1e8e-406e-a490-05d6823737f1}" level="1">
+
+        <diagnosticInstance version="0">
+          <classification subType="Start" />
+                  <classification subType="End" />
+            <template>
+              <BlurEvent>
+              </BlurEvent>
+            </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+        <event eventID="1" message="$(string.ImageId)" guid="{9b3d423f-4fbf-460a-b529-9fd15f032724}" level="1">
+
+        <diagnosticInstance version="0">
+        <classification subType="Start" />
+        <classification subType="End" />
+            <template>
+              <OcclusionPass>
+                <data>%UInt64;</data>
+                <id>%UInt32;</id>
+              </OcclusionPass>
+            </template>
+
+        <classification subType="Info" />
+            <template>
+                <OcclusionPass>
+                  <Z>%UInt32;</Z>
+                  <left>%Float;</left>
+                  <top>%Float;</top>
+                  <right>%Float;</right>
+                  <bottom>%Float;</bottom>
+                  <rectType>%UInt32;</rectType>
+                </OcclusionPass>
+            </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{12ff2eac-9aec-4069-bb01-cda998158e95}" level="1">
+
+        <diagnosticInstance version="0">
+
+          <classification subType="BeginLayerStart" />
+          <classification subType="BeginLayerEnd" />
+
+          <template>
+
+            <Layer>
+
+              <left>%UInt32;</left>
+              <top>%UInt32;</top>
+              <right>%UInt32;</right>
+              <bottom>%UInt32;</bottom>
+            </Layer>
+
+          </template>
+
+         <classification subType="EndLayerStart" />
+         <classification subType="EndLayerEnd" />
+
+          <template>
+
+            <Layer>
+
+            </Layer>
+
+          </template>
+
+          <!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+        </diagnosticInstance>
+
+      </event>
+
+     <event eventID="1" message="$(string.ImageId)" guid="{9cec574c-5b6a-4ced-a6c3-8a475b3b0cdf}" level="1">
+
+        <diagnosticInstance version="0">
+          <classification subType="Info" />
+            <template>
+              <DWMWindowUpdate>
+                <Hwnd>%UInt64;</Hwnd>
+                <dirtyrectleft>%UInt32;</dirtyrectleft>
+                <dirtyrecttop>%UInt32;</dirtyrecttop>
+                <dirtyrectright>%UInt32;</dirtyrectright>
+                <dirtyrectbottom>%UInt32;</dirtyrectbottom>
+                <clientarealeft>%UInt32;</clientarealeft>
+                <clientareatop>%UInt32;</clientareatop>
+                <clientarearight>%UInt32;</clientarearight>
+                <clientareabottom>%UInt32;</clientareabottom>
+              </DWMWindowUpdate>
+            </template>
+        </diagnosticInstance>
+     </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{c4e8f367-3ba1-4c75-b985-facbb4274dd7}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="BitmapStart" />
+        <classification subType="BitmapEnd"     />
+        <classification subType="RectangleStart"/>
+        <classification subType="RectangleEnd"  />
+        <classification subType="GeometryStart" />
+        <classification subType="GeometryEnd"   />
+        <classification subType="ImageStart"    />
+        <classification subType="ImageEnd"      />
+        <classification subType="GlyphRunStart" />
+        <classification subType="GlyphRunEnd"   />
+        <classification subType="GlassStart"    />
+        <classification subType="GlassEnd"      />
+        <classification subType="BeginLayerStart" />
+        <classification subType="BeginLayerEnd"   />
+        <classification subType="EndLayerStart"   />
+        <classification subType="EndLayerEnd"     />
+        <classification subType="Scene3DStart"    />
+        <classification subType="Scene3DEnd"      />
+        <classification subType="Mesh2DStart"    />
+        <classification subType="Mesh2DEnd"      />
+        <classification subType="SurfaceStart"    />
+        <classification subType="SurfaceEnd"      />
+        <classification subType="ClippedBitmapStart"    />
+        <classification subType="ClippedBitmapEnd"      />
+        <template>
+            <DWMDraw_>
+                <Z>%Int32;</Z>
+            </DWMDraw_>
+        </template>
+
+        <classification subType="Info" />
+        <template>
+            <DWMDraw_>
+              <left>%Float;</left>
+              <top>%Float;</top>
+              <right>%Float;</right>
+              <bottom>%Float;</bottom>
+            </DWMDraw_>
+        </template>
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{ead9a51b-d3d3-4b0b-8d25-e4914ed4c1ed}" level="1">
+
+        <diagnosticInstance version="2">
+          <classification subType="Start" />
+          <classification subType="End" />
+            <template>
+              <LayerEvent>
+              </LayerEvent>
+            </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <event eventID="1" message="$(string.ImageId)" guid="{a1ca426a-c4b8-45f2-8867-f1fc89fbb21d}" level="1">
+
+        <diagnosticInstance version="0">
+          <classification subType="Start" />
+          <classification subType="End" />
+            <template>
+              <FlushPendingDXUpdates_>
+              </FlushPendingDXUpdates_>
+            </template>
+          <classification subType="Info" />
+            <template>
+              <FlushPendingDXUpdates_>
+	      <index>%UInt32;</index>
+              </FlushPendingDXUpdates_>
+            </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <event eventID="1" message="$(string.ImageId)" guid="{c1c66e1d-dce0-4d1d-8b05-f7619c77ea65}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="DxUpdatePending" />
+            <template>
+              <DxRedirectionBlt_>
+	      <ulFlipChain>%UInt64;</ulFlipChain>
+	      <hwnd>%UInt64;</hwnd>
+	      <ulUpdateId>%UInt64;</ulUpdateId>
+              <left>%UInt32;</left>
+              <top>%UInt32;</top>
+              <right>%UInt32;</right>
+              <bottom>%UInt32;</bottom>
+              </DxRedirectionBlt_>
+            </template>
+
+          <classification subType="DxUpdateComplete" />
+            <template>
+              <DxRedirectionBlt_>
+	      <ulFlipChain>%UInt64;</ulFlipChain>
+	      <hwnd>%UInt64;</hwnd>
+	      <ulUpdateId>%UInt64;</ulUpdateId>
+              <left>%UInt32;</left>
+              <top>%UInt32;</top>
+              <right>%UInt32;</right>
+              <bottom>%UInt32;</bottom>
+              </DxRedirectionBlt_>
+            </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{9ddfeedc-05bb-45cb-b09d-dc77def67197}" level="1">
+
+        <diagnosticInstance version="0">
+          <classification subType="Info" />
+            <template>
+              <FlipChain_SetPresentParameters_>
+	      <ulFlipChain>%UInt64;</ulFlipChain>
+               <cRefresh>%UInt64;</cRefresh>
+               <cbSize>%UInt32;</cbSize>
+               <fQueue>%Pointer;</fQueue>
+               <cRefreshStart>%UInt64;</cRefreshStart>
+               <cBuffer>%UInt32;</cBuffer>
+               <fUseSourceRate>%UInt32;</fUseSourceRate>
+               <rateSourceNumerator>%UInt32;</rateSourceNumerator>
+               <rateSourceDenominator>%UInt32;</rateSourceDenominator>
+               <cRefreshesPerFrame>%UInt32;</cRefreshesPerFrame>
+               <hrCommand>%Pointer;</hrCommand>
+              <indexDisplay>%UInt32;</indexDisplay>
+              <indexLastComplete>%UInt32;</indexLastComplete>
+              <indexLastPending>%UInt32;</indexLastPending>
+              <indexNextShared>%UInt32;</indexNextShared>
+              <indexLastShared>%UInt32;</indexLastShared>
+              </FlipChain_SetPresentParameters_>
+            </template>
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{671f95d5-b389-4878-9692-54e5100a2143}" level="1">
+
+        <diagnosticInstance version="0">
+          <classification subType="Info" />
+            <template>
+              <FlipChain_Glitch_>
+	      <ulFlipChain>%UInt64;</ulFlipChain>
+              <cRefreshFrame>%UInt64;</cRefreshFrame>
+              <cFramesMissed>%UInt64;</cFramesMissed>
+              <cFramesDropped>%UInt64;</cFramesDropped>
+              <cFramesMissedTotal>%UInt64;</cFramesMissedTotal>
+              <cFramesDroppedTotal>%UInt64;</cFramesDroppedTotal>
+              <cFramesComplete>%UInt64;</cFramesComplete>
+              <cFramesDisplayed>%UInt64;</cFramesDisplayed>
+              </FlipChain_Glitch_>
+            </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+
+      <event eventID="1" message="$(string.ImageId)" guid="{c348704b-348a-4dff-9df1-b716a7716d55}" level="1">
+
+        <diagnosticInstance version="0">
+          <classification subType="Info" />
+            <template>
+              <FlipChain_Buffer_>
+	      <ulFlipChain>%UInt64;</ulFlipChain>
+              <cRefreshFrame>%UInt64;</cRefreshFrame>
+	      <ulUpdateId>%UInt64;</ulUpdateId>
+
+              <index>%UInt32;</index>
+              <state>%UInt32;</state>
+
+	      <hSurface>%Pointer;</hSurface>
+
+	      <cUnconfirmed>%UInt32;</cUnconfirmed>
+	      <cPending>%UInt32;</cPending>
+	      <cComplete>%UInt32;</cComplete>
+
+	      <indexPending>%UInt32;</indexPending>
+	      <indexComplete>%UInt32;</indexComplete>
+	      <indexDisplay>%UInt32;</indexDisplay>
+	      <indexUnconfirmed>%UInt32;</indexUnconfirmed>
+
+	      <cRefreshPending>%UInt64;</cRefreshPending>
+	      <cRefreshComplete>%UInt64;</cRefreshComplete>
+	      <cRefreshDisplayed>%UInt64;</cRefreshDisplayed>
+	      <cRefreshConfirmed>%UInt64;</cRefreshConfirmed>
+
+	      <cDXRefreshDisplayed>%UInt32;</cDXRefreshDisplayed>
+	      <cDXRefreshConfirmed>%UInt32;</cDXRefreshConfirmed>
+
+	      <cRefreshStartRequested>%UInt64;</cRefreshStartRequested>
+	      <cRefreshesRequested>%UInt64;</cRefreshesRequested>
+	      <cRefreshStart>%UInt64;</cRefreshStart>
+	      <cRefreshesDisplayed>%UInt64;</cRefreshesDisplayed>
+              </FlipChain_Buffer_>
+            </template>
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{a4c821c3-f456-4da6-9b1c-06c7dcb8993c}" level="1">
+
+        <diagnosticInstance version="0">
+          <classification subType="Info" />
+            <template>
+              <FlipChain_Buffer_Duration_>
+	      <ulFlipChain>%UInt64;</ulFlipChain>
+              <cRefreshFrame>%UInt64;</cRefreshFrame>
+	      <ulUpdateId>%UInt64;</ulUpdateId>
+
+              <index>%UInt32;</index>
+              <state>%UInt32;</state>
+
+	      <hSurface>%Pointer;</hSurface>
+
+	      <cUnconfirmed>%UInt32;</cUnconfirmed>
+	      <cPending>%UInt32;</cPending>
+	      <cComplete>%UInt32;</cComplete>
+
+	      <indexPending>%UInt32;</indexPending>
+	      <indexComplete>%UInt32;</indexComplete>
+	      <indexDisplay>%UInt32;</indexDisplay>
+	      <indexUnconfirmed>%UInt32;</indexUnconfirmed>
+
+	      <cRefreshPending>%UInt64;</cRefreshPending>
+	      <cRefreshComplete>%UInt64;</cRefreshComplete>
+	      <cRefreshDisplayed>%UInt64;</cRefreshDisplayed>
+	      <cRefreshConfirmed>%UInt64;</cRefreshConfirmed>
+
+	      <cDXRefreshDisplayed>%UInt32;</cDXRefreshDisplayed>
+	      <cDXRefreshConfirmed>%UInt32;</cDXRefreshConfirmed>
+
+	      <cRefreshStartRequested>%UInt64;</cRefreshStartRequested>
+	      <cRefreshesRequested>%UInt64;</cRefreshesRequested>
+	      <cRefreshStart>%UInt64;</cRefreshStart>
+	      <cRefreshesDisplayed>%UInt64;</cRefreshesDisplayed>
+              </FlipChain_Buffer_Duration_>
+            </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- WClientDesktopRTCreate -->
+      <event eventID="1" message="$(string.ImageId)" guid="{2e62c3bf-7c51-43fb-8cdc-915d4abc09dd}" level="1">
+        <diagnosticInstance version="2">
+          <classification subType="+" subTypeValue="1" />
+          <classification subType="-" subTypeValue="2" />
+            <template>
+              <WClientDesktopRTCreate>
+                <Hwnd>%UInt64;</Hwnd>
+              </WClientDesktopRTCreate>
+            </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- WClientUceProcessQueue -->
+      <event eventID="1" message="$(string.ImageId)" guid="{b7c7f692-f2b4-447a-b5df-fa6c314889ae}" level="1">
+        <diagnosticInstance version="2">
+          <classification subType="+" subTypeValue="1" />
+          <classification subType="-" subTypeValue="2" />
+            <template>
+              <WClientUceProcessQueue>
+                <Id>%UInt64;</Id>
+              </WClientUceProcessQueue>
+            </template>
+
+          <classification subType="Info" />
+            <template>
+              <WClientUceProcessQueue>
+                <BatchSize>%UInt64;</BatchSize>
+              </WClientUceProcessQueue>
+            </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- WClientUcePrecompute -->
+      <event eventID="1" message="$(string.ImageId)" guid="{de51ae60-46ad-4cc0-9a29-426a87e88e9f}" level="1">
+        <diagnosticInstance version="2">
+          <classification subType="+" subTypeValue="1" />
+          <classification subType="-" subTypeValue="2" />
+            <template>
+              <WClientUcePrecompute>
+                <Id>%UInt64;</Id>
+              </WClientUcePrecompute>
+            </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- WClientUceRender -->
+      <event eventID="1" message="$(string.ImageId)" guid="{92ca500c-67b1-447f-9497-cfd6d52a5b0e}" level="1">
+        <diagnosticInstance version="2">
+          <classification subType="+" subTypeValue="1" />
+          <classification subType="-" subTypeValue="2" />
+            <template>
+              <WClientUceRender>
+                <Id>%UInt64;</Id>
+              </WClientUceRender>
+            </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- WClientUcePresent -->
+      <event eventID="1" message="$(string.ImageId)" guid="{4C48D6EF-AC14-4d84-BA37-49A94BA8D2AF}" level="1">
+        <diagnosticInstance version="2">
+          <classification subType="+" subTypeValue="1" />
+          <classification subType="-" subTypeValue="2" />
+            <template>
+              <WClientUcePresent>
+                <Id>%UInt64;</Id>
+                <QPCCurrentTime>%UInt64;</QPCCurrentTime>
+              </WClientUcePresent>
+            </template>
+        </diagnosticInstance>
+      </event>
+      
+      <!-- WClientUceResponse -->
+      <event eventID="1" message="$(string.ImageId)" guid="{4c253b24-7230-4fa1-9748-ac4c59cf288c}" level="1">
+        <diagnosticInstance version="2">
+          <classification subType="" subTypeValue="0" />
+            <template>
+              <WClientUceResponse>
+                <Id>%UInt32;</Id>
+              </WClientUceResponse>
+            </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- WClientUceProcessPresentHistory -->
+      <event eventID="1" message="$(string.ImageId)" guid="{C914EE5B-07CD-422d-A2EB-7A44A550616C}" level="1">
+
+        <diagnosticInstance version="2">
+          <classification subType="+" subTypeValue="1" />
+          <classification subType="-" subTypeValue="2" />
+            <template>
+              <WClientUceProcessPresentHistory>
+              </WClientUceProcessPresentHistory>
+            </template>
+
+        </diagnosticInstance>
+
+        <diagnosticInstance version="0">
+        
+          <classification subType="Info" />
+            <template>
+              <WClientUceProcessPresentHistory>
+                <hr>%Pointer;</hr>
+                <cTokens>%UInt32;</cTokens>
+                <ulUpdateId>%Pointer;</ulUpdateId>
+	        <ulFlipChain>%Pointer;</ulFlipChain>
+              </WClientUceProcessPresentHistory>
+            </template>
+            
+       </diagnosticInstance>
+      </event>
+
+      <!-- WClientUceCheckDeviceState -->
+      <event eventID="1" message="$(string.ImageId)" guid="{76601D6D-C6D4-4e8d-AC6E-3F9B4F1745E0}" level="1">
+
+        <diagnosticInstance version="2">
+          <classification subType="+" subTypeValue="1" />
+          <classification subType="-" subTypeValue="2" />
+            <template>
+              <WClientUceCheckDeviceState>
+              </WClientUceCheckDeviceState>
+            </template>
+
+          <classification subType="Info" />
+            <template>
+              <WClientUceCheckDeviceState>
+                <hwnd>%Pointer;</hwnd>
+                <hr>%UInt32;</hr>
+              </WClientUceCheckDeviceState>
+            </template>
+        </diagnosticInstance>
+      </event>
+
+ </events>
+</instrumentation>
+</assembly>

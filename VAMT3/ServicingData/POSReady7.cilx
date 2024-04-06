@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="9D8EA47C-C774-41D9-A86C-1142D21613C6">
+
+  <VamtSystemData>
+
+    <SupportedGVLKs>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Embedded POSReady 7 Volume:GVLK</KeyDescription>
+        <KeyId>12345-00170-868-000000-03-1033-6001.0000-1962009</KeyId>
+        <KeyValue>YBYF6-BHCR3-JPKRB-CDW7B-F9BK4</KeyValue>
+        <SupportedEditions>Embedded</SupportedEditions>
+        <SupportedSku>DB537896-376F-48AE-A492-53D0547773D0</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+    </SupportedGVLKs>
+
+  </VamtSystemData>
+</VolumeActivationManagementToolData>

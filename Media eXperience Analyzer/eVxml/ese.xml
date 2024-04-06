@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1">
+<instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+
+  <events>
+    <eventSubTypes/>
+
+    <!-- NewPage -->
+    <event guid="{ecf8dd48-bcc0-4a4d-9084-ffbf3b0f8124}">
+    
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+                <NewPage>
+                <FileNumber>%UInt32;</FileNumber>
+                <BlockNumber YAxis="true" Scale="1"  >%UInt32;</BlockNumber>
+                <LatchFlags>%UInt32;</LatchFlags>
+                <ObjectNumber>%UInt32;</ObjectNumber>
+                <BlockFlags>%UInt32;</BlockFlags>
+                </NewPage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- ReadPage -->
+    <event guid="{dc8945f2-e4bf-4044-87eb-43280872c429}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+                <ReadPage>
+                <FileNumber>%UInt32;</FileNumber>
+                  <BlockNumber YAxis="true" Scale="1"  >%UInt32;</BlockNumber>
+                <LatchFlags>%UInt32;</LatchFlags>
+                <ObjectNumber>%UInt32;</ObjectNumber>
+                <BlockFlags>%UInt32;</BlockFlags>
+                </ReadPage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- PrereadPage -->
+    <event guid="{82f97c05-463c-4f81-ba26-5cdc4249f848}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <PrereadPage>
+                <FileNumber>%UInt32;</FileNumber>
+                <BlockNumber YAxis="true" Scale="1"  >%UInt32;</BlockNumber>
+                </PrereadPage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- WritePage -->
+    <event guid="{8b51bc9e-661f-4ec4-9e18-4a5bcc711508}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <WritePage>
+                <FileNumber>%UInt32;</FileNumber>
+                <BlockNumber YAxis="true" Scale="1"  >%UInt32;</BlockNumber>
+                </WritePage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- EvictPage -->
+    <event guid="{475f19b7-18f6-4879-b239-12eead88cca9}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <EvictPage>
+                <FileNumber>%UInt32;</FileNumber>
+                <BlockNumber YAxis="true" Scale="1"  >%UInt32;</BlockNumber>
+                </EvictPage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- TouchPage -->
+    <event guid="{542e6a09-b445-4dae-9eb0-3fafc7bebf8c}">
+
+      <!-- Info -->
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <TouchPage>
+                <FileNumber>%UInt32;</FileNumber>
+                <BlockNumber YAxis="true" Scale="1"  >%UInt32;</BlockNumber>
+                <LatchFlags>%UInt32;</LatchFlags>
+                <ObjectNumber>%UInt32;</ObjectNumber>
+                <BlockFlags>%UInt32;</BlockFlags>
+                </TouchPage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- LatchPage -->
+    <event guid="{92041ca1-fdc5-4edb-9444-beee2f88cb7c}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <LatchPage>
+                <FileNumber>%UInt32;</FileNumber>
+                <BlockNumber YAxis="true" Scale="1"  >%UInt32;</BlockNumber>
+                <LatchFlags>%UInt32;</LatchFlags>
+                <ObjectNumber>%UInt32;</ObjectNumber>
+                <BlockFlags>%UInt32;</BlockFlags>
+                </LatchPage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- DirtyPage -->
+    <event guid="{59af5318-43a5-45c8-bd53-3cb05401fbd7}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <DirtyPage>
+                <FileNumber>%UInt32;</FileNumber>
+                <BlockNumber YAxis="true" Scale="1"  >%UInt32;</BlockNumber>
+                <ObjectNumber>%UInt32;</ObjectNumber>
+                <BlockFlags>%UInt32;</BlockFlags>
+                <DirtyLevel>%UInt32;</DirtyLevel>
+                </DirtyPage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- TransactionBegin -->
+    <event guid="{9876D315-B9D2-41a7-B5BF-5915F5589A7A}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <TransactionBegin>
+                <SessionNumber>%UInt32;</SessionNumber>
+                <TransactionNumber>%UInt32;</TransactionNumber>
+                <TransactionLevel>%Byte;</TransactionLevel>
+                </TransactionBegin>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- TransactionCommit -->
+    <event guid="{D751C74E-90C8-4413-8DE4-D9DB538C03E2}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0"  />
+            <template>
+              <TransactionCommit>
+                <SessionNumber>%UInt32;</SessionNumber>
+                <TransactionNumber>%UInt32;</TransactionNumber>
+                <TransactionLevel>%Byte;</TransactionLevel>
+                </TransactionCommit>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- TransactionRollback -->
+    <event guid="{7129DD43-E69B-4818-9CD2-F78F344AAB0A}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <TransactionRollback>
+                <SessionNumber>%UInt32;</SessionNumber>
+                <TransactionNumber>%UInt32;</TransactionNumber>
+                <TransactionLevel>%Byte;</TransactionLevel>
+                </TransactionRollback>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- AllocateExtent -->
+    <event guid="{64d3e6e0-17f1-11dc-8d1b-0012f0c9f7ef}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <AllocateExtent>
+                <ifmp>%UInt32;</ifmp>
+                <pgnoFDP>%UInt32;</pgnoFDP>
+                <pgnoFirst>%UInt32;</pgnoFirst>
+                <cpg>%UInt32;</cpg>
+                </AllocateExtent>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- FreeExtent -->
+    <event guid="{64d3e6e1-17f1-11dc-8d1b-0012f0c9f7ef}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <FreeExtent>
+                <ifmp>%UInt32;</ifmp>
+                <pgnoFDP>%UInt32;</pgnoFDP>
+                <pgnoFirst>%UInt32;</pgnoFirst>
+                <cpg>%UInt32;</cpg>
+                </FreeExtent>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- AllocatePage -->
+    <event guid="{64d3e6e2-17f1-11dc-8d1b-0012f0c9f7ef}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <AllocatePage>
+                <ifmp>%UInt32;</ifmp>
+                <pgnoFDP>%UInt32;</pgnoFDP>
+                <pgnoAlloc>%UInt32;</pgnoAlloc>
+                </AllocatePage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+    <!-- FreePage -->
+    <event guid="{64d3e6e3-17f1-11dc-8d1b-0012f0c9f7ef}">
+    
+         
+        <diagnosticInstance version="1">
+            <classification subType="Info" subTypeValue="0" />
+            <template>
+              <FreePage>
+                <ifmp>%UInt32;</ifmp>
+                <pgnoFDP>%UInt32;</pgnoFDP>
+                <pgnoFree>%UInt32;</pgnoFree>
+                </FreePage>
+            </template>
+        </diagnosticInstance>
+    </event>
+    
+  </events>
+</instrumentation>
+</assembly>

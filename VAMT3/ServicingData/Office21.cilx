@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VolumeActivationManagementToolData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" VamtVersion="3.0.5.0" ServiceDataFileId="0FF1CE15-9268-4442-B9F0-B0E1A41C182F">
+   <VamtSystemData>
+      <SupportedGVLKs>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 Access2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>WM8YG-YNGDD-4JHDC-PG3F4-FC4T4</KeyValue>
+            <SupportedEditions>Access2021VL</SupportedEditions>
+            <SupportedSku>1FE429D8-3FA7-4A39-B6F0-03DDED42FE14</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 Excel2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>NWG3X-87C9K-TC7YY-BC2G7-G6RVC</KeyValue>
+            <SupportedEditions>Excel2021VL</SupportedEditions>
+            <SupportedSku>EA71EFFC-69F1-4925-9991-2F5E319BBC24</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 Outlook2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>C9FM6-3N72F-HFJXB-TM3V9-T86R9</KeyValue>
+            <SupportedEditions>Outlook2021VL</SupportedEditions>
+            <SupportedSku>A5799E4C-F83C-4C6E-9516-DFE9B696150B</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 PowerPoint2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>TY7XF-NFRBR-KJ44C-G83KF-GX27K</KeyValue>
+            <SupportedEditions>PowerPoint2021VL</SupportedEditions>
+            <SupportedSku>6E166CC3-495D-438A-89E7-D7C9E6FD4DEA</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 ProjectPro2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>FTNWT-C6WBT-8HMGF-K9PRX-QV9H8</KeyValue>
+            <SupportedEditions>ProjectPro2021VL</SupportedEditions>
+            <SupportedSku>76881159-155C-43E0-9DB7-2D70A9A3A4CA</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 ProjectStd2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>J2JDC-NJCYY-9RGQ4-YXWMH-T3D4T</KeyValue>
+            <SupportedEditions>ProjectStd2021VL</SupportedEditions>
+            <SupportedSku>6DD72704-F752-4B71-94C7-11CEC6BFC355</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 ProPlus2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH</KeyValue>
+            <SupportedEditions>ProPlus2021VL</SupportedEditions>
+            <SupportedSku>FBDB3E18-A8EF-4FB3-9183-DFFD60BD0984</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 Publisher2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>2MW9D-N4BXM-9VBPG-Q7W6M-KFBGQ</KeyValue>
+            <SupportedEditions>Publisher2021VL</SupportedEditions>
+            <SupportedSku>AA66521F-2370-4AD8-A2BB-C095E3E4338F</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 SkypeforBusiness2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>HWCXN-K3WBT-WJBKY-R8BD9-XK29P</KeyValue>
+            <SupportedEditions>SkypeforBusiness2021VL</SupportedEditions>
+            <SupportedSku>1F32A9AF-1274-48BD-BA1E-1AB7508A23E8</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 Standard2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>KDX7X-BNVR8-TXXGX-4Q7Y8-78VT3</KeyValue>
+            <SupportedEditions>Standard2021VL</SupportedEditions>
+            <SupportedSku>080A45C5-9F9F-49EB-B4B0-C3C610A5EBD3</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 VisioPro2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>KNH8D-FGHT4-T8RK3-CTDYJ-K2HT4</KeyValue>
+            <SupportedEditions>VisioPro2021VL</SupportedEditions>
+            <SupportedSku>FB61AC9A-1688-45D2-8F6B-0674DBFFA33C</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 VisioStd2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>MJVNY-BYWPY-CWV6J-2RKRT-4M8QG</KeyValue>
+            <SupportedEditions>VisioStd2021VL</SupportedEditions>
+            <SupportedSku>72FCE797-1884-48DD-A860-B2F6A5EFD3CA</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+         <BuiltInGvlk>
+            <KeyDescription>Office 2021 Word2021VL:GVLK</KeyDescription>
+            <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+            <KeyValue>TN8H9-M34D3-Y64V9-TR72V-X79KV</KeyValue>
+            <SupportedEditions>Word2021VL</SupportedEditions>
+            <SupportedSku>ABE28AEA-625A-43B1-8E30-225EB8FBD9E5</SupportedSku>
+            <KeyType>Gvlk</KeyType>
+         </BuiltInGvlk>
+      </SupportedGVLKs>
+      <SupportedVolumeApplications>
+         <VolumeApplication>
+            <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+            <ApplicationName>Office</ApplicationName>
+            <OnlineHelpUri />
+         </VolumeApplication>
+      </SupportedVolumeApplications>
+      <ProductMappings>
+         <ProductMapping>
+            <Sku>47F3B983-7C53-4D45-ABC6-BCD91E2DD90A</Sku>
+            <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+            <KmsId>86D50B16-4808-41AF-B83B-B338274318B2</KmsId>
+            <VersionName>2021</VersionName>
+            <SupportsAd>1</SupportsAd>
+            <ProductName />
+            <ProductFamily />
+            <Edition />
+         </ProductMapping>
+      </ProductMappings>
+   </VamtSystemData>
+</VolumeActivationManagementToolData>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="E8AFB237-3344-4F46-8C7F-DE9198DD0D1F">
+  <VamtSystemData>
+    <SupportedGVLKs>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2021 RTM ServerStandard Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>NHB69-V77PJ-F86MF-2DHCK-66RQV</KeyValue>
+        <SupportedEditions>ServerStandard</SupportedEditions>
+        <SupportedSku>9bd77860-9b31-4b7b-96ad-2564017315bf</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2021 RTM ServerDatacenter Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>X93C6-JNQJY-CC77M-6YKVG-6F7HQ</KeyValue>
+        <SupportedEditions>ServerDatacenter</SupportedEditions>
+        <SupportedSku>ef6cfc9f-8c5d-44ac-9aad-de6a2ea0ae03</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2021 RTM ServerStandardACor Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>4PV9K-NRWQ6-HJ8FV-B68XJ-DGRRG</KeyValue>
+        <SupportedEditions>ServerStandardACor</SupportedEditions>
+        <SupportedSku>f5e9429c-f50b-4b98-b15c-ef92eb5cff39</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2021 RTM ServerDatacenterACor Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>YNVYH-P6CR8-GKP9K-29KYD-M7X77</KeyValue>
+        <SupportedEditions>ServerDatacenterACor</SupportedEditions>
+        <SupportedSku>39e69c41-42b4-4a0a-abad-8e3c10a797cc</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+    </SupportedGVLKs>
+  </VamtSystemData>
+</VolumeActivationManagementToolData>
+

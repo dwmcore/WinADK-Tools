@@ -1,0 +1,102 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+    <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+        <events componentType="application">
+
+
+        <!--Sample Profile-->
+        <event guid="{DEF2FE46-7BD6-4b80-bd94-F57FE20D0CE3}" />
+        <!--Perf Info GUID-->        
+        <event guid="{ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}" />
+        <!--EventTraceConfigGuid-->
+        <event guid="{01853a65-418f-4f36-aefc-dc0f1d2fd235}" />
+        <!--EventTraceGuid Id Tracing session-->
+        <event guid="{68fdd900-4a3e-11d1-84f4-0000f80464e3}" />
+        <!--EventMetadataGuid Crimson data from Xperf-->
+        <event guid="{BBCCF6C1-6CD1-48c4-80FF-839482E37671}" />
+        <!--PerfTrackMetadataGuid-->
+        <event guid="{BF6EF1CB-89B5-490a-80AC-B180CFBCFF0F}" />
+        <!--SystemConfigExGuid  Build Lab, ...-->
+        <event guid="{9B79EE91-B5FD-41c0-A243-4248E266E9D0}" />
+        <!--Stackwalk Event-->
+        <event guid="{DEF2FE46-7BD6-4B80-BD94-F57FE20D0CE3}" />
+
+        <!--ProcessGuid-->
+        <event guid="{3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}" />
+        <!--ThreadGuid-->
+        <event guid="{3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}" />
+        <!--PageFaultGuid-->
+        <event guid="{3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c}" />
+        <!--DiskIoGuid-->
+        <event guid="{3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c}" />
+        <!--FileIoGuid-->
+        <event guid="{90cbdc39-4a3e-11d1-84f4-0000f80464e3}" />
+        <!--TcpIpGuid-->
+        <event guid="{9a280ac0-c8e0-11d1-84e2-00c04fb998a2}" />
+        <!--UdpIpGuid-->
+        <event guid="{bf3a50c5-a9c9-4988-a005-2df0b7c80f80}" />
+        <!--ImageLoadGuid-->
+        <event guid="{2cb15d1d-5fc1-11d2-abe1-00a0c911f518}" />
+        <!--RegistryGuid-->
+        <event guid="{AE53722E-C863-11d2-8659-00C04FA321A1}" />
+        <!--ImageIdGuid-->
+        <event guid="{B3E675D7-2554-4f18-830B-2762732560DE}" />
+
+        <!--TraceInfo-->
+        <event guid="{01853a65-418f-4f36-aefc-dc0f1d2fd235}" />
+        <!--EventTraceGuid is used to identify a event tracing session-->
+        <event guid="{68FDD900-4A3E-11D1-84F4-0000F80464E3}" />
+
+        <!--ALPCGuid-->
+        <event guid="{45d8cccd-539f-4b72-a8b7-5c683142609a}" />
+
+
+          <!--WMP GUIDS-->
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD00}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD01}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD02}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD03}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD04}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD05}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD06}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD07}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD08}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD09}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD0a}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD0b}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD0c}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD0d}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD0e}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD0f}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD10}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD11}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD12}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD13}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD14}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD15}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD16}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD17}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD18}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD19}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD1a}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD1b}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD1c}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD1d}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD1e}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD2f}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD20}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD21}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD22}" />
+        <event guid="{564C2AE5-133F-4c5b-B3F2-CEE4A8DDCD29}" />
+
+        </events>
+    </instrumentation>
+</assembly>
+
+
+

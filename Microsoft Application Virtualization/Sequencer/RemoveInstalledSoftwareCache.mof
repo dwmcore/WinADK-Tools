@@ -1,0 +1,5 @@
+#pragma autorecover
+#pragma namespace("\\\\.\\root\\ccm\\invagt")
+
+// Delete the sccm class and all of its instances
+#pragma deleteclass("AI_InstalledSoftwareCache",NOFAIL) //NOFAIL means continue if the class is not found

@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+<!-- Add an "subType" element for each non-standard subtype name.  Attribute "name" specifies the subtype name and attribute "value" attribute the corresponding numerical value. -->
+<!-- Add an "event" element for each old ETW event.  Attribute "guid" specifies the event guid (in the {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX} format) for old ETW events. -->
+<!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+<!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+<!-- Add a single "template" element to specify the layout of the event for the subtypes declared in preceding "classification" elements. -->
+<!-- Top level element of element layout specifies event name. -->
+<!-- Add an element for each field.  The element name is the declared field name, the content of the element is the field type name in %...; format. -->
+<!-- XPerfInfo currently supports the following types: String, AnsiString, CountedString (BSTR), Guid, Byte/SByte, UInt16/32/64, Int16/32/64, Double, Float, Boolean (1 byte), Pointer, SizeT, SSizeT -->
+<!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <!-- Zune trace provider GUID is 59313e6b-cf19-4e68-8ef3-876b0c08e801 -->
+
+      <!-- ClientEvent -->
+      <event message="$(string.ImageId)" guid="{87877d7a-b2a5-4cf2-80c7-f9da8c0e785f}" level="4">
+        <diagnosticInstance version="0">
+          <classification subType="Info" subTypeValue="0" />
+          <classification subType="Start" subTypeValue="1" />
+          <classification subType="End" subTypeValue="2" />
+          <template>
+            <ClientEvent_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <ulData>%UInt32;</ulData>
+            </ClientEvent_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- ClientEvent2 -->
+      <event message="$(string.ImageId)" guid="{6e3746cc-bb82-4fc2-8c81-1b6ab82f8b35}" level="5">
+        <diagnosticInstance version="0">
+          <classification subType="Checkpoint" subTypeValue="8" />
+          <template>
+            <ClientEvent2_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <str>%String;</str>
+            </ClientEvent2_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- WMP_PLAYBACK -->
+      <event message="$(string.ImageId)" guid="{7fc49626-18c6-4ac1-b276-33a7a617f146}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="OPEN"              subTypeValue="1" />
+          <classification subType="QUEUE"             subTypeValue="2" />
+          <classification subType="START"             subTypeValue="3" />
+          <classification subType="GRAPH_ERROR_OPEN"  subTypeValue="4" />
+          <classification subType="GRAPH_ERROR_QUEUE" subTypeValue="5" />
+          <template>
+            <WMP_PLAYBACK_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <GraphType>%UInt32;</GraphType>
+              <LastHr>%UInt32;</LastHr>
+              <szFileName>%String;</szFileName>
+            </WMP_PLAYBACK_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- MFGRAPH_EVENT -->
+      <event eventID="4" message="$(string.ImageId)" guid="{b0d68dee-e06d-e06d-b272-dc07db6d3625}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="START_PLAY"                       subTypeValue="1" />
+          <classification subType="END_PLAY"                         subTypeValue="2" />
+          <classification subType="START_STOP"                       subTypeValue="3" />
+          <classification subType="END_STOP"                         subTypeValue="4" />
+          <classification subType="START_PAUSE"                      subTypeValue="5" />
+          <classification subType="END_PAUSE"                        subTypeValue="6" />
+          <classification subType="START_RENDER"                     subTypeValue="7" />
+          <classification subType="END_RENDER"                       subTypeValue="8" />
+          <classification subType="START_FIND_INTERFACE_ON_FILTER"   subTypeValue="9" />
+          <classification subType="END_FIND_INTERFACE_ON_FILTER"     subTypeValue="10" />
+          <classification subType="START_SCAN"                       subTypeValue="11" />
+          <classification subType="END_SCAN"                         subTypeValue="12" />
+          <classification subType="START_SET_RATE"                   subTypeValue="13" />
+          <classification subType="END_SET_RATE"                     subTypeValue="14" />
+          <classification subType="START_INSERT_NODE"                subTypeValue="15" />
+          <classification subType="END_INSERT_NODE"                  subTypeValue="16" />
+          <classification subType="START_BEGIN_BATCH_INSERT"         subTypeValue="17" />
+          <classification subType="END_BEGIN_BATCH_INSERT"           subTypeValue="18" />
+          <classification subType="START_END_BATCH_INSERT"           subTypeValue="19" />
+          <classification subType="END_END_BATCH_INSERT"             subTypeValue="20" />
+          <classification subType="START_CLOSE"                      subTypeValue="21" />
+          <classification subType="END_CLOSE"                        subTypeValue="22" />
+          <classification subType="START_SET_VOLUME"                 subTypeValue="23" />
+          <classification subType="END_SET_VOLUME"                   subTypeValue="24" />
+          <classification subType="START_SET_STOP_POSITION"          subTypeValue="25" />
+          <classification subType="END_SET_STOP_POSITION"            subTypeValue="26" />
+          <classification subType="START_SET_CURRENT_POSITION"       subTypeValue="27" />
+          <classification subType="END_SET_CURRENT_POSITION"         subTypeValue="28" />
+          <classification subType="START_SET_CONTEXT"                subTypeValue="29" />
+          <classification subType="END_SET_CONTEXT"                  subTypeValue="30" />
+          <classification subType="START_QUEUE"                      subTypeValue="31" />
+          <classification subType="END_QUEUE"                        subTypeValue="32" />
+          <classification subType="START_INIT"                       subTypeValue="33" />
+          <classification subType="END_INIT"                         subTypeValue="34" />
+          <classification subType="START_INIT_EX"                    subTypeValue="35" />
+          <classification subType="END_INIT_EX"                      subTypeValue="36" />
+          <classification subType="START_GET_TYPE"                   subTypeValue="37" />
+          <classification subType="END_GET_TYPE"                     subTypeValue="38" />
+          <classification subType="START_IS_REUSED"                  subTypeValue="39" />
+          <classification subType="END_IS_REUSED"                    subTypeValue="40" />
+          <classification subType="START_GET_URL"                    subTypeValue="41" />
+          <classification subType="END_GET_URL"                      subTypeValue="42" />
+          <classification subType="START_GET_CONTEXT"                subTypeValue="43" />
+          <classification subType="END_GET_CONTEXT"                  subTypeValue="44" />
+          <classification subType="START_GET_COOKIE"                 subTypeValue="45" />
+          <classification subType="END_GET_COOKIE"                   subTypeValue="46" />
+          <classification subType="START_SET_COOKIE"                 subTypeValue="47" />
+          <classification subType="END_SET_COOKIE"                   subTypeValue="48" />
+          <classification subType="START_GET_OPEN_STATE"             subTypeValue="49" />
+          <classification subType="END_GET_OPEN_STATE"               subTypeValue="50" />
+          <classification subType="START_GET_RATE"                   subTypeValue="51" />
+          <classification subType="END_GET_RATE"                     subTypeValue="52" />
+          <classification subType="START_GET_CURRENT_POSITION"       subTypeValue="53" />
+          <classification subType="END_GET_CURRENT_POSITION"         subTypeValue="54" />
+          <classification subType="START_GET_STOP_POSITION"          subTypeValue="55" />
+          <classification subType="END_GET_STOP_POSITION"            subTypeValue="56" />
+          <classification subType="START_GET_VOLUME"                 subTypeValue="57" />
+          <classification subType="END_GET_VOLUME"                   subTypeValue="58" />
+          <classification subType="START_GET_MEDIA_CAPS"             subTypeValue="59" />
+          <classification subType="END_GET_MEDIA_CAPS"               subTypeValue="60" />
+          <classification subType="START_GET_CONTROL_CAPS"           subTypeValue="61" />
+          <classification subType="END_GET_CONTROL_CAPS"             subTypeValue="62" />
+          <classification subType="START_GET_SEEK_CAPS"              subTypeValue="63" />
+          <classification subType="END_GET_SEEK_CAPS"                subTypeValue="64" />
+          <classification subType="START_GET_JUMP_CAPS"              subTypeValue="65" />
+          <classification subType="END_GET_JUMP_CAPS"                subTypeValue="66" />
+          <classification subType="START_SET_AUTO_REWIND"            subTypeValue="67" />
+          <classification subType="END_SET_AUTO_REWIND"              subTypeValue="68" />
+          <classification subType="START_NOTIFY_STATE_CHANGE"        subTypeValue="69" />
+          <classification subType="END_NOTIFY_STATE_CHANGE"          subTypeValue="70" />
+          <classification subType="START_NOTIFY_PLAYBACK_END"        subTypeValue="71" />
+          <classification subType="END_NOTIFY_PLAYBACK_END"          subTypeValue="72" />
+          <classification subType="START_NOTIFY_RATE_CHANGE"         subTypeValue="73" />
+          <classification subType="END_NOTIFY_RATE_CHANGE"           subTypeValue="74" />
+          <classification subType="START_NOTIFY_ERROR"               subTypeValue="75" />
+          <classification subType="END_NOTIFY_ERROR"                 subTypeValue="76" />
+          <classification subType="START_NOTIFY_LICENSE"             subTypeValue="77" />
+          <classification subType="END_NOTIFY_LICENSE"               subTypeValue="78" />
+          <classification subType="START_NOTIFY_CRED"                subTypeValue="79" />
+          <classification subType="END_NOTIFY_CRED"                  subTypeValue="80" />
+          <classification subType="START_NOTIFY_INDIVIDUALIZATION"   subTypeValue="81" />
+          <classification subType="END_NOTIFY_INDIVIDUALIZATION"     subTypeValue="82" />
+          <classification subType="START_FIND_PLUGIN"                subTypeValue="83" />
+          <classification subType="END_FIND_PLUGIN"                  subTypeValue="84" />
+          <classification subType="START_NOTIFY_REVOCATION"          subTypeValue="85" />
+          <classification subType="END_NOTIFY_REVOCATION"            subTypeValue="86" />
+          <classification subType="START_HANDLE_PRESENTATION_SWITCH" subTypeValue="87" />
+          <classification subType="END_HANDLE_PRESENTATION_SWITCH"   subTypeValue="88" />
+          <classification subType="START_NOTIFY_FULLSCREEN"          subTypeValue="89" />
+          <classification subType="END_NOTIFY_FULLSCREEN"            subTypeValue="90" />
+          <classification subType="START_NOTIFY_CUSTOM_LICENSE"      subTypeValue="91" />
+          <classification subType="END_NOTIFY_CUSTOM_LICENSE"        subTypeValue="92" />
+          <classification subType="START_USER_EVENT"                 subTypeValue="93" />
+          <classification subType="END_USER_EVENT"                   subTypeValue="94" />
+
+          <template>
+            <MFGRAPH_EVENT_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <lParam>%UInt32;</lParam>
+              <bstr>%CountedString;</bstr>
+            </MFGRAPH_EVENT_>
+          </template>
+        </diagnosticInstance>
+      </event>
+      
+      <!-- MFGRAPH -->
+      <event eventID="5" message="$(string.ImageId)" guid="{f9b5edf2-5e1e-43b7-a938-5071954bbad2}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="START_PLAY"                       subTypeValue="1" />
+          <classification subType="END_PLAY"                         subTypeValue="2" />
+          <classification subType="START_STOP"                       subTypeValue="3" />
+          <classification subType="END_STOP"                         subTypeValue="4" />
+          <classification subType="START_PAUSE"                      subTypeValue="5" />
+          <classification subType="END_PAUSE"                        subTypeValue="6" />
+          <classification subType="START_RENDER"                     subTypeValue="7" />
+          <classification subType="END_RENDER"                       subTypeValue="8" />
+          <classification subType="START_FIND_INTERFACE_ON_FILTER"   subTypeValue="9" />
+          <classification subType="END_FIND_INTERFACE_ON_FILTER"     subTypeValue="10" />
+          <classification subType="START_SCAN"                       subTypeValue="11" />
+          <classification subType="END_SCAN"                         subTypeValue="12" />
+          <classification subType="START_SET_RATE"                   subTypeValue="13" />
+          <classification subType="END_SET_RATE"                     subTypeValue="14" />
+          <classification subType="START_INSERT_NODE"                subTypeValue="15" />
+          <classification subType="END_INSERT_NODE"                  subTypeValue="16" />
+          <classification subType="START_BEGIN_BATCH_INSERT"         subTypeValue="17" />
+          <classification subType="END_BEGIN_BATCH_INSERT"           subTypeValue="18" />
+          <classification subType="START_END_BATCH_INSERT"           subTypeValue="19" />
+          <classification subType="END_END_BATCH_INSERT"             subTypeValue="20" />
+          <classification subType="START_CLOSE"                      subTypeValue="21" />
+          <classification subType="END_CLOSE"                        subTypeValue="22" />
+          <classification subType="START_SET_VOLUME"                 subTypeValue="23" />
+          <classification subType="END_SET_VOLUME"                   subTypeValue="24" />
+          <classification subType="START_SET_STOP_POSITION"          subTypeValue="25" />
+          <classification subType="END_SET_STOP_POSITION"            subTypeValue="26" />
+          <classification subType="START_SET_CURRENT_POSITION"       subTypeValue="27" />
+          <classification subType="END_SET_CURRENT_POSITION"         subTypeValue="28" />
+          <classification subType="START_SET_CONTEXT"                subTypeValue="29" />
+          <classification subType="END_SET_CONTEXT"                  subTypeValue="30" />
+          <classification subType="START_QUEUE"                      subTypeValue="31" />
+          <classification subType="END_QUEUE"                        subTypeValue="32" />
+          <classification subType="START_INIT"                       subTypeValue="33" />
+          <classification subType="END_INIT"                         subTypeValue="34" />
+          <classification subType="START_INIT_EX"                    subTypeValue="35" />
+          <classification subType="END_INIT_EX"                      subTypeValue="36" />
+          <classification subType="START_GET_TYPE"                   subTypeValue="37" />
+          <classification subType="END_GET_TYPE"                     subTypeValue="38" />
+          <classification subType="START_IS_REUSED"                  subTypeValue="39" />
+          <classification subType="END_IS_REUSED"                    subTypeValue="40" />
+          <classification subType="START_GET_URL"                    subTypeValue="41" />
+          <classification subType="END_GET_URL"                      subTypeValue="42" />
+          <classification subType="START_GET_CONTEXT"                subTypeValue="43" />
+          <classification subType="END_GET_CONTEXT"                  subTypeValue="44" />
+          <classification subType="START_GET_COOKIE"                 subTypeValue="45" />
+          <classification subType="END_GET_COOKIE"                   subTypeValue="46" />
+          <classification subType="START_SET_COOKIE"                 subTypeValue="47" />
+          <classification subType="END_SET_COOKIE"                   subTypeValue="48" />
+          <classification subType="START_GET_OPEN_STATE"             subTypeValue="49" />
+          <classification subType="END_GET_OPEN_STATE"               subTypeValue="50" />
+          <classification subType="START_GET_RATE"                   subTypeValue="51" />
+          <classification subType="END_GET_RATE"                     subTypeValue="52" />
+          <classification subType="START_GET_CURRENT_POSITION"       subTypeValue="53" />
+          <classification subType="END_GET_CURRENT_POSITION"         subTypeValue="54" />
+          <classification subType="START_GET_STOP_POSITION"          subTypeValue="55" />
+          <classification subType="END_GET_STOP_POSITION"            subTypeValue="56" />
+          <classification subType="START_GET_VOLUME"                 subTypeValue="57" />
+          <classification subType="END_GET_VOLUME"                   subTypeValue="58" />
+          <classification subType="START_GET_MEDIA_CAPS"             subTypeValue="59" />
+          <classification subType="END_GET_MEDIA_CAPS"               subTypeValue="60" />
+          <classification subType="START_GET_CONTROL_CAPS"           subTypeValue="61" />
+          <classification subType="END_GET_CONTROL_CAPS"             subTypeValue="62" />
+          <classification subType="START_GET_SEEK_CAPS"              subTypeValue="63" />
+          <classification subType="END_GET_SEEK_CAPS"                subTypeValue="64" />
+          <classification subType="START_GET_JUMP_CAPS"              subTypeValue="65" />
+          <classification subType="END_GET_JUMP_CAPS"                subTypeValue="66" />
+          <classification subType="START_SET_AUTO_REWIND"            subTypeValue="67" />
+          <classification subType="END_SET_AUTO_REWIND"              subTypeValue="68" />
+          <classification subType="START_NOTIFY_STATE_CHANGE"        subTypeValue="69" />
+          <classification subType="END_NOTIFY_STATE_CHANGE"          subTypeValue="70" />
+          <classification subType="START_NOTIFY_PLAYBACK_END"        subTypeValue="71" />
+          <classification subType="END_NOTIFY_PLAYBACK_END"          subTypeValue="72" />
+          <classification subType="START_NOTIFY_RATE_CHANGE"         subTypeValue="73" />
+          <classification subType="END_NOTIFY_RATE_CHANGE"           subTypeValue="74" />
+          <classification subType="START_NOTIFY_ERROR"               subTypeValue="75" />
+          <classification subType="END_NOTIFY_ERROR"                 subTypeValue="76" />
+          <classification subType="START_NOTIFY_LICENSE"             subTypeValue="77" />
+          <classification subType="END_NOTIFY_LICENSE"               subTypeValue="78" />
+          <classification subType="START_NOTIFY_CRED"                subTypeValue="79" />
+          <classification subType="END_NOTIFY_CRED"                  subTypeValue="80" />
+          <classification subType="START_NOTIFY_INDIVIDUALIZATION"   subTypeValue="81" />
+          <classification subType="END_NOTIFY_INDIVIDUALIZATION"     subTypeValue="82" />
+          <classification subType="START_FIND_PLUGIN"                subTypeValue="83" />
+          <classification subType="END_FIND_PLUGIN"                  subTypeValue="84" />
+          <classification subType="START_NOTIFY_REVOCATION"          subTypeValue="85" />
+          <classification subType="END_NOTIFY_REVOCATION"            subTypeValue="86" />
+          <classification subType="START_HANDLE_PRESENTATION_SWITCH" subTypeValue="87" />
+          <classification subType="END_HANDLE_PRESENTATION_SWITCH"   subTypeValue="88" />
+          <classification subType="START_NOTIFY_FULLSCREEN"          subTypeValue="89" />
+          <classification subType="END_NOTIFY_FULLSCREEN"            subTypeValue="90" />
+          <classification subType="START_NOTIFY_CUSTOM_LICENSE"      subTypeValue="91" />
+          <classification subType="END_NOTIFY_CUSTOM_LICENSE"        subTypeValue="92" />
+          <classification subType="START_USER_EVENT"                 subTypeValue="93" />
+          <classification subType="END_USER_EVENT"                   subTypeValue="94" />
+
+          <template>
+            <MFGRAPH>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <hr>%UInt32;</hr>
+            </MFGRAPH>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- WMP_BUFFER -->
+      <event message="$(string.ImageId)" guid="{8d638d83-e7db-4fd0-acd9-390d89569e8d}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="PROCESS_WMP_DELIVER_EMPTY_AUDIO_BUFFER_TO_SDK"               subTypeValue="1" />
+          <classification subType="PROCESS_SDK_DELIVER_DECODED_AUDIO_BUFFER_TO_RENDER"          subTypeValue="2" />
+          <classification subType="PROCESS_WMP_DELIVER_EMPTY_VIDEO_BUFFER_TO_SDK"               subTypeValue="3" />
+          <classification subType="PROCESS_SDK_DELIVER_DECODED_VIDEO_BUFFER_TO_RENDER"          subTypeValue="4" />
+          <template>
+            <WMP_BUFFER_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <llStartTime>%UInt64;</llStartTime>
+              <llEndTime>%UInt64;</llEndTime>
+              <byteCount>%UInt32;</byteCount>
+            </WMP_BUFFER_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- GENERIC_EVENT -->
+      <event message="$(string.ImageId)" guid="{c367850d-1843-46b3-8ee9-2357af8243c2}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="PERFTRACE_GENERIC_EVENT_ACTION_INFO"                       subTypeValue="0" />
+          <classification subType="PERFTRACE_GENERIC_EVENT_ACTION_START"                      subTypeValue="1" />
+          <classification subType="PERFTRACE_GENERIC_EVENT_ACTION_STOP"                       subTypeValue="2" />
+          <template>
+            <GENERIC_EVENT_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <TypeOf>%UInt32;</TypeOf>
+            </GENERIC_EVENT_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- DBMUTEX -->
+      <event message="$(string.ImageId)" guid="{3C4680A4-58F8-4b83-90E2-F1192D176832}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="TRY"               subTypeValue="1" />
+          <classification subType="ACQUIRED"          subTypeValue="2" />
+          <classification subType="RELEASED"          subTypeValue="3" />
+          <classification subType="LONGHOLD"          subTypeValue="4" />
+          <template>
+            <DBMUTEX_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <ThreadId>%UInt32;</ThreadId>
+              <Time>%UInt32;</Time>
+            </DBMUTEX_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- LAUNCH -->
+      <event message="$(string.ImageId)" guid="{6C31C411-5AE8-46a7-BEA6-4CEC7533C4DA}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="LauncherAtWinMain"               subTypeValue="1" />
+          <classification subType="WinMainAboutToLaunch"            subTypeValue="2" />
+          <classification subType="StartPhase2Init"                 subTypeValue="3" />
+          <classification subType="EndPhase2Init"                   subTypeValue="4" />
+          <classification subType="StartZuneNativeLib"              subTypeValue="5" />
+          <classification subType="LaunchingManagedApp"             subTypeValue="6" />
+          <classification subType="InManagedLaunch"                 subTypeValue="7" />
+          <classification subType="RequestUILoad"                   subTypeValue="8" />
+          <classification subType="RequestUILoad_Complete"          subTypeValue="9" />
+          <classification subType="QueryDB_Begin"                   subTypeValue="10" />
+          <classification subType="QueryDB_End"                     subTypeValue="11" />
+          <classification subType="Device_Connected"                subTypeValue="12" />
+          <classification subType="Phase3_Work_Begin"               subTypeValue="13" />
+          <classification subType="Phase3_Work_End"                 subTypeValue="14" />
+          <classification subType="Generate_Test_ShipAssert_Begin"  subTypeValue="15" />
+          <classification subType="Generate_Test_ShipAssert_End"    subTypeValue="16" />
+          <template>
+            <PERFMARKER_>
+              <data>%UInt32;</data>
+            </PERFMARKER_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- QRS -->
+      <event message="$(string.ImageId)" guid="{DB68302A-7DEB-44e3-87E6-78CC122AB13F}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="GetFieldValue"                   subTypeValue="1" />
+          <classification subType="GetCount"                        subTypeValue="2" />
+          <classification subType="FireNotifyCount"                 subTypeValue="3" />
+          <classification subType="RequeryCompare_Begin"            subTypeValue="4" />
+          <classification subType="RequeryCompare_End"              subTypeValue="5" />
+          <classification subType="BackgroundCount_Begin"           subTypeValue="6" />
+          <classification subType="BackgroundCount_End"             subTypeValue="7" />
+          <classification subType="Requery_GatherData_Begin"        subTypeValue="8" />
+          <classification subType="Requery_GatherData_RequeryBegin" subTypeValue="9" />
+          <classification subType="Requery_GatherData_End"          subTypeValue="10" />
+          <classification subType="Requery_LCS_Complete"            subTypeValue="11" />
+
+          <template>
+            <QRS_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <data>%UInt32;</data>
+            </QRS_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- SYNC -->
+      <event message="$(string.ImageId)" guid="{7D820438-85DE-4c0f-A4FE-FDC98692EAF0}" level="7">
+        <diagnosticInstance version="0">
+          <classification subType="SyncThread_Begin"                subTypeValue="1" />
+          <classification subType="SyncThread_End"                  subTypeValue="2" />
+          <classification subType="TransferItem_Begin"              subTypeValue="3" />
+          <classification subType="TransferItem_End"                subTypeValue="4" />
+          <classification subType="TransferItems_Begin"             subTypeValue="5" />
+          <classification subType="TransferItems_End"               subTypeValue="6" />
+          <classification subType="TransferItems_NotDone"           subTypeValue="7" />
+          <classification subType="TransferItems_WaitOver"          subTypeValue="8" />
+          <classification subType="DoCloudSync_Begin"               subTypeValue="9" />
+          <classification subType="DoCloudSync_End"                 subTypeValue="10" />
+          <classification subType="TransferFileToDevice_Begin"      subTypeValue="11" />
+          <classification subType="TransferFileToDevice_End"        subTypeValue="12" />
+          <classification subType="CopyStream_Begin"                subTypeValue="13" />
+          <classification subType="CopyStream_End"                  subTypeValue="14" />
+          <classification subType="SendObject_Begin"                subTypeValue="15" />
+          <classification subType="SendObject_End"                  subTypeValue="16" />
+          <classification subType="WPDSendObject_Begin"             subTypeValue="17" />
+          <classification subType="WPDSendObject_End"               subTypeValue="18" />
+          <classification subType="WPDTransferFile_Begin"           subTypeValue="19" />
+          <classification subType="WPDTransferFile_End"             subTypeValue="20" />
+          <classification subType="DRMCopyStream_Begin"             subTypeValue="21" />
+          <classification subType="DRMCopyStream_End"               subTypeValue="22" />
+          <classification subType="UpdateTracksAlbum_Begin"         subTypeValue="23" />
+          <classification subType="UpdateTracksAlbum_End"           subTypeValue="24" />
+          <classification subType="LocateAlbumArt_Begin"            subTypeValue="25" />
+          <classification subType="LocateAlbumArt_End"              subTypeValue="26" />
+          <classification subType="TranscodeArt_Begin"              subTypeValue="27" />
+          <classification subType="TranscodeArt_End"                subTypeValue="28" />
+          <template>
+            <SYNC_>
+              <data>%UInt32;</data>
+            </SYNC_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- UI COLLECTION -->
+      <event message="$(string.ImageId)" guid="{0e0fc989-9392-467b-92fc-80d4c1999a97}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="LibraryQueryIssued"                       subTypeValue="1" />
+          <classification subType="LibraryQueryResultsAvailable"             subTypeValue="2" />
+          <classification subType="LibraryQueryResultsVisible"               subTypeValue="3" />
+          <classification subType="MusicLibraryViewCommandInvoked"           subTypeValue="4" />
+          <classification subType="DeviceIconItemDropped"                    subTypeValue="5" />
+          <classification subType="SearchQueryIssued"                        subTypeValue="6" />
+          <classification subType="SearchQueryResultsAvailable"              subTypeValue="7" />
+          <classification subType="SearchQueryResultsVisible"                subTypeValue="8" />
+          <classification subType="MarketplaceQueriesIssued"                 subTypeValue="9" />
+          <classification subType="MarketplaceQueriesResultsAvailable"       subTypeValue="10" />
+          <classification subType="MarketplaceQueriesResultsVisible"         subTypeValue="11" />
+          <classification subType="PlayRequestIssued"                        subTypeValue="12" />
+          <classification subType="PlayRequestComplete"                      subTypeValue="13" />
+          <classification subType="BulkEventsPush_Begin"                     subTypeValue="14" />
+          <classification subType="BulkEventsPush_End"                       subTypeValue="15" />
+          <classification subType="RecommendationQueriesIssued"              subTypeValue="16" />
+          <classification subType="RecommendationQueriesResultsAvailable"    subTypeValue="17" />
+          <classification subType="RecommendationQueriesResultsVisible"      subTypeValue="18" />
+          <classification subType="SocialQueriesIssued"                      subTypeValue="19" />
+          <classification subType="SocialQueriesResultsAvailable"            subTypeValue="20" />
+          <classification subType="SocialQueriesResultsVisible"              subTypeValue="21" />
+          <classification subType="MixQueriesIssued"                         subTypeValue="22" />
+          <classification subType="MixQueriesResultsAvailable"               subTypeValue="23" />
+          <classification subType="MixQueriesResultsVisible"                 subTypeValue="24" />
+          <classification subType="QuickplayQueriesIssued"                   subTypeValue="25" />
+          <classification subType="QuickplayQueriesResultsAvailable"         subTypeValue="26" />
+          <classification subType="QuickplayQueriesResultsVisible"           subTypeValue="27" />
+          <classification subType="DataProviderQueryBegin"                   subTypeValue="28" />
+          <classification subType="DataProviderQueryComplete"                subTypeValue="29" />
+          <classification subType="QuickMixBegin"                            subTypeValue="30" />
+          <classification subType="QuickMixUpdate"                           subTypeValue="31" />
+          <classification subType="QuickMixComplete"                         subTypeValue="32" />
+          <classification subType="MarketplaceSearchResultArtistClicked"     subTypeValue="33" />
+          <classification subType="SearchHintCollectionQueryArtistBegin"     subTypeValue="34" />
+          <classification subType="SearchHintCollectionQueryArtistComplete"  subTypeValue="35" />
+          <classification subType="SearchHintMarketplaceQueryPrefixBegin"    subTypeValue="36" />
+          <classification subType="SearchHintMarketplaceQueryPrefixComplete" subTypeValue="37" />
+          <classification subType="SyncStatusVisible"                        subTypeValue="38" />
+
+          <template>
+            <UICOLLECTION_>
+              <QueryType>%String;</QueryType>
+            </UICOLLECTION_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- Driver -->
+      <event message="$(string.ImageId)" guid="{391184A6-EAB2-41a8-8752-8755975F0652}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="ExecuteSimpleCommand_Begin"                  subTypeValue="1" />
+          <classification subType="ExecuteSimpleCommand_End"                    subTypeValue="2" />
+          <classification subType="ExecuteSimpleCommand_AtWriteDataHeader"      subTypeValue="3" />
+          <classification subType="ExecuteSimpleCommand_AtWriteDataChunk"       subTypeValue="4" />
+          <classification subType="ExecuteSimpleCommand_AtCompleteTransfer"     subTypeValue="5" />
+          <classification subType="ExecuteSimpleCommand_AtReadResponse"         subTypeValue="6" />
+          <classification subType="USB_ReadData_Begin"                          subTypeValue="7" />
+          <classification subType="USB_ReadData_End"                            subTypeValue="8" />
+          <classification subType="USB_WriteData_Begin"                         subTypeValue="9" />
+          <classification subType="USB_WriteData_End"                           subTypeValue="10" />
+          <classification subType="USB_WaitForIOCompletion_Begin"               subTypeValue="11" />
+          <classification subType="USB_WaitForIOCompletion_End"                 subTypeValue="12" />
+          <template>
+            <DEVICEDRIVER_>
+              <QueryType>%String;</QueryType>
+            </DEVICEDRIVER_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- HTTP -->
+      <event message="$(string.ImageId)" guid="{541b47cc-b638-493c-8c43-50751bf70f3c}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="REQUEST_BEGIN"             subTypeValue="1" />
+          <classification subType="REQUEST_END"               subTypeValue="2" />
+          <classification subType="AUTOPROXYCONFIG_BEGIN"     subTypeValue="3" />
+          <classification subType="AUTOPROXYCONFIG_END"       subTypeValue="4" />
+
+          <template>
+            <HTTP_>
+              <Url>%String;</Url>
+            </HTTP_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- MBR -->
+      <event message="$(string.ImageId)" guid="{BE26BA6F-70BE-4b24-91DD-AAC1B46A66E4}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="REQUEST_SAMPLE"                      subTypeValue="1" />
+          <classification subType="REQUEST_SAMPLE_GOT_BUFFER"           subTypeValue="2" />
+          <classification subType="GETSAMPLE_COMPLETE"                  subTypeValue="3" />
+          <classification subType="SAMPLE_PUSHED_TO_PIN_PUMP"           subTypeValue="4" />
+          <classification subType="SAMPLE_PUSHED_DOWNSTREAM"            subTypeValue="5" />
+          <classification subType="SAMPLE_PUSHED_DOWNSTREAM_LATE"       subTypeValue="6" />
+          <classification subType="SAMPLE_PUSHED_DOWNSTREAM_COMPLETE"   subTypeValue="7" />
+          <classification subType="PAUSE"                               subTypeValue="8" />
+          <classification subType="PAUSE_EXIT"                          subTypeValue="9" />
+          <classification subType="PLAY"                                subTypeValue="10" />
+          <classification subType="STOP"                                subTypeValue="11" />
+          <classification subType="SEEK"                                subTypeValue="12" />
+          <classification subType="PIN_BEGINFLUSH"                      subTypeValue="13" />
+          <classification subType="PIN_BEGINFLUSH_EXIT"                 subTypeValue="14" />
+          <classification subType="PIN_ENDFLUSH"                        subTypeValue="15" />
+          <classification subType="PIN_ENDFLUSH_EXIT"                   subTypeValue="16" />
+          <classification subType="PIN_BEGIN_DECOMPRESS"                subTypeValue="17" />
+          <classification subType="PIN_END_DECOMPRESS"                  subTypeValue="18" />
+          <classification subType="PIN_CALL_BEGIN_DECOMPRESS"           subTypeValue="19" />
+          <classification subType="PIN_ENDCALL_DECOMPRESS"              subTypeValue="20" />
+          <classification subType="BEGIN_TRANSCRYPT"                    subTypeValue="21" />
+          <classification subType="END_TRANSCRYPT"                      subTypeValue="22" />
+          <classification subType="TIME_BUFFERED"                       subTypeValue="23" />
+          <classification subType="RELEASED_CLOCK"                      subTypeValue="24" />
+          <classification subType="RELEASED_CLOCK_AFTER_GIVING_UP"      subTypeValue="25" />
+          <classification subType="DROP_FRAME"                          subTypeValue="26" />
+          <classification subType="DECOMPRESS_TIMING_REPORT"            subTypeValue="27" />
+          <classification subType="FINISH_DMO_PROCESSINPUT"             subTypeValue="28" />
+          <classification subType="FINISH_DMO_PROCESSOUTPUT"            subTypeValue="29" />
+          <classification subType="NOT_USED_30"                         subTypeValue="30" />
+          <classification subType="NOT_USED_31"                         subTypeValue="31" />
+          <classification subType="GET_CHUNK"                           subTypeValue="32" />
+
+          <template>
+            <MBR_>
+              <StreamNumber>%UInt32;</StreamNumber>
+              <SampleTime>%UInt64;</SampleTime>
+              <StreamTime>%UInt64;</StreamTime>
+            </MBR_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- Ship Assert -->
+      <event message="$(string.ImageId)" guid="{20EE694E-DA45-46b4-B7DE-5689DD28E063}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="ASSERT"             subTypeValue="0" />
+
+          <template>
+            <SHIPASSERT_>
+              <Id>%UInt32;</Id>
+              <Param>%UInt32;</Param>
+              <Message>%string;</Message>
+            </SHIPASSERT_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- QUICKMIX -->
+      <event message="$(string.ImageId)" guid="{38920B5C-F3B0-4499-B5A9-27023BF44EC3}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="QUICKMIXEVENT_INITIALIZATION_BEGIN"    subTypeValue="1" />
+          <classification subType="QUICKMIXEVENT_INITIALIZATION_END"      subTypeValue="2" />
+          <classification subType="QUICKMIXEVENT_MDS_BEGIN"               subTypeValue="3" />
+          <classification subType="QUICKMIXEVENT_MDS_END"                 subTypeValue="4" />
+          <classification subType="QUICKMIXEVENT_SESSION_BEGIN"           subTypeValue="5" />
+          <classification subType="QUICKMIXEVENT_SESSION_END"             subTypeValue="6" />
+          <classification subType="QUICKMIXEVENT_MEDIA_SELECTION_BEGIN"   subTypeValue="7" />
+          <classification subType="QUICKMIXEVENT_MEDIA_SELECTION_END"     subTypeValue="8" />
+          <classification subType="QUICKMIXEVENT_SIMILAR_LOCAL_BEGIN"     subTypeValue="9" />
+          <classification subType="QUICKMIXEVENT_SIMILAR_LOCAL_END"       subTypeValue="10" />
+          <classification subType="QUICKMIXEVENT_SIMILAR_ZMP_BEGIN"       subTypeValue="11" />
+          <classification subType="QUICKMIXEVENT_SIMILAR_ZMP_END"         subTypeValue="12" />
+
+          <template>
+            <QUICKMIX_>
+              <Data>%UInt32;</Data>
+            </QUICKMIX_>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- DOWNLOAD -->
+      <event message="$(string.ImageId)" guid="{9D1DB961-7D57-48b6-AF2A-62E1C7F4418B}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="DOWNLOADEVENT_ZMP_DOWNLOAD_REQUEST"  subTypeValue="1" />
+          <classification subType="DOWNLOADEVENT_LICENCE_CHECK_BEGIN"   subTypeValue="2" />
+          <classification subType="DOWNLOADEVENT_LICENCE_CHECK_END"     subTypeValue="3" />
+          <classification subType="DOWNLOADEVENT_DOWNLOAD_BEGIN"        subTypeValue="4" />
+          <classification subType="DOWNLOADEVENT_DOWNLOAD_END"          subTypeValue="5" />
+          <classification subType="DOWNLOADEVENT_VIRUS_SCAN_BEGIN"      subTypeValue="6" />
+          <classification subType="DOWNLOADEVENT_VIRUS_SCAN_END"        subTypeValue="7" />
+
+          <template>
+            <DOWNLOAD_>
+              <Id>%String;</Id>
+            </DOWNLOAD_>
+          </template>
+        </diagnosticInstance>
+      </event>
+      
+    </events>
+
+  </instrumentation>
+
+</assembly>
+

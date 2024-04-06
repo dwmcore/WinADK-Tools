@@ -1,0 +1,68 @@
+﻿<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<DeviceLayout
+    xmlns="http://schemas.microsoft.com/embedded/2004/10/ImageUpdate"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    >
+  <Partitions>
+
+    <Partition>
+      <Name>EFIESP</Name>
+      <!-- PARTITION_SYSTEM_GUID -->
+      <Type>{c12a7328-f81f-11d2-ba4b-00a0c93ec93b}</Type>
+      <FileSystem>FAT32</FileSystem>
+      <!-- 100 MB size -->
+      <TotalSectors>204800</TotalSectors>
+      <RequiredToFlash>true</RequiredToFlash>
+    </Partition>
+
+    <Partition>
+      <Name>MSR</Name>
+      <!-- PARTITION_MSFT_RESERVED_GUID -->
+      <Type>{e3c9e316-0b5c-4db8-817d-f92df00215ae}</Type>
+      <!-- 16 MB size -->
+      <TotalSectors>32768</TotalSectors>
+    </Partition>
+
+    <Partition>
+      <Name>MainOS</Name>
+      <Type>{ebd0a0a2-b9e5-4433-87c0-68b6b72699c7}</Type>
+      <UseAllSpace>true</UseAllSpace>
+      <FileSystem>NTFS</FileSystem>
+      <AttachDriveLetter>true</AttachDriveLetter>
+    </Partition>
+
+    <!--
+        ISSUE: 
+        Desktop device layout does not create recovery partition.
+        FFU format is currently unable to support variable disk
+        sizes, and hence supports "extension" of only the last
+        partition on the disk. This prevents the FFU format from
+        handling the WinRE partition, which is supposed to be at
+        the end of the disk. We are working around this problem
+        by not capturing WinRE partition in the FFU, but instead,
+        letting the OS run-time create the WinRE partition at the
+        end of the disk by shrinking the OS partition.
+        Size: 2 GB
+    -->
+    <!-- Partition properties -->
+      <!-- PARTITION_MSFT_RECOVERY_GUID -->
+      <!-- 2 GB size -->
+    <!-- -->
+    <!-- 
+    <Partition>
+      <Name>WinRE</Name>
+      <Type>{de94bba4-06d1-4d40-a16a-bfd50179d6ac}</Type>
+      <TotalSectors>4194304</TotalSectors>
+      <FileSystem>NTFS</FileSystem>
+      <Hidden>true</Hidden>
+    </Partition>
+    -->
+
+  </Partitions>
+
+  <SectorSize>512</SectorSize>
+  <ChunkSize>128</ChunkSize>
+  <DefaultPartitionByteAlignment>0x20000</DefaultPartitionByteAlignment>
+
+</DeviceLayout>

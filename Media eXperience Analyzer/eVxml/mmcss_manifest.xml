@@ -1,0 +1,53 @@
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+	<assemblyIdentity version="1.0.0.0" processorArchitecture="x86" name="?????" type="win32"/>
+    <memberships>
+        <categoryMembership>
+            <id name="Microsoft.Windows.Event" version="1.0.0.0" publicKeyToken="################" />
+            <categoryInstance subcategory="{########-####-####-####-############}">
+            </categoryInstance>
+            <eventData>
+                <globalChannel name="Application"/>
+                <applicationChannel name="Operational"/>
+            </eventData>
+        </categoryMembership>
+    </memberships>
+    <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+
+        <events componentType="application">
+             
+            <event eventID="1" message="$(string.MMCSS)" guid="{f8f10121-b617-4a56-868b-9df1b27fe32c}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="MMCSS_START" value="32"/>          <!-- 0x20 -->
+                    <classification subType="MMCSS_STOP" value="33"/>           <!-- 0x21 -->
+                    <template>
+                        <MMCSS>
+                        </MMCSS>
+                    </template>
+                    <classification subType="SCHEDULER_EVENT" value="34"/>      <!-- 0x22 -->
+                    <template>
+                        <MMCSS>
+                            <pid>%UInt32;</pid>
+                            <tid>%UInt32;</tid>
+                            <priority>%UInt32;</priority>
+                            <taskIndex>%UInt32;</taskIndex>
+                        </MMCSS>
+                    </template>                     
+                    <classification subType="SCHEDULER_WAKEUP" value="35"/>     <!-- 0x23 -->
+                    <template>
+                        <MMCSS>
+                            <reason>%UInt32;</reason>
+                        </MMCSS>
+                    </template>
+
+                    <classification subType="SCHEDULER_SLEEP" value="36"/>      <!-- 0x24 -->
+                    <classification subType="SCHEDULER_SLEEP_RESP" value="37"/> <!-- 0x25 -->
+                    <template>
+                        <MMCSS>
+                        </MMCSS>
+                    </template>
+                </diagnosticInstance>
+            </event>
+            
+        </events>
+    </instrumentation>
+</assembly>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!-- This is a manifest for standalone use with xperf for describing Classic ETW events. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1">
+
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+
+    <events>
+
+      <eventSubTypes>
+
+        <!-- Add an "subType" element for each non-standard subtype name.  Attribute "name" specifies the subtype name and attribute "value" attribute the corresponding numerical value. -->
+        <subType name="LoaderLockAttempt" value="128" />
+        <subType name="LoaderLockAcquire" value="129" />
+        <subType name="LoaderLockTriedAndFailed" value="130" />
+        <subType name="DllMainExit" value="131" />
+        <subType name="ProcessInitDone" value="132" />
+        <subType name="CreateSectionBegin" value="133" />
+        <subType name="CreateSectionEnd" value="134" />
+        <subType name="MapViewEnd" value="135" />
+        <subType name="RelocateImageBegin" value="136" />
+        <subType name="RelocateImageEnd" value="137" />
+        <subType name="HandleOldDescsBegin" value="138" />
+        <subType name="HandleOldDescsEnd" value="139" />
+        <subType name="HandleNewDescsBegin" value="140" />
+        <subType name="HandleNewDescsEnd" value="141" />
+        <subType name="LoaderLockRelease" value="160" />
+        <subType name="DllMainEnter" value="161" />
+        <subType name="FindDllByName" value="162" />
+        <subType name="MapViewBegin" value="163" />
+        <subType name="LoaderLockWait" value="176" />
+
+      </eventSubTypes>
+
+      <!-- Add an "event" element for each old ETW event.  Attribute "guid" specifies the event guid (in the {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX} format) for old ETW events. -->
+      <event guid="{2cb15d1d-5fc1-11d2-abe1-00a0c911f518}">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+        <diagnosticInstance version="2">
+
+          <!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+          <classification subType="LoaderLockAttempt" />
+          <classification subType="LoaderLockAcquire" />
+          <classification subType="LoaderLockTriedAndFailed" />
+          <classification subType="DllMainExit" />
+          <classification subType="ProcessInitDone" />
+          <classification subType="CreateSectionBegin" />
+          <classification subType="CreateSectionEnd" />
+          <classification subType="MapViewEnd" />
+          <classification subType="RelocateImageBegin" />
+          <classification subType="RelocateImageEnd" />
+          <classification subType="HandleOldDescsBegin" />
+          <classification subType="HandleOldDescsEnd" />
+          <classification subType="HandleNewDescsBegin" />
+          <classification subType="HandleNewDescsEnd" />
+          <template>
+            <!-- Top level element of element layout specifies event name. -->
+            <LoaderBasicEvent>
+            </LoaderBasicEvent>
+          </template>
+
+          <classification subType="LoaderLockRelease" />
+          <classification subType="DllMainEnter" />
+          <classification subType="FindDllByName" />
+          <classification subType="MapViewBegin" />
+          <template>
+            <!-- Top level element of element layout specifies event name. -->
+            <LoaderDescribedEvent>
+              <Code>%UInt32;</Code>
+              <Description>%String;</Description>
+            </LoaderDescribedEvent>
+          </template>
+
+          <classification subType="LoaderLockWait" />
+          <template>
+            <!-- Top level element of element layout specifies event name. -->
+            <LoaderContentionEvent>
+              <NumWaitTimeouts>%UInt32;</NumWaitTimeouts>
+            </LoaderContentionEvent>
+          </template>
+        </diagnosticInstance>
+      </event>
+    </events>
+  </instrumentation>
+</assembly>

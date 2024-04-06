@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <eventSubTypes>
+        <subType name="APPLYWINDOWSCALEFACTOR"      value="170"/>
+        <subType name="DXGETWINDOWSHAREDSURFACE"    value="171"/>
+        <subType name="DXUPDATEWINDOWSHAREDSURFACE" value="172"/>
+        <subType name="ENABLEBLURBEHINDWINDOW"      value="173"/>
+        <subType name="ENABLECOMPOSITION"           value="174"/>
+        <subType name="EXTENDFRAMEINTOCLIENTAREA"   value="175"/>
+        <subType name="GETCOLORIZATIONCOLOR"        value="176"/>
+        <subType name="GETCOMPOSITIONTIMINGINFO"    value="177"/>
+        <subType name="GETWINDOWATTRIBUTE"          value="178"/>
+        <subType name="ISCOMPOSITIONENABLED"        value="179"/>
+        <subType name="REGISTERTHUMBNAIL"           value="180"/>
+        <subType name="SETPRESENTPARAMETERS"        value="181"/>
+        <subType name="SETWINDOWATTRIBUTE"          value="182"/>
+        <subType name="UNREGISTERTHUMBNAIL"         value="183"/>
+        <subType name="UPDATETHUMBNAILPROPERTIES"   value="184"/>
+        <subType name="ENABLEMMCSS"                 value="185"/>
+
+        <subType name="ATTACHMILCONTENT"           value="190"/>
+        <subType name="CLOSEGRAPHICSSTREAM"        value="191"/>
+        <subType name="DETACHMILCONTENT"           value="192"/>
+        <subType name="OPENGRAPHICSSTREAM"         value="193"/>
+        <subType name="QUERYGRAPHICSSTREAM"        value="194"/>
+        <subType name="QUERYTHUMBNAILSOURCESIZE"   value="195"/>
+        <subType name="SETCOLORIZATIONCOLOR"           value="196"/>
+        <subType name="STARTUPVIAUSERINIT"         value="197"/>
+
+      </eventSubTypes>
+
+
+      <event eventID="1" message="$(string.ImageId)" guid="{4114800a-1b17-4754-9d70-ccdd416af619}" level="1">
+        <diagnosticInstance version="0">
+        
+          <classification subType="APPLYWINDOWSCALEFACTOR" />
+          <classification subType="ENABLEBLURBEHINDWINDOW" />
+          <classification subType="EXTENDFRAMEINTOCLIENTAREA"/>
+          <classification subType="GETCOLORIZATIONCOLOR"/>
+          <classification subType="GETCOMPOSITIONTIMINGINFO"/>
+          <classification subType="GETWINDOWATTRIBUTE"/>
+          <classification subType="ISCOMPOSITIONENABLED"/>
+          <classification subType="REGISTERTHUMBNAIL"/>
+          <classification subType="SETPRESENTPARAMETERS"/>
+          <classification subType="SETWINDOWATTRIBUTE"/>
+          <classification subType="UNREGISTERTHUMBNAIL"/>
+          <classification subType="UPDATETHUMBNAILPROPERTIES"/>
+          <classification subType="ENABLEMMCSS"/>
+          <template>
+          <DWM_API_>
+            <hrApi>%Pointer;</hrApi>
+          </DWM_API_>
+          </template>
+
+          <classification subType="ATTACHMILCONTENT"/>
+          <classification subType="CLOSEGRAPHICSSTREAM"/>
+          <classification subType="DETACHMILCONTENT"/>
+          <classification subType="OPENGRAPHICSSTREAM"/>
+          <classification subType="QUERYGRAPHICSSTREAM"/>
+          <classification subType="QUERYTHUMBNAILSOURCESIZE"/>
+          <classification subType="SETCOLORIZATIONCOLOR"/>
+          <classification subType="STARTUPVIAUSERINIT"/>
+          <template>
+          <DWM_APIP_>
+            <hrApi>%Pointer;</hrApi>
+          </DWM_APIP_>
+          </template>
+
+          <classification subType="DXGETWINDOWSHAREDSURFACE" />
+          <template>
+          <DWM_API_>
+            <hrApi>%Pointer;</hrApi>
+            <spacer>%UInt32;</spacer>
+            <hWnd>%UInt64;</hWnd>
+            <luidAdapter>%UInt64;</luidAdapter>
+            <hmonAssociation>%UInt64;</hmonAssociation>
+            <dwFlags>%UInt32;</dwFlags>
+            <cTries>%UInt32;</cTries>
+            <ulUpdateId>%UInt32;</ulUpdateId>
+            <ulFlipChain>%UInt32;</ulFlipChain>
+            <hDxSurface>%Pointer;</hDxSurface>
+          </DWM_API_>
+          </template>
+
+          <classification subType="DXUPDATEWINDOWSHAREDSURFACE" />
+          <template>
+          <DWM_API_>
+            <hrApi>%Pointer;</hrApi>
+            <spacer>%UInt32;</spacer>
+            <hWnd>%UInt64;</hWnd>
+            <left>%UInt32;</left>
+            <top>%UInt32;</top>
+            <right>%UInt32;</right>
+            <bottom>%UInt32;</bottom>
+          </DWM_API_>
+          </template>
+
+
+          <classification subType="ENABLECOMPOSITION" />
+          <template>
+          <DWM_API_>
+            <hrApi>%Pointer;</hrApi>
+            <fEnable>%UInt32;</fEnable>
+          </DWM_API_>
+          </template>
+
+        </diagnosticInstance>
+
+      </event>
+ </events>
+</instrumentation>
+
+</assembly>

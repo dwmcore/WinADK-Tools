@@ -1,0 +1,257 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersin="1.0">
+    <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+     <events componentType="application">
+        <eventSubTypes>
+        <!-- Object event -->
+        <subType name="Create"                   value="1"/>
+      </eventSubTypes>
+
+      <!-- MTPOperationEventGuid -->
+      <event eventID="1" message="$(string.ImageId)" guid="{37B4B68B-B89D-48fc-91EF-A1A89EF3B43E}" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="Start"    value="1" Start="true"  Layer="4" />
+          <classification subType="End"      value="2" Start="false" Layer="4" LayerName="Operation" Name="MTP Operation" StartType="1"/>
+
+    <!--
+    MTP_OPCODE_UNDEFINED                      = 0x1000,
+    MTP_OPCODE_GETDEVICEINFO                  = 0x1001,
+    MTP_OPCODE_OPENSESSION                    = 0x1002,
+    MTP_OPCODE_CLOSESESSION                   = 0x1003,
+    MTP_OPCODE_GETSTORAGEIDS                  = 0x1004,
+    MTP_OPCODE_GETSTORAGEINFO                 = 0x1005,
+    MTP_OPCODE_GETNUMOBJECTS                  = 0x1006,
+    MTP_OPCODE_GETOBJECTHANDLES               = 0x1007,
+    MTP_OPCODE_GETOBJECTINFO                  = 0x1008,
+    MTP_OPCODE_GETOBJECT                      = 0x1009,
+    MTP_OPCODE_GETTHUMB                       = 0x100A,
+    MTP_OPCODE_DELETEOBJECT                   = 0x100B,
+    MTP_OPCODE_SENDOBJECTINFO                 = 0x100C,
+    MTP_OPCODE_SENDOBJECT                     = 0x100D,
+    
+    MTP_OPCODE_INITIATECAPTURE                = 0x100E,
+    MTP_OPCODE_FORMATSTORE                    = 0x100F,
+    MTP_OPCODE_RESETDEVICE                    = 0x1010,
+    MTP_OPCODE_SELFTEST                       = 0x1011,
+    MTP_OPCODE_SETOBJECTPROTECTION            = 0x1012,
+    
+    MTP_OPCODE_POWERDOWN                      = 0x1013,
+    MTP_OPCODE_GETDEVICEPROPDESC              = 0x1014,
+    MTP_OPCODE_GETDEVICEPROPVALUE             = 0x1015,
+    MTP_OPCODE_SETDEVICEPROPVALUE             = 0x1016,
+    MTP_OPCODE_RESETDEVICEPROPVALUE           = 0x1017,
+    MTP_OPCODE_TERMINATECAPTURE               = 0x1018,
+    MTP_OPCODE_MOVEOBJECT                     = 0x1019,
+    MTP_OPCODE_COPYOBJECT                     = 0x101A,
+    MTP_OPCODE_GETPARTIALOBJECT               = 0x101B,
+    MTP_OPCODE_INITIATEOPENCAPTURE            = 0x101C,
+    -->      
+          
+          
+          
+          <StrTable Name="OperationName">
+            <String Name="Undefined"               value="4096"/>
+            <String Name="GetDeviceInfo"           value="4097"/>
+            <String Name="OpenSession"             value="4098"/>
+            <String Name="CloseSession"            value="4099"/>
+            <String Name="GetStorageIDs"           value="4100"/>
+            <String Name="GetStorageInfo"          value="4101"/>
+            <String Name="GetNumObjects"           value="4102"/>
+            <String Name="GetObjectHandles"        value="4103"/>
+            <String Name="GetObjectInfo"           value="4104"/>
+            <String Name="GetObject"               value="4105"/>
+            <String Name="GetThumb"                value="4106"/>
+            <String Name="DeleteObject"            value="4107"/>
+            <String Name="SendObjectInfo"          value="4108"/>
+            <String Name="SendObject"              value="4109"/>
+            <String Name="InitiateCapture"         value="4109"/>
+            <String Name="FormatStore"             value="4110"/>
+            <String Name="ResetDevice"             value="4111"/>
+            <String Name="SelfTest"                value="4112"/>
+            <String Name="SetobjectProtection"     value="4113"/>           
+            <String Name="PowerDown"               value="4114"/>
+            <String Name="GetDevicePropDesc"       value="4115"/>
+            <String Name="GetDevicePropValue"      value="4116"/>
+            <String Name="SetDevicePropValue"      value="4117"/>
+            <String Name="resetDevicePropValue"    value="4118"/>
+            <String Name="TerminateCapture"        value="4119"/>
+            <String Name="MoveObject"              value="4120"/>
+            <String Name="CopyObject"              value="4121"/>
+            <String Name="GetPartialObject"        value="4122"/>
+            <String Name="InitiateOpenCapture"     value="4123"/>
+
+            <String Name="GetServiceIDs"           value="37633"/>
+            <String Name="GetServiceInfo"          value="37636"/>
+            <String Name="GetServiceCapabilities"  value="37635"/>
+            <String Name="GetServiceProperties"    value="37636"/>       
+            <String Name="GetServicePropertyList"  value="37637"/>
+            <String Name="SetServicePropertyList"  value="37638"/>
+            <String Name="UpdateObjectPropertyList" value="37639"/>
+
+            <String Name="GetObjectPropsSupported"       value="38913"/>
+            <String Name="GetObjectPropDesc"       value="38914"/>
+            <String Name="GetObjectPropValue"       value="38915"/>
+            <String Name="setObjectPropvalue"       value="38916"/>
+            <String Name="GetObjectPropList"       value="38917"/>
+            <String Name="SetObjectPropList"       value="38918"/>
+            <String Name="GetInterdependentPropDesc"       value="38919"/>
+            <String Name="SendObjectPropList"       value="38920"/>
+            <String Name="GetObjectReferences"       value="38921"/>
+            <String Name="SetObjectReferences"       value="38922"/>
+            <String Name="UpdateDeviceFirmware"       value="38923"/>
+            <String Name="ResetObjectPropValue"       value="38924"/>
+          </StrTable>          
+          
+          <template>
+            <MTP_Operation>
+              <Handle>%UInt64;</Handle>
+              <dwTransactionID>%UInt32;</dwTransactionID>
+              <dwCode Key="true" StringTable="OperationName" >%UInt32;</dwCode>
+              <pParam>%UInt32;</pParam>
+              <dwParam1>%UInt32;</dwParam1>
+              <dwParam2>%UInt32;</dwParam2>
+              <dwParam3>%UInt32;</dwParam3>
+              <dwParam4>%UInt32;</dwParam4>
+              <dwParam5>%UInt32;</dwParam5>
+            </MTP_Operation>
+          </template>
+          
+
+        </diagnosticInstance>
+      </event>
+
+       <!-- MTPSubOperationEventGuid -->
+       <event eventID="1" message="$(string.ImageId)" guid="{5DCA3B0F-BC7F-446e-BF46-C7856D51C9B4}" level="1">
+         <diagnosticInstance version="0">
+           <classification subType="OpCommandStart"   value="11" Start="true"  Layer="6"/>
+           <classification subType="OpCommandEnd"     value="12" Start="false" Layer="6" LayerName="Sub Operation" Name="Command" StartType="11"/>
+           <classification subType="OpDataStart"      value="13" Start="true"  Layer="6"/>
+           <classification subType="OpDataChunkStart" value="14" Start="true"  Layer="7"/>
+           <classification subType="OpDataChunkEnd"   value="15" Start="false" Layer="7" LayerName="Sub Operation" Name="DataChunk" StartType="14"/>
+           <classification subType="OpDataEnd"        value="16" Start="false" Layer="6" LayerName="Sub Operation" Name="Data" StartType="13"/>
+           <classification subType="OpResponseStart"  value="17" Start="true"  Layer="6"/>
+           <classification subType="OpResponseEnd"    value="18" Start="false" Layer="6" LayerName="Sub Operation" Name="Response" StartType="17"/>
+           <classification subType="DeviceEventStart"    value="20" Start="true"  Layer="6"/>
+           <classification subType="DeviceEventEnd"      value="21" Start="false" Layer="6" LayerName="Sub Operation" Name="Device Event" StartType="20"/>
+           <classification subType="WpdEventStart"       value="22" Start="true"  Layer="6"/>
+           <classification subType="WpdEventEnd"         value="23" Start="false" Layer="6" LayerName="Sub Operation" Name="Wpd Event" StartType="22"/>
+           <classification subType="CancelTransferStart" value="30" Start="true"  Layer="6"/>
+           <classification subType="CancelTransferEnd"   value="31" Start="false" Layer="6" LayerName="Sub Operation" Name="Cancel Transfer" StartType="30"/>
+
+           <template>
+             <MTP_SubOperation>
+               <Handle>%UInt64;</Handle>
+               <dwTransactionID>%UInt32;</dwTransactionID>
+               <dwdatalength>%UInt32;</dwdatalength>
+               <hr>%UInt16;</hr>
+               <dwPadded>%UInt32;</dwPadded>
+             </MTP_SubOperation>
+           </template>
+
+         </diagnosticInstance>
+       </event>
+
+       <!-- MTPUsElapsedTimeEventGuid -->
+       <event eventID="1" message="$(string.ImageId)" guid="{1b1e2e9f-de9c-43d2-bf8c-f564b470f487}" level="1">
+         <diagnosticInstance version="0">
+           <classification subType="Start" value="100" Start="true"  Layer="9" />
+           <classification subType="End" value="101" Start="false" Layer="9" LayerName="Elapsed Time" Name="US" StartType="100"/>
+
+           <StrTable Name="FunctionName">
+             <String Name="AsyncRead"           value="1"/>
+             <String Name="AsyncWrite"          value="2"/>
+             <String Name="CancelIO"            value="3"/>
+             <String Name="WaitForIOCompletion" value="4"/>
+           </StrTable>
+           
+           <template>
+             <MTP_UsElapsedTime>
+               <dwFunctionCode Key="true" StringTable="FunctionName">%UInt32;</dwFunctionCode>
+             </MTP_UsElapsedTime>
+           </template>
+
+         </diagnosticInstance>
+       </event>
+       
+       <!-- MTPIPElapsedTimeEventGuid -->
+       <event eventID="1" message="$(string.ImageId)" guid="{3451db73-3ba0-4ffd-a767-810e5caed366}" level="1">
+         <diagnosticInstance version="0">
+           <classification subType="Start" value="100" Start="true"  Layer="10"/>
+           <classification subType="End" value="101" Start="false" Layer="10" LayerName="Elapsed Time" Name="IP" StartType="100"/>
+           <template>
+             <MTP_IPElapsedTime>
+               <dwFunctionCode>%UInt32;</dwFunctionCode>
+             </MTP_IPElapsedTime>
+           </template>
+
+         </diagnosticInstance>
+       </event>
+       <!-- MTPDrElapsedTimeEventGuid -->
+       <event eventID="1" message="$(string.ImageId)" guid="{0bdf0013-61fc-4ac3-86fb-e7f0a4d125e4}" level="1">
+         <diagnosticInstance version="0">
+           <classification subType="Start" value="100" Start="true"  Layer="11"/>
+           <classification subType="End" value="101" Start="false" Layer="11" LayerName="Elapsed Time" Name="DRiver" StartType="100"/>
+           <template>
+             <MTP_DriverElapsedTime>
+               <dwFunctionCode>%UInt32;</dwFunctionCode>
+             </MTP_DriverElapsedTime>
+           </template>
+
+         </diagnosticInstance>
+       </event>
+       
+       <!-- MTPDrPostEventEventGuid-->
+       <event eventID="1" message="$(string.ImageId)" guid="{6B494097-2289-4962-9F3D-65490DB7057C}" level="1">
+         <diagnosticInstance version="0">
+           <classification subType="Start" value="22" Start="true"  Layer="4"  />
+           <classification subType="End" value="23" Start="false" Layer="4" LayerName="Driver Event" Name="Post Event" StartType="22"/>
+           <template>
+             <MTP_DriverPostEvent>
+               <dwFunctionCode>%UInt32;</dwFunctionCode>
+             </MTP_DriverPostEvent>
+         </template>
+         </diagnosticInstance>
+       </event>
+
+       <!-- WMP PDA Device Enumerate-->
+       <event eventID="1" message="$(string.ImageId)" guid="{93059C20-F8FF-4C0F-BCF1-DAA35C045873}" level="1">
+         <diagnosticInstance version="0">
+           <classification subType="Start" value="1"/>
+           <classification subType="End" value="2"/>
+           <template>
+             <WMP_DeviceEnumerate>
+               <pPointer>%UInt64;</pPointer>
+               <dwReporterTag>%UInt32;</dwReporterTag>
+               <Padding>%UInt32;</Padding>
+             </WMP_DeviceEnumerate>
+           </template>
+         </diagnosticInstance>
+       </event>
+
+
+
+       <!-- MTPCancelRequestEventGuid-->       
+       <event eventID="1" message="$(string.ImageId)" guid="{0737393D-8775-4045-8445-3D73FD89D000}" level="1">
+         <diagnosticInstance version="0">
+           <classification subType="Start" value="1"/>
+           <classification subType="End" value="2"/>
+           <template>
+             <MTP_CancelRequest>
+               <Handle>%UInt64;</Handle>
+               <dwTransactionID>%UInt32;</dwTransactionID>
+               <dwCode>%UInt32;</dwCode>
+             </MTP_CancelRequest>
+           </template>
+         </diagnosticInstance>
+       </event>
+     </events>
+    </instrumentation>
+</assembly>
+
+
+

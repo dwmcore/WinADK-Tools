@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="761A6B03-3A4E-4AF6-A6BC-6A8E6A90404B">
+  <VamtSystemData>
+
+    <SupportedGVLKs>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2012 ServerStandard Volume:GVLK</KeyDescription>
+        <KeyId>12345-01343-001-005017-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>YNBF9-GPVTG-FFHQC-MJR4B-B4CQX</KeyValue>
+        <SupportedEditions>ServerStandard</SupportedEditions>
+        <SupportedSku>D3872724-5C08-4B1B-91F2-FC9EAFED4990</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2012 ServerMultiPointStandard Volume:GVLK</KeyDescription>
+        <KeyId>12345-01310-001-000000-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>3CK7G-VRNKC-8QBFR-9G8HC-YKG8W</KeyValue>
+        <SupportedEditions>ServerMultiPointStandard</SupportedEditions>
+        <SupportedSku>BFA6B683-56BE-47B8-A22E-461B27B9CF11</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2012 ServerDatacenter Volume:GVLK</KeyDescription>
+        <KeyId>12345-01336-001-005017-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>VRDD2-NVGDP-K7QG8-69BR4-TVFHB</KeyValue>
+        <SupportedEditions>ServerDatacenter</SupportedEditions>
+        <SupportedSku>BA947C44-D19D-4786-B6AE-22770BC94C54</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Windows 8 Beta PrereleaseARM Volume:GVLK</KeyDescription>
+        <KeyId>12345-01283-001-000000-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>NTJQR-RKW42-DMDHB-D8F6T-3V2MF</KeyValue>
+        <SupportedEditions>PrereleaseARM</SupportedEditions>
+        <SupportedSku>631EAD72-A8AB-4DF8-BBDF-372029989BDD</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Windows 8 Professional Volume:GVLK</KeyDescription>
+        <KeyId>12345-00034-001-000047-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>MTWNQ-CKDHJ-3HXW9-Q2PFX-WB2HQ</KeyValue>
+        <SupportedEditions>Professional</SupportedEditions>
+        <SupportedSku>A4383E6B-DADA-423D-A43D-F25678429676</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Windows 8 ProfessionalN Volume:GVLK</KeyDescription>
+        <KeyId>12345-00062-001-000051-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>G2DR7-7N9C8-KBK9V-D4W3M-H49R8</KeyValue>
+        <SupportedEditions>ProfessionalN</SupportedEditions>
+        <SupportedSku>64192251-81B0-4898-AC63-913CC3EDF919</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2012 ServerMultiPointPremium Volume:GVLK</KeyDescription>
+        <KeyId>12345-01316-001-000001-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>GRMDJ-JNF7H-W9WTC-WKQRG-H8KW6</KeyValue>
+        <SupportedEditions>ServerMultiPointPremium</SupportedEditions>
+        <SupportedSku>BC20FB5B-4097-484F-84D2-55B18DAC95EB</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Windows 8 Beta Prerelease Volume:GVLK</KeyDescription>
+        <KeyId>12345-01279-001-000000-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>NHKTD-YYMG6-H77XH-BWBC8-MR8X9</KeyValue>
+        <SupportedEditions>Prerelease</SupportedEditions>
+        <SupportedSku>2B9C337F-7A1D-4271-90A3-C6855A2B8A1C</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Windows 8 EnterpriseN Volume:GVLK</KeyDescription>
+        <KeyId>12345-00063-001-000011-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>N8BR7-D8XB9-939VB-FMFWD-KWXR9</KeyValue>
+        <SupportedEditions>EnterpriseN</SupportedEditions>
+        <SupportedSku>C23947F3-3F2E-401F-A38C-F38FE0ECB0BD</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Windows 8 Enterprise Volume:GVLK</KeyDescription>
+        <KeyId>12345-00030-001-000147-03-1033-8191.0000-0872012</KeyId>
+        <KeyValue>2MP7K-98NK8-WPVF3-Q2WDG-VMD98</KeyValue>
+        <SupportedEditions>Enterprise</SupportedEditions>
+        <SupportedSku>CDE952C7-2F96-4D9D-8F2B-2D349F64FC51</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Win 8 RTM EnterpriseN Volume:GVLK</KeyDescription>
+        <KeyId>12345-01788-000-000001-03-1033-8429.0000-1812012</KeyId>
+        <KeyValue>JMNMF-RHW7P-DMY6X-RF3DR-X2BQT</KeyValue>
+        <SupportedEditions>EnterpriseN</SupportedEditions>
+        <SupportedSku>E14997E7-800A-4CF7-AD10-DE4B45B578DB</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8 RTM Enterprise Volume:GVLK</KeyDescription>
+        <KeyId>12345-01789-000-000011-03-1033-8429.0000-1812012</KeyId>
+        <KeyValue>32JNW-9KQ84-P47T8-D8GGY-CWCK7</KeyValue>
+        <SupportedEditions>Enterprise</SupportedEditions>
+        <SupportedSku>458E1BEC-837A-45F6-B9D5-925ED5D299DE</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8 RTM Professional Volume:GVLK</KeyDescription>
+        <KeyId>12345-01787-000-000011-03-1033-8429.0000-1812012</KeyId>
+        <KeyValue>NG4HW-VH26C-733KW-K6F98-J8CK4</KeyValue>
+        <SupportedEditions>Professional</SupportedEditions>
+        <SupportedSku>A98BCD6D-5343-4603-8AFE-5908E4611112</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8 RTM ProfessionalN Volume:GVLK</KeyDescription>
+        <KeyId>12345-01786-000-000011-03-1033-8429.0000-1812012</KeyId>
+        <KeyValue>XCVCF-2NXM9-723PB-MHCB7-2RYQQ</KeyValue>
+        <SupportedEditions>ProfessionalN</SupportedEditions>
+        <SupportedSku>EBF245C1-29A8-4DAF-9CB1-38DFC608A8C8</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2012 RTM ServerStandard Volume:GVLK</KeyDescription>
+        <KeyId>12345-01843-000-000001-03-1033-8429.0000-1812012</KeyId>
+        <KeyValue>XC9B7-NBPP2-83J2H-RHMBY-92BT4</KeyValue>
+        <SupportedEditions>ServerStandard</SupportedEditions>
+        <SupportedSku>F0F5EC41-0D55-4732-AF02-440A44A3CF0F</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2012 RTM ServerDatacenter Volume:GVLK</KeyDescription>
+        <KeyId>12345-01849-000-000001-03-1033-8429.0000-1812012</KeyId>
+        <KeyValue>48HP8-DN98B-MYWDG-T2DCC-8W83P</KeyValue>
+        <SupportedEditions>ServerDatacenter</SupportedEditions>
+        <SupportedSku>D3643D60-0C42-412D-A7D6-52E6635327F6</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Windows Embedded Industry 8.1 RTM EmbeddedIndustryA Volume:GVLK</KeyDescription>
+        <KeyId>12345-02654-000-000001-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>VHXM3-NR6FT-RY6RT-CK882-KW2CJ</KeyValue>
+        <SupportedEditions>EmbeddedIndustryA</SupportedEditions>
+        <SupportedSku>f7e88590-dfc7-4c78-bccb-6f3865b99d1a</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM CoreARM Volume:GVLK</KeyDescription>
+        <KeyId>12345-02609-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>XYTND-K6QKT-K2MRH-66RTM-43JKP</KeyValue>
+        <SupportedEditions>CoreARM</SupportedEditions>
+        <SupportedSku>ffee456a-cd87-4390-8e07-16146c672fd0</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 12 R2 RTM ServerStandard Volume:GVLK</KeyDescription>
+        <KeyId>12345-02527-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>D2N9P-3P6X9-2R39C-7RTCD-MDVJX</KeyValue>
+        <SupportedEditions>ServerStandard</SupportedEditions>
+        <SupportedSku>b3ca044e-a358-4d68-9883-aaa2941aca99</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>ServerCloudStorage 12 R2 RTM ServerCloudStorage Volume:GVLK</KeyDescription>
+        <KeyId>12345-02546-000-000001-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>3NPTF-33KPT-GGBPR-YX76B-39KDD</KeyValue>
+        <SupportedEditions>ServerCloudStorage</SupportedEditions>
+        <SupportedSku>b743a2be-68d4-4dd3-af32-92425b7bb623</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM CoreN Volume:GVLK</KeyDescription>
+        <KeyId>12345-02611-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>7B9N3-D94CG-YTVHR-QBPX3-RJP64</KeyValue>
+        <SupportedEditions>CoreN</SupportedEditions>
+        <SupportedSku>78558a64-dc19-43fe-a0d0-8075b2a370a3</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM CoreSingleLanguage Volume:GVLK</KeyDescription>
+        <KeyId>12345-02612-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>BB6NG-PQ82V-VRDPW-8XVD2-V8P66</KeyValue>
+        <SupportedEditions>CoreSingleLanguage</SupportedEditions>
+        <SupportedSku>c72c6a1d-f252-4e7e-bdd1-3fca342acb35</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 12 R2 RTM ServerDatacenter Volume:GVLK</KeyDescription>
+        <KeyId>12345-02535-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9</KeyValue>
+        <SupportedEditions>ServerDatacenter</SupportedEditions>
+        <SupportedSku>00091344-1ea4-4f37-b789-01750ba6988c</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM Professional Volume:GVLK</KeyDescription>
+        <KeyId>12345-02615-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>GCRJD-8NW9H-F2CDX-CCM8D-9D6T9</KeyValue>
+        <SupportedEditions>Professional</SupportedEditions>
+        <SupportedSku>c06b6981-d7fd-4a35-b7b4-054742b7af67</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server Essentials 2012 R2 RTM ServerSolution Volume:GVLK</KeyDescription>
+        <KeyId>12345-02584-000-000001-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>KNC87-3J2TX-XB4WP-VCPJV-M4FWM</KeyValue>
+        <SupportedEditions>ServerSolution</SupportedEditions>
+        <SupportedSku>21db6ba4-9a7b-4a14-9e29-64a60c59301d</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Windows Embedded Industry 8.1 RTM EmbeddedIndustryE Volume:GVLK</KeyDescription>
+        <KeyId>12345-02647-000-000001-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>FNFKF-PWTVT-9RC8H-32HB2-JB34X</KeyValue>
+        <SupportedEditions>EmbeddedIndustryE</SupportedEditions>
+        <SupportedSku>cd4e2d9f-5059-4a50-a92d-05d5bb1267c7</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM ProfessionalN Volume:GVLK</KeyDescription>
+        <KeyId>12345-02616-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>HMCNV-VVBFX-7HMBH-CTY9B-B4FXY</KeyValue>
+        <SupportedEditions>ProfessionalN</SupportedEditions>
+        <SupportedSku>7476d79f-8e48-49b4-ab63-4d0b813a16e4</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Windows Embedded Industry 8.1 RTM EmbeddedIndustry Volume:GVLK</KeyDescription>
+        <KeyId>12345-02640-000-000001-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>NMMPB-38DD4-R2823-62W8D-VXKJB</KeyValue>
+        <SupportedEditions>EmbeddedIndustry</SupportedEditions>
+        <SupportedSku>0ab82d54-47f4-4acb-818c-cc5bf0ecb649</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM CoreCountrySpecific Volume:GVLK</KeyDescription>
+        <KeyId>12345-02610-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>NCTT7-2RGK8-WMHRF-RY7YQ-JTXG3</KeyValue>
+        <SupportedEditions>CoreCountrySpecific</SupportedEditions>
+        <SupportedSku>db78b74f-ef1c-4892-abfe-1e66b8231df6</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM ProfessionalWMC Volume:GVLK</KeyDescription>
+        <KeyId>12345-02617-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>789NJ-TQK6T-6XTH8-J39CJ-J8D3P</KeyValue>
+        <SupportedEditions>ProfessionalWMC</SupportedEditions>
+        <SupportedSku>096ce63d-4fac-48a9-82a9-61ae9e800e5f</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM Enterprise Volume:GVLK</KeyDescription>
+        <KeyId>12345-02613-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>MHF9N-XY6XB-WVXMC-BTDCT-MKKG7</KeyValue>
+        <SupportedEditions>Enterprise</SupportedEditions>
+        <SupportedSku>81671aaf-79d1-4eb1-b004-8cbbe173afea</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM Core Volume:GVLK</KeyDescription>
+        <KeyId>12345-02607-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>M9Q9P-WNJJT-6PXPY-DWX8H-6XWKK</KeyValue>
+        <SupportedEditions>Core</SupportedEditions>
+        <SupportedSku>fe1c3238-432a-43a1-8e25-97e7d1ef10f3</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+      <BuiltInGvlk>
+        <KeyDescription>Win 8.1 RTM EnterpriseN Volume:GVLK</KeyDescription>
+        <KeyId>12345-02614-000-000000-03-1033-9200.0000-1922013</KeyId>
+        <KeyValue>TT4HM-HN7YT-62K67-RGRQJ-JFFXW</KeyValue>
+        <SupportedEditions>EnterpriseN</SupportedEditions>
+        <SupportedSku>113e705c-fa49-48a4-beea-7dd879b46b14</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+    </SupportedGVLKs>
+
+    <ProductMappings>
+      <ProductMapping>
+        <Sku>CE94CC11-3AA1-4234-A29F-DDB80B02F4F0</Sku>
+        <ApplicationId>55c92734-d682-4d71-983e-d6ec3f16059f</ApplicationId>
+        <KmsId>3c40b358-5948-45af-923b-53d21fcc7e79</KmsId>
+        <VersionName>Windows 8 Client</VersionName>
+        <SupportsAd>1</SupportsAd>
+        <ProductName>Windows 8</ProductName>
+        <ProductFamily>Client</ProductFamily>
+        <Edition></Edition>
+      </ProductMapping>
+
+      <ProductMapping>
+        <Sku>C9BBC82F-2C45-4233-92B8-B3E93A512E0F</Sku>
+        <ApplicationId>55c92734-d682-4d71-983e-d6ec3f16059f</ApplicationId>
+        <KmsId>8665cb71-468c-4aa3-a337-cb9bc9d5eaac</KmsId>
+        <VersionName>Windows Server 8</VersionName>
+        <SupportsAd>1</SupportsAd>
+        <ProductName>Windows Server 2012</ProductName>
+        <ProductFamily>Server</ProductFamily>
+        <Edition></Edition>
+      </ProductMapping>
+
+      <ProductMapping>
+        <Sku>BD7CD3F9-526C-46E6-82E6-85D56CB9413C</Sku>
+        <ApplicationId>55c92734-d682-4d71-983e-d6ec3f16059f</ApplicationId>
+        <KmsId>bbb97b3b-8ca4-4a28-9717-89fabd42c4ac</KmsId>
+        <VersionName>Windows 8 Client</VersionName>
+        <SupportsAd>1</SupportsAd>
+        <ProductName>Windows 8</ProductName>
+        <ProductFamily>Client</ProductFamily>
+        <Edition></Edition>
+      </ProductMapping>
+    </ProductMappings>
+
+  </VamtSystemData>
+</VolumeActivationManagementToolData>

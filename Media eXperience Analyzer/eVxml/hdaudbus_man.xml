@@ -1,0 +1,137 @@
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
+	<assemblyIdentity version="1.0.0.0" processorArchitecture="x86" name="?????" type="win32"/>  
+    <memberships>  
+        <categoryMembership>  
+            <id name="Microsoft.Windows.Event" version="1.0.0.0" publicKeyToken="################" />  
+            <categoryInstance subcategory="{########-####-####-####-############}">  
+            </categoryInstance>  
+            <eventData>  
+                <globalChannel name="Application"/>  
+                <applicationChannel name="Operational"/>  
+            </eventData>  
+        </categoryMembership>  
+    </memberships>  
+    <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">  
+        <events componentType="application">  
+            <eventSubTypes>  
+                <subType name="_PNP" value="1" />  
+                <subType name="_POWER" value="2" />  
+                <subType name="_VERB" value="3" />  
+                <subType name="_CTNLR" value="4" />  
+                <subType name="_INSERT_CODEC_VERB_DPC" value="5" />  
+                <subType name="_INSERT_CODEC_STATUS_DPC" value="6" />  
+                <subType name="_NEW_RESPONSE_ARRIVED" value="7" />  
+  
+                <subType name="_INSERT_BUF_COMP_DPC" value="1" />  
+                <subType name="_SIGNAL_BUF_COMP_EVT" value="2" />  
+              <subType name="_INVOKE_BUF_COMP_DPC" value="3" />  
+            </eventSubTypes>  
+            <event eventID="101" message="$(string.PC)" guid="{e7ad130f-d1e6-4969-ab89-7d78bce3a3fe}" level="#">  
+                <diagnosticInstance version="0">  
+                    <classification subType="_PNP" />        <!-- 0x1 -->  
+                    <template>  
+                      <HDAudBus>  
+                        <EventType>%UInt32;</EventType>  
+                        <EntryState>%UInt32;</EntryState>  
+                        <Reserved>%UInt32;</Reserved>  
+                        <Status>%UInt32;</Status>  
+                      </HDAudBus>  
+                    </template>  
+                    <classification subType="_POWER" />     <!-- 0x2 -->  
+                    <template>  
+                      <HDAudBus>  
+                        <EventType>%UInt32;</EventType>  
+                            <EntryState>%UInt32;</EntryState>  
+                            <Reserved>%UInt32;</Reserved>  
+                            <Status>%UInt32;</Status>  
+                        </HDAudBus>  
+                    </template>  
+                    <classification subType="_VERB" />  
+                    <!-- 0x3 -->  
+                    <template>  
+                      <HDAudBus>  
+                        <EventType>%UInt32;</EventType>  
+                            <EntryState>%UInt32;</EntryState>  
+                            <Reserved>%UInt32;</Reserved>  
+                            <Status>%UInt32;</Status>  
+                        </HDAudBus>  
+                    </template>  
+                    <classification subType="_CTNLR" />  
+                    <!-- 0x4 -->  
+                    <template>  
+                      <HDAudBus>  
+                        <EventType>%UInt32;</EventType>  
+                            <EntryState>%UInt32;</EntryState>  
+                            <Reserved>%UInt32;</Reserved>  
+                            <Status>%UInt32;</Status>  
+                        </HDAudBus>  
+                    </template>  
+                    <classification subType="_INSERT_CODEC_VERB_DPC" />  
+                    <!-- 0x5 -->  
+                    <template>  
+                      <HDAudBus>  
+                        <EventType>%UInt32;</EventType>  
+                            <DPCInsertStatus>%UInt32;</DPCInsertStatus>  
+                            <RIRBIntStatus>%UInt32;</RIRBIntStatus>  
+                            <Reserved>%UInt32;</Reserved>  
+                            <Reserved2>%UInt32;</Reserved2>  
+                        </HDAudBus>  
+                    </template>  
+                    <classification subType="_INSERT_CODEC_STATUS_DPC" />         <!-- 0x6 -->  
+                    <template>  
+                      <HDAudBus>  
+                        <EventType>%UInt32;</EventType>  
+                        <EntryState>%UInt32;</EntryState>  
+                        <Reserved>%UInt32;</Reserved>  
+                        <Status>%UInt32;</Status>  
+                      </HDAudBus>  
+                    </template>     
+                    <classification subType="_NEW_RESPONSE_ARRIVED" />         <!-- 0x7 -->  
+                    <template>  
+                      <HDAudBus>  
+                        <EventType>%UInt32;</EventType>  
+                            <CurrentRIRBWriteIndex>%UInt32;</CurrentRIRBWriteIndex>  
+                            <HwRIRBWriteIndex>%UInt32;</HwRIRBWriteIndex>  
+                            <Reserved1>%UInt32;</Reserved1>  
+                            <Reserved2>%UInt32;</Reserved2>  
+                        </HDAudBus>  
+                    </template>                 
+                </diagnosticInstance>  
+            </event>  
+          <event eventID="102" message="$(string.PC)" guid="{aef818d8-0878-4fb2-a776-536883b37aa1}" level="#">  
+            <diagnosticInstance version="0">  
+              <classification subType="_INSERT_BUF_COMP_DPC" />  
+              <!-- 0x1 -->  
+              <template>  
+                <HDAudBus>  
+                  <EventType>%UInt32;</EventType>  
+                  <EntryState>%UInt32;</EntryState>  
+                  <Reserved>%UInt32;</Reserved>  
+                  <Status>%UInt32;</Status>  
+                </HDAudBus>  
+              </template>  
+              <classification subType="_SIGNAL_BUF_COMP_EVT" />  
+              <!-- 0x2 -->  
+              <template>  
+                <HDAudBus>  
+                  <EventType>%UInt32;</EventType>  
+                  <EntryState>%UInt32;</EntryState>  
+                  <Reserved>%UInt32;</Reserved>  
+                  <Status>%UInt32;</Status>  
+                </HDAudBus>  
+              </template>  
+              <classification subType="_INVOKE_BUF_COMP_DPC" />  
+              <!-- 0x3 -->  
+              <template>  
+                <HDAudBus>  
+                  <EventType>%UInt32;</EventType>  
+                  <StartMarker>%UInt32;</StartMarker>  
+                  <EndMarker>%UInt32;</EndMarker>  
+                </HDAudBus>  
+              </template>  
+            </diagnosticInstance>  
+          </event>  
+  
+        </events>  
+    </instrumentation>  
+</assembly>  

@@ -1,0 +1,932 @@
+<?xml version="1.0" standalone="yes"?>
+<!--
+Copyright (c) Microsoft Corporation. All rights reserved.
+-->
+<avrf:logfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:avrf="Application Verifier">
+  <avrf:logEntry Time="2006-01-01 : 00:00:00" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:message>DO NOT REMOVE THIS LOGENTRY!</avrf:message>
+    <avrf:formatmessage />
+    <avrf:parameter1 />
+    <avrf:parameter2 />
+    <avrf:parameter3 />
+    <avrf:parameter4 />
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>module1</avrf:trace>
+      <avrf:trace>module2</avrf:trace>
+      <avrf:trace>module3</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/29/2006 10:00:10 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\NamedPipe\lsass) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/29/2006 10:00:11 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\NamedPipe\ntsvcs) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/29/2006 10:00:13 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\NamedPipe\srvsvc) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/29/2006 10:00:14 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\NamedPipe\wkssvc) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/29/2006 10:00:20 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet001\Control\MediaProperties\PrivateProperties\Joystick\Winmm) (RegOpenKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/29/2006 10:00:20 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet002\Control\MediaProperties\PrivateProperties\Joystick\Winmm) (RegOpenKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/29/2006 10:00:20 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet003\Control\MediaProperties\PrivateProperties\Joystick\Winmm) (RegOpenKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/29/2006 10:00:50 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\BaseNamedObjects\crypt32LogoffEvent) (OpenEventA) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/29/2006 10:01:08 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\BaseNamedObjects\DINPUTWINMM) (OpenEventW) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\1\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\2\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\3\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\4\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\5\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\6\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\7\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\8\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\9\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:04:29 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Sessions\10\BaseNamedObjects\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:06:39 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:09:47 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\WinSock2\Parameters) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:09:47 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet002\Services\WinSock2\Parameters) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:09:47 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet003\Services\WinSock2\Parameters) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:11:22 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache\Content) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:11:22 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache\Cookies) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:11:23 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache\History) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:11:23 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:11:23 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap) (RegOpenKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="7/31/2006 7:11:34 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\NamedPipe\ROUTER) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:27 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\WinSock2\Parameters\Protocol_Catalog9) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:27 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet002\Services\WinSock2\Parameters\Protocol_Catalog9) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:27 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet003\Services\WinSock2\Parameters\Protocol_Catalog9) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:32 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:32 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet002\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:32 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet003\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:34 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\WinSock2\Parameters\NameSpace_Catalog5) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:34 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet002\Services\WinSock2\Parameters\NameSpace_Catalog5) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:34 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet003\Services\WinSock2\Parameters\NameSpace_Catalog5) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:35 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet001\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:35 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet002\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 5:19:35 AM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet003\Services\WinSock2\Parameters\NameSpace_Catalog5\Catalog_Entries) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:13:22 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet001\Hardware Profiles\0001\Software\Microsoft\windows\CurrentVersion\Internet Settings) (RegCreateKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:13:22 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet002\Hardware Profiles\0001\Software\Microsoft\windows\CurrentVersion\Internet Settings) (RegCreateKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:13:22 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SYSTEM\ControlSet003\Hardware Profiles\0001\Software\Microsoft\windows\CurrentVersion\Internet Settings) (RegCreateKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:16:53 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\EnterpriseCertificates\TrustedPublisher\Certificates) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:16:54 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\EnterpriseCertificates\TrustedPublisher\CRLs) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:16:54 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\EnterpriseCertificates\TrustedPublisher\CTLs) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:16:55 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\EnterpriseCertificates\TrustedPublisher) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:16:55 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\SystemCertificates\TrustedPublisher\Certificates) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:16:56 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\SystemCertificates\TrustedPublisher\CRLs) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:16:57 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\SystemCertificates\TrustedPublisher\CTLs) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:16:57 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\SystemCertificates\TrustedPublisher) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:17:04 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Policies\Microsoft\SystemCertificates\TrustedPublisher\Certificates) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:17:04 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Policies\Microsoft\SystemCertificates\TrustedPublisher\CRLs) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:17:05 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Policies\Microsoft\SystemCertificates\TrustedPublisher\CTLs) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:17:05 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Policies\Microsoft\SystemCertificates\TrustedPublisher) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:17:18 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\USER\CURRENT\Software\Policies\Microsoft\SystemCertificates\TrustedPublisher\Certificates) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:17:18 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\USER\CURRENT\Software\Policies\Microsoft\SystemCertificates\TrustedPublisher\CRLs) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:17:19 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\USER\CURRENT\Software\Policies\Microsoft\SystemCertificates\TrustedPublisher\CTLs) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/1/2006 7:17:19 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\USER\CURRENT\Software\Policies\Microsoft\SystemCertificates\TrustedPublisher) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/2/2006 1:58:43 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\NamedPipe\DAV RPC SERVICE) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/9/2006 7:24:38 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\AppLogLevels) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/11/2006 6:28:58 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\BaseNamedObjects\HelpPaneUpdatingEvent) (OpenEventW) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/30/2006 2:12:10 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Global\__ComCatalogCache__) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/30/2006 3:16:34 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Global\TabletHardwarePresent) (OpenEventW) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/30/2006 3:16:36 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Global\SvcctrlStartEvent_A3752DX) (OpenEventW) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/1/2006 6:33:24 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Global\mmGlobalPnpInfo) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/1/2006 6:33:28 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(RasPbFile) (CreateMutexA) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="12/5/2006 6:14:28 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(oleacc-msaa-loaded) (CreateMutexA) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="12/5/2006 6:14:28 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(oleacc-msaa-loaded) (CreateMutexW) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/1/2006 8:20:25 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Local\__DDrawCheckExclMode__) (CreateMutexA) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/1/2006 8:20:26 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Local\__DDrawExclMode__) (CreateMutexA) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/6/2006 5:24:57 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(CheckTokenMembership) (NT AUTHORITY\SYSTEM) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/6/2006 5:26:42 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(CheckTokenMembership) (NT AUTHORITY\LOCAL SERVICE) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/6/2006 5:26:43 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(CheckTokenMembership) (NT AUTHORITY\NETWORK SERVICE) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/6/2006 5:27:43 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(CONIN$) (CreateFileA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/6/2006 5:27:56 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(CONOUT$) (CreateFileA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/11/2006 4:14:34 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Global\crypt32LogoffEvent) (CreateEventA) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/14/2006 2:18:00 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\WinSock2\Parameters) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/15/2006 4:39:09 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\5.0\Cache) (RegOpenKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/15/2006 4:39:09 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\) (RegOpenKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/26/2006 12:34:24 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(HKEY_CURRENT_CONFIG\Software\Microsoft\windows\CurrentVersion\Internet Settings) (RegCreateKeyExA) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/27/2006 1:12:47 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(DINPUTWINMM) (CreateEventW) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/27/2006 1:13:00 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Global\winlogon: Logon UserProfileMapping Mutex) (CreateMutexW) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="9/27/2006 1:13:04 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(SHIMLIB_LOG_MUTEX) (CreateMutexA) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/19/2006 4:52:37 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\BaseNamedObjects\__ComCatalogCache__) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/19/2006 4:52:45 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\BaseNamedObjects\CLR_PerfMon_DoneEnumEvent) (OpenEventW) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/19/2006 4:52:49 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\BaseNamedObjects\CLR_PerfMon_StartEnumEvent) (OpenEventW) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/19/2006 4:53:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Local\DDrawDriverObjectListMutex) (CreateMutexA) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/19/2006 4:53:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Local\DDrawWindowListMutex) (CreateMutexA) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/19/2006 4:56:22 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Global\windows_shell_global_counters) (OpenFileMappingW) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/19/2006 5:07:07 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(CheckTokenMembership) (BUILTIN\Administrators) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>rasapi32</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/19/2006 5:35:44 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(CheckTokenMembership) (BUILTIN\Network Configuration Operators) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>rasapi32</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/19/2006 5:58:33 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(Global\TermSrvReadyEvent) (OpenEventW) (Event) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/24/2006 5:07:24 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(SeDebugPrivilege) (NtAdjustPrivilegesToken) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>advapi32</avrf:trace>
+      <avrf:trace>shlwapi</avrf:trace>
+      <avrf:trace>shell32</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/24/2006 5:16:39 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(MSIMGSIZECacheMap) (CreateFileMappingA) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>mshtml</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/24/2006 5:16:40 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(MSIMGSIZECacheMap) (OpenFileMappingA) (Section) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>mshtml</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="10/24/2006 5:16:57 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(oleacc-msaa-loaded) (CreateMutexW) (Mutex) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>oleacc</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:46 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\ALERTS) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:47 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\APPCFGWZD) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:47 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\AUTHDELGFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:48 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\COM) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:48 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\COMPFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:50 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\COOKIEAUTHFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:50 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\CTRL) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:53 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\DIFFSERV) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:54 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\DNSCACHE) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:54 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\DNSFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:57 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\ENG) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:58 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\FLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:43:59 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\FTP) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:00 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\FWC) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:00 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\FWSRV) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:01 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\GENERAL) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:02 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\H323) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:02 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\HTTPFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:03 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\LDAPFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:04 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\LINKTRANSFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:04 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\LOG) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:05 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\MIXER) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:06 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\MONITOR) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:06 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\POP3) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:07 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\PPTP) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:08 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\PROFILING) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:09 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\RADIUSFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:09 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\REPORT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:10 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\RPC) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:11 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\RPCFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:11 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SCHED) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:13 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SECURIDFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:13 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SINK) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:13 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SMTP_POLICY) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SMTP) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SOCKS) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_APPFILTER) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:22 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_AUTHENTICATION) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:23 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_CHAIN) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:23 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_CONNECTEX) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:24 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_CMD) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:26 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_CTRL) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:26 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_DNS) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_DOD) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:28 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_ENG) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:28 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_GENERAL) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:29 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_INIT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:31 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_IO) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:31 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_LOADCTRL) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:32 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_LOADPOLICY) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:36 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_LOG) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:37 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_NETWORK) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:37 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_NLB) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:39 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_POLICY) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:39 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_PORTSCAN) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:40 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_QUOTA) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:42 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_RULES) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:42 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_SOC) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:43 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\SRV_SSL_SOCKET) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:45 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\STG_SEC) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:45 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\STG) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:46 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\STRMFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:48 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\TEST) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:49 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\UI) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:49 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\VPN) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WEBFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WP_AUTH) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:52 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WP_CACHE) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:53 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WP_CONNECT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:54 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WP_GEN) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:54 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WP_REQUEST) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:56 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WP_SSL) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:56 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WP_TRAFFIC) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:57 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WP) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:58 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW\WPLBFLT) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:58 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\Microsoft\MSFW) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="11/2/2006 3:44:59 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing) (RegCreateKeyExW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(C:\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(D:\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(E:\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(F:\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(G:\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:15 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(H:\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume1\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume3\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume4\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume5\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume6\ProgramData\Microsoft\Windows\Start Menu\CFP00000000.tmp) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume1\ProgramData\Microsoft\Windows\Start Menu) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>AcLayers</avrf:trace>
+      <avrf:trace>ShimEng</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>AcLayers</avrf:trace>
+      <avrf:trace>ShimEng</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume3\ProgramData\Microsoft\Windows\Start Menu) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>AcLayers</avrf:trace>
+      <avrf:trace>ShimEng</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume4\ProgramData\Microsoft\Windows\Start Menu) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>AcLayers</avrf:trace>
+      <avrf:trace>ShimEng</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume5\ProgramData\Microsoft\Windows\Start Menu) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>AcLayers</avrf:trace>
+      <avrf:trace>ShimEng</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="6/20/2007 3:54:27 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume6\ProgramData\Microsoft\Windows\Start Menu) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+    <avrf:stackTrace>
+      <avrf:trace>AcLayers</avrf:trace>
+      <avrf:trace>ShimEng</avrf:trace>
+    </avrf:stackTrace>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(C:\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(D:\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(E:\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(F:\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(G:\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(H:\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume1\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume2\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume3\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume4\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume5\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume6\Windows\Microsoft.NET\Framework\v2.0.50727\config\enterprisesec.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(C:\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(D:\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(E:\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(F:\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(G:\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(H:\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume1\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume2\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume3\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume4\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume5\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+  <avrf:logEntry Time="8/29/2007 7:06:51 PM" LayerName="LuaPriv" StopCode="0" Severity="any">
+    <avrf:formatmessage>(\Device\HarddiskVolume6\Windows\Microsoft.NET\Framework\v2.0.50727\config\security.config.cch.new) (CreateFileW) </avrf:formatmessage>
+    <avrf:IsNoise>true</avrf:IsNoise>
+  </avrf:logEntry>
+</avrf:logfile>

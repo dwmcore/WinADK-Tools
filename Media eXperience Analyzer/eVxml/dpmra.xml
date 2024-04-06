@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <events componentType="application">
+
+      <eventSubTypes>
+		<subType name="WaitForThreadStart"		value="20" />	
+		<subType name="WaitForThreadStop"		value="21" />
+		<subType name="SubtaskLock"		        value="22" />
+		<subType name="WorkitemLock"		        value="23" />
+
+		<subType name="RecvBufferQEmptyStart"		value="30" />	
+		<subType name="RecvBufferQEmptyStop"		value="31" />
+		<subType name="RecvBufferQEmptyRestart"		value="32" />
+		<subType name="RecvBufferQFullStart"		value="33" />	
+		<subType name="RecvBufferQFullStop"		value="34" />
+		<subType name="SendBufferQEmptyStart"		value="35" />	
+		<subType name="SendBufferQEmptyStop"		value="36" />
+		<subType name="SendBufferQFullStart"		value="37" />	
+		<subType name="SendBufferQFullStop"		value="38" />
+
+		<subType name="ConsumeBufferStart"	        value="50" />
+		<subType name="ReceiveBufferStart"	        value="51" />
+		<subType name="FillupBufferStart"		value="52" />	
+		<subType name="SendBufferStart"			value="53" />
+      </eventSubTypes>
+
+
+
+      <event guid="{C68DF853-70F0-4464-BF83-ADD08AD9D4C0}" level="0">
+        <diagnosticInstance version="0">
+          <classification subType="WaitForThreadStart" />
+          <template>
+            <Contention />
+          </template>
+
+          <classification subType="WaitForThreadStop" />
+          <template>
+            <Contention />
+          </template>
+
+          <classification subType="SubtaskLock" />
+          <template>
+            <Contention>
+               <PeriodInMS>%UInt32;</PeriodInMS>
+               <SubtaskGuid>%Guid;</SubtaskGuid>
+            </Contention>
+          </template>
+
+          <classification subType="WorkitemLock" />
+          <template>
+            <Contention>
+               <PeriodInMS>%UInt32;</PeriodInMS>
+               <WorkItemGuid>%Guid;</WorkItemGuid>
+            </Contention>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+
+      <event guid="{1B30EAF7-1920-4cf0-8D4F-79AFBCFB0F4C}" level="0">
+        <diagnosticInstance version="0">
+          <classification subType="RecvBufferQEmptyStart" />
+          <template>
+            <DataMoverSession />
+          </template>
+
+          <classification subType="RecvBufferQEmptyStop" />
+          <template>
+            <DataMoverSession />
+          </template>
+
+          <classification subType="RecvBufferQEmptyRestart" />
+          <template>
+            <DataMoverSession />
+          </template>
+
+          <classification subType="RecvBufferQFullStart" />
+          <template>
+            <DataMoverSession />
+          </template>
+
+          <classification subType="RecvBufferQFullStop" />
+          <template>
+            <DataMoverSession />
+          </template>
+
+          <classification subType="SendBufferQEmptyStart" />
+          <template>
+            <DataMoverSession />
+          </template>
+
+          <classification subType="SendBufferQEmptyStop" />
+          <template>
+            <DataMoverSession />
+          </template>
+
+          <classification subType="SendBufferQFullStart" />
+          <template>
+            <DataMoverSession />
+          </template>
+
+          <classification subType="SendBufferQFullStop" />
+          <template>
+            <DataMoverSession />
+          </template>
+        </diagnosticInstance>
+      </event>
+
+
+      <event guid="{4B58DD96-4E87-42D5-B177-1F5309798425}" level="0">
+        <diagnosticInstance version="0">
+          <classification subType="ConsumeBufferStart" />
+          <template>
+            <DsmReceiverSubtask>
+              <SubtaskPointer>%Pointer;</SubtaskPointer> 
+            </DsmReceiverSubtask>
+          </template>
+
+          <classification subType="ReceiveBufferStart" />
+          <template>
+            <DsmReceiverSubtask>
+              <SubtaskPointer>%Pointer;</SubtaskPointer> 
+            </DsmReceiverSubtask>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <event guid="{81F33DAD-EF40-4356-807D-469493AED320}" level="0">
+        <diagnosticInstance version="0">
+          <classification subType="FillupBufferStart" />
+          <template>
+            <DsmSenderSubtask>
+              <SubtaskPointer>%Pointer;</SubtaskPointer> 
+            </DsmSenderSubtask>
+          </template>
+
+          <classification subType="SendBufferStart" />
+          <template>
+            <DsmSenderSubtask>
+              <SubtaskPointer>%Pointer;</SubtaskPointer> 
+            </DsmSenderSubtask>
+          </template>
+        </diagnosticInstance>
+      </event>
+                    
+    </events>
+  </instrumentation>
+</assembly>

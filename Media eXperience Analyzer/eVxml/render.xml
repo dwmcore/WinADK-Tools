@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+	<eventSubTypes>
+                <subType name= "Audio_Render" value="0" />
+		<subType name= "Pattern_Render" value="1" />
+		<subType name= "Calibration_Render" value="1" />		
+	</eventSubTypes>
+
+      <!-- POWER SIGNAL SYNC Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{bd61d789-35e7-4c2d-a742-c40a5c1e01FF}" level="1">
+
+        <diagnosticInstance version="0">
+
+        <classification subType="Audio_Render"/>
+    	<classification subType="Pattern_Render"/>
+    	<classification subType="Calibration_Render"/>
+          <template>
+            <RenderSync_>
+                <dwValue>%UInt32;</dwValue>
+            </RenderSync_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+ </events>
+
+</instrumentation>
+
+</assembly>
+

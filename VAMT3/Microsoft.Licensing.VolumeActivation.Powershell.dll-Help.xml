@@ -1,0 +1,2519 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<helpItems schema="maml">
+		<!-- v 1.3.0.36 -->
+		<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+			<command:details>
+				<command:name>
+											 Add-VamtProductKey
+				</command:name>
+				<maml:description>
+					<maml:para>Adds a user-specified product key to a VAMT database.</maml:para>
+				</maml:description>
+				<maml:copyright>
+					<maml:para></maml:para>
+				</maml:copyright>
+				<command:verb>Add</command:verb>
+				<command:noun>VamtProductKey</command:noun>
+				<dev:version></dev:version>
+			</command:details>
+			<maml:description>
+				<maml:para>The Add-VamtProductKey cmdlet adds the user-specified product key to a VAMT database. If a list of product keys must be added to a VAMT database, you can use this cmdlet in a script to add the product keys.</maml:para>
+			</maml:description>
+			<!-- Cmdlet syntax section-->
+			<command:syntax>
+				<command:syntaxItem>
+					<maml:name>Add-VamtProductKey</maml:name>
+					<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+						<maml:name>ProductKey</maml:name>
+						<maml:description>
+							<maml:para>Specifies the product key to be added to the VAMT database. </maml:para>
+						</maml:description>
+						<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+					</command:parameter>
+					<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+						<maml:name>DbCommandTimeout</maml:name>
+						<maml:description>
+							<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+						</maml:description>
+						<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+					</command:parameter>
+					<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+						<maml:name>DbConnectionString</maml:name>
+						<maml:description>
+							<maml:para>Specifies the database that the product key is added to. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.
+		 
+
+		</maml:para>
+						</maml:description>
+						<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+					</command:parameter>
+				</command:syntaxItem>
+			</command:syntax>
+			<!-- Cmdlet parameter section  -->
+			<command:parameters>
+				<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+					<maml:name>DbCommandTimeout</maml:name>
+					<maml:description>
+						<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+										
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+					<dev:type>
+						<maml:name>int</maml:name>
+						<maml:uri/>
+					</dev:type>
+					<dev:defaultValue></dev:defaultValue>
+				</command:parameter>
+				<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+					<maml:name>DbConnectionString</maml:name>
+					<maml:description>
+						<maml:para>Specifies the database that the product key is added to. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.
+		 
+
+		</maml:para>
+										
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+					<dev:type>
+						<maml:name>string</maml:name>
+						<maml:uri/>
+					</dev:type>
+					<dev:defaultValue></dev:defaultValue>
+				</command:parameter>
+				<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+					<maml:name>ProductKey</maml:name>
+					<maml:description>
+						<maml:para>Specifies the product key to be added to the VAMT database. </maml:para>
+										
+					</maml:description>
+					<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+					<dev:type>
+						<maml:name>string</maml:name>
+						<maml:uri/>
+					</dev:type>
+					<dev:defaultValue></dev:defaultValue>
+				</command:parameter>
+			</command:parameters>
+			<!-- Input - Output section-->
+			<command:inputTypes>
+				<command:inputType>
+					<dev:type>
+						<maml:name></maml:name>
+						<maml:uri/>
+						<maml:description />
+					</dev:type>
+					<maml:description>
+						<maml:para>
+							<!-- description  -->
+							
+						</maml:para>
+					</maml:description>
+				</command:inputType>
+			</command:inputTypes>
+			<command:returnValues>
+				<command:returnValue>
+					<dev:type>
+						<maml:name></maml:name>
+						<maml:uri />
+						<maml:description />
+					</dev:type>   
+					<maml:description>
+						<maml:para>
+							<!-- description  -->
+							
+						</maml:para>
+					</maml:description> 
+				</command:returnValue>
+			</command:returnValues>
+			<!-- Error section-->
+			<command:terminatingErrors />
+			<command:nonTerminatingErrors />
+				<!-- Notes section  -->
+			<maml:alertSet>
+				<maml:title></maml:title>
+				<maml:alert>
+					<maml:para>
+															
+														</maml:para>
+				</maml:alert>
+				<maml:alert>
+					<maml:para></maml:para>
+				</maml:alert>
+			</maml:alertSet>
+			<!-- Example section  --> 
+			<command:examples>
+
+				<command:example>
+					<maml:title>
+						-------------------------- EXAMPLE 1 --------------------------
+					</maml:title> 
+					<maml:introduction>
+						<maml:para>C:\PS&gt;</maml:para>
+					</maml:introduction> 
+						<dev:code>
+		add-vamtproductkey -productkey 12345-456789-12345-456789-12345 -dbConnectionstring &quot;data source=.\adk;initial catalog=test;integrated security=true;multipleactiveresultsets=true&quot;                        </dev:code>
+								<dev:remarks>
+																		<maml:para>Description</maml:para>
+																		<maml:para>-----------</maml:para>
+										<maml:para>This command adds a product key to the specified VAMT database.</maml:para>
+															<maml:para></maml:para>
+															<maml:para></maml:para>
+															<maml:para></maml:para>
+															<maml:para></maml:para>
+						</dev:remarks>
+					<command:commandLines>
+						<command:commandLine>
+							<command:commandText></command:commandText>
+						</command:commandLine>
+					</command:commandLines>
+				</command:example>
+			</command:examples>
+			<!-- Link section  -->
+			<maml:relatedLinks>
+				<maml:navigationLink>
+					<maml:linkText>Online help:</maml:linkText>
+					<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229157</maml:uri>
+				</maml:navigationLink>
+			</maml:relatedLinks>
+		</command:command>
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Export-VamtData
+		</command:name>
+		<maml:description>
+			<maml:para>Exports product data and product-key data from a VAMT database to a portable .cilx file.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Export</command:verb>
+		<command:noun>VamtData</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Export-VamtData cmdlet exports specified product data and product-key data from a VAMT database to a portable cilx file. You can use this .cilx file to move data from one VAMT instance to another, to store data for backup purposes, or to facilitate proxy activation. By default, the export does not include product-key data and personally identifiable information (PII). </maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Export-VamtData</maml:name>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>OutputFile</maml:name>
+				<maml:description>
+					<maml:para>Specifies the location and name of the .cilx file that the Export-VamtData cmdlet creates.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbCommandTimeout</maml:name>
+				<maml:description>
+					<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbConnectionString</maml:name>
+				<maml:description>
+					<maml:para>Specifies the database that the product and the product key are exported from. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>IncludeProductKeys</maml:name>
+				<maml:description>
+					<maml:para>Includes product keys in the export. By default, VAMT does not include product keys in the export.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">bool</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>IncludeSensitiveInfo</maml:name>
+				<maml:description>
+					<maml:para>Includes personally identifiable information (PII) in the export. By default, VAMT does not include PII in the export.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">bool</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Products</maml:name>
+				<maml:description>
+					<maml:para>Specifies the product information to be exported. If the Products parameter is not included, VAMT exports all product information in the VAMT database to the .cilx file.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbCommandTimeout</maml:name>
+			<maml:description>
+				<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			<dev:type>
+				<maml:name>int</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbConnectionString</maml:name>
+			<maml:description>
+				<maml:para>Specifies the database that the product and the product key are exported from. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>IncludeProductKeys</maml:name>
+			<maml:description>
+				<maml:para>Includes product keys in the export. By default, VAMT does not include product keys in the export.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">bool</command:parameterValue>
+			<dev:type>
+				<maml:name>bool</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue>FALSE</dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>IncludeSensitiveInfo</maml:name>
+			<maml:description>
+				<maml:para>Includes personally identifiable information (PII) in the export. By default, VAMT does not include PII in the export.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">bool</command:parameterValue>
+			<dev:type>
+				<maml:name>bool</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue>FALSE</dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>OutputFile</maml:name>
+			<maml:description>
+				<maml:para>Specifies the location and name of the .cilx file that the Export-VamtData cmdlet creates.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Products</maml:name>
+			<maml:description>
+				<maml:para>Specifies the product information to be exported. If the Products parameter is not included, VAMT exports all product information in the VAMT database to the .cilx file.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+get-vamtproduct | export-vamtdata -includeproductkeys -includesensitiveinfo -outputfile c:\users\me\desktop\vamtdata.cilx                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command gets a VAMT product object that contains all products and then exports the object to the specified file. The command also specifies to include product keys and personally identifiable information.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229158</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Find-VamtManagedMachine
+		</command:name>
+		<maml:description>
+			<maml:para>The Find-VamtManagedMachine cmdlet discovers products and adds them to the VAMT database.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Find</command:verb>
+		<command:noun>VamtManagedMachine</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Find-VamtManagedMachine cmdlet discovers products either on an individual computer or in a specified domain or workgroup, and then adds them to the VAMT database. You can use this cmdlet in a script to periodically run product discovery on a domain or workgroup. You can use this process to determine whether any new computers are present in the domain or workgroup.</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Find-VamtManagedMachine</maml:name>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>QueryType</maml:name>
+				<maml:description>
+					<maml:para>Defines what kind of query to use to find the computers. The following values apply to the QueryType parameter: 
+-- Manual: When you use this value, you can manually enter a computer IP address or name. 
+-- ActiveDirectory: When you used this value, VAMT searches the Active Directory domain.
+-- Workgroup: When you use this value, VAMT searches the specified workgroup.
+-- LDAP: When you use this value, you can supply a Lightweight Directory Access Protocol (LDAP) query to search for computers that the meet specified conditions. For example, you can use this value in a script to search for new computers that were added to the network within a certain time frame.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>QueryValue</maml:name>
+				<maml:description>
+					<maml:para>The QueryValue parameter is required when the QueryType parameter is declared. The QueryValue parameter supplies the following values for the specified QueryType:
+-- If QueryType is Manual, QueryValue is the IP address or name of the computer.
+-- If QueryType is ActiveDirectory, QueryValue is the name of Active Directory domain.
+-- If QueryType is Workgroup, QueryValue is the name of the workgroup.
+-- If QueryType is LDAP, QueryValue is an LDAP query to search for computers that meet the specified conditions. For example, you can use this value in a script to search for new computers that were added to the network within a certain time frame.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbCommandTimeout</maml:name>
+				<maml:description>
+					<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbConnectionString</maml:name>
+				<maml:description>
+					<maml:para>Specifies the database that the discovered products are added to. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>MachineFilter</maml:name>
+				<maml:description>
+					<maml:para>Narrows the search results when used with the QueryType parameter, when the ActiveDirectory value or the WorkGroup value is specified. Do not use the MachineFilter parameter when you specify the Manual value for the QueryType parameter.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Password</maml:name>
+				<maml:description>
+					<maml:para>Provides a password if the environment to be checked for products is password-protected.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Username</maml:name>
+				<maml:description>
+					<maml:para>Provides a user name if the environment to be checked for products is password-protected.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbCommandTimeout</maml:name>
+			<maml:description>
+				<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			<dev:type>
+				<maml:name>int</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbConnectionString</maml:name>
+			<maml:description>
+				<maml:para>Specifies the database that the discovered products are added to. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>MachineFilter</maml:name>
+			<maml:description>
+				<maml:para>Narrows the search results when used with the QueryType parameter, when the ActiveDirectory value or the WorkGroup value is specified. Do not use the MachineFilter parameter when you specify the Manual value for the QueryType parameter.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Password</maml:name>
+			<maml:description>
+				<maml:para>Provides a password if the environment to be checked for products is password-protected.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>QueryType</maml:name>
+			<maml:description>
+				<maml:para>Defines what kind of query to use to find the computers. The following values apply to the QueryType parameter: 
+-- Manual: When you use this value, you can manually enter a computer IP address or name. 
+-- ActiveDirectory: When you used this value, VAMT searches the Active Directory domain.
+-- Workgroup: When you use this value, VAMT searches the specified workgroup.
+-- LDAP: When you use this value, you can supply a Lightweight Directory Access Protocol (LDAP) query to search for computers that the meet specified conditions. For example, you can use this value in a script to search for new computers that were added to the network within a certain time frame.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>QueryValue</maml:name>
+			<maml:description>
+				<maml:para>The QueryValue parameter is required when the QueryType parameter is declared. The QueryValue parameter supplies the following values for the specified QueryType:
+-- If QueryType is Manual, QueryValue is the IP address or name of the computer.
+-- If QueryType is ActiveDirectory, QueryValue is the name of Active Directory domain.
+-- If QueryType is Workgroup, QueryValue is the name of the workgroup.
+-- If QueryType is LDAP, QueryValue is an LDAP query to search for computers that meet the specified conditions. For example, you can use this value in a script to search for new computers that were added to the network within a certain time frame.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Username</maml:name>
+			<maml:description>
+				<maml:para>Provides a user name if the environment to be checked for products is password-protected.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+find-vamtmanagedmachine -querytype manual -queryvalue machinename                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command finds a computer by looking for the specified computer name.  </maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+find-vamtmanagedmachine -querytype activedirectory -queryvalue domainname -machinefilter labcomp*                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command searches the specified Active Directory domain. The search results are narrowed to the computers with LabComp in their name.   </maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 3 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+find-vamtmanagedmachine -querytype workgroup -queryvalue workgroupname -machinefilter labcomp*
+                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command searches the specified workgroup. The search results are narrowed to the computers with LabComp in their name.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 4 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+find-vamtmanagedmachine -querytype ldap -queryvalue &quot;ldap://domainname/??sub?(&amp;amp;(objectclass=computer)(name=labcomp*))&quot;                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command searches for computers by using an ldap query. The search results are narrowed to the computers with LabComp in their name.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229159</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Get-VamtProductKey
+		</command:name>
+		<maml:description>
+			<maml:para>Retrieves product-key records from a VAMT database.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Get</command:verb>
+		<command:noun>VamtProductKey</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Get-VamtProductKey cmdlet retrieves product key records from a VAMT database. You can use this cmdlet to retrieve a single product key or a list of product keys. The results are saved to a file, or a Microsoft.Licensing.VolumeActivation.Product object is returned.  </maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Get-VamtProductKey</maml:name>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbCommandTimeout</maml:name>
+				<maml:description>
+					<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbConnectionstring</maml:name>
+				<maml:description>
+					<maml:para>Specifies the database that the product key or list of product keys is retrieved from. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbCommandTimeout</maml:name>
+			<maml:description>
+				<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			<dev:type>
+				<maml:name>int</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbConnectionstring</maml:name>
+			<maml:description>
+				<maml:para>Specifies the database that the product key or list of product keys is retrieved from. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$makkeys = get-vamtproductkey | where { $_.keytype -eq 'mak' }                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command gets a list of MAK keys.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229160</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Get-VamtProduct
+		</command:name>
+		<maml:description>
+			<maml:para>Retrieves the record of a product or list of products from a VAMT database.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Get</command:verb>
+		<command:noun>VamtProduct</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Get-VamtProduct cmdlet retrieves the record of a product or list of products from a VAMT database. The results are saved to a file, or a Microsoft.Licensing.VolumeActivation.Product object is returned. </maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Get-VamtProduct</maml:name>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbCommandTimeout</maml:name>
+				<maml:description>
+					<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbConnectionString</maml:name>
+				<maml:description>
+					<maml:para>Specifies the database that the product or list of products are retrieved from. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ProductName</maml:name>
+				<maml:description>
+					<maml:para>Specifies the product information to retrieve. If the ProductName parameter is not included, VAMT retrieves all product information in the VAMT database.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbCommandTimeout</maml:name>
+			<maml:description>
+				<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			<dev:type>
+				<maml:name>int</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbConnectionString</maml:name>
+			<maml:description>
+				<maml:para>Specifies the database that the product or list of products are retrieved from. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ProductName</maml:name>
+			<maml:description>
+				<maml:para>Specifies the product information to retrieve. If the ProductName parameter is not included, VAMT retrieves all product information in the VAMT database.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+get-vamtproduct &gt; c:\users\me\windowslist.txt                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command outputs the list of all products in the VAMT database to the specified file.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$products = get-vamtproduct -productname windows | where { $_.licensestatus -ne 'licensed' }                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command returns all &quot;Windows&quot; products whose license status does not equal &quot;licensed.&quot;</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229161</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Get-VamtConfirmationID
+		</command:name>
+		<maml:description>
+			<maml:para>Acquires confirmation IDs (CIDs) from the Microsoft licensing servers during proxy activation.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Get</command:verb>
+		<command:noun>VamtConfirmationID</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Get-VamtConfirmationID cmdlet acquires the confirmation IDs (CIDs) from the Microsoft licensing servers during proxy activation. All products either in the Windows PowerShell object or in the .cilx file are updated with the results. </maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Get-VamtConfirmationID</maml:name>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>FileName</maml:name>
+				<maml:description>
+					<maml:para>Specifies the name of the file that contains products that need CIDs. Use the FileName parameter during proxy activation to acquire CIDs for all products in the specified .cilx file. You cannot use the FileName parameter together with the Products parameter.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Products</maml:name>
+				<maml:description>
+					<maml:para>Specifies the products in VAMT that need CIDs. By default, if you don't specify a product, CIDs are retrieved for all products in VAMT. You can't use the Products parameter together with the FileName parameter.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ProxyPassword</maml:name>
+				<maml:description>
+					<maml:para>Provides the password to access the Microsoft licensing servers.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ProxyUserName</maml:name>
+				<maml:description>
+					<maml:para>Provides the user name to access the Microsoft licensing servers.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>FileName</maml:name>
+			<maml:description>
+				<maml:para>Specifies the name of the file that contains products that need CIDs. Use the FileName parameter during proxy activation to acquire CIDs for all products in the specified .cilx file. You cannot use the FileName parameter together with the Products parameter.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Products</maml:name>
+			<maml:description>
+				<maml:para>Specifies the products in VAMT that need CIDs. By default, if you don't specify a product, CIDs are retrieved for all products in VAMT. You can't use the Products parameter together with the FileName parameter.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ProxyPassword</maml:name>
+			<maml:description>
+				<maml:para>Provides the password to access the Microsoft licensing servers.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ProxyUserName</maml:name>
+			<maml:description>
+				<maml:para>Provides the user name to access the Microsoft licensing servers.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+get-vamtconfirmationid -filename &quot;c:\users\me\desktop\vamtdata.cilx&quot;                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command gets the CIDs for the products in the specified file.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$productinfo = get-vamtproduct
+$updatedproductinfo = get-vamtconfirmationid -products $productinfo                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command gets a product object with all products and gets the confirmation IDs for these products.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229162</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Import-VamtData
+		</command:name>
+		<maml:description>
+			<maml:para>Imports the data from a specified .cilx or .cil file into a VAMT database.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Import</command:verb>
+		<command:noun>VamtData</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Import-VamtData cmdlet imports data from a specified .cilx or .cil file into a VAMT database. You can merge data from a previous version of VAMT into your database by exporting the data in the previous version to a .cil file and then importing the .cil file into the VAMT database. You can import data from a .cilx file to recover data from a backup file.</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Import-VamtData</maml:name>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>InputFile</maml:name>
+				<maml:description>
+					<maml:para>Specifies the name of the file that contains the data to import into the VAMT database. You can't use the InputFile parameter together with the Products parameter.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Products</maml:name>
+				<maml:description>
+					<maml:para>Specifies the product information to import. If the Products parameter is not included, all product information in the .cilx or .cil file is imported into the VAMT database. You can't use the Products together with the InputFile parameter.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbCommandTimeout</maml:name>
+				<maml:description>
+					<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbConnectionString</maml:name>
+				<maml:description>
+					<maml:para>Specifies the database that the data from the .cilx file or .cil file is imported into. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbCommandTimeout</maml:name>
+			<maml:description>
+				<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			<dev:type>
+				<maml:name>int</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbConnectionString</maml:name>
+			<maml:description>
+				<maml:para>Specifies the database that the data from the .cilx file or .cil file is imported into. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>InputFile</maml:name>
+			<maml:description>
+				<maml:para>Specifies the name of the file that contains the data to import into the VAMT database. You can't use the InputFile parameter together with the Products parameter.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Products</maml:name>
+			<maml:description>
+				<maml:para>Specifies the product information to import. If the Products parameter is not included, all product information in the .cilx or .cil file is imported into the VAMT database. You can't use the Products together with the InputFile parameter.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+import-vamtdata -inputfile .\vamtdata.cilx
+
+                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command imports data from the specified file.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$productinfo = get-vamtproduct
+$updatedproductinfo = get-vamtconfirmationid -products $productinfo
+import-vamtdata -products $updatedproductinfo                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command gets a product object, acquires the confirmation IDs for the products, and imports the data to the database. Just acquiring the CIDs does not mean the data is in the database. The data must be imported as shown in this example.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229164</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Initialize-VamtData
+		</command:name>
+		<maml:description>
+			<maml:para>Initializes the VAMT database and removes all the data.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Initialize</command:verb>
+		<command:noun>VamtData</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Initialize-VamtData cmdlet restores a VAMT database to its initial state and removes all the data from the database. You can preserve the product keys in the database if you need them. You can also suppress the prompt that asks you to confirm the database initialization. </maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Initialize-VamtData</maml:name>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Confirm</maml:name>
+				<maml:description>
+					<maml:para>Suppresses the prompt that asks you to confirm the initialize action. If the Confirm parameter is not supplied, you will be prompted to confirm the action.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">Optional BOOL</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbCommandTimeout</maml:name>
+				<maml:description>
+					<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbConnectionString</maml:name>
+				<maml:description>
+					<maml:para>Specifies the database to be initialized. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>PreserveKeys</maml:name>
+				<maml:description>
+					<maml:para>Indicates that the product keys in the VAMT database will be retained when the database is initialized.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">Optional BOOL</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Confirm</maml:name>
+			<maml:description>
+				<maml:para>Suppresses the prompt that asks you to confirm the initialize action. If the Confirm parameter is not supplied, you will be prompted to confirm the action.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">Optional BOOL</command:parameterValue>
+			<dev:type>
+				<maml:name>Optional BOOL</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbCommandTimeout</maml:name>
+			<maml:description>
+				<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			<dev:type>
+				<maml:name>int</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbConnectionString</maml:name>
+			<maml:description>
+				<maml:para>Specifies the database to be initialized. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>PreserveKeys</maml:name>
+			<maml:description>
+				<maml:para>Indicates that the product keys in the VAMT database will be retained when the database is initialized.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">Optional BOOL</command:parameterValue>
+			<dev:type>
+				<maml:name>Optional BOOL</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+initialize-vamtdata -preservekeys                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command initializes the database, but retains the product keys.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229165</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Install-VamtProductKey
+		</command:name>
+		<maml:description>
+			<maml:para>Installs the specified product key on a product or a group of products. </maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Install</command:verb>
+		<command:noun>VamtProductKey</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Install-VamtProductKey cmdlet installs the specified product key on a single product or on a group of products. The cmdlet returns a value to indicate whether the product key is valid.</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Install-VamtProductKey</maml:name>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Products</maml:name>
+				<maml:description>
+					<maml:para>Specifies the product or products that the product key will be installed on. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Username</maml:name>
+				<maml:description>
+					<maml:para>Provides a user name for password-protected environments.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbCommandTimeout</maml:name>
+				<maml:description>
+					<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbConnectionString</maml:name>
+				<maml:description>
+					<maml:para>Specifies the database where the product keys are installed. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Password</maml:name>
+				<maml:description>
+					<maml:para>Provides a password for password-protected environments.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ProductKey</maml:name>
+				<maml:description>
+					<maml:para>Specifies the product key to be installed on the product or products. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbCommandTimeout</maml:name>
+			<maml:description>
+				<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			<dev:type>
+				<maml:name>int</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbConnectionString</maml:name>
+			<maml:description>
+				<maml:para>Specifies the database where the product keys are installed. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Password</maml:name>
+			<maml:description>
+				<maml:para>Provides a password for password-protected environments.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ProductKey</maml:name>
+			<maml:description>
+				<maml:para>Specifies the product key to be installed on the product or products. </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Products</maml:name>
+			<maml:description>
+				<maml:para>Specifies the product or products that the product key will be installed on. </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Username</maml:name>
+			<maml:description>
+				<maml:para>Provides a user name for password-protected environments.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$product = get-vamtproduct | where { $_.fullyqualifieddomainname -eq 'mymachine' }
+install-vamtproductkey $product -productkey 12345-67890-12345-67890-12345                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command gets a specified product by using the fully qualified domain name and then installs the specified product key on that product.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229166</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Install-VamtProductActivation
+		</command:name>
+		<maml:description>
+			<maml:para>Activates products online, using the local computer's Internet connection.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Install</command:verb>
+		<command:noun>VamtProductActivation</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Install-VamtProductActivation cmdlet activates products online by using the Internet connection on the local computer. You cannot use this cmdlet for proxy activation. </maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Install-VamtProductActivation</maml:name>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Products</maml:name>
+				<maml:description>
+					<maml:para>Specifies the product or products to be activated. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Username</maml:name>
+				<maml:description>
+					<maml:para>Provides a user name for password-protected environments.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Password</maml:name>
+				<maml:description>
+					<maml:para>Provides a password for password-protected environments.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Password</maml:name>
+			<maml:description>
+				<maml:para>Provides a password for password-protected environments.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Products</maml:name>
+			<maml:description>
+				<maml:para>Specifies the product or products to be activated. </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Username</maml:name>
+			<maml:description>
+				<maml:para>Provides a user name for password-protected environments.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+get-vamtproduct | install-vamtproductactivation                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command gets products and then activates them by using online activation.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229167</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Install-VamtConfirmationID
+		</command:name>
+		<maml:description>
+			<maml:para>Installs the confirmation IDs (CIDs) on the system.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Install</command:verb>
+		<command:noun>VamtConfirmationID</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Install-VamtConfirmationID cmdlet installs the confirmation IDs (CIDs) on the computers in the system and alerts the products that they have been activated. Use this cmdlet for proxy activations after you have acquired the CIDs from the Microsoft licensing servers.</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Install-VamtConfirmationID</maml:name>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Products</maml:name>
+				<maml:description>
+					<maml:para>Specifies the product or products to install the CIDs on during the proxy activation process.  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Username</maml:name>
+				<maml:description>
+					<maml:para>Provides a user name for password-protected environments.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Password</maml:name>
+				<maml:description>
+					<maml:para>Provides a password for password-protected environments.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Password</maml:name>
+			<maml:description>
+				<maml:para>Provides a password for password-protected environments.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Products</maml:name>
+			<maml:description>
+				<maml:para>Specifies the product or products to install the CIDs on during the proxy activation process.  </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Username</maml:name>
+			<maml:description>
+				<maml:para>Provides a user name for password-protected environments.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+import-vamtdata -inputfile c:\users\me\desktop\vamtdata.cilx
+$productinfo = get-vamtproduct
+$updatedproductinfo = install-vamtconfirmationid -products $productinfo
+import-vamtdata -products $updatedproductinfo                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>Run this command at the end of a proxy activation. This command imports a file and acquires the data in the file. It then installs the CIDs into the VAMT data object. Finally, it imports the VAMT data object into the VAMT database.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229168</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Update-VamtProduct
+		</command:name>
+		<maml:description>
+			<maml:para>Updates the VAMT database by querying the computers for their current status.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Update</command:verb>
+		<command:noun>VamtProduct</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Update-VamtProduct cmdlet updates the information in the VAMT database by querying the computers in the environment for their current status. You can use this cmdlet in a script when product data in the database must be updated on a regular basis. </maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Update-VamtProduct</maml:name>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbCommandTimeout</maml:name>
+				<maml:description>
+					<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>DbConnectionString</maml:name>
+				<maml:description>
+					<maml:para>Specifies the database where the products are updated. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Password</maml:name>
+				<maml:description>
+					<maml:para>Provides the password for password-protected environments.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Products</maml:name>
+				<maml:description>
+					<maml:para>Specifies the product or products in the VAMT database that the Update-VamtProduct cmdlet will update. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Username</maml:name>
+				<maml:description>
+					<maml:para>Provides the user name for password-protected environments.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbCommandTimeout</maml:name>
+			<maml:description>
+				<maml:para>Indicates how long VAMT waits for a response from the database before timing out. The default value is 30 seconds. You can use the DbCommandTimeout parameter to change the timeout value.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">int</command:parameterValue>
+			<dev:type>
+				<maml:name>int</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>DbConnectionString</maml:name>
+			<maml:description>
+				<maml:para>Specifies the database where the products are updated. If no database connection string is provided, VAMT attempts to use the database the VAMT user console used on the local computer. If VAMT does not find a database, it returns an error. You can find the connection string in the VAMT UI in the Preferences dialog box. On the menu bar click View and then click Preferences to open the Volume Activation Management Tool Preferences dialog box. The connection string is in the Database Settings section, under &quot;Current connection string&quot;.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Password</maml:name>
+			<maml:description>
+				<maml:para>Provides the password for password-protected environments.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Products</maml:name>
+			<maml:description>
+				<maml:para>Specifies the product or products in the VAMT database that the Update-VamtProduct cmdlet will update. </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Username</maml:name>
+			<maml:description>
+				<maml:para>Provides the user name for password-protected environments.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+get-vamtproduct | update-vamtproduct                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>This command updates all of the product information in the database.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online Help:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkId=229169</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+
+
+</helpItems>

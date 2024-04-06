@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <event eventID="1" message="$(string.ImageId)" guid="{79b4910c-1419-44f0-b38c-5053d631342b}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info" />
+          <template>
+            <Redir_GetSharedHandle_>
+            <ulFlipChain>%Uint32;</ulFlipChain>
+	    <space>%Uint32;</space>
+            <ulUpdateId>%Uint32;</ulUpdateId>
+	    <index>%Uint32;</index>
+	    <indexUnconfirmed>%Uint32;</indexUnconfirmed>
+	    <hSurface>%Pointer;</hSurface>
+	    <cEmpty>%Uint32;</cEmpty>
+            </Redir_GetSharedHandle_>
+          </template>
+
+          <classification subType="End" />
+          <template>
+            <Redir_UpdateSharedSurface_>
+            <ulFlipChain>%Uint32;</ulFlipChain>
+	    <space>%Uint32;</space>
+            <ulUpdateId>%Uint32;</ulUpdateId>
+	    <index>%Uint32;</index>
+	    <indexUnconfirmed>%Uint32;</indexUnconfirmed>
+	    <hSurface>%Pointer;</hSurface>
+	    <cEmpty>%Uint32;</cEmpty>
+            </Redir_UpdateSharedSurface_>
+          </template>
+
+        </diagnosticInstance>
+
+      </event>
+      <event eventID="1" message="$(string.ImageId)" guid="{065dfed6-0dd9-4a35-95f7-8baad8900074}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info" />
+          <template>
+            <Redir_DXResize_>
+	    <hwnd>%Pointer;</hwnd>
+	    <xSizeOld>%Uint32;</xSizeOld>
+	    <ySizeOld>%Uint32;</ySizeOld>
+	    <formatOld>%Pointer;</formatOld>
+	    <xSizeNew>%Uint32;</xSizeNew>
+	    <ySizeNew>%Uint32;</ySizeNew>
+	    <formatNew>%Pointer;</formatNew>
+            </Redir_DXResize_>
+          </template>
+
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{26e9403b-e569-42c5-aacd-b72ca51ae8e6}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info" />
+          <template>
+            <Redir_GetCompositionTimingInfo_>
+	        <ulFlipChain>%Uint64;</ulFlipChain>
+	        <cbSize>%Uint32;</cbSize>
+		<rateRefresh_Numerator>%Uint32;</rateRefresh_Numerator>
+		<rateRefresh_Denominator>%Uint32;</rateRefresh_Denominator>
+		<qpcRefreshPeriod>%Uint64;</qpcRefreshPeriod>
+		<rateCompose_Numerator>%Uint32;</rateCompose_Numerator>
+		<rateCompose_Denominator>%Uint32;</rateCompose_Denominator>
+
+		<qpcVBlank>%Uint64;</qpcVBlank>
+		<cRefresh>%Uint64;</cRefresh>
+		<cDXRefresh>%Uint32;</cDXRefresh>
+		<qpcCompose>%Uint64;</qpcCompose>
+		<cFrame>%Uint64;</cFrame>
+		<cDXPresent>%Uint32;</cDXPresent>
+		<cRefreshFrame>%Uint64;</cRefreshFrame>
+		<cFrameSubmitted>%Uint64;</cFrameSubmitted>
+		<cDXPresentSubmitted>%Uint32;</cDXPresentSubmitted>
+		<cFrameConfirmed>%Uint64;</cFrameConfirmed>
+		<cDXPresentConfirmed>%Uint32;</cDXPresentConfirmed>
+		<cRefreshConfirmed>%Uint64;</cRefreshConfirmed>
+		<cDXRefreshConfirmed>%Uint32;</cDXRefreshConfirmed>
+		<cFramesLate>%Uint64;</cFramesLate>
+		<cFramesOutstanding>%Uint32;</cFramesOutstanding>
+
+		<cFrameDisplayed>%Uint64;</cFrameDisplayed>
+		<qpcFrameDisplayed>%Uint64;</qpcFrameDisplayed> 
+		<cRefreshFrameDisplayed>%Uint64;</cRefreshFrameDisplayed>
+		<cFrameComplete>%Uint64;</cFrameComplete>
+		<qpcFrameComplete>%Uint64;</qpcFrameComplete>
+		<cFramePending>%Uint64;</cFramePending>
+		<qpcFramePending>%Uint64;</qpcFramePending>
+		<cFramesDisplayed>%Uint64;</cFramesDisplayed>
+		<cFramesComplete>%Uint64;</cFramesComplete>
+		<cFramesPending>%Uint64;</cFramesPending>
+		<cFramesAvailable>%Uint64;</cFramesAvailable>
+		<cFramesDropped>%Uint64;</cFramesDropped>
+		<cFramesMissed>%Uint64;</cFramesMissed>
+		<cRefreshNextDisplayed>%Uint64;</cRefreshNextDisplayed>
+		<cRefreshNextPresented>%Uint64;</cRefreshNextPresented>
+		<cRefreshesDisplayed>%Uint64;</cRefreshesDisplayed>
+		<cRefreshesPresented>%Uint64;</cRefreshesPresented>
+		<cRefreshStarted>%Uint64;</cRefreshStarted>
+
+		<cPixelsReceived>%Uint64;</cPixelsReceived>
+		<cPixelsDrawn>%Uint64;</cPixelsDrawn>
+		<cBuffersEmpty>%Uint64;</cBuffersEmpty>
+
+            </Redir_GetCompositionTimingInfo_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{6f61c05d-c9e1-40cc-bc38-69a60397f8c7}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info" />
+          <template>
+            <Redir_ModifyFrameDuration_>
+            <ulFlipChain>%Uint32;</ulFlipChain>
+	    <Space>%Uint32;</Space>
+            <ulUpdateId>%Uint32;</ulUpdateId>
+	    <fRelative>%Uint32;</fRelative>
+	    <cRefreshesChange>%Uint32;</cRefreshesChange>
+	    <cRefreshes>%Uint32;</cRefreshes>
+            </Redir_ModifyFrameDuration_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+ </events>
+
+</instrumentation>
+
+</assembly>

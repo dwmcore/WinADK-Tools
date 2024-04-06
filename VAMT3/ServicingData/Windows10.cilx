@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="35880303-5A2E-450E-BAC2-45EF6C6DE2AA">
+  <VamtSystemData>
+    <SupportedGVLKs>
+
+
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM Core Volume:GVLK</KeyDescription>
+        <KeyId>12345-03263-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>TX9XD-98N7V-6WMQ6-BX7FG-H8Q99</KeyValue>
+        <SupportedEditions>Core</SupportedEditions>
+        <SupportedSku>58e97c99-f377-4ef1-81d5-4ad5522b5fd8</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM CoreCountrySpecific Volume:GVLK</KeyDescription>
+        <KeyId>12345-03267-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>PVMJN-6DFY6-9CCP6-7BKTT-D3WVR</KeyValue>
+        <SupportedEditions>CoreCountrySpecific</SupportedEditions>
+        <SupportedSku>a9107544-f4a0-4053-a96a-1479abdef912</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM CoreN Volume:GVLK</KeyDescription>
+        <KeyId>12345-03272-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>3KHY7-WNT83-DGQKR-F7HPR-844BM</KeyValue>
+        <SupportedEditions>CoreN</SupportedEditions>
+        <SupportedSku>7b9e1751-a8da-4f75-9560-5fadfe3d8e38</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM CoreSingleLanguage Volume:GVLK</KeyDescription>
+        <KeyId>12345-03277-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH</KeyValue>
+        <SupportedEditions>CoreSingleLanguage</SupportedEditions>
+        <SupportedSku>cd918a57-a41b-4c82-8dce-1a538e221a83</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM Education Volume:GVLK</KeyDescription>
+        <KeyId>12345-03281-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>NW6C2-QMPVW-D7KKK-3GKT6-VCFB2</KeyValue>
+        <SupportedEditions>Education</SupportedEditions>
+        <SupportedSku>e0c42288-980c-4788-a014-c080d2e1926e</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM EducationN Volume:GVLK</KeyDescription>
+        <KeyId>12345-03286-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>2WH4N-8QGBV-H22JP-CT43Q-MDWWJ</KeyValue>
+        <SupportedEditions>EducationN</SupportedEditions>
+        <SupportedSku>3c102355-d027-42c6-ad23-2e7ef8a02585</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM Enterprise Volume:GVLK</KeyDescription>
+        <KeyId>12345-03290-000-000003-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>NPPR9-FWDCX-D2C8J-H872K-2YT43</KeyValue>
+        <SupportedEditions>Enterprise</SupportedEditions>
+        <SupportedSku>73111121-5638-40f6-bc11-f1d7b0d64300</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM EnterpriseS Volume:GVLK</KeyDescription>
+        <KeyId>12345-03782-000-000003-03-1033-14366.0000-1662016</KeyId>
+        <KeyValue>DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ</KeyValue>
+        <SupportedEditions>EnterpriseS</SupportedEditions>
+        <SupportedSku>2d5a5a60-3040-48bf-beb0-fcd770c20ce0</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM EnterpriseS Volume:GVLK</KeyDescription>
+        <KeyId>12345-03295-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>WNMTR-4C88C-JK8YV-HQ7T2-76DF9</KeyValue>
+        <SupportedEditions>EnterpriseS</SupportedEditions>
+        <SupportedSku>7b51a46c-0c04-4e8f-9af4-8496cca90d5e</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM EnterpriseN Volume:GVLK</KeyDescription>
+        <KeyId>12345-03299-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4</KeyValue>
+        <SupportedEditions>EnterpriseN</SupportedEditions>
+        <SupportedSku>e272e3e2-732f-4c65-a8f0-484747d0d947</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM EnterpriseSN Volume:GVLK</KeyDescription>
+        <KeyId>12345-03783-000-000003-03-1033-14366.0000-1662016</KeyId>
+        <KeyValue>QFFDN-GRT3P-VKWWX-X7T3R-8B639</KeyValue>
+        <SupportedEditions>EnterpriseSN</SupportedEditions>
+        <SupportedSku>9f776d83-7156-45b2-8a5c-359b9c9f22a3</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM EnterpriseSN Volume:GVLK</KeyDescription>
+        <KeyId>12345-03302-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>2F77B-TNFGY-69QQF-B8YKP-D69TJ</KeyValue>
+        <SupportedEditions>EnterpriseSN</SupportedEditions>
+        <SupportedSku>87b838b7-41b6-4590-8318-5797951d8529</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM Professional Volume:GVLK</KeyDescription>
+        <KeyId>12345-03311-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>W269N-WFGWX-YVC9B-4J6C9-T83GX</KeyValue>
+        <SupportedEditions>Professional</SupportedEditions>
+        <SupportedSku>2de67392-b7a7-462a-b1ca-108dd189f588</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM ProfessionalN Volume:GVLK</KeyDescription>
+        <KeyId>12345-03319-000-000001-03-1033-10155.0000-1772015</KeyId>
+        <KeyValue>MH37W-N47XK-V7XM9-C7227-GCQG9</KeyValue>
+        <SupportedEditions>ProfessionalN</SupportedEditions>
+        <SupportedSku>a80b5abf-76ad-428b-b05d-a47d2dffeebf</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM ProfessionalEducation Volume:GVLK</KeyDescription>
+        <KeyId>12345-03784-000-000001-03-1033-14366.0000-1662016</KeyId>
+        <KeyValue>6TP4R-GNPTD-KYYHQ-7B7DP-J447Y</KeyValue>
+        <SupportedEditions>ProfessionalEducation</SupportedEditions>
+        <SupportedSku>3f1afc82-f8ac-4f6c-8005-1d233e606eee</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM ProfessionalEducationN Volume:GVLK</KeyDescription>
+        <KeyId>12345-03785-000-000001-03-1033-14366.0000-1662016</KeyId>
+        <KeyValue>YVWGF-BXNMC-HTQYQ-CPQ99-66QFC</KeyValue>
+        <SupportedEditions>ProfessionalEducationN</SupportedEditions>
+        <SupportedSku>5300b18c-2e33-4dc2-8291-47ffcec746dd</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2016 RTM ServerDatacenter Volume:GVLK</KeyDescription>
+        <KeyId>12345-03764-000-000000-03-1033-14342.0000-1342016</KeyId>
+        <KeyValue>CB7KF-BWN84-R7R2Y-793K2-8XDDG</KeyValue>
+        <SupportedEditions>ServerDatacenter</SupportedEditions>
+        <SupportedSku>21c56779-b449-4d20-adfc-eece0e1ad74b</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2016 RTM ServerStandard Volume:GVLK</KeyDescription>
+        <KeyId>12345-03776-000-000000-03-1033-14342.0000-1342016</KeyId>
+        <KeyValue>WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY</KeyValue>
+        <SupportedEditions>ServerStandard</SupportedEditions>
+        <SupportedSku>8c1c5410-9f39-4805-8c9d-63a07706358f</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server Essentials 2016 RTM ServerSolution Volume:GVLK</KeyDescription>
+        <KeyId>12345-03760-000-000000-03-1033-14342.0000-1342016</KeyId>
+        <KeyValue>JCKRF-N37P4-C2D82-9YXRT-4M63B</KeyValue>
+        <SupportedEditions>ServerSolution</SupportedEditions>
+        <SupportedSku>2b5a1b0f-a5ab-4c54-ac2f-a6d94824a283</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>ServerCloudStorage 2016 RTM ServerCloudStorage Volume:GVLK</KeyDescription>
+        <KeyId>12345-03747-000-000000-03-1033-14366.0000-1662016</KeyId>
+        <KeyValue>QN4C6-GBJD2-FB422-GHWJK-GJG2R</KeyValue>
+        <SupportedEditions>ServerCloudStorage</SupportedEditions>
+        <SupportedSku>3dbf341b-5f6c-4fa7-b936-699dce9e263f</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2016 RTM ServerAzureCor Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-1662016</KeyId>
+        <KeyValue>VP34G-4NPPG-79JTQ-864T4-R3MQX</KeyValue>
+        <SupportedEditions>ServerAzureCor</SupportedEditions>
+        <SupportedSku>7b4433f4-b1e7-4788-895a-c45378d38253</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM EnterpriseG Volume:GVLK</KeyDescription>
+        <KeyId>12345-00385-600-000000-00-1033-14366.0000-1662016</KeyId>
+        <KeyValue>YYVX9-NTFWV-6MDM3-9PT4T-4M68B</KeyValue>
+        <SupportedEditions>EnterpriseG</SupportedEditions>
+        <SupportedSku>e0b2d383-d112-413f-8a80-97f373a5820c</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Win 10 RTM EnterpriseGN Volume:GVLK</KeyDescription>
+        <KeyId>12345-00386-100-000000-00-1033-14366.0000-1662016</KeyId>
+        <KeyValue>44RPN-FTY23-9VTTB-MP9BX-T84FV</KeyValue>
+        <SupportedEditions>EnterpriseGN</SupportedEditions>
+        <SupportedSku>e38454fb-41a4-4f59-a5dc-25080e354730</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+    </SupportedGVLKs>
+  </VamtSystemData>
+</VolumeActivationManagementToolData>
+

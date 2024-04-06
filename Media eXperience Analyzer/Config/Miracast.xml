@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MAIN xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<PARSERS ConfigFolder="\config\">
+        <PARSER ParserDll="XA_Hypervisor.dll" ParserName="HVEventsParser">
+          <PROPERTY Name="DataSetName" ParentName="HVEvents">hypervisor</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_Playto.dll" ParserName="CNetCaptureParser"  >
+          <PROPERTY Name="DataSetName" ParentName="Network Capture DataSet">Network Capture Sample</PROPERTY>
+          <PARAMETER Name="EnableNetMon" Value="false"></PARAMETER>
+        </PARSER>
+        <!--PARSER parserDll="WPRXRay.dll" ParserName="WPRParser"  >
+          <PROPERTY Name="DataSetName" ParentName="WEX Perf DataSet">WEX Perf Spans</PROPERTY>
+          <PATH  Name="http://wexperfresults/tools.asmx"></PATH>
+        </PARSER-->
+        <!--PARSER parserDll="XA_InfoSource.dll" ParserName="KernelCSwitchParser"  >
+          <PROPERTY Name="DataSetName" ParentName="Processes and Threads DataSet">CPU: Processes and Threads</PROPERTY>
+        </PARSER-->
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelDpcIsrParser"  >
+          <PROPERTY Name="DataSetName" ParentName="ISR/DPC DataSet" GroupName="CPU" >ISRs and DPCs</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelDpcIsrStormParser"  >
+          <PROPERTY Name="DataSetName" ParentName="ISR/DPC Storm DataSet" GroupName="CPU" >ISRs and DPCs Storm</PROPERTY>
+          <PARAMETER Name="StormInterval" Value="10000000"></PARAMETER>
+          <PARAMETER Name="StormThreshold" Value="4000000"></PARAMETER>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelISRUtilizationParser"  >
+          <PROPERTY Name="DataSetName" ParentName="ISR Utilization DataSet" GroupName="Utilization" >ISR</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelDPCUtilizationParser"  >
+          <PROPERTY Name="DataSetName" ParentName="DPC Utilization DataSet" GroupName="Utilization">DPC</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelCPUUtilizationParser"  >
+          <PROPERTY Name="DataSetName" ParentName="CPU Utilization DataSet"  GroupName="Utilization">CPU</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelGPUUtilizationParser"  >
+          <PROPERTY Name="DataSetName" ParentName="GPU Utilization DataSet"  GroupName="Utilization">GPU</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelPerProcessCPUUtilizationParser"  >
+          <PROPERTY Name="DataSetName" ParentName="CPUP Utilization DataSet"  GroupName="Utilization">CPU Per Process</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelPerThreadCPUUtilizationParser"  >
+          <PROPERTY Name="DataSetName" ParentName="CPUT Utilization DataSet"  GroupName="Utilization">CPU Per Thread</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelDiskIOUtilizationParser"  >
+          <PROPERTY Name="DataSetName" ParentName="Disk Utilization DataSet" GroupName="Utilization">Disk I/O</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelDiskIOParser"  >
+          <PROPERTY Name="DataSetName" ParentName="Disk IO DataSet" GroupName="Disk">Disk IO</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelFileIOParser"  >
+          <PROPERTY Name="DataSetName" ParentName="File IO DataSet" GroupName="Disk">File System</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelSampledProfilerParser"  >
+          <PROPERTY Name="DataSetName" ParentName="SampledProfiles DataSet" GroupName="CPU">Sampled Profiles</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelRegistryParser"  >
+          <PROPERTY Name="DataSetName" ParentName="Registry Dataset" GroupName="Disk">Registry - Process/Thread/Operation</PROPERTY>
+        </PARSER>
+        <!--PARSER parserDll="XA_InfoSource.dll" ParserName="KernelRegistryParserEx"  >
+          <PROPERTY Name="DataSetName" ParentName="Registry Dataset">IO: Registry - Process/Thread/Key/Operation</PROPERTY>
+        </PARSER-->
+        <PARSER parserDll="XA_InfoSource.dll" ParserName="KernelRegistryParserEx2">
+          <PROPERTY Name="DataSetName" ParentName="Registry Dataset" GroupName="Utilization">Registry - Process/Key/Operation</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">Audio Engine</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="AE Events" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="false"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">Media Foundation</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="MF Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">Media Foundation Property Handler</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="MF PropertyHandler" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">DRM</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="DRM Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">DX and DWM</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="DWM Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="DWMAPI Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="REDIR Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="Schedule Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="UCE Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="DXGKRNL Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">Multimedia Class Scheduler</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="MMCSS Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Power">Serial Sync</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="Serial Sync Events" ></FILE>
+        </PARSER>
+        <!--PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset">Capture: Render</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="Render Events" ></FILE>
+        </PARSER-->
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParserEx"  UnhandledEvents="true">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset">Unhandled Events</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="Ignore Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDLL="XA_PageFault.dll" ParserName="PageFaultsParser" >
+          <PROPERTY Name="DataSetName" ParentName="Page Faults DataSet" GroupName="Disk">Hard PageFaults</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="TCPParser" >
+          <PROPERTY Name="DataSetName"  ParentName="TCP Dataset"  GroupName="Network">TCPIP</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="PepParser" >
+          <PROPERTY Name="DataSetName"  ParentName="PEP Dataset" GroupName="Power">PEP Frequency Change</PROPERTY>
+          <PROPERTY Name="DataSetName"  ParentName="PEP Dataset" GroupName="Power">PEP Voltage Change</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="HWPowerParser" >
+          <PROPERTY Name="DataSetName"  ParentName="PEP Dataset" GroupName="Power">Hardware Power</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="WPPParser" >
+          <PROPERTY Name="DataSetName" ParentName="WPP Dataset" GroupName="WPP">WPP Events</PROPERTY>
+          <PARAMETER Name="TraceFormatPath" >c:\windowsxray64\tmf</PARAMETER>
+          <PARAMETER Name="EnableWPP" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_InfoSource.dll" ParserName="StackwalkParser">
+          <PROPERTY Name="DataSetName" ParentName="Stackwalk Dataset" GroupName="CPU">Call Stacks</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Stackwalk Dataset Map" GroupName="CPU">Call Stacks Map</PROPERTY>
+          <PARAMETER Name="EnableStackMap" Value="false"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="BatteryParser" >
+          <PROPERTY Name="DataSetName" ParentName="Power Ticks DataSet" GroupName="Power">State Transitions</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Power Intervals DataSet" GroupName="Power">CPU Idle States</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Power States DataSet" GroupName="Power">(P) States</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll"  DisableIdle="true"  ParserName="SchedulerParser" >
+          <PROPERTY Name="DataSetName" ParentName="Processes and Threads DataSet" GroupName="CPU" >Scheduler</PROPERTY>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="audiodg.exe" Description="Audio Playback process"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="svchost.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="System"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="conhost.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="csrss.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="dwm.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="lsass.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="wininit.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="winlogon.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="dllhost.exe"></PARAMETER>  
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="WmiPrvSE.exe"></PARAMETER>  
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="WUDFHost.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="spoolsv.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="services.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="xperf.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="wpr.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="tracelog.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="SystemUI.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="TabTip.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="xam.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="nuiservice.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="eracontrol.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="eraproxyapp.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="XboxNetApiSvc.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="Home.exe"></PARAMETER>   
+          <PARAMETER Name="ProcessGroup" GroupName="Phone System Processes" Value="MobileUI.exe"></PARAMETER> 
+          <PARAMETER Name="OtherProcessGroup" Value="User Processes"></PARAMETER> 
+        </PARSER>
+        <PARSER ParserDll="XA_InfoSource.dll" ParserName="VideoCoreParser" >
+          <PROPERTY Name="DataSetName" ParentName="GPU run-time DataSet" GroupName="GPU">DMA Operations</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU Allocations Placement DataSet" GroupName="GPU">Used Allocations</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU Flip DataSet" GroupName="GPU">Flip Queue</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU Allocations Placement DataSet" GroupName="GPU">Allocations</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU DDI DataSet" GroupName="GPU">GPU: DDI Operations</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Memory Segment Utilization DataSet" GroupName="GPU">Segment Memory Utilization</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU Queue DataSet" GroupName="GPU">Hardware Queues</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="MMCSSParser" >
+          <PROPERTY Name="DataSetName" ParentName="MMCSS Scheduler Dataset" GroupName="CPU">Multimedia Class Scheduler</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="ProcessLoadParser" >
+          <PROPERTY Name="DataSetName" ParentName="Process Lifetime Dataset" GroupName="CPU">Process Load/Unload</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Process Lifetime Interval Dataset" GroupName="CPU">Process Lifetime</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="ThreadLoadParser" >
+          <PROPERTY Name="DataSetName" ParentName="Thread Lifetime Dataset" GroupName="CPU">Thread Create/Destroy</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Thread Lifetime Interval Dataset" GroupName="CPU">Thread Lifetime</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="ImageLoadParser">
+          <PROPERTY Name="DataSetName" ParentName="Image Lifetime Dataset" GroupName="CPU">Image Load/Unload</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Image Load Lifetime Interval Dataset" GroupName="CPU">Image Lifetime</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEx" >
+          <PROPERTY Name="DataSetName" ParentName="Crimson Events Dataset" GroupName="Crimson">CrimsonEx</PROPERTY>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+          <PARAMETER Name="ShowGUID" Value="FALSE"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="MiracastParser">
+          <PROPERTY Name="DataSetName" ParentName="Miracast Dataset" GroupName="Miracast">Frame Process</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Sequence Dataset" GroupName="Miracast">Sequence Frames</PROPERTY>
+        </PARSER>
+        <!--PARSER ParserDll="XA_MediaPlatform.dll" ParserName="DxKernelIntervalParser" >
+          <PROPERTY Name="DataSetName" ParentName="Media DataSet">CrimsonEx</PROPERTY>
+          <PARAMETER Name="ShowGUID" Value="TRUE"></PARAMETER>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER-->
+        <!--PARSER ParserDll="XA_Core.dll" ParserName="CrimsonIntervalParser">
+          <PROPERTY Name="DataSetName" ParentName="Crimson Intervals Events Dataset">Crimson: Auto Intervals</PROPERTY>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER-->
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonIntervalParserEx">
+          <PROPERTY Name="DataSetName" ParentName="Crimson Intervals Events Dataset" GroupName="Crimson Intervals" >Crimson: Auto Intervals Ex</PROPERTY>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <!--PARSER ParserDll="XA_DCPower.dll" ParserName="PowerParser" >
+          <PROPERTY Name="DataSetName" ParentName="Power Signals Dataset" >Power: Measurements</PROPERTY>
+          <PROPERTY Name="InputFileType">POWER</PROPERTY>
+        </PARSER-->
+        <PARSER ParserDll="XA_DCPower.dll" ParserName="PowerParser" >
+          <PROPERTY Name="DataSetName" ParentName="Power Signals Dataset"  GroupName="Power">Sync Signal</PROPERTY>
+          <!--PROPERTY Name="InputFileType">0</PROPERTY-->
+        </PARSER>
+        <PARSER ParserDll="XA_DCPower.dll" ParserName="SocPowerParser" >
+          <PROPERTY Name="DataSetName" ParentName="Power Signals Dataset"  GroupName="Power">SoC power</PROPERTY>
+          <!--PROPERTY Name="InputFileType">0</PROPERTY-->
+        </PARSER>
+        <PARSER ParserDll="XA_ACPower.dll" ParserName="ACPowerParser" >
+          <PROPERTY Name="DataSetName" ParentName="AC Power Signals Dataset"  GroupName="Power">AC Power Signals</PROPERTY>
+          <PARAMETER Name="CustomAlignmentMicroSec" Value="500000000"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXML2DParser"   >
+          <PROPERTY Name="DataSetName" ParentName="Dataflow Difference DataSet" GroupName="Media">Pipeline Dataflow</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="MFPARSER" ></FILE>
+        </PARSER>
+        <!--PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset">CPU: Clock Timer</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="CLOCKINT" ></FILE>
+        </PARSER-->
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXML2DParser">
+          <PROPERTY Name="DataSetName" ParentName="AE Process Wake Pump DataSet" GroupName="Media">Audio Engine WakePump Process Time</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="AEPROCPASS" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvxCadence">
+          <PROPERTY Name="DataSetName" ParentName="DX Present DataSet" GroupName="GPU">DX Present Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="PRESENTCRIMSONCADENCE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLCadenceParser">
+          <PROPERTY Name="DataSetName" ParentName="DX VSync DataSet" GroupName="GPU">DX VSync ISR/DPC Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="CADENCE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvxCadence">
+          <PROPERTY Name="DataSetName" ParentName="DX VSync DataSet" GroupName="GPU">DX VSync ISR/DPC Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="CRIMSONCADENCE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLCadenceParser">
+          <PROPERTY Name="DataSetName" ParentName="AE Process Time DataSet" GroupName="Media">Audio Engine Process Wake Pump Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="AEPROCPASSCADENCE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLCadenceParser">
+          <PROPERTY Name="DataSetName" ParentName="EVR Render DataSet" GroupName="Media">Cadence: EVR Render End</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="CADENCE1" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLCadenceParser">
+          <PROPERTY Name="DataSetName" ParentName="DWM DataSet" GroupName="Media">Cadence: DWM Scheduler VBlank Present</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="CADENCE2" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLIntervalParser">
+          <PROPERTY Name="DataSetName" ParentName="MTP DataSet" GroupName="Sync">MTP Operations</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="MTPOPERATIONS" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="MTP DataSet" GroupName="Sync">MTP Sample Operations</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="MTPOPERATIONS" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLIntervalParser">
+          <PROPERTY Name="DataSetName" ParentName="WMC DataSet" GroupName="Media">WMC Intervals</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="WMCINTERVAL"></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="WMC Dataset" GroupName="Media">WMC Ticks</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="WMC Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXML2DParser">
+          <PROPERTY Name="DataSetName" ParentName="Render Difference DataSet" GroupName="Media">Render Delay Difference</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="Render Actual End Delay" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLIntervalParser">
+          <PROPERTY Name="DataSetName" ParentName="Crimson Intervals Events Dataset" GroupName="Media">Zune DB Mutex</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="Zune DBMUTEX Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">Zune Events</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="Zune DBMUTEX Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">ESE Events defined (eVxml)</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="ESE" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXML2DParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined XY Dataset" GroupName="Media">ESE XY Events defined (eVxml)</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="ESE" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">DVD Navigator</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="DVDNAV" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx" >
+          <PROPERTY Name="DataSetName" ParentName="Video Glitches Events Dataset" GroupName="Media">Video Glitches</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="VIDEOGLITCHES" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx" >
+          <PROPERTY Name="DataSetName" ParentName="Data Drops Events Dataset" GroupName="Media">Data Drops</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="MEDIADATADROPS" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx" >
+          <PROPERTY Name="DataSetName" ParentName="Audio Glitches Events Dataset" GroupName="Media">Audio Glitches</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="AUDIOGLITCHCRIMSON" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx" >
+          <PROPERTY Name="DataSetName" ParentName="DWM Glitches Events Dataset" GroupName="Media">DWM Schedule Glitches</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="DWMGLITCHES" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx2D" >
+          <PROPERTY Name="DataSetName" ParentName="Power State Change Events Dataset" GroupName="Power">Processor Frequency</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="POWERSTATECHANGE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx2D" >
+          <PROPERTY Name="DataSetName" ParentName="Timer Resolution Events Dataset" GroupName="Power">System Timer Resolution</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="SYSTEMTIMERCHANGE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvxCadence" >
+          <PROPERTY Name="DataSetName" ParentName="EVR Render DataSet" GroupName="Media">Video Render Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="RENDER_CADENCE" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="Audio Glitches Events Dataset" GroupName="Media">Audio Glitches Classic</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="AE Glitches" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">PortCls</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="PortCls Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">HDAudio Bus</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="HDAudio Bus Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">HDAudio</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="HDAudio Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_VGPU.dll" ParserName="XA_VGPUParser2" >
+          <PROPERTY Name="DataSetName" ParentName="VGPU DataSet 2"  GroupName="VGPU">Counters 2</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_NDISRST.dll" ParserName="NDISRSTParser">
+          <PROPERTY Name="DataSetName" ParentName="NDISRST DataSet">NDIS RST</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_msmpeg2vdec.dll" ParserName="XA_msmpeg2vdecParser">
+          <PROPERTY Name="DataSetName" ParentName="MSMPEG2VDEC Dataset" GroupName="Media">MSMPEG2VDEC</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_RtMedia.dll" ParserName="XA_RtMediaParser">
+          <PROPERTY Name="DataSetName" ParentName="XA_RtMedia" GroupName="Media">real time media platform</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_InfoSource.dll" ParserName="PerfTrackParser">
+          <PROPERTY Name="DataSetName" ParentName="PerfTrack Dataset" GroupName="PerfTrack">PerfTrack</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_NetMon.dll" ParserName="CNetCaptureParser" >
+          <PROPERTY Name="DataSetName" ParentName="Network Capture DataSet" GroupName="Network">NETMON</PROPERTY>
+          <PARAMETER Name="EnableNetMon" Value="false"></PARAMETER>
+        </PARSER>
+        <PARSER parserDll="XA_Video.dll" ParserName="PatternParser"  >
+          <PROPERTY Name="DataSetName" ParentName="FrameParser DataSet" GroupName="Media">Video Frames</PROPERTY>
+          <!--Value="0" means ignore-->
+          <PARAMETER Name="FrameWidth" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameHeight" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameStartTimeInMS" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameEndTimeInMS" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameStartIndex" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameEndIndex" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameTimeCompressionFactor" Value="1.0"></PARAMETER>
+          <PARAMETER Name="FrameFormat" Value="jpeg"></PARAMETER>
+          <PARAMETER Name="PSNRThreshold" Value="40.0"></PARAMETER>
+          <PARAMETER Name="AudioDetectionThreshold" Value="400000000"></PARAMETER>
+          <PARAMETER Name="CameraType" Value="REFERENCE"></PARAMETER>
+          <!--PARAMETER Name="CameraType" Value="UNDERTEST"></PARAMETER-->
+          <PARAMETER Name="PatternVersion" Value="V3"></PARAMETER>
+          <PARAMETER Name="CalibrationFrameRetries" Value="1"></PARAMETER>
+          <PARAMETER Name="PSNREnabled" Value="FALSE" />
+        </PARSER>
+        <PARSER ParserDll="XA_CSV.DLL" ParserName="CSVParser" >
+          <PROPERTY Name="DataSetName" ParentName="CSV DataSet" GroupName="CSV">CSV Data</PROPERTY>
+          <PARAMETER Name="CSVFormat" Value="CSVPerfmon"></PARAMETER>
+          <!--PARAMETER Name="IgnoreInstance" Value="_Total"></PARAMETER-->
+          <!--PARAMETER Name="IgnoreObject" Value="_Total"></PARAMETER-->
+          <!--PARAMETER Name="IgnoreCounter" Value="_Total"></PARAMETER-->
+          <!--PARAMETER Name="MaxRecords" Value="_Total"></PARAMETER-->
+          <!--PARAMETER Name="CSVFormat" Value="CSVNoHeader"></PARAMETER-->
+        </PARSER>
+        <PARSER ParserDll="XA_Media.dll" ParserName="WorkQueueParser" >
+          <PROPERTY Name="DataSetName" ParentName="Async Dataset" GroupName="Media">WorkQueues</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Media.dll" ParserName="CaptureParser" >
+          <PROPERTY Name="DataSetName" ParentName="CapEng Dataset" GroupName="Media">Capture Data</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Media.dll" ParserName="CommunicationParser" >
+          <PROPERTY Name="DataSetName" ParentName="CapEng Dataset" GroupName="Media">Transform Data</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Media.dll" ParserName="OverlayParser" >
+          <PROPERTY Name="DataSetName" ParentName="Overlay Dataset" GroupName="Media">Multimedia Power Data</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_EncoderFrame.dll" ParserName="EncoderParser"  >
+          <PROPERTY Name="DataSetName" ParentName="Encoder DataSet">Encoder Analysis</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_WLAN.dll" ParserName="CWlanDriverEventsParser">
+          <PROPERTY Name="DataSetName" ParentName="WLAN Frame Summary Dataset" GroupName="Miracast">WLAN Frame Summary</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_WLAN.dll" ParserName="WlanFrameDensityParser">
+          <PROPERTY Name="DataSetName" ParentName="WLAN Frame Density Dataset" GroupName="Miracast">WLAN Frame Density</PROPERTY>
+          <PARAMETER Name="WindowInterval" Value="20000000"></PARAMETER>
+        </PARSER>
+ </PARSERS>
+<XDMS>
+        <XDM Dll="XA_AudioDM.dll" Name="AudioGlitchDM" FriendlyName="AudioGlitch Diagnostic Module" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="ISRDPCDataSetName" Value="ISRs and DPCs"></PARAMETER>
+          <PARAMETER Name="ProcessAndThreadsDataSetName" Value="Scheduler"></PARAMETER>
+          <PARAMETER Name="AudioGlitchDataSetName" Value="Audio Glitches"></PARAMETER>
+          <PARAMETER Name="SampleProfileDataSetName" Value="Sampled Profiles"></PARAMETER>
+          <PARAMETER Name="PageFaultsDataSetName" Value="Hard PageFaults"></PARAMETER>
+          <PARAMETER Name="AEPumpCadenceDataSetName" Value="Audio Engine Process Wake Pump Cadence"></PARAMETER>
+          <PARAMETER Name="LayoutName" Value="Audio Layout"></PARAMETER>
+          <PARAMETER Name="MaxISRDPCDuration" Value="1000000"></PARAMETER>
+          <PARAMETER Name="MaxAudioGlitchesToProcess" Value="300"></PARAMETER>
+          <PARAMETER Name="Threshold" Value="1500000000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_CoreDM.dll" Name="XDMLongISRDPC" FriendlyName="Long ISR DPC" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="ISRDPCDataSetName" Value="ISRs and DPCs"></PARAMETER>
+          <PARAMETER Name="ProcessAndThreadsDataSetName" Value="Processes and Threads"></PARAMETER>
+          <PARAMETER Name="SampleProfileDataSetName" Value="Sampled Profiles"></PARAMETER>
+          <PARAMETER Name="LayoutName" Value="Layout 1"></PARAMETER>
+          <PARAMETER Name="MaxISRDPCDuration" Value="1000000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_CoreDM.dll" Name="XDMDiskIODelays" FriendlyName="Disk IO Delays" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="DiskIODataSetName" Value="Disk IO"></PARAMETER>
+          <PARAMETER Name="MaxDiskIODuration" Value="20000000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_TouchDM.dll" Name="XDMTouchLatency" FriendlyName="XDM Touch Latency" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="InputDataSetName" Value="Microsoft-Windows-TabletPC-Platform-Input-Ninput"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_MediaDM.dll" Name="XDMAllMedia" FriendlyName="XDM Playback Metrics" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="ProcessLoadDataSetName" Value="Process Load/Unload"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-Performance"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_MediaDM.dll" Name="XDMAudioPlaybackLatency" FriendlyName="XDM Audio Playback Startup Latency" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="ProcessLoadDataSetName" Value="Process Load/Unload"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-Performance"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_MediaDM.dll" Name="XDMVideoPlaybackLatency" FriendlyName="XDM Video Playback Startup Latency" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="ProcessLoadDataSetName" Value="Process Load/Unload"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-Performance"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_MediaDM.dll" Name="XDMSeekPlaybackLatency" FriendlyName="XDM Playback Seek Latency" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="ProcessLoadDataSetName" Value="Process Load/Unload"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-Performance"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_LyncDM.dll" Name="XDMLync" FriendlyName="XDM Lync Latency" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_LowLatencyDM.dll" Name="XDMLowLatency" FriendlyName="XDM Low Latency" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="ProcessLoadDataSetName" Value="Process Load/Unload"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-Performance"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_VideoBasicDM.dll" Name="XDMAudioBasic" FriendlyName="XDM Audio Basics" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="AudioFramesNodeName" Value="Audio Frames"></PARAMETER>
+          <PARAMETER Name="NumberOfChammels" Value="1"></PARAMETER>
+          <PARAMETER Name="MaxDropSize" Value="220000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_VideoBasicDM.dll" Name="XDMVideoBasic" FriendlyName="XDM Video Basics" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="VideoFramesNodeName" Value="Video Frames"></PARAMETER>
+          <PARAMETER Name="VideoFrameRate" Value="30"></PARAMETER>
+          <PARAMETER Name="VideoFrameRateError" Value="10"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_CoreDM.dll" Name="XDMStackStringLookup" FriendlyName="Sleep Delays" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="XDMStackStringLookupName" Value="Sleep Delays"></PARAMETER>
+          <PARAMETER Name="CallStackDataSetName" Value="Call Stacks"></PARAMETER>
+          <PARAMETER Name="CallStackType" Value="Scheduler"></PARAMETER>
+          <PARAMETER Name="LookupString" Value="Sleep"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_CoreDM.dll" Name="XDMStackStringLookup" FriendlyName="TimerExpiration Delays" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="XDMStackStringLookupName" Value="TimerExpiration Delays"></PARAMETER>
+          <PARAMETER Name="CallStackDataSetName" Value="Call Stacks"></PARAMETER>
+          <PARAMETER Name="CallStackType" Value="ReadyThreads"></PARAMETER>
+          <PARAMETER Name="LookupString" Value="KiTimerExpiration"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_ThresholdDM.dll" Name="XDMThreshold" FriendlyName="Narrator Threshold" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="ProviderName" Value="Microsoft-Windows-Narrator"></PARAMETER>
+          <PARAMETER Name="Event ID" Value="400"></PARAMETER>
+          <PARAMETER Name="FieldName" Value="SpokenText"></PARAMETER>
+          <PARAMETER Name="Threshold" Value="10"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_CaptureDM.dll" Name="XDMAllCapture" FriendlyName="XDM Capture Metrics" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Source Start Cadence Threshold (ns)" Value="100000000"></PARAMETER>
+          <PARAMETER Name="Remove Source Events From Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Remove Source Events From Ending" Value="0"></PARAMETER>
+          <PARAMETER Name="Source Duration Threshold (ns)" Value="100000000"></PARAMETER>
+          <PARAMETER Name="Sink Duration Threshold (ns)" Value="100000000"></PARAMETER>
+          <PARAMETER Name="Media Type Switch Duration Threshold (ns)" Value="100000000"></PARAMETER>
+          <PARAMETER Name="Camera Switch Duration Threshold (ns)" Value="100000000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_CaptureDM.dll" Name="XDMCaptureInitializeAndTakePhotoLatency" FriendlyName="XDM Capture Initialize and Take Photo Latency" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_CaptureDM.dll" Name="XDMCaptureBasicStatistics" FriendlyName="XDM Capture Basics" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Source Start Cadence Threshold (ns)" Value="100000000"></PARAMETER>
+          <PARAMETER Name="Remove Source Events From Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Remove Source Events From Ending" Value="0"></PARAMETER>
+          <PARAMETER Name="Source Duration Threshold (ns)" Value="100000000"></PARAMETER>
+          <PARAMETER Name="Sink Duration Threshold (ns)" Value="100000000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_CaptureDM.dll" Name="XDMCaptureSwitchScenarios" FriendlyName="XDM Capture Switch Metrics" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Media Type Switch Duration Threshold (ns)" Value="100000000"></PARAMETER>
+          <PARAMETER Name="Camera Switch Duration Threshold (ns)" Value="100000000"></PARAMETER>
+        </XDM>
+        <!--XDM Dll="XraySampleDM.dll" Name="XDMSample" FriendlyName="Sample XDM" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="Sample Property 1" Value="XML overload 1"></PARAMETER>
+        </XDM-->
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCaptureAnalysis" FriendlyName="XDM HCK Capture Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Media Type Switch Duration Threshold (ns)" Value="100000000"></PARAMETER>
+          <PARAMETER Name="Camera Switch Duration Threshold (ns)" Value="100000000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCaptureTimeToTakePhoto" FriendlyName="HCK Capture Time To Take Photo" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Event Duration Threshold (ns)" Value="500000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCaptureTimetoStartRecordOrPreview" FriendlyName="HCK Capture Time to Start Record Or Preview" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Event Duration Threshold (ns)" Value="500000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCaptureCheckRecordOrPreviewTimestamps" FriendlyName="HCK Capture Check Record Or Preview Timestamps" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End" Value="0"></PARAMETER>
+          <PARAMETER Name="Expected Frame Rate" Value="30"></PARAMETER>
+          <PARAMETER Name="Frame Rate Percent Tolerance" Value="10"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCaptureTimeBetweenTakeMultiplePhotos" FriendlyName="HCK Capture Time Between Take Multiple Photos" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Event Duration Threshold (ns)" Value="500000000"></PARAMETER>
+          <PARAMETER Name="Cadence Threshold (ns)" Value="200000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCaptureTimeBetweenSwitchRecordOrPreviewMediaTypes" FriendlyName="HCK Capture Time Between Switch Record Or Preview Media Types" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Average Duration Threshold (ns)" Value="250000000"></PARAMETER>
+          <PARAMETER Name="Max Duration Threshold (ns)" Value="275000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCaptureTimeBetweenSwitchCamerasWhilePreview" FriendlyName="HCK Capture Time Between Switch Cameras While Preview" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Average Duration Threshold (ns)" Value="750000000"></PARAMETER>
+          <PARAMETER Name="Max Duration Threshold (ns)" Value="825000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCaptureTimeBetweenSwitchCamerasWhileRecord" FriendlyName="HCK Capture Time Between Switch Cameras While Record" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Average Duration Threshold (ns)" Value="750000000"></PARAMETER>
+          <PARAMETER Name="Max Duration Threshold (ns)" Value="825000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCapturePhoto" FriendlyName="HCK Capture Photo" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Time For Photo Threshold (ns)" Value="500000000"></PARAMETER>
+          <PARAMETER Name="Time Between Multiple Photos Threshold (ns)" Value="200000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCapturePreview" FriendlyName="HCK Capture Preview" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Time to Start Preview Threshold (ns)" Value="500000000"></PARAMETER>
+          <PARAMETER Name="Expected Frame Rate" Value="30"></PARAMETER>
+          <PARAMETER Name="Frame Rate Percent Tolerance" Value="10"></PARAMETER>
+          <PARAMETER Name="Number of Timestamps to Skip At Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Timestamps to Skip At End" Value="0"></PARAMETER>
+          <PARAMETER Name="Average Duration Threshold For Media Type Switch (ns)" Value="250000000"></PARAMETER>
+          <PARAMETER Name="Max Duration Threshold For Media Type Switch (ns)" Value="275000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning For Media Type Switch" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End For Media Type Switch" Value="0"></PARAMETER>
+          <PARAMETER Name="Average Duration Threshold For Camera Switch (ns)" Value="750000000"></PARAMETER>
+          <PARAMETER Name="Max Duration Threshold For Camera Switch (ns)" Value="825000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning For Camera Switch" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End For Camera Switch" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_HCKCaptureAnalysisDM.dll" Name="XDMHCKCaptureRecord" FriendlyName="HCK Capture Record" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="MFProviderName" Value="Microsoft-Windows-MediaFoundation-MFCaptureEngine - {B8197C10-845F-40CA-82AB-9341E98CFC2B}"></PARAMETER>
+          <PARAMETER Name="Time to Start Record Threshold (ns)" Value="500000000"></PARAMETER>
+          <PARAMETER Name="Expected Frame Rate" Value="30"></PARAMETER>
+          <PARAMETER Name="Frame Rate Percent Tolerance" Value="10"></PARAMETER>
+          <PARAMETER Name="Number of Timestamps to Skip At Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Timestamps to Skip At End" Value="0"></PARAMETER>
+          <PARAMETER Name="Average Duration Threshold For Media Type Switch (ns)" Value="250000000"></PARAMETER>
+          <PARAMETER Name="Max Duration Threshold For Media Type Switch (ns)" Value="275000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning For Media Type Switch" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End For Media Type Switch" Value="0"></PARAMETER>
+          <PARAMETER Name="Average Duration Threshold For Camera Switch (ns)" Value="750000000"></PARAMETER>
+          <PARAMETER Name="Max Duration Threshold For Camera Switch (ns)" Value="825000000"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At Beginning For Camera Switch" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Events to Skip At End For Camera Switch" Value="0"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMAVSync" FriendlyName="Visual Pattern AVSync Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+          <PARAMETER Name="AudioDataSet" Value="Audio Frames"></PARAMETER>          
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMAVSync" FriendlyName="Visual Pattern AVSync Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="1"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+          <PARAMETER Name="AudioDataSet" Value="Audio Frames"></PARAMETER>          
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMAVSync" FriendlyName="Visual Pattern AVSync Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="2"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+          <PARAMETER Name="AudioDataSet" Value="Audio Frames"></PARAMETER>          
+        </XDM>
+
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMPattern2Videos" FriendlyName="Visual Pattern Source Target Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="Video Input 1" Value="1"></PARAMETER>
+          <PARAMETER Name="Video Input 2" Value="2"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames  to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Pattern Version" Value="3"></PARAMETER>
+          <PARAMETER Name="VideoDataSet1" Value="Video Frames"></PARAMETER>
+          <PARAMETER Name="VideoDataSet2" Value="Video Frames"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMPatternVideo" FriendlyName="Visual Pattern Video Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames  to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Repeat Frame Min Threshold" Value="3"></PARAMETER>
+          <PARAMETER Name="Pattern Version" Value="3"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMPatternVideo" FriendlyName="Visual Pattern Video Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="1"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames  to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Repeat Frame Min Threshold" Value="3"></PARAMETER>
+          <PARAMETER Name="Pattern Version" Value="3"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMPatternVideo" FriendlyName="Visual Pattern Video Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="2"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames  to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Repeat Frame Min Threshold" Value="3"></PARAMETER>
+          <PARAMETER Name="Pattern Version" Value="3"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+        </XDM>
+        <XDM Dll="Xa_Networkdm.dll" Name="XDMNetwork" FriendlyName="XDM Network Miracast" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="Dataset" Value="Microsoft-Windows-WLAN-Driver - {DAA6A96B-F3E7-4D4D-A0D6-31A350E6A445}"></PARAMETER>
+          <PARAMETER Name="TxCompletedByNIC" Value="Event Id - 2"></PARAMETER>
+          <PARAMETER Name="TxSubmissionToNIC" Value="Event Id - 1"></PARAMETER>
+          <PARAMETER Name="TxFrameReceivedFromOS" Value="Event Id - 0"></PARAMETER>
+          <PARAMETER Name="MaxLatency" Value="10000000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_WirelessMonitorDM.dll" Name="XDMMiracast" FriendlyName="XDM Miracast" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="OutputCsvFile" Value="Issues.csv"></PARAMETER>
+          <PARAMETER Name="StatsCsvFile" Value="Stats.csv"></PARAMETER>
+          <PARAMETER Name="MiracastEtwSetName" Value="Frame Process"></PARAMETER>
+          <PARAMETER Name="WifiSetName" Value="WLAN Frame Summary"></PARAMETER>
+          <PARAMETER Name="SequenceSetName" Value="Sequence Frames"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_WlanUtilizationDM.dll" Name="XDMMiracastWlanUtilization" FriendlyName="Miracast WLAN Utilization" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameRate" Value="30"></PARAMETER>
+          <PARAMETER Name="MiracastFrameDataSet" Value="Frame Process"></PARAMETER>
+          <PARAMETER Name="WlanFrameDataSet" Value="WLAN Frame Summary"></PARAMETER>
+          <PARAMETER Name="WlanFrameDensityDataSet" Value="WLAN Frame Density"></PARAMETER>
+        </XDM>
+
+</XDMS>
+
+</MAIN>

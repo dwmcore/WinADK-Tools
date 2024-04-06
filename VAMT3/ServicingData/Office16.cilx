@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="0FF1CE15-6337-4442-B9F0-B0E1A41C182F">
+  <VamtSystemData>
+<SupportedGVLKs>
+
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 AccessVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>GNH9Y-D2J4T-FJHGG-QRVH7-QPFDW</KeyValue>
+        <SupportedEditions>AccessVL</SupportedEditions>
+        <SupportedSku>67C0FC0C-DEBA-401B-BF8B-9C8AD8395804</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 ExcelVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>9C2PK-NWTVB-JMPW8-BFT28-7FTBF</KeyValue>
+        <SupportedEditions>ExcelVL</SupportedEditions>
+        <SupportedSku>C3E65D36-141F-4D2F-A303-A842EE756A29</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 MondoVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>HFTND-W9MK4-8B7MJ-B6C4G-XQBR2</KeyValue>
+        <SupportedEditions>MondoVL</SupportedEditions>
+        <SupportedSku>9CAABCCB-61B1-4B4B-8BEC-D10A3C3AC2CE</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 OneNoteVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>DR92N-9HTF2-97XKM-XW2WJ-XW3J6</KeyValue>
+        <SupportedEditions>OneNoteVL</SupportedEditions>
+        <SupportedSku>D8CACE59-33D2-4AC7-9B1B-9B72339C51C8</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 OutlookVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>R69KK-NTPKF-7M3Q4-QYBHW-6MT9B</KeyValue>
+        <SupportedEditions>OutlookVL</SupportedEditions>
+        <SupportedSku>EC9D9265-9D1E-4ED0-838A-CDC20F2551A1</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 PowerPointVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6</KeyValue>
+        <SupportedEditions>PowerPointVL</SupportedEditions>
+        <SupportedSku>D70B1BBA-B893-4544-96E2-B7A318091C33</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 ProjectProVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>YG9NW-3K39V-2T3HJ-93F3Q-G83KT</KeyValue>
+        <SupportedEditions>ProjectProVL</SupportedEditions>
+        <SupportedSku>4F414197-0FC2-4C01-B68A-86CBB9AC254C</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 ProjectProXC2RVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>WGT24-HCNMF-FQ7XH-6M8K7-DRTW9</KeyValue>
+        <SupportedEditions>ProjectProXC2RVL</SupportedEditions>
+        <SupportedSku>829B8110-0E6F-4349-BCA4-42803577788D</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 ProjectStdVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>GNFHQ-F6YQM-KQDGJ-327XX-KQBVC</KeyValue>
+        <SupportedEditions>ProjectStdVL</SupportedEditions>
+        <SupportedSku>DA7DDABC-3FBE-4447-9E01-6AB7440B4CD4</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 ProjectStdXC2RVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>D8NRQ-JTYM3-7J2DX-646CT-6836M</KeyValue>
+        <SupportedEditions>ProjectStdXC2RVL</SupportedEditions>
+        <SupportedSku>CBBACA45-556A-4416-AD03-BDA598EAA7C8</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 ProPlusVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99</KeyValue>
+        <SupportedEditions>ProPlusVL</SupportedEditions>
+        <SupportedSku>D450596F-894D-49E0-966A-FD39ED4C4C64</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 PublisherVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>F47MM-N3XJP-TQXJ9-BP99D-8K837</KeyValue>
+        <SupportedEditions>PublisherVL</SupportedEditions>
+        <SupportedSku>041A06CB-C5B8-4772-809F-416D03D16654</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 SkypeforBusinessVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>869NQ-FJ69K-466HW-QYCP2-DDBV6</KeyValue>
+        <SupportedEditions>SkypeforBusinessVL</SupportedEditions>
+        <SupportedSku>83E04EE1-FA8D-436D-8994-D31A862CAB77</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 StandardVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>JNRGM-WHDWX-FJJG3-K47QV-DRTFM</KeyValue>
+        <SupportedEditions>StandardVL</SupportedEditions>
+        <SupportedSku>DEDFA23D-6ED1-45A6-85DC-63CAE0546DE6</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 VisioProVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>PD3PC-RHNGV-FXJ29-8JK7D-RJRJK</KeyValue>
+        <SupportedEditions>VisioProVL</SupportedEditions>
+        <SupportedSku>6BF301C1-B94A-43E9-BA31-D494598C47FB</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 VisioProXC2RVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>69WXN-MBYV6-22PQG-3WGHK-RM6XC</KeyValue>
+        <SupportedEditions>VisioProXC2RVL</SupportedEditions>
+        <SupportedSku>B234ABE3-0857-4F9C-B05A-4DC314F85557</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 VisioStdVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>7WHWN-4T7MP-G96JF-G33KR-W8GF4</KeyValue>
+        <SupportedEditions>VisioStdVL</SupportedEditions>
+        <SupportedSku>AA2A7821-1827-4C2C-8F1D-4513A34DDA97</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 VisioStdXC2RVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>NY48V-PPYYH-3F4PX-XJRKJ-W4423</KeyValue>
+        <SupportedEditions>VisioStdXC2RVL</SupportedEditions>
+        <SupportedSku>361FE620-64F4-41B5-BA77-84F8E079B1F7</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2016 WordVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6</KeyValue>
+        <SupportedEditions>WordVL</SupportedEditions>
+        <SupportedSku>BB11BADF-D8AA-470E-9311-20EAF80FE5CC</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+
+    </SupportedGVLKs>
+
+  <SupportedVolumeApplications>
+      <VolumeApplication>
+        <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+        <ApplicationName>Office</ApplicationName>
+        <OnlineHelpUri></OnlineHelpUri>
+      </VolumeApplication>
+    </SupportedVolumeApplications>
+
+    <ProductMappings>
+      <ProductMapping>
+        <Sku>98EBFE73-2084-4C97-932C-C0CD1643BEA7</Sku>
+        <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+        <KmsId>85B5F61B-320B-4BE3-814A-B76B2BFAFC82</KmsId>
+        <VersionName>2016</VersionName>
+        <SupportsAd>1</SupportsAd>
+        <ProductName></ProductName>
+        <ProductFamily></ProductFamily>
+        <Edition></Edition>
+      </ProductMapping>
+    </ProductMappings>
+  </VamtSystemData>
+</VolumeActivationManagementToolData>

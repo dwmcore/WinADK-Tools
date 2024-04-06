@@ -1,0 +1,3175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <eventSubTypes>
+
+        <subType name="_KS" value="1" />
+        <subType name="_CP" value="2" />
+        <subType name="_RF" value="3" />
+        <subType name="_KS_Ext" value="4" />
+        <subType name="_KS_IRP" value="5" />
+        <subType name="_KS_Merged" value="6" />
+        <subType name="_CP_Order" value="7" />
+        <subType name="_APO" value="8" />
+        <subType name="_CP_POS_ERR" value="9" />
+        <subType name="_CP_CAP" value="10" />
+        <subType name="_KS_BUFINDX" value="11" />
+        <subType name="_CM_CAPTURE" value="12" />
+        <subType name="_CM_RENDER" value="13" />
+
+
+        <subType name="_INFO" value="0" />
+
+        <subType name="Info"          value="0" />
+        <!-- Object event -->
+        <subType name="Create"                   value="1"/>
+        <subType name="Delete"                   value="2"/>
+
+        <!-- AudioRenderer Starvation event -->
+        <subType name="Start"                    value="1"/>
+        <subType name="Stop"                     value="2"/>
+        <subType name="Previous_Discontinuity"   value="128"/>
+
+        <!-- Video Frame glitch event -->
+        <subType name="Frame_Glitch"             value="0"/>
+
+        <!-- Data drop event -->
+        <subType name="Late_Arrival"             value="1"/>
+        <subType name="Late_Finish"              value="2"/>
+        <subType name="Bad_Data"                 value="4"/>
+        <subType name="Insufficient_Bit"         value="8"/>
+        <subType name="Net_Data_Loss"            value="16"/>
+        <subType name="Overrun"                  value="32"/>
+        <subType name="Stale"                    value="64"/>
+        <subType name="Mux_Failed"               value="128"/>
+
+
+        <!-- Clock Get Time event -->
+        <subType name="Get_Time"                 value="0"/>
+
+        <!--  Predicted Video Sample Event -->
+        <subType name="Video_Sample"                   value="0"/>
+
+        <!-- Stream Event -->
+        <subType name="Create"                   value="1"/>
+        <subType name="Delete"                   value="2"/>
+
+        <!-- Media Type Change Event -->
+        <subType name="Change"                   value="0"/>
+
+        <!-- Buffer Event -->
+        <subType name="Input"                   value="1"/>
+        <subType name="Output"                   value="2"/>
+
+        <!-- Processing Events -->
+        <subType name="Input"              value="1"/>
+        <subType name="Output"                   value="2"/>
+
+        <!-- DiskIO Request Events  -->
+        <subType name="Read"                   value="1"/>
+        <subType name="Write"                   value="2"/>
+
+        <!-- DiskIO Complete Events  -->
+        <subType name="Complete"                   value="0"/>
+
+        <!-- File Open Event -->
+        <subType name="Open"                   value="0"/>
+
+        <!-- Renderer Rend Events -->
+        <subType name="Recv_Sample"                   value="1"/>
+        <subType name="Start_Rend"                   value="2"/>
+        <subType name="End_Rend"                   value="3"/>
+        <subType name="Alloc_Sample"                   value="4"/>
+        <subType name="Start_Mix"                   value="6"/>
+        <subType name="End_Mix"                   value="7"/>
+        <subType name="Start_Decode"                   value="8"/>
+        <subType name="End_Decode"                   value="9"/>
+        <subType name="Start_Deinterlace"                   value="10"/>
+        <subType name="End_Deinterlace"                   value="11"/>
+        <subType name="Start_Procamp"                   value="12"/>
+        <subType name="End_Procamp"                   value="13"/>
+        <subType name="Start_Frc"                   value="14"/>
+        <subType name="End_Frc"                   value="15"/>
+        <subType name="Mid_Rend"                   value="16"/>
+        <subType name="Map_Rend"                   value="17"/>
+
+        <!-- Renderer Sample Event -->
+        <subType name="Recv_Sample"                   value="1"/>
+        <subType name="Alloc_Sample"                   value="4"/>
+
+        <!-- DXVA Event -->
+        <subType name="Event"                   value="0"/>
+
+        <!-- State Change Events -->
+        <subType name="SCStop"                   value="1"/>
+        <subType name="SCPause"                   value="2"/>
+        <subType name="SCStart"                   value="3"/>
+
+        <!--Transform Creation Event  -->
+        <subType name="Create"                   value="0"/>
+
+        <!-- Topoloader API Events  -->
+        <subType name="Start"                   value="1"/>
+        <subType name="End"                   value="2"/>
+
+        <!-- packet Sink Events -->
+        <subType name="Lost"                   value="1"/>
+        <subType name="Recover_RTX"                   value="2"/>
+        <subType name="Recover_FEC"                   value="3"/>
+
+        <!-- Net Source Events -->
+        <subType name="Disconnect"                   value="1"/>
+        <subType name="Reconnect_Start"                   value="2"/>
+        <subType name="Reconnect_Stop"                   value="3"/>
+        <subType name="Announce"                   value="4"/>
+        <subType name="Eos"                   value="5"/>
+        <subType name="Streamswitch"                   value="6"/>
+        <subType name="Streamswitch_Done"                   value="7"/>
+        <subType name="Buffering_Start"                   value="8"/>
+        <subType name="Buffering_Stop"                   value="9"/>
+        <subType name="Connect_Start"                   value="10"/>
+        <subType name="Connect_Stop"                   value="11"/>
+        <subType name="Open_Start"                   value="12"/>
+        <subType name="Open_Stop"                   value="13"/>
+        <subType name="Mcast_Join_Done"                   value="14"/>
+
+        <!-- HTTP ByteStream Events -->
+        <subType name="Start"                   value="1"/>
+        <subType name="Stop"                   value="2"/>
+
+        <!-- Media Cache Events -->
+        <subType name="Readsample"                   value="1"/>
+        <subType name="Onreadsample"                   value="2"/>
+        <subType name="Writesample"                   value="3"/>
+        <subType name="Onwritesample"                   value="4"/>
+        <subType name="Seek"                   value="5"/>
+        <subType name="Onseek"                   value="6"/>
+        <subType name="Trim "                   value="7"/>
+        <subType name="Ontrim"                   value="8"/>
+
+        <!-- Session Bitpump Events -->
+        <subType name="Start_Async_Call"                   value="1"/>
+        <subType name="End_Async_Call"                   value="2"/>
+        <subType name="Receive"                   value="3"/>
+        <subType name="Error"                   value="4"/>
+        <subType name="Critical_Error"                   value="5"/>
+        <subType name="Start_Sync_Call"                   value="6"/>
+        <subType name="End_Sync_Call"                   value="7"/>
+        <subType name="Wait_for_Sample"                   value="8"/>
+
+        <!-- Media Session Events -->
+        <subType name="Begin_Set_Topology"       value="1"/>
+        <subType name="End_Set_Topology"         value="2"/>
+        <subType name="Begin_Start"         value="3"/>
+        <subType name="End_Start"         value="4"/>
+        <subType name="Begin_Stop"         value="5"/>
+        <subType name="End_Stop"         value="6"/>
+        <subType name="Begin_Pause"         value="7"/>
+        <subType name="End_Pause"         value="8"/>
+        <subType name="Begin_Close"         value="9"/>
+        <subType name="End_Close"         value="10"/>
+        <subType name="Begin_Shutdown"         value="11"/>
+        <subType name="End_Shutdown"         value="12"/>
+        <subType name="Begin_Presentationswitch"         value="13"/>
+        <subType name="End_Presentationswitch"         value="14"/>
+
+        <!-- Sequencer Events  -->
+        <subType name="Start"                   value="1"/>
+        <subType name="Stop"                   value="2"/>
+        <subType name="OnContextEvent"                   value="3"/>
+        <subType name="ProcessSample"                   value="4"/>
+        <subType name="OnStreamEvent"                   value="5"/>
+        <subType name="BeginCreateObjectFromNode"                   value="6"/>
+        <subType name="EndCreateObjectFromNode"                   value="7"/>
+
+        <!-- Quality Manager Events  -->
+        <subType name="SetQualityLevel"                   value="1"/>
+        <subType name="SetDropMode"                   value="2"/>
+        <subType name="SetDropMode"                   value="3"/>
+
+        <!-- Adjust Sample Time Events  -->
+        <subType name="OneShot"                   value="1"/>
+        <subType name="Repeat"                   value="2"/>
+
+        <!-- Video Render Event  -->
+        <subType name="Render"                   value="0"/>
+
+        <!-- Audio Render Event  -->
+        <subType name="Render"                   value="0"/>
+
+        <!-- Metadata Events  -->
+        <subType name="Created"                   value="1"/>
+        <subType name="Loaded"                   value="2"/>
+        <subType name="GetCount"                   value="3"/>
+        <subType name="GetAt"                   value="4"/>
+        <subType name="GetValue"                   value="5"/>
+        <subType name="SetValue"                   value="6"/>
+        <subType name="Flush"                   value="7"/>
+        <subType name="OnGetCount"                   value="8"/>
+        <subType name="OnGetAt"                   value="9"/>
+        <subType name="OnGetValue"                   value="10"/>
+        <subType name="OnSetValue"                   value="11"/>
+        <subType name="OnFlush"                   value="12"/>
+
+        <!-- Muxer Events -->
+        <subType name="ProcessSample"                   value="1"/>
+        <subType name="AddPayload"                   value="2"/>
+        <subType name="OnCompletedPacket"                   value="3"/>
+
+        <!-- Timer Late Event -->
+        <subType name="Late"                   value="0"/>
+
+        <!-- Lock Events  -->
+        <subType name="Try_Acquire"              value="1"/>
+        <subType name="Acquired"                 value="2"/>
+        <subType name="Released"                 value="3"/>
+
+        <!-- Stack Event  -->
+        <subType name="Event"                   value="0"/>
+
+        <!-- MFGraph Events  -->
+        <subType name="Start_Play"                   value="1"/>
+        <subType name="End_Play"                   value="2"/>
+        <subType name="Start_Stop"                   value="3"/>
+        <subType name="End_Stop"                   value="4"/>
+        <subType name="Start_Pause"                   value="5"/>
+        <subType name="End_Pause"                   value="6"/>
+        <subType name="Start_Render"                   value="7"/>
+        <subType name="End_Render"                   value="8"/>
+        <subType name="Start_Find_Interface_On_Filter"                   value="9"/>
+        <subType name="End_Find_Interface_On_Filter"                   value="10"/>
+        <subType name="Start_Scan"                   value="11"/>
+        <subType name="End_Scan"                   value="12"/>
+        <subType name="Start_Set_Rate"                   value="13"/>
+        <subType name="End_Set_Rate"                   value="14"/>
+        <subType name="Start_Insert_Node"                   value="15"/>
+        <subType name="End_Insert_Node"                   value="16"/>
+        <subType name="Start_Begin_Batch_Insert"                   value="17"/>
+        <subType name="End_Begin_Batch_Insert"                   value="18"/>
+        <subType name="Start_End_Batch_Insert"                   value="19"/>
+        <subType name="End_End_Batch_Insert"                   value="20"/>
+        <subType name="Start_Close"                   value="21"/>
+        <subType name="MFGEnd_Close"                   value="22"/>
+        <subType name="Start_Set_Volume"                   value="23"/>
+        <subType name="End_Set_Volume"                   value="24"/>
+        <subType name="Start_Set_Stop_Position"                   value="25"/>
+        <subType name="End_Set_Stop_Position"                   value="26"/>
+        <subType name="Start_Set_Current_Position"                   value="27"/>
+        <subType name="End_Set_Current_Position"                   value="28"/>
+        <subType name="Start_Set_Context"                   value="29"/>
+        <subType name="End_Set_Context"                   value="30"/>
+        <subType name="Start_Queue"                   value="31"/>
+        <subType name="End_Queue"                   value="32"/>
+        <subType name="Start_Init"                   value="33"/>
+        <subType name="End_Init"                   value="34"/>
+        <subType name="Start_Init_Ex"                   value="35"/>
+        <subType name="End_Init_Ex"                   value="36"/>
+        <subType name="Start_Get_Type"                   value="37"/>
+        <subType name="End_Get_Type"                   value="38"/>
+        <subType name="Start_Is_Reused"                   value="39"/>
+        <subType name="End_Is_Reused"                   value="40"/>
+        <subType name="Start_Get_Url"                   value="41"/>
+        <subType name="End_Get_Url"                   value="42"/>
+        <subType name="Start_Get_Context"                   value="43"/>
+        <subType name="End_Get_Context"                   value="44"/>
+        <subType name="Start_Get_Cookie"                   value="45"/>
+        <subType name="End_Get_Cookie"                   value="46"/>
+        <subType name="Start_Set_Cookie"                   value="47"/>
+        <subType name="End_Set_Cookie"                   value="48"/>
+        <subType name="Start_Get_Open_State"                   value="49"/>
+        <subType name="End_Get_Open_State"                   value="50"/>
+        <subType name="Start_Get_Rate"                   value="51"/>
+        <subType name="End_Get_Rate"                   value="52"/>
+        <subType name="Start_Get_Current_Position"                   value="53"/>
+        <subType name="End_Get_Current_Position"                   value="54"/>
+        <subType name="Start_Get_Stop_Position"                   value="55"/>
+        <subType name="End_Get_Stop_Position"                   value="56"/>
+        <subType name="Start_Get_Volume"                   value="57"/>
+        <subType name="End_Get_Volume"                   value="58"/>
+        <subType name="Start_Get_Media_Caps"                   value="59"/>
+        <subType name="End_Get_Media_Caps"                   value="60"/>
+        <subType name="Start_Get_Control_Caps"                   value="61"/>
+        <subType name="End_Get_Control_Caps"                   value="62"/>
+        <subType name="Start_Get_Seek_Caps"                   value="63"/>
+        <subType name="End_Get_Seek_Caps"                   value="64"/>
+        <subType name="Start_Get_Jump_Caps"                   value="65"/>
+        <subType name="End_Get_Jump_Caps"                   value="66"/>
+        <subType name="Start_Set_Auto_Rewind"                   value="67"/>
+        <subType name="End_Set_Auto_Rewind"                   value="68"/>
+        <subType name="Start_Notify_State_Change"                   value="69"/>
+        <subType name="End_Notify_State_Change"                   value="70"/>
+        <subType name="Start_Notify_Playback_End"                   value="71"/>
+        <subType name="End_Notify_Playback_End"                   value="72"/>
+        <subType name="Start_Notify_Rate_Change"                   value="73"/>
+        <subType name="End_Notify_Rate_Change"                   value="74"/>
+        <subType name="Start_Notify_Error"                   value="75"/>
+        <subType name="End_Notify_Error"                   value="76"/>
+        <subType name="Start_Notify_License"                   value="77"/>
+        <subType name="End_Notify_License"                   value="78"/>
+        <subType name="Start_Notify_Cred"                   value="79"/>
+        <subType name="End_Notify_Cred"                   value="80"/>
+        <subType name="Start_Notify_Individualization"                   value="81"/>
+        <subType name="End_Notify_Individualization"                   value="82"/>
+        <subType name="Start_Find_Plugin"                   value="83"/>
+        <subType name="End_Find_Plugin"                   value="84"/>
+        <subType name="Start_Notify_Revocation"                   value="85"/>
+        <subType name="End_Notify_Revocation"                   value="86"/>
+        <subType name="Start_Handle_Presentation_Switch"                   value="87"/>
+        <subType name="End_Handle_Presentation_Switch"                   value="88"/>
+        <subType name="Start_Notify_Fullscreen"                   value="89"/>
+        <subType name="End_Notify_Fullscreen"                   value="90"/>
+        <subType name="Start_Notify_Custom_License"                   value="91"/>
+        <subType name="End_Notify_Custom_License"                   value="92"/>
+        <subType name="Start_Notify_Device_Loss_Gain"                   value="93"/>
+        <subType name="End_Notify_Device_Loss_Gain"                   value="94"/>
+
+        <!-- WMP Playback events -->
+        <subType name= "_WAKEPUMP" value="4" />
+        <subType name="WMPOpen"                   value="1"/>
+        <subType name="WMPQueue"                   value="2"/>
+        <subType name="WMPStart"                   value="3"/>
+        <subType name="Graph_Error_Open"                   value="4"/>
+        <subType name="Graph_Error_Queue"                   value="5"/>
+
+        <!-- PE Auth Comm -->
+        <subType name="Start_Acquire_Sessionkey"                   value="1"/>
+        <subType name="End_Acquire_Sessionkey"                   value="2"/>
+        <subType name="Start_Kernelstate_Inquiry"                   value="3"/>
+        <subType name="End_Kernelstate_Inquiry"                   value="4"/>
+        <subType name="Start_Reload_Grl"                   value="5"/>
+        <subType name="End_Reload_Grl"                   value="6"/>
+        <subType name="Start_Renew_Sessionkey"                   value="7"/>
+        <subType name="End_Renew_Sessionkey"                   value="8"/>
+        <subType name="Start_Get_Comp_List"                   value="9"/>
+        <subType name="End_End_Comp_List"                   value="10"/>
+
+        <!-- Cache Reader Status -->
+        <subType name="Status"                   value="0"/>
+
+      </eventSubTypes>
+
+
+
+
+      <!-- Event source definition starts here -->
+
+      <EventSource name="Loader Events" >
+        <FILE  Name="ldr.xml"></FILE>
+      </EventSource>
+
+
+      <EventSource name="Device Events" >
+        <FILE  Name="DeviceSync.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="AE Events" >
+        <FILE  Name="aewmi_manifest.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="PortCls Events" >
+        <FILE  Name="portcls_man.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="HDAudio Bus Events" >
+        <FILE  Name="hdaudbus_man.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="CLOCKINT" >
+        <FILE  Name="dtt.xml"></FILE>
+      </EventSource>
+
+
+      <EventSource name="HDAudio Events" >
+        <FILE  Name="hdaudio_man.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="MMCSS Events" >
+        <FILE  Name="mmcss_manifest.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="WMC Events" >
+        <FILE  Name="wmc-etw-manifest.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="DXVA Events" >
+        <FILE  Name="mfdxva2-etw-manifest.xml"></FILE>
+      </EventSource>
+
+
+
+      <EventSource name="MF PropertyHandler" >
+        <FILE  Name="mmhandler-etw-manifest.xml"></FILE>
+      </EventSource>
+
+
+      <EventSource name="Serial Sync Events" >
+        <FILE  Name="serialsync.xml"></FILE>
+      </EventSource>
+      <EventSource name="Render Events" >
+        <FILE  Name="Render.xml"></FILE>
+      </EventSource>
+      <EventSource name="DRM Events" >
+        <FILE  Name="drm-etw-manifest.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="DWMAPI Events" >
+        <FILE  Name="dwmapi-etw-manifest.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="DWM Events" >
+        <FILE  Name="dwm-etw-manifest.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="DXGKRNL Events" >
+        <FILE  Name="dxgkrnl-manifest-1019.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="REDIR Events" >
+        <FILE  Name="redir-etw-manifest.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="Schedule Events" >
+        <FILE  Name="schedule-manifest.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="UCE Events" >
+        <FILE  Name="uce-etw-manifest.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="IE7" >
+        <FILE  Name="ieperf060624.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="CE Events" >
+        <FILE  Name="celog.xml"></FILE>
+      </EventSource>
+
+      <!-- Event source definition ends here -->
+
+      <EventSource name="RDP" >
+        <event channel="16" guid="{aa1d17c9-c75f-4603-b54d-467835dd85f9}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="RDPPerfCounter" subTypeValue="1" OpCode="100" Task="1" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="Zune DBMUTEX Events" >
+        <FILE  Name="zune-etw-manifest.xml"></FILE>
+      </EventSource>
+
+       <EventSource name="ESE">
+          <FILE Name="ese.xml"/>
+      </EventSource>
+
+      <EventSource name="MTPOPERATIONS" >
+	   <FILE  Name="mtp.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="DVDNAV" >
+        <FILE  Name="DVD_EVxml.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="MovieMaker Events" >
+        <FILE  Name="moviemaker.xml"></FILE>
+      </EventSource>
+
+      <EventSource name="Homer Events" >
+        <FILE  Name="homer.xml"></FILE>
+      </EventSource>
+
+
+      <EventSource name="Ignore Events" >
+        <FILE  Name="unhandled_exclude.xml"></FILE>
+      </EventSource>
+
+
+
+      <EventSource name="VIDEOGLITCHESSEVERITY" >
+        <event channel="16" guid="{8F2048E0-F260-4F57-A8D1-932376291682}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="119" OpCode="0" Task="23" />
+            <template>
+              <Name>
+                <object Key="true" Scale="1"></object>
+                <FramesLate YAxis="true" Scale="1"></FramesLate>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <!-- Microsoft-Windows-Dwm-Core  - {9E9BBA3C-2E38-40CB-99F4-9E8281425164} -->  
+        <!--event channel="16" guid="{9E9BBA3C-2E38-40CB-99F4-9E8281425164}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="24" OpCode="0" Task="17" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event-->   
+      </EventSource>
+
+
+
+
+      <EventSource name="VIDEOGLITCHES" >
+        <event channel="16" guid="{F404B94E-27E0-4384-BFE8-1D8D390B0AA3}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="4003" OpCode="0" Task="302" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      <!--Microsoft-Windows-MediaEngine - {8F2048E0-F260-4F57-A8D1-932376291682} -->
+        <event channel="16" guid="{8F2048E0-F260-4F57-A8D1-932376291682}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="114" OpCode="0" Task="18" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{8F2048E0-F260-4F57-A8D1-932376291682}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="311" OpCode="0" Task="168" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{8F2048E0-F260-4F57-A8D1-932376291682}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="119" OpCode="0" Task="23" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <!-- Microsoft-Windows-Dwm-Core  - {9E9BBA3C-2E38-40CB-99F4-9E8281425164} -->  
+        <event channel="16" guid="{9E9BBA3C-2E38-40CB-99F4-9E8281425164}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="24" OpCode="0" Task="17" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>   
+      </EventSource>
+
+      <EventSource name="MEDIADATADROPS" >
+        <event channel="16" guid="{F404B94E-27E0-4384-BFE8-1D8D390B0AA3}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="4009" OpCode="0" Task="308" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+      <EventSource name="DWMGLITCHES" >
+        <event channel="16" guid="{8c9dd1ad-e6e5-4b07-b455-684a9d879900}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="24" OpCode="0" Task="14" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{8c9dd1ad-e6e5-4b07-b455-684a9d879900}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="25" OpCode="0" Task="15" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="GPUPOWERSTATECHANGE" >
+        <event channel="17" guid="{802ec45a-1e99-4b83-9920-87c98277ba9d}" level="0"  >
+            <diagnosticInstance version="0">
+                <classification subType="Start" subTypeValue="203" OpCode="1" Task="123" />
+                <template>
+                    <Name>
+                        <AdapterHandle Key="true">%UInt64;</AdapterHandle>
+                        <ComponentIndex Key="true">%UInt32;</ComponentIndex>
+                        <State YAxis="true">%UInt32;</State>
+                    </Name>
+                </template>
+            </diagnosticInstance>
+        </event>
+        <event channel="17" guid="{802ec45a-1e99-4b83-9920-87c98277ba9d}" level="0"  >
+            <diagnosticInstance version="0">
+                <classification subType="Start" subTypeValue="209" OpCode="0" Task="123" />
+                <template>
+                    <Name>
+                        <AdapterHandle Key="true">%UInt64;</AdapterHandle>
+                        <ComponentIndex Key="true">%UInt32;</ComponentIndex>
+                        <State YAxis="true">%UInt32;</State>
+                    </Name>
+                </template>
+            </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="GPULATENCYSTATECHANGE" >
+        <event channel="17" guid="{802ec45a-1e99-4b83-9920-87c98277ba9d}" level="0"  >
+            <diagnosticInstance version="0">
+                <classification subType="Start" subTypeValue="228" OpCode="0" Task="123" />
+                <template>
+                    <Name>
+                        <AdapterHandle Key="true">%UInt64;</AdapterHandle>
+                        <ComponentIndex Key="true">%UInt32;</ComponentIndex>
+                        <Latency YAxis="true">%UInt32;</Latency>
+                    </Name>
+                </template>
+            </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="POWERSTATECHANGE" >
+        <event channel="0" guid="{0f67e49f-fe51-4e9f-b490-6f2948cc6027}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="10" OpCode="0" Task="10" />
+            <template>
+              <Name>
+                <Speed YAxis="true" Scale="1"></Speed>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="0" guid="{0f67e49f-fe51-4e9f-b490-6f2948cc6027}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="18" OpCode="0" Task="10" />
+            <template>
+              <Name>
+                <Speed YAxis="true" Scale="1"></Speed>                
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="POWERSTATECHANGE1" >
+        <event channel="0" guid="{0f67e49f-fe51-4e9f-b490-6f2948cc6027}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="12" OpCode="0" Task="12" />
+            <template>
+              <Name>
+                <Frequency YAxis="true" Scale="1"></Frequency>
+                <Number Key="true" Scale="1"></Number>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+      <EventSource name="SYSTEMTIMERCHANGE" >
+        <event channel="16" guid="{331c3b3a-2005-44c2-ac5e-77220c37d6b4}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="95" OpCode="0" Task="92" />
+            <template>
+              <Name>
+                <NewResolution YAxis="true" Scale="1"></NewResolution>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="MEDIA_ENGINE_PRESENT_CADENCE" >
+        <event channel="16" guid="{8F2048E0-F260-4F57-A8D1-932376291682}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="115" OpCode="0" Task="19" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{8F2048E0-F260-4F57-A8D1-932376291682}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="116" OpCode="0" Task="20" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{8F2048E0-F260-4F57-A8D1-932376291682}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="117" OpCode="0" Task="21" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{8F2048E0-F260-4F57-A8D1-932376291682}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="118" OpCode="0" Task="22" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+
+      </EventSource>
+
+
+      <EventSource name="MEDIA_ENGINE_GLITCH_DISTANCE" >
+        <event channel="16" guid="{8F2048E0-F260-4F57-A8D1-932376291682}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="152" OpCode="0" Task="51" />
+            <template>
+              <Name>
+                <GlitchDuration YAxis="true" Scale="1"></GlitchDuration>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+
+      </EventSource>
+      <EventSource name="RENDER_CADENCE" >
+        <event channel="16" guid="{F404B94E-27E0-4384-BFE8-1D8D390B0AA3}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="4044" OpCode="0" Task="332" />
+            <template>
+              <Name>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="MEDIA_ASYNC" >
+        <event channel="16" guid="{F404B94E-27E0-4384-BFE8-1D8D390B0AA3}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Start" subTypeValue="4506" OpCode="1" Task="581" />
+            <template> <Name> </Name> </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{F404B94E-27E0-4384-BFE8-1D8D390B0AA3}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Stop" subTypeValue="4507" OpCode="2" Task="581" />
+            <template>
+              <Name> </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{F404B94E-27E0-4384-BFE8-1D8D390B0AA3}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Start" subTypeValue="4508" OpCode="1" Task="582" />
+            <template>
+              <Name> </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{F404B94E-27E0-4384-BFE8-1D8D390B0AA3}" level="5"  >
+          <diagnosticInstance version="0">
+            <classification subType="Stop" subTypeValue="4509" OpCode="2" Task="582" />
+            <template>
+              <Name> </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+
+      </EventSource>
+      <EventSource name="CAPTURE_ENGINE" >
+        <event channel="100" guid="{B8197C10-845F-40CA-82AB-9341E98CFC2B}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="217" OpCode="0" Task="106" />
+            <template>
+              <Name>
+                <SourceStreamIndex  Key="true" ></SourceStreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="100" guid="{B8197C10-845F-40CA-82AB-9341E98CFC2B}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="215" OpCode="2" Task="105" />
+            <template>
+              <Name>
+                <StreamIndex  Key="true" ></StreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="100" guid="{B8197C10-845F-40CA-82AB-9341E98CFC2B}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="219" OpCode="1" Task="107" />
+            <template>
+              <Name>
+                <SinkStreamIndex  Key="true" ></SinkStreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="100" guid="{B8197C10-845F-40CA-82AB-9341E98CFC2B}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="220" OpCode="2" Task="107" />
+            <template>
+              <Name>
+                <SinkStreamIndex  Key="true" ></SinkStreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="16" guid="{F404B94E-27E0-4384-BFE8-1D8D390B0AA3}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="4451" OpCode="0" Task="594" />
+            <template>
+              <Name>
+                <StreamIndex  Key="true" ></StreamIndex>
+                <SampleTimestamp  YAxis="true" Scale="1"></SampleTimestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+      <EventSource name="SINK_WRITTER" >
+        <event channel="17" guid="{4B7EAC67-FC53-448C-A49D-7CC6DB524DA7}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="107" OpCode="0" Task="14" />
+            <template>
+              <Name>
+                <StreamIndex  Key="true" ></StreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="17" guid="{4B7EAC67-FC53-448C-A49D-7CC6DB524DA7}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="103" OpCode="1" Task="11" />
+            <template>
+              <Name>
+                <StreamIndex  Key="true" ></StreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+      <EventSource name="SINK_WRITTER_CADENCE" >
+        <event channel="17" guid="{4B7EAC67-FC53-448C-A49D-7CC6DB524DA7}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="107" OpCode="0" Task="14" />
+            <template>
+              <Name>
+                <StreamIndex  Key="true" ></StreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+      <EventSource name="SOURCE_READER" >
+        <event channel="16" guid="{4B7EAC67-FC53-448C-A49D-7CC6DB524DA7}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="5" OpCode="2" Task="3" />
+            <template>
+              <Name>
+                <ActualStreamIndex  Key="true" ></ActualStreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+      <EventSource name="SOURCE_READER_CADENCE" >
+        <event channel="16" guid="{4B7EAC67-FC53-448C-A49D-7CC6DB524DA7}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="4" OpCode="1" Task="3" />
+            <template>
+              <Name>
+                <StreamIndex  Key="true" ></StreamIndex>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+      <EventSource name="TRANSFORM" >
+        <event channel="18" guid="{4B7EAC67-FC53-448C-A49D-7CC6DB524DA7}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="200" OpCode="0" Task="23" />
+            <template>
+              <Name>
+                <StreamIndex  Key="true" ></StreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event channel="18" guid="{4B7EAC67-FC53-448C-A49D-7CC6DB524DA7}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="202" OpCode="0" Task="24" />
+            <template>
+              <Name>
+                <StreamIndex  Key="true" ></StreamIndex>
+                <Timestamp  YAxis="true" Scale="1"></Timestamp>
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+
+      </EventSource>
+
+
+      <EventSource name="TRANSFORM_CADENCE" >
+        <event channel="18" guid="{4B7EAC67-FC53-448C-A49D-7CC6DB524DA7}" level="4"  >
+          <diagnosticInstance version="0">
+            <classification subType="Info" subTypeValue="205" OpCode="0" Task="26" />
+            <template>
+              <Name>
+                <StreamIndex  Key="true" ></StreamIndex>
+                <!--Transform  Key="true" ></Transform-->
+              </Name>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+
+
+
+      <EventSource name="AE Glitches" >
+
+        <event eventID="1" message="$(string.DROP)" guid="{F6C4E82E-4C40-4B08-A983-FFC0E63B7E03}" level="#">
+          <diagnosticInstance version="0">
+
+            <classification subType="_INFO" />
+            <template>
+              <AE_DROP>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <ullSampleTime>%UInt64;</ullSampleTime>
+                <u64ByteCount>%UInt64;</u64ByteCount>
+              </AE_DROP>
+            </template>
+          </diagnosticInstance>
+        </event>
+
+        <event eventID="2" message="$(string.GLITCH)" guid="{2013DBB2-2F76-4B2C-950A-0C9DFAC62398}" level="#">
+          <diagnosticInstance version="0">
+            <classification subType="_KS" />
+            <classification subType="_CP" />
+            <classification subType="_RF" />
+            <classification subType="_KS_Ext" />
+            <classification subType="_KS_IRP" />
+            <classification subType="_KS_Merged" />
+            <classification subType="_CP_Order" />
+            <classification subType="_APO" />
+            <classification subType="_CP_POS_ERR" />
+            <classification subType="_CP_CAP" />
+            <classification subType="_KS_BUFINDX" />
+            <classification subType="_CM_CAPTURE" />
+            <classification subType="_CM_RENDER" />
+
+            <template>
+              <AE_GLITCH>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <WritePos>%UInt64;</WritePos>
+                <PlayPos>%UInt64;</PlayPos>
+                <StreamPos>%UInt64;</StreamPos>
+                <GlitchFrameCount>%UInt64;</GlitchFrameCount>
+              </AE_GLITCH>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+
+      <EventSource name="EVR Dequeue Difference    XXXXXXXX COMPLETE" >
+
+        <event eventID="1" message="$(string.ImageId)" guid="{c8809dd6-2b1c-4f21-8cbd-016aca980293}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info"/>
+
+          <template>
+            <EVRDeQueue>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <pSample>%UInt64;</pSample>
+              <llOriginalTargetQPC>%UInt64;</llOriginalTargetQPC>
+              <llTargetQPC>%UInt64;</llTargetQPC>
+              <llSubmittedQPC>%UInt64;</llSubmittedQPC>
+              <llNow>%UInt64;</llNow>
+              <llPresentTime>%UInt64;</llPresentTime>
+              <cDWMFramesPresented>%Int64;</cDWMFramesPresented>
+              <cDWMRefreshStart>%Int64;</cDWMRefreshStart>
+              <cBuffersEmpty>%UInt32;</cBuffersEmpty>
+              <cRefreshFrame>%Int64;</cRefreshFrame>
+
+            </EVRDeQueue>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+      </EventSource>
+
+
+      <EventSource name="EVRSample" >
+        <!-- Renderer Rend Events -->
+        <event eventID="1" message="$(string.ImageId)" guid="{b857a029-6523-4dde-af98-f5b7e796d99a}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Map_Rend"/>
+
+            <template>
+              <Renderer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <pSample >%UInt64;</pSample>
+                <llSampleTime YAxis="true">%Int64;</llSampleTime>
+                <llSampleDuration XAxis="true">%Int64;</llSampleDuration>
+                <llClockTime>%Int64;</llClockTime>
+              </Renderer_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+      </EventSource>
+
+      <EventSource name="EVRClock" >
+        <!-- Renderer Rend Events -->
+        <event eventID="1" message="$(string.ImageId)" guid="{b857a029-6523-4dde-af98-f5b7e796d99a}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Map_Rend"/>
+
+            <template>
+              <Renderer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <pSample >%UInt64;</pSample>
+                <llSampleTime >%Int64;</llSampleTime>
+                <llSampleDuration XAxis="true">%Int64;"</llSampleDuration>
+                <llClockTime YAxis="true">%Int64;</llClockTime>
+              </Renderer_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+      </EventSource>
+
+
+      <EventSource name="AEPROCPASS" >
+        <event eventID="5" message="$(string.PROCPASS)" guid="{810143B0-8898-433D-B00D-FBA5D05EDF6D}" level="#" >
+              <diagnosticInstance version="0">
+                  <classification subType="_WAKEPUMP" />
+                   <template>
+                      <AE_PROCPASS>
+                         <pObject>%UInt64;</pObject>
+                         <dwReporterTag Key="true" >%UInt32;</dwReporterTag>
+                         <dwPadding>%UInt32;</dwPadding>
+                         <ProcessDuration YAxis="true" Scale="1">%UInt64;</ProcessDuration>
+                         <ProcessTime>%UInt64;</ProcessTime>
+                     </AE_PROCPASS>
+                  </template>
+              </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="AEPROCPASSCADENCE" >
+        <event eventID="5" message="$(string.PROCPASS)" guid="{810143B0-8898-433D-B00D-FBA5D05EDF6D}" level="#" >
+          <diagnosticInstance version="0">
+            <classification subType="_WAKEPUMP" />
+            <template>
+              <AE_PROCPASS>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag Key="true" >%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <ProcessDuration YAxis="true" Scale="1">%UInt64;</ProcessDuration>
+                <ProcessTime>%UInt64;</ProcessTime>
+              </AE_PROCPASS>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="INTERVAL" >
+        <!-- Topoloader API Events  -->
+        <event eventID="1" message="$(string.ImageId)" guid="{E78B8410-9535-4b19-AFC3-94AAF91453E1}" level="1" >
+          <diagnosticInstance version="0">
+
+            <classification subType="Start" Start="true"  Layer="2" LayerName="Layer 2" Name="Topoloader" EndType="2" />
+            <classification subType="End" Start="false"  Layer="2" LayerName="Layer 2" Name="Topoloader" EndType="2" />
+
+            <template>
+              <Topoloader_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwApiCode>%UInt32;</dwApiCode>
+              </Topoloader_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- Media Session Events -->
+        <event eventID="1" message="$(string.ImageId)" guid="{568a2f63-deb8-4348-88d3-36f3763ed1f6}" level="1" EventSource="INTERVAL" >
+          <diagnosticInstance version="0">
+
+            <classification subType="Begin_Set_Topology" Start="true"  Layer="1" LayerName="Layer 1" Name="Renderer" EndType="2" />
+            <classification subType="End_Set_Topology" Start="false"  Layer="1" LayerName="Layer 1" Name="Renderer" EndType="2" />
+            <classification subType="Begin_Start" Start="true"  Layer="1" LayerName="Layer 1" Name="Renderer" EndType="2"  />
+            <classification subType="End_Start" Start="false"  Layer="1" LayerName="Layer 1" Name="Renderer" EndType="2" />
+            <classification subType="Begin_Stop"/>
+            <classification subType="End_Stop"/>
+            <classification subType="Begin_Pause"/>
+            <classification subType="End_Pause"/>
+            <classification subType="Begin_Close"/>
+            <classification subType="End_Close"/>
+            <classification subType="Begin_Shutdown"/>
+            <classification subType="End_Shutdown"/>
+            <classification subType="Begin_Presentationswitch"/>
+            <classification subType="End_Presentationswitch"/>
+
+            <template>
+              <MFSession_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <pParam1>%UInt64;</pParam1>
+              </MFSession_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+      <EventSource name="DRMINTERVAL" >
+
+
+        <!-- DRMV2Clt Events  -->
+
+        <event eventID="1" message="" guid="{dd9f7da9-5960-410d-9409-75c3e8771391}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Open_Devicestore_Begin" Start="true"  Layer="4" LayerName="DRM Client" Name="Open Device Store"             subTypeValue="1"/>
+            <classification subType="Open_Devicestore_End"   Start="false"  Layer="4" LayerName="DRM Client" Name="Open Device Store"          subTypeValue="2"/>
+            <classification subType="Globalobjects_Init_Begin"             subTypeValue="3"/>
+            <classification subType="Globalobjects_Init_End"             subTypeValue="4"/>
+            <classification subType="Create_Drmrightsmanager_Begin"  Start="true"  Layer="4" LayerName="DRM Client" Name="Create DRM Rights Manager" subTypeValue="5"/>
+            <classification subType="Create_Drmrightsmanager_End"  Start="false"  Layer="4" LayerName="DRM Client" Name="Create DRM Rights Manager" subTypeValue="6"/>
+            <classification subType="Cmsrightsmanager_Init_Begin" Start="true"  Layer="3" LayerName="DRM Client" Name="Rights Manager Init"              subTypeValue="7"/>
+            <classification subType="Cmsrightsmanager_Init_End" Start="false"  Layer="3" LayerName="DRM Client" Name="Rights Manager Init"              subTypeValue="8"/>
+            <classification subType="Keyexchange_Begin"  Start="true"  Layer="2" LayerName="DRM Client" Name="Key Exchange"            subTypeValue="9"/>
+            <classification subType="Keyexchange_End"  Start="false"  Layer="2" LayerName="DRM Client" Name="Key Exchange"            subTypeValue="10"/>
+            <classification subType="Create_Rmobject_Begin"             subTypeValue="11"/>
+            <classification subType="Create_Rmobject_End"             subTypeValue="12"/>
+            <classification subType="Create_Authenticationobject_Begin"  Start="true"  Layer="2" LayerName="DRM Client" Name="Create Authentication Object"           subTypeValue="13"/>
+            <classification subType="Create_Authenticationobject_End"  Start="false"  Layer="2" LayerName="DRM Client" Name="Create Authentication Object"           subTypeValue="14"/>
+            <classification subType="Derivejdlicensefromcurrent_Begin"             subTypeValue="15"/>
+            <classification subType="Derivejdlicensefromcurrent_End"             subTypeValue="16"/>
+            <classification subType="Derivesimplejdlicense_Begin"             subTypeValue="17"/>
+            <classification subType="Derivesimplejdlicense_End"             subTypeValue="18"/>
+            <classification subType="Prepare_License_Transcryptor_Begin"             subTypeValue="19"/>
+            <classification subType="Prepare_License_Transcryptor_End"             subTypeValue="20"/>
+            <classification subType="Update_License_Begin"             subTypeValue="21"/>
+            <classification subType="Update_License_End"             subTypeValue="22"/>
+            <classification subType="Pk_Encrypt_Large_Begin"             subTypeValue="23"/>
+            <classification subType="Pk_Encrypt_Large_End"             subTypeValue="24"/>
+            <classification subType="Build_License_Data_Node_Begin"             subTypeValue="25"/>
+            <classification subType="Build_License_Data_Node_End"             subTypeValue="26"/>
+            <classification subType="Sign_License_Begin"             subTypeValue="27"/>
+            <classification subType="Sign_License_End"             subTypeValue="28"/>
+            <classification subType="Report_License_Action_Begin"             subTypeValue="29"/>
+            <classification subType="Report_License_Action_End"             subTypeValue="30"/>
+            <classification subType="Process_Create_Bb_Shim_Begin"             subTypeValue="31"/>
+            <classification subType="Process_Create_Bb_Shim_End"             subTypeValue="32"/>
+            <classification subType="Process_Drm_Form_Licaq_Request_String_Begin"             subTypeValue="33"/>
+            <classification subType="Process_Drm_Form_Licaq_Request_String_End"             subTypeValue="34"/>
+            <classification subType="Process_Drm_Getv1challenge_Begin"             subTypeValue="35"/>
+            <classification subType="Process_Drm_Getv1challenge_End"             subTypeValue="36"/>
+            <classification subType="Process_Drm_Licaq_Process_Ulinks_Begin"             subTypeValue="37"/>
+            <classification subType="Process_Drm_Licaq_Process_Ulinks_End"             subTypeValue="38"/>
+            <classification subType="Process_Drm_Licaq_Janus_Createrequest_Begin"             subTypeValue="39"/>
+            <classification subType="Process_Drm_Licaq_Janus_Createrequest_End"             subTypeValue="40"/>
+            <classification subType="Process_Drm_Acquire_License_Begin"             subTypeValue="41"/>
+            <classification subType="Process_Drm_Acquire_License_End"             subTypeValue="42"/>
+            <classification subType="Process_Verify_Caller_Begin"             subTypeValue="43"/>
+            <classification subType="Process_Verify_Caller_End"             subTypeValue="44"/>
+            <classification subType="Process_Create_Rights_Manager_Obj_Begin"             subTypeValue="45"/>
+            <classification subType="Process_Create_Rights_Manager_Obj_End"             subTypeValue="46"/>
+            <classification subType="Process_Rights_Manager_Obj_Keyexchange_Begin"             subTypeValue="47"/>
+            <classification subType="Process_Rights_Manager_Obj_Keyexchange_End"             subTypeValue="48"/>
+            <classification subType="Process_Verify_Keyexchange_Begin"             subTypeValue="49"/>
+            <classification subType="Process_Verify_Keyexchange_End"             subTypeValue="50"/>
+            <classification subType="Process_Check_Clock_Rollback_Begin"             subTypeValue="51"/>
+            <classification subType="Process_Check_Clock_Rollback_End"             subTypeValue="52"/>
+            <classification subType="Process_Completelicensechain_Begin"             subTypeValue="53"/>
+            <classification subType="Process_Completelicensechain_End"             subTypeValue="54"/>
+            <classification subType="Process_Reportactions_Begin"             subTypeValue="55"/>
+            <classification subType="Process_Reportactions_End"             subTypeValue="56"/>
+            <classification subType="Globalobjects_Create_Instance_Begin"             subTypeValue="57"/>
+            <classification subType="Globalobjects_Create_Instance_End"             subTypeValue="58"/>
+            <classification subType="Globalobjects_Object_Tasks_Begin"             subTypeValue="59"/>
+            <classification subType="Globalobjects_Object_Tasks_End"             subTypeValue="60"/>
+            <classification subType="Globalobjects_Worker_Thread_Proc_Begin"             subTypeValue="61"/>
+            <classification subType="Globalobjects_Worker_Thread_Proc_End"             subTypeValue="62"/>
+            <classification subType="Globalobjects_Chk_App_Rev_Begin"             subTypeValue="63"/>
+            <classification subType="Globalobjects_Chk_App_Rev_End"             subTypeValue="64"/>
+            <classification subType="Globalobjects_Chk_Rev_Guid_Begin"             subTypeValue="65"/>
+            <classification subType="Globalobjects_Chk_Rev_Guid_End"             subTypeValue="66"/>
+            <classification subType="Globalobjects_Cache_Crl_Begin"             subTypeValue="67"/>
+            <classification subType="Globalobjects_Cache_Crl_End"             subTypeValue="68"/>
+            <classification subType="Globalobjects_Verify_Chkpt_Begin"             subTypeValue="69"/>
+            <classification subType="Globalobjects_Verify_Chkpt_End"             subTypeValue="70"/>
+            <classification subType="Globalobjects_Get_Rev_Lic_Store_Begin"             subTypeValue="71"/>
+            <classification subType="Globalobjects_Get_Rev_Lic_Store_End"             subTypeValue="72"/>
+            <classification subType="Globalobjects_Get_Rev_Info_Begin"             subTypeValue="73"/>
+            <classification subType="Globalobjects_Get_Rev_Info_End"             subTypeValue="74"/>
+            <classification subType="Globalobjects_Get_Riv_Begin"             subTypeValue="75"/>
+            <classification subType="Globalobjects_Get_Riv_End"             subTypeValue="76"/>
+            <classification subType="Globalobjects_Chk_Wmdrmnet_Rev_Begin"             subTypeValue="77"/>
+            <classification subType="Globalobjects_Chk_Wmdrmnet_Rev_End"             subTypeValue="78"/>
+            <classification subType="Globalobjects_Replace_Bbshim_Begin"             subTypeValue="79"/>
+            <classification subType="Globalobjects_Replace_Bbshim_End"             subTypeValue="80"/>
+            <classification subType="Backuprest_Key_Exchange_Begin"             subTypeValue="81"/>
+            <classification subType="Backuprest_Key_Exchange_End"             subTypeValue="82"/>
+            <classification subType="Backuprest_Backup_Lics_Begin"             subTypeValue="83"/>
+            <classification subType="Backuprest_Backup_Lics_End"             subTypeValue="84"/>
+            <classification subType="Backuprest_Setup_Lic_Eval_Obj_Begin"             subTypeValue="85"/>
+            <classification subType="Backuprest_Setup_Lic_Eval_Obj_End"             subTypeValue="86"/>
+            <classification subType="Backuprest_Free_Lic_Eval_Obj_Begin"             subTypeValue="87"/>
+            <classification subType="Backuprest_Free_Lic_Eval_Obj_End"             subTypeValue="88"/>
+            <classification subType="Backuprest_Free_Br_Callback_Begin"             subTypeValue="89"/>
+            <classification subType="Backuprest_Free_Br_Callback_End"             subTypeValue="90"/>
+            <classification subType="Backuprest_Init_Begin"             subTypeValue="91"/>
+            <classification subType="Backuprest_Init_End"             subTypeValue="92"/>
+            <classification subType="Backuprest_Cancel_Lic_Backup_Thread_Begin"             subTypeValue="93"/>
+            <classification subType="Backuprest_Cancel_Lic_Backup_Thread_End"             subTypeValue="94"/>
+            <classification subType="Backuprest_Restore_Lics_Begin"             subTypeValue="95"/>
+            <classification subType="Backuprest_Restore_Lics_End"             subTypeValue="96"/>
+            <classification subType="Backuprest_Restore_Thread_Func_Begin"             subTypeValue="97"/>
+            <classification subType="Backuprest_Restore_Thread_Func_End"             subTypeValue="98"/>
+            <classification subType="Backuprest_Cancel_Lic_Restore_Begin"             subTypeValue="99"/>
+            <classification subType="Backuprest_Cancel_Lic_Restore_End"             subTypeValue="100"/>
+            <classification subType="Backuprest_Set_String_Val_Begin"             subTypeValue="101"/>
+            <classification subType="Backuprest_Set_String_Val_End"             subTypeValue="102"/>
+            <classification subType="Certificate_Init_Begin"             subTypeValue="103"/>
+            <classification subType="Certificate_Init_End"             subTypeValue="104"/>
+            <classification subType="Certificate_Key_Exchange_Begin"             subTypeValue="105"/>
+            <classification subType="Certificate_Key_Exchange_End"             subTypeValue="106"/>
+            <classification subType="Certificate_Verify_Cert_Begin"             subTypeValue="107"/>
+            <classification subType="Certificate_Verify_Cert_End"             subTypeValue="108"/>
+            <classification subType="Certificate_Get_Attribute_Begin"             subTypeValue="109"/>
+            <classification subType="Certificate_Get_Attribute_End"             subTypeValue="110"/>
+            <classification subType="Certificate_Get_Sec_Level_Begin"             subTypeValue="111"/>
+            <classification subType="Certificate_Get_Sec_Level_End"             subTypeValue="112"/>
+            <classification subType="Certificate_Get_Public_Key_Begin"             subTypeValue="113"/>
+            <classification subType="Certificate_Get_Public_Key_End"             subTypeValue="114"/>
+            <classification subType="Coding_Key_Exchange_Begin"             subTypeValue="115"/>
+            <classification subType="Coding_Key_Exchange_End"             subTypeValue="116"/>
+            <classification subType="Coding_Encode_Begin"             subTypeValue="117"/>
+            <classification subType="Coding_Encode_End"             subTypeValue="118"/>
+            <classification subType="Coding_Decode_Begin"             subTypeValue="119"/>
+            <classification subType="Coding_Decode_End"             subTypeValue="120"/>
+            <classification subType="Decrypt_Key_Exchange_Begin"             subTypeValue="121"/>
+            <classification subType="Decrypt_Key_Exchange_End"             subTypeValue="122"/>
+            <classification subType="Decrypt_Init_Args1_Begin"             subTypeValue="123"/>
+            <classification subType="Decrypt_Init_Args1_End"             subTypeValue="124"/>
+            <classification subType="Decrypt_Init_Args2_Begin"             subTypeValue="125"/>
+            <classification subType="Decrypt_Init_Args2_End"             subTypeValue="126"/>
+            <classification subType="Decrypt_Decrypt_Begin"             subTypeValue="127"/>
+            <classification subType="Decrypt_Decrypt_End"             subTypeValue="128"/>
+            <classification subType="Decrypt_Decrypt_Extended_Begin"             subTypeValue="129"/>
+            <classification subType="Decrypt_Decrypt_Extended_End"             subTypeValue="130"/>
+            <classification subType="Decrypt_Scatter_Begin" Start="true"  Layer="3" LayerName="DRM Client" Name="Decrypt Scatter"            subTypeValue="131"/>
+            <classification subType="Decrypt_Scatter_End"   Start="false"  Layer="3" LayerName="DRM Client" Name="Decrypt Scatter"          subTypeValue="132"/>
+            <classification subType="Decrypt_Init_Scatter_Begin"             subTypeValue="133"/>
+            <classification subType="Decrypt_Init_Scatter_End"             subTypeValue="134"/>
+            <classification subType="Decrypt_Init_Scatter_Clone_Export_Begin"             subTypeValue="135"/>
+            <classification subType="Decrypt_Init_Scatter_Clone_Export_End"             subTypeValue="136"/>
+            <classification subType="Decrypt_Init_Scatter_Clone_Import_Begin"             subTypeValue="137"/>
+            <classification subType="Decrypt_Init_Scatter_Clone_Import_End"             subTypeValue="138"/>
+            <classification subType="Globalobjects_Verify_Chk_Pt_Begin"             subTypeValue="139"/>
+            <classification subType="Globalobjects_Verify_Chk_Pt_End"             subTypeValue="140"/>
+            <classification subType="Encrypt_Init1_Begin"             subTypeValue="183"/>
+            <classification subType="Encrypt_Init1_End"             subTypeValue="184"/>
+            <classification subType="Encrypt_Init2_Begin"             subTypeValue="185"/>
+            <classification subType="Encrypt_Init2_End"             subTypeValue="186"/>
+            <classification subType="Encrypt_Key_Exchange_Begin"             subTypeValue="187"/>
+            <classification subType="Encrypt_Key_Exchange_End"             subTypeValue="188"/>
+            <classification subType="Encrypt_Init_Encrypt_Begin"             subTypeValue="189"/>
+            <classification subType="Encrypt_Init_Encrypt_End"             subTypeValue="190"/>
+            <classification subType="Encrypt_Encrypt_Begin"             subTypeValue="191"/>
+            <classification subType="Encrypt_Encrypt_End"             subTypeValue="192"/>
+            <classification subType="Encrypt_Encrypt_Extended_Begin"             subTypeValue="193"/>
+            <classification subType="Encrypt_Encrypt_Extended_End"             subTypeValue="194"/>
+            <classification subType="Encrypt_Scmutual_Auth_Begin"             subTypeValue="195"/>
+            <classification subType="Encrypt_Scmutual_Auth_End"             subTypeValue="196"/>
+            <classification subType="Encrypt_Init_Encrypt_Scatter_Begin"             subTypeValue="197"/>
+            <classification subType="Encrypt_Init_Encrypt_Scatter_End"             subTypeValue="198"/>
+            <classification subType="Encrypt_Init_Encrypt_Import_Begin"             subTypeValue="199"/>
+            <classification subType="Encrypt_Init_Encrypt_Import_End"             subTypeValue="200"/>
+            <classification subType="Encrypt_Encrypt_Scatter_Begin"             subTypeValue="201"/>
+            <classification subType="Encrypt_Encrypt_Scatter_End"             subTypeValue="202"/>
+            <classification subType="Encrypt_Encrypt_Protect_Import_Begin"             subTypeValue="203"/>
+            <classification subType="Encrypt_Encrypt_Protect_Import_End"             subTypeValue="204"/>
+            <classification subType="Encrypt_Get_Check_Sum_Begin"             subTypeValue="205"/>
+            <classification subType="Encrypt_Get_Check_Sum_End"             subTypeValue="206"/>
+            <classification subType="Header_Init_Begin"             subTypeValue="207"/>
+            <classification subType="Header_Init_End"             subTypeValue="208"/>
+            <classification subType="Header_Key_Exchange_Begin"             subTypeValue="209"/>
+            <classification subType="Header_Key_Exchange_End"             subTypeValue="210"/>
+            <classification subType="Header_Set_Attribute_Begin"             subTypeValue="211"/>
+            <classification subType="Header_Set_Attribute_End"             subTypeValue="212"/>
+            <classification subType="Header_Set_Check_Sum_Begin"             subTypeValue="213"/>
+            <classification subType="Header_Set_Check_Sum_End"             subTypeValue="214"/>
+            <classification subType="Header_Set_Check_Sum_Ex_Begin"             subTypeValue="215"/>
+            <classification subType="Header_Set_Check_Sum_Ex_End"             subTypeValue="216"/>
+            <classification subType="Header_Sign_Begin"             subTypeValue="217"/>
+            <classification subType="Header_Sign_End"             subTypeValue="218"/>
+            <classification subType="Header_Get_Header_Begin"             subTypeValue="219"/>
+            <classification subType="Header_Get_Header_End"             subTypeValue="220"/>
+            <classification subType="Auth_Verify_Address_Begin"             subTypeValue="221"/>
+            <classification subType="Auth_Verify_Address_End"             subTypeValue="222"/>
+            <classification subType="Auth_Verify_Cert_Begin"             subTypeValue="223"/>
+            <classification subType="Auth_Verify_Cert_End"             subTypeValue="224"/>
+            <classification subType="Auth_Verify_Module_Begin"             subTypeValue="225"/>
+            <classification subType="Auth_Verify_Module_End"             subTypeValue="226"/>
+            <classification subType="Auth_Get_Rev_Hashes_Begin"             subTypeValue="227"/>
+            <classification subType="Auth_Get_Rev_Hashes_End"             subTypeValue="228"/>
+            <classification subType="Auth_Init_Begin"             subTypeValue="229"/>
+            <classification subType="Auth_Init_End"             subTypeValue="230"/>
+            <classification subType="Auth_Chk_Cert_For_Rev_Begin"             subTypeValue="231"/>
+            <classification subType="Auth_Chk_Cert_For_Rev_End"             subTypeValue="232"/>
+            <classification subType="Auth_Refresh_Rev_Data_Begin"             subTypeValue="233"/>
+            <classification subType="Auth_Refresh_Rev_Data_End"             subTypeValue="234"/>
+            <classification subType="Auth_Verify_O_Mac_Begin"             subTypeValue="235"/>
+            <classification subType="Auth_Verify_O_Mac_End"             subTypeValue="236"/>
+            <classification subType="Devicereg_Init_Begin"             subTypeValue="237"/>
+            <classification subType="Devicereg_Init_End"             subTypeValue="238"/>
+            <classification subType="Devicereg_Key_Exchange_Begin"             subTypeValue="239"/>
+            <classification subType="Devicereg_Key_Exchange_End"             subTypeValue="240"/>
+            <classification subType="Devicereg_Reg_Dev_Begin"             subTypeValue="241"/>
+            <classification subType="Devicereg_Reg_Dev_End"             subTypeValue="242"/>
+            <classification subType="Devicereg_Unreg_Dev_Begin"             subTypeValue="243"/>
+            <classification subType="Devicereg_Unreg_Dev_End"             subTypeValue="244"/>
+            <classification subType="Devicereg_Get_First_Reged_Dev_Begin"             subTypeValue="245"/>
+            <classification subType="Devicereg_Get_First_Reged_Dev_End"             subTypeValue="246"/>
+            <classification subType="Devicereg_Get_Next_Reged_Dev_Begin"             subTypeValue="247"/>
+            <classification subType="Devicereg_Get_Next_Reged_Dev_End"             subTypeValue="248"/>
+            <classification subType="Devicereg_Get_Reged_Dev_By_Id_Begin"             subTypeValue="249"/>
+            <classification subType="Devicereg_Get_Reged_Dev_By_Id_End"             subTypeValue="250"/>
+            <classification subType="Devicereg_Get_Reg_Stats_Begin"             subTypeValue="251"/>
+            <classification subType="Devicereg_Get_Reg_Stats_End"             subTypeValue="252"/>
+            <classification subType="Regeddevice_Init_Begin"             subTypeValue="253"/>
+            <classification subType="Regeddevice_Init_End"             subTypeValue="254"/>
+
+
+            <template>
+              <DRMV2clt_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+              </DRMV2clt_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- Blackbox Events -->
+        <event eventID="1" message="" guid="{5818c091-894b-4f0a-8d12-05acc484a4bb}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Iblackbox_Createinstance2_Begin"             subTypeValue="1"/>
+            <classification subType="Iblackbox_Createinstance2_End"             subTypeValue="2"/>
+            <classification subType="Iblackbox_Createinstance_Begin"             subTypeValue="3"/>
+            <classification subType="Iblackbox_Createinstance_End"             subTypeValue="4"/>
+            <classification subType="Cblackboxshim_Init_Begin"             subTypeValue="5"/>
+            <classification subType="Cblackboxshim_Init_End"             subTypeValue="6"/>
+            <classification subType="Cblackboxshim_Loadbbxwithindivkeyfile_Begin"             subTypeValue="7"/>
+            <classification subType="Cblackboxshim_Loadbbxwithindivkeyfile_End"             subTypeValue="8"/>
+            <classification subType="Cblackboxshim_Loaddll_Begin"             subTypeValue="9"/>
+            <classification subType="Cblackboxshim_Loaddll_End"             subTypeValue="10"/>
+            <classification subType="Cblackboxshim_Getbbcert_Begin"             subTypeValue="11"/>
+            <classification subType="Cblackboxshim_Getbbcert_End"             subTypeValue="12"/>
+            <classification subType="Cindiloader_Loadmostviable_Begin"             subTypeValue="13"/>
+            <classification subType="Cindiloader_Loadmostviable_End"             subTypeValue="14"/>
+            <classification subType="Cindiloader_Load_Begin"             subTypeValue="15"/>
+            <classification subType="Cindiloader_Load_End"             subTypeValue="16"/>
+            <classification subType="Cindiloader_Verifymoduleworker_Begin"             subTypeValue="17"/>
+            <classification subType="Cindiloader_Verifymoduleworker_End"             subTypeValue="18"/>
+            <classification subType="Setdrmaccessrights_Begin"             subTypeValue="19"/>
+            <classification subType="Setdrmaccessrights_End"             subTypeValue="20"/>
+            <classification subType="Get_Dacl_Begin"             subTypeValue="21"/>
+            <classification subType="Get_Dacl_End"             subTypeValue="22"/>
+            <classification subType="Set_Dacl_Begin"             subTypeValue="23"/>
+            <classification subType="Set_Dacl_End"             subTypeValue="24"/>
+            <classification subType="Set_Fileattr_Begin"             subTypeValue="25"/>
+            <classification subType="Set_Fileattr_End"             subTypeValue="26"/>
+            <classification subType="Process_Payload_Decrypt_Begin" Start="true"  Layer="1" LayerName="Blackbox" Name="Payload Decrypt"             subTypeValue="27"/>
+            <classification subType="Process_Payload_Decrypt_End"   Start="false"  Layer="1" LayerName="Blackbox" Name="Payload Decrypt"          subTypeValue="28"/>
+            <classification subType="Process_Output_Encrypt_Begin"             subTypeValue="29"/>
+            <classification subType="Process_Output_Encrypt_End"             subTypeValue="30"/>
+            <classification subType="Process_Secret_Key_Hide_Begin"             subTypeValue="31"/>
+            <classification subType="Process_Secret_Key_Hide_End"             subTypeValue="32"/>
+            <classification subType="Cblackbox_Pccontentkeytopmcontentkeybegin"             subTypeValue="33"/>
+            <classification subType="Cblackbox_Pccontentkeytopmcontentkeyend"             subTypeValue="34"/>
+            <classification subType="Cblackbox_Pmlicchksumbegin"             subTypeValue="35"/>
+            <classification subType="Cblackbox_Pmlicchksumend"             subTypeValue="36"/>
+            <classification subType="Cblackbox_Initbegin"    Start="true"  Layer="1" LayerName="Blackbox" Name="Blackbox Init"                         subTypeValue="37"/>
+            <classification subType="Cblackbox_Initend"      Start="false"  Layer="1" LayerName="Blackbox" Name="Blackbox Init"            subTypeValue="38"/>
+            <classification subType="Cblackbox_Destructorbegin"             subTypeValue="39"/>
+            <classification subType="Cblackbox_Destructorend"             subTypeValue="40"/>
+            <classification subType="Cblackbox_Gethiddenpkcertbegin"             subTypeValue="41"/>
+            <classification subType="Cblackbox_Gethiddenpkcertend"             subTypeValue="42"/>
+            <classification subType="Cblackbox_Getblackboxversionbegin"             subTypeValue="43"/>
+            <classification subType="Cblackbox_Getblackboxversionend"             subTypeValue="44"/>
+            <classification subType="Cblackbox_Getblackboxversionexbegin"             subTypeValue="45"/>
+            <classification subType="Cblackbox_Getblackboxversionexend"             subTypeValue="46"/>
+            <classification subType="Cblackbox_Getblackboxcertbegin"             subTypeValue="47"/>
+            <classification subType="Cblackbox_Getblackboxcertend"             subTypeValue="48"/>
+            <classification subType="Cblackbox_Getdlltypebegin"             subTypeValue="49"/>
+            <classification subType="Cblackbox_Getdlltypeend"             subTypeValue="50"/>
+            <classification subType="Cblackbox_Canbindbegin"             subTypeValue="51"/>
+            <classification subType="Cblackbox_Canbindend"             subTypeValue="52"/>
+            <classification subType="Cblackbox_Rebindcontentkeybegin"             subTypeValue="53"/>
+            <classification subType="Cblackbox_Rebindcontentkeyend"             subTypeValue="54"/>
+            <classification subType="Cblackbox_Signbrlicservbegin"             subTypeValue="55"/>
+            <classification subType="Cblackbox_Signbrlicservend"             subTypeValue="56"/>
+            <classification subType="Cblackbox_Decryptlicensebegin"             subTypeValue="57"/>
+            <classification subType="Cblackbox_Decryptlicenseend"             subTypeValue="58"/>
+            <classification subType="Cblackbox_Hashvaluebegin"             subTypeValue="59"/>
+            <classification subType="Cblackbox_Hashvalueend"             subTypeValue="60"/>
+            <classification subType="Cblackbox_Keyexchangedecryptorbegin"             subTypeValue="61"/>
+            <classification subType="Cblackbox_Keyexchangedecryptorend"             subTypeValue="62"/>
+            <classification subType="Cblackbox_Keyexchangeencryptorbegin"             subTypeValue="63"/>
+            <classification subType="Cblackbox_Keyexchangeencryptorend"             subTypeValue="64"/>
+            <classification subType="Cblackbox_Keyexchangeblackboxbegin"             subTypeValue="65"/>
+            <classification subType="Cblackbox_Keyexchangeblackboxend"             subTypeValue="66"/>
+            <classification subType="Cblackbox_Keysetupdecryptorbegin"             subTypeValue="67"/>
+            <classification subType="Cblackbox_Keysetupdecryptorend"             subTypeValue="68"/>
+            <classification subType="Cblackbox_Keysetupencryptorbegin"             subTypeValue="69"/>
+            <classification subType="Cblackbox_Keysetupencryptorend"             subTypeValue="70"/>
+            <classification subType="Cblackbox_Decryptscatterbegin"             subTypeValue="71"/>
+            <classification subType="Cblackbox_Decryptscatterend"             subTypeValue="72"/>
+            <classification subType="Cblackbox_Encryptbegin"             subTypeValue="73"/>
+            <classification subType="Cblackbox_Encryptend"             subTypeValue="74"/>
+            <classification subType="Cblackboximp_Transfercontentkeybegin"             subTypeValue="75"/>
+            <classification subType="Cblackboximp_Transfercontentkeyend"             subTypeValue="76"/>
+            <classification subType="Cblackboximp_Signdatabegin"             subTypeValue="77"/>
+            <classification subType="Cblackboximp_Signdataend"             subTypeValue="78"/>
+            <classification subType="Cblackboximp_Transferpmcontentkeybegin"             subTypeValue="79"/>
+            <classification subType="Cblackboximp_Transferpmcontentkeyend"             subTypeValue="80"/>
+            <classification subType="Cblackboximp_Canbindbegin"             subTypeValue="81"/>
+            <classification subType="Cblackboximp_Canbindend"             subTypeValue="82"/>
+            <classification subType="Cblackboximp_Createcontentdecryptorexbegin"             subTypeValue="83"/>
+            <classification subType="Cblackboximp_Createcontentdecryptorexend"             subTypeValue="84"/>
+            <classification subType="Cblackboximp_Createcontentencryptorexbegin"             subTypeValue="85"/>
+            <classification subType="Cblackboximp_Createcontentencryptorexend"             subTypeValue="86"/>
+            <classification subType="Cblackboximp_Hashvalueexbegin"   Start="true"  Layer="2" LayerName="Blackbox" Name="Hash Value Ex"             subTypeValue="87"/>
+            <classification subType="Cblackboximp_Hashvalueexend"   Start="false"  Layer="2" LayerName="Blackbox" Name="Hash Value Ex"             subTypeValue="88"/>
+            <classification subType="Cblackboximp_Pcchainedcontentkeytopmcontentkeybegin"             subTypeValue="89"/>
+            <classification subType="Cblackboximp_Pcchainedcontentkeytopmcontentkeyend"             subTypeValue="90"/>
+            <classification subType="Cblackboximp_Createcontentdecryptorex2begin"             subTypeValue="91"/>
+            <classification subType="Cblackboximp_Createcontentdecryptorex2end"             subTypeValue="92"/>
+            <classification subType="Cblackboximp_Verifyomacbegin"             subTypeValue="93"/>
+            <classification subType="Cblackboximp_Verifyomacend"             subTypeValue="94"/>
+            <classification subType="Cblackboximp_Canbindexbegin"             subTypeValue="95"/>
+            <classification subType="Cblackboximp_Canbindexend"             subTypeValue="96"/>
+            <classification subType="Cblackboximp_Processregistrationresponsebegin"             subTypeValue="97"/>
+            <classification subType="Cblackboximp_Processregistrationresponseend"             subTypeValue="98"/>
+            <classification subType="Cblackboximp_Createcontentencryptorex2begin"             subTypeValue="99"/>
+            <classification subType="Cblackboximp_Createcontentencryptorex2end"             subTypeValue="100"/>
+            <classification subType="Cblackboximp_Updatelicensebegin"             subTypeValue="101"/>
+            <classification subType="Cblackboximp_Updatelicenseend"             subTypeValue="102"/>
+            <classification subType="Cblackboximp_Rotatekeysbegin"             subTypeValue="103"/>
+            <classification subType="Cblackboximp_Rotatekeysend"             subTypeValue="104"/>
+            <classification subType="Cblackboximp_Generatekeybegin"             subTypeValue="105"/>
+            <classification subType="Cblackboximp_Generatekeyend"             subTypeValue="106"/>
+            <classification subType="Cblackboximp_Getmachinecertificatebegin"             subTypeValue="107"/>
+            <classification subType="Cblackboximp_Getmachinecertificateend"             subTypeValue="108"/>
+            <classification subType="Cblackboximp_Getrsapublickeybegin"             subTypeValue="109"/>
+            <classification subType="Cblackboximp_Getrsapublickeyend"             subTypeValue="110"/>
+            <classification subType="Cblackboximp_Rebindlegacycontentkeybegin"             subTypeValue="111"/>
+            <classification subType="Cblackboximp_Rebindlegacycontentkeyend"             subTypeValue="112"/>
+            <classification subType="Cblackboximp_Generatelegacylicensechallengebegin"             subTypeValue="113"/>
+            <classification subType="Cblackboximp_Generatelegacylicensechallengeend"             subTypeValue="114"/>
+            <classification subType="Cblackboximp_Getpdrmdatabegin"             subTypeValue="115"/>
+            <classification subType="Cblackboximp_Getpdrmdataend"             subTypeValue="116"/>
+            <classification subType="Cblackboximp_Pccontentkeytopmcontentkeyexbegin"             subTypeValue="117"/>
+            <classification subType="Cblackboximp_Pccontentkeytopmcontentkeyexend"             subTypeValue="118"/>
+            <classification subType="Cblackboximp_Pcchainedcontentkeytopmcontentkeyexbegin"             subTypeValue="119"/>
+            <classification subType="Cblackboximp_Pcchainedcontentkeytopmcontentkeyexend"             subTypeValue="120"/>
+            <classification subType="Cblackboximp_Getxmrencryptedkeybegin"    Start="true"  Layer="2" LayerName="Blackbox" Name="Get XMR Encrypted Key"         subTypeValue="121"/>
+            <classification subType="Cblackboximp_Getxmrencryptedkeyend"     Start="false"  Layer="2" LayerName="Blackbox" Name="Get XMR Encrypted Key"        subTypeValue="122"/>
+            <classification subType="Cblackboximp_Signxmrlicensebegin"             subTypeValue="123"/>
+            <classification subType="Cblackboximp_Signxmrlicenseend"             subTypeValue="124"/>
+            <classification subType="Cblackboximp_Rebindxmrencryptedkeybegin"             subTypeValue="125"/>
+            <classification subType="Cblackboximp_Rebindxmrencryptedkeyend"             subTypeValue="126"/>
+            <classification subType="Pcdrm_Bbx_Initialize_Internalbegin"     Start="true"  Layer="1" LayerName="Blackbox" Name="Pcdrm Bbx Initialize Internal"           subTypeValue="127"/>
+            <classification subType="Pcdrm_Bbx_Initialize_Internalend"      Start="false"  Layer="1" LayerName="Blackbox" Name="Pcdrm Bbx Initialize Internal"            subTypeValue="128"/>
+            <classification subType="Process_Payload_Decrypt2_Begin" Start="true"  Layer="1" LayerName="Blackbox" Name="Payload Decrypt2"             subTypeValue="129"/>
+            <classification subType="Process_Payload_Decrypt2_End"   Start="false"  Layer="1" LayerName="Blackbox" Name="Payload Decrypt2"           subTypeValue="130"/>
+            <classification subType="Process_Payload_Decrypt3_Begin"             subTypeValue="131"/>
+            <classification subType="Process_Payload_Decrypt3_End"            subTypeValue="132"/>
+            <classification subType="Pcdrm_Bbx_Cipherkeysetupexbegin"             subTypeValue="133"/>
+            <classification subType="Pcdrm_Bbx_Cipherkeysetupexend"             subTypeValue="134"/>
+            <classification subType="Decryptcontentkeybegin"             subTypeValue="135"/>
+            <classification subType="Decryptcontentkeyend"             subTypeValue="136"/>
+            <classification subType="Decryptcontentkey_Checkpoint1"             subTypeValue="137"/>
+            <classification subType="Decryptcontentkey_Checkpoint2"             subTypeValue="138"/>
+            <classification subType="Decryptcontentkey_Checkpoint3"             subTypeValue="139"/>
+            <classification subType="Decryptcontentkey_Checkpoint4"             subTypeValue="140"/>
+            <classification subType="Signlicensebegin"             subTypeValue="141"/>
+            <classification subType="Signlicenseend"             subTypeValue="142"/>
+            <classification subType="Signchainedkeysbegin"             subTypeValue="143"/>
+            <classification subType="Signchainedkeysend"             subTypeValue="144"/>
+            <classification subType="Getreboundcontentkeybegin"             subTypeValue="145"/>
+            <classification subType="Getreboundcontentkeyend"             subTypeValue="146"/>
+            <classification subType="Decryptorex_Key_Exchange_Begin"             subTypeValue="147"/>
+            <classification subType="Decryptorex_Key_Exchange_End"             subTypeValue="148"/>
+            <classification subType="Decryptorex_Set_Cipher_Begin"             subTypeValue="149"/>
+            <classification subType="Decryptorex_Set_Cipher_End"             subTypeValue="150"/>
+            <classification subType="Decryptorex_Init_Scatter_Begin"             subTypeValue="151"/>
+            <classification subType="Decryptorex_Init_Scatter_End"             subTypeValue="152"/>
+            <classification subType="Decryptorex_Init_Scatter_Clone_Export_Begin"             subTypeValue="153"/>
+            <classification subType="Decryptorex_Init_Scatter_Clone_Export_End"             subTypeValue="154"/>
+            <classification subType="Decryptorex_Init_Scatter_Clone_Import_Begin"             subTypeValue="155"/>
+            <classification subType="Decryptorex_Init_Scatter_Clone_Import_End"             subTypeValue="156"/>
+            <classification subType="Decryptorex_Decrypt_Scatter_Begin"  Start="true"  Layer="2" LayerName="Blackbox" Name="Decryptorex Decrypt Scatter"           subTypeValue="157"/>
+            <classification subType="Decryptorex_Decrypt_Scatter_End"   Start="false"  Layer="2" LayerName="Blackbox" Name="Decryptorex Decrypt Scatter"          subTypeValue="158"/>
+            <classification subType="Encryptorex_Key_Exchange_Begin"             subTypeValue="159"/>
+            <classification subType="Encryptorex_Key_Exchange_End"             subTypeValue="160"/>
+            <classification subType="Encryptorex_Key_Setup_Begin"             subTypeValue="161"/>
+            <classification subType="Encryptorex_Key_Setup_End"             subTypeValue="162"/>
+            <classification subType="Encryptorex_Encrypt_Begin"             subTypeValue="163"/>
+            <classification subType="Encryptorex_Encrypt_End"             subTypeValue="164"/>
+            <classification subType="Encryptorex_Encrypt_Ex_Begin"             subTypeValue="165"/>
+            <classification subType="Encryptorex_Encrypt_Ex_End"             subTypeValue="166"/>
+            <classification subType="Encryptorex_Init_Encrypt_Scatter_Begin"             subTypeValue="167"/>
+            <classification subType="Encryptorex_Init_Encrypt_Scatter_End"             subTypeValue="168"/>
+            <classification subType="Encryptorex_Encrypt_Import_Begin"             subTypeValue="169"/>
+            <classification subType="Encryptorex_Encrypt_Import_End"             subTypeValue="170"/>
+            <classification subType="Encryptorex_Clone_Priv_Rsa_Key_Begin"             subTypeValue="171"/>
+            <classification subType="Encryptorex_Clone_Priv_Rsa_Key_End"             subTypeValue="172"/>
+            <classification subType="Encryptorex_Encrypt_Scatter_Begin"             subTypeValue="173"/>
+            <classification subType="Encryptorex_Encrypt_Scatter_End"             subTypeValue="174"/>
+            <classification subType="Encryptorex_Encrypt_Protected_Import_Begin"             subTypeValue="175"/>
+            <classification subType="Encryptorex_Encrypt_Protected_Import_End"             subTypeValue="176"/>
+            <classification subType="Encryptorex_Sc_Mutual_Auth_Begin"             subTypeValue="177"/>
+            <classification subType="Encryptorex_Sc_Mutual_Auth_End"             subTypeValue="178"/>
+            <classification subType="Encryptorex_Get_Chksum_Begin"             subTypeValue="179"/>
+            <classification subType="Encryptorex_Get_Chksum_End"             subTypeValue="180"/>
+            <classification subType="Lictranscript_Key_Exchange_Begin"             subTypeValue="181"/>
+            <classification subType="Lictranscript_Key_Exchange_End"             subTypeValue="182"/>
+            <classification subType="Lictranscript_Validate_Slk_Begin"             subTypeValue="183"/>
+            <classification subType="Lictranscript_Validate_Slk_End"             subTypeValue="184"/>
+            <classification subType="Lictranscript_Get_Cert_Chain_Begin"             subTypeValue="185"/>
+            <classification subType="Lictranscript_Get_Cert_Chain_End"             subTypeValue="186"/>
+            <classification subType="Lictranscript_Gen_Session_Lic_Key_Begin"             subTypeValue="187"/>
+            <classification subType="Lictranscript_Gen_Session_Lic_Key_End"             subTypeValue="188"/>
+            <classification subType="Lictranscript_Set_Pm_Lic_Begin"             subTypeValue="189"/>
+            <classification subType="Lictranscript_Set_Pm_Lic_End"             subTypeValue="190"/>
+            <classification subType="Lictranscript_Set_Enabling_Bits_Begin"             subTypeValue="191"/>
+            <classification subType="Lictranscript_Set_Enabling_Bits_End"             subTypeValue="192"/>
+            <classification subType="Lictranscript_Set_Enabling_Bits_Ex_Begin"             subTypeValue="193"/>
+            <classification subType="Lictranscript_Set_Enabling_Bits_Ex_End"             subTypeValue="194"/>
+            <classification subType="Lictranscript_Sign_Chained_Keys_Ex_Begin"             subTypeValue="195"/>
+            <classification subType="Lictranscript_Sign_Chained_Keys_Ex_End"             subTypeValue="196"/>
+            <classification subType="Lictranscript_Get_Rebount_Content_Key_Ex_Begin"             subTypeValue="197"/>
+            <classification subType="Lictranscript_Get_Rebount_Content_Key_Ex_End"             subTypeValue="198"/>
+            <classification subType="Migrationsupport_Rebind_Content_Key_Xmr_Begin"             subTypeValue="199"/>
+            <classification subType="Migrationsupport_Rebind_Content_Key_Xmr_End"             subTypeValue="200"/>
+            <classification subType="Migrationsupport_Rebind_Content_Key_Xml_Begin"             subTypeValue="201"/>
+            <classification subType="Migrationsupport_Rebind_Content_Key_Xml_End"             subTypeValue="202"/>
+            <classification subType="Migrationsupport_Rebind_Content_Key_V1_Begin"             subTypeValue="203"/>
+            <classification subType="Migrationsupport_Rebind_Content_Key_V1_End"             subTypeValue="204"/>
+            <classification subType="Migrationsupport_Update_Lic_Begin"             subTypeValue="205"/>
+            <classification subType="Migrationsupport_Update_Lic_End"             subTypeValue="206"/>
+            <classification subType="Migrationsupport_Rsa_Sign_Data_Begin"             subTypeValue="207"/>
+            <classification subType="Migrationsupport_Rsa_Sign_Data_End"             subTypeValue="208"/>
+            <classification subType="Migrationsupport_Migrate_Content_Key_Xml_Begin"             subTypeValue="209"/>
+            <classification subType="Migrationsupport_Migrate_Content_Key_Xml_End"             subTypeValue="210"/>
+            <classification subType="Migrationsupport_Hash_Val_Begin"             subTypeValue="211"/>
+            <classification subType="Migrationsupport_Hash_Val_End"             subTypeValue="212"/>
+            <classification subType="Migrationsupport_Parse_Key_History_Begin"             subTypeValue="213"/>
+            <classification subType="Migrationsupport_Parse_Key_History_End"             subTypeValue="214"/>
+            <classification subType="Restoresupport_Init_Begin"             subTypeValue="215"/>
+            <classification subType="Restoresupport_Init_End"             subTypeValue="216"/>
+            <classification subType="Restoresupport_Parse_Key_History_Begin"             subTypeValue="217"/>
+            <classification subType="Restoresupport_Parse_Key_History_End"             subTypeValue="218"/>
+            <classification subType="Indiv_Update_List_And_Check_Cert_Begin"             subTypeValue="219"/>
+            <classification subType="Indiv_Update_List_And_Check_Cert_End"             subTypeValue="220"/>
+            <classification subType="Indiv_Check_App_Cert_Begin"             subTypeValue="221"/>
+            <classification subType="Indiv_Check_App_Cert_End"             subTypeValue="222"/>
+            <classification subType="Cindiloader_Create_Instance_Ex_Begin"             subTypeValue="223"/>
+            <classification subType="Cindiloader_Create_Instance_Ex_End"             subTypeValue="224"/>
+            <classification subType="Cindiloader_Create_Instance_Begin"             subTypeValue="225"/>
+            <classification subType="Cindiloader_Create_Instance_End"             subTypeValue="226"/>
+            <classification subType="Iblackbox_Create_Instance_Ex_Begin"             subTypeValue="227"/>
+            <classification subType="Iblackbox_Create_Instance_Ex_End"             subTypeValue="228"/>
+            <classification subType="Iblackbox_Create_Instance_Ex2_Begin"             subTypeValue="229"/>
+            <classification subType="Iblackbox_Create_Instance_Ex2_End"             subTypeValue="230"/>
+            <classification subType="Cblackboxeximp_Create_Instance_Ex_Begin"             subTypeValue="231"/>
+            <classification subType="Cblackboxeximp_Create_Instance_Ex_End"             subTypeValue="232"/>
+            <classification subType="Cblackboxeximp_Create_Content_Dec_Ex2_Intl_Begin"             subTypeValue="233"/>
+            <classification subType="Cblackboxeximp_Create_Content_Dec_Ex2_Intl_End"             subTypeValue="234"/>
+            <classification subType="Ibx_Baseaddress"             subTypeValue="235"/>
+
+            <template>
+              <Blackbox_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+              </Blackbox_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- WMDRM SDK Events -->
+        <event eventID="1" message="" guid="{d97bda6a-5093-4c1d-beff-c81f3e6d1059}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Sec_Get_Security_Version_Begin"             subTypeValue="1"/>
+            <classification subType="Sec_Get_Security_Version_End"             subTypeValue="2"/>
+            <classification subType="Sec_Get_Machine_Cert_Begin"             subTypeValue="3"/>
+            <classification subType="Sec_Get_Machine_Cert_End"             subTypeValue="4"/>
+            <classification subType="Perf_Security_Update_Begin"             subTypeValue="5"/>
+            <classification subType="Perf_Security_Update_End"             subTypeValue="6"/>
+            <classification subType="Query_Security_Status_Begin"             subTypeValue="7"/>
+            <classification subType="Query_Security_Status_End"             subTypeValue="8"/>
+            <classification subType="Set_Crl_Begin"             subTypeValue="9"/>
+            <classification subType="Set_Crl_End"             subTypeValue="10"/>
+            <classification subType="Get_Crl_Begin"             subTypeValue="11"/>
+            <classification subType="Get_Crl_End"             subTypeValue="12"/>
+            <classification subType="Get_Crl_Version_Begin"             subTypeValue="13"/>
+            <classification subType="Get_Crl_Version_End"             subTypeValue="14"/>
+            <classification subType="Encrypt_Begin"             subTypeValue="15"/>
+            <classification subType="Encrypt_End"             subTypeValue="16"/>
+            <classification subType="Decrypt_Begin"             subTypeValue="17"/>
+            <classification subType="Decrypt_End"             subTypeValue="18"/>
+            <classification subType="Reset_Enumeration_Begin"             subTypeValue="19"/>
+            <classification subType="Reset_Enumeration_End"             subTypeValue="20"/>
+            <classification subType="Get_Next_Begin"             subTypeValue="21"/>
+            <classification subType="Get_Next_End"             subTypeValue="22"/>
+            <classification subType="Get_License_Begin"             subTypeValue="23"/>
+            <classification subType="Get_License_End"             subTypeValue="24"/>
+            <classification subType="Get_License_Property_Begin"             subTypeValue="25"/>
+            <classification subType="Get_License_Property_End"             subTypeValue="26"/>
+            <classification subType="Create_Decryptor_Begin"             subTypeValue="27"/>
+            <classification subType="Create_Decryptor_End"             subTypeValue="28"/>
+            <classification subType="Persist_License_Begin"             subTypeValue="29"/>
+            <classification subType="Persist_License_End"             subTypeValue="30"/>
+            <classification subType="Can_Persist_Begin"             subTypeValue="31"/>
+            <classification subType="Can_Persist_End"             subTypeValue="32"/>
+            <classification subType="Get_Analog_Video_Rest_Level_Begin"             subTypeValue="33"/>
+            <classification subType="Get_Analog_Video_Rest_Level_End"             subTypeValue="34"/>
+            <classification subType="Get_Uncomp_Digital_Audio_Rest_Level_Begin"             subTypeValue="35"/>
+            <classification subType="Get_Uncomp_Digital_Audio_Rest_Level_End"             subTypeValue="36"/>
+            <classification subType="Query_License_State_Begin"             subTypeValue="37"/>
+            <classification subType="Query_License_State_End"             subTypeValue="38"/>
+            <classification subType="Set_Cando_Query_Params_Begin"             subTypeValue="39"/>
+            <classification subType="Set_Cando_Query_Params_End"             subTypeValue="40"/>
+            <classification subType="Query_Cando_Actions_Begin"             subTypeValue="41"/>
+            <classification subType="Query_Cando_Actions_End"             subTypeValue="42"/>
+            <classification subType="Store_License_Begin"             subTypeValue="43"/>
+            <classification subType="Store_License_End"             subTypeValue="44"/>
+            <classification subType="Acquire_License_Begin"             subTypeValue="45"/>
+            <classification subType="Acquire_License_End"             subTypeValue="46"/>
+            <classification subType="Create_License_Enumeration_Begin"             subTypeValue="47"/>
+            <classification subType="Create_License_Enumeration_End"             subTypeValue="48"/>
+            <classification subType="Backup_Licenses_Begin"             subTypeValue="49"/>
+            <classification subType="Backup_Licenses_End"             subTypeValue="50"/>
+            <classification subType="Restore_Licenses_Begin"             subTypeValue="51"/>
+            <classification subType="Restore_Licenses_End"             subTypeValue="52"/>
+            <classification subType="Create_License_Revocation_Challenge_Begin"             subTypeValue="53"/>
+            <classification subType="Create_License_Revocation_Challenge_End"             subTypeValue="54"/>
+            <classification subType="Process_License_Revocation_Response_Begin"             subTypeValue="55"/>
+            <classification subType="Process_License_Revocation_Response_End"             subTypeValue="56"/>
+            <classification subType="Delete_License_Begin"             subTypeValue="57"/>
+            <classification subType="Delete_License_End"             subTypeValue="58"/>
+            <classification subType="Clean_License_Store_Begin"             subTypeValue="59"/>
+            <classification subType="Clean_License_Store_End"             subTypeValue="60"/>
+            <classification subType="Get_Registration_Challenge_Begin"             subTypeValue="61"/>
+            <classification subType="Get_Registration_Challenge_End"             subTypeValue="62"/>
+            <classification subType="Process_Registration_Response_Begin"             subTypeValue="63"/>
+            <classification subType="Process_Registration_Response_End"             subTypeValue="64"/>
+            <classification subType="Get_License_Challenge_Begin"             subTypeValue="65"/>
+            <classification subType="Get_License_Challenge_End"             subTypeValue="66"/>
+            <classification subType="Process_License_Response_Begin"             subTypeValue="67"/>
+            <classification subType="Process_License_Response_End"             subTypeValue="68"/>
+            <classification subType="Get_Status_Begin"             subTypeValue="69"/>
+            <classification subType="Get_Status_End"             subTypeValue="70"/>
+            <classification subType="Get_Url_Begin"             subTypeValue="71"/>
+            <classification subType="Get_Url_End"             subTypeValue="72"/>
+            <classification subType="Get_Challenge_Begin"             subTypeValue="73"/>
+            <classification subType="Get_Challenge_End"             subTypeValue="74"/>
+            <classification subType="Create_Encryptor_Begin"             subTypeValue="75"/>
+            <classification subType="Create_Encryptor_End"             subTypeValue="76"/>
+            <classification subType="Indiv_On_Status_Begin"             subTypeValue="77"/>
+            <classification subType="Indiv_On_Status_End"             subTypeValue="78"/>
+            <classification subType="Br_On_Status_Begin"             subTypeValue="79"/>
+            <classification subType="Br_On_Status_End"             subTypeValue="80"/>
+            <classification subType="License_Acquisition_On_Status_Begin"             subTypeValue="81"/>
+            <classification subType="License_Acquisition_On_Status_End"             subTypeValue="82"/>
+            <classification subType="Create_Object_Begin"       Start="true"  Layer="5" LayerName="WMDRM SDK" Name="Create Object"                     subTypeValue="83"/>
+            <classification subType="Create_Object_End"        Start="false"  Layer="5" LayerName="WMDRM SDK" Name="Create Object"             subTypeValue="84"/>
+            <classification subType="Lic_Mgmt_Cancel_Async_Op_Begin"             subTypeValue="85"/>
+            <classification subType="Lic_Mgmt_Cancel_Async_Op_End"             subTypeValue="86"/>
+            <classification subType="Sec_Cancel_Async_Op_Begin"             subTypeValue="87"/>
+            <classification subType="Sec_Cancel_Async_Op_End"             subTypeValue="88"/>
+            <classification subType="Net_Recv_Cancel_Async_Op_Begin"             subTypeValue="89"/>
+            <classification subType="Net_Recv_Cancel_Async_Op_End"             subTypeValue="90"/>
+            <classification subType="Create_License_From_Req_Begin"             subTypeValue="91"/>
+            <classification subType="Create_License_From_Req_End"             subTypeValue="92"/>
+            <classification subType="Startup_Begin"   Start="true"  Layer="5" LayerName="WMDRM SDK" Name="Startup"           subTypeValue="93"/>
+            <classification subType="Startup_End"    Start="false"  Layer="5" LayerName="WMDRM SDK" Name="Startup"         subTypeValue="94"/>
+            <classification subType="Shutdown_Begin"   Start="true"  Layer="5" LayerName="WMDRM SDK" Name="Shutdown"          subTypeValue="95"/>
+            <classification subType="Shutdown_End"  Start="false"  Layer="5" LayerName="WMDRM SDK" Name="Shutdown"          subTypeValue="96"/>
+            <classification subType="Get_Output_Protection_Level_Begin"             subTypeValue="97"/>
+            <classification subType="Get_Output_Protection_Level_End"             subTypeValue="98"/>
+            <classification subType="Init_Encrypt_Scatter_Begin"             subTypeValue="99"/>
+            <classification subType="Init_Encrypt_Scatter_End"             subTypeValue="100"/>
+            <classification subType="Encrypt_Scatter_Begin"             subTypeValue="101"/>
+            <classification subType="Encrypt_Scatter_End"             subTypeValue="102"/>
+            <classification subType="Create_Provider_Begin"             subTypeValue="103"/>
+            <classification subType="Create_Provider_End"             subTypeValue="104"/>
+            <classification subType="Create_Protected_Provider_Begin"             subTypeValue="105"/>
+            <classification subType="Create_Protected_Provider_End"             subTypeValue="106"/>
+            <classification subType="Monitor_License_Acquisition_Begin"             subTypeValue="107"/>
+            <classification subType="Monitor_License_Acquisition_End"             subTypeValue="108"/>
+            <classification subType="Create_Secure_Decryptor_Begin"             subTypeValue="109"/>
+            <classification subType="Create_Secure_Decryptor_End"             subTypeValue="110"/>
+            <classification subType="Process_License_Deletion_Message_Begin"             subTypeValue="111"/>
+            <classification subType="Process_License_Deletion_Message_End"             subTypeValue="112"/>
+            <classification subType="Get_Policy_Begin"             subTypeValue="113"/>
+            <classification subType="Get_Policy_End"             subTypeValue="114"/>
+            <classification subType="Process_License_Update_Begin"             subTypeValue="115"/>
+            <classification subType="Process_License_Update_End"             subTypeValue="116"/>
+            <classification subType="Automatic_Enable_Begin"             subTypeValue="117"/>
+            <classification subType="Automatic_Enable_End"             subTypeValue="118"/>
+            <classification subType="Sec_Init_Begin"             subTypeValue="119"/>
+            <classification subType="Sec_Init_End"             subTypeValue="120"/>
+            <classification subType="Sec_Check_Cert_For_Rev_Begin"             subTypeValue="121"/>
+            <classification subType="Sec_Check_Cert_For_Rev_End"             subTypeValue="122"/>
+            <classification subType="Sec_Get_Content_Enable_Rev_Begin"             subTypeValue="123"/>
+            <classification subType="Sec_Get_Content_Enable_Rev_End"             subTypeValue="124"/>
+            <classification subType="Sec_Get_Rev_Data_Begin"             subTypeValue="125"/>
+            <classification subType="Sec_Get_Rev_Data_End"             subTypeValue="126"/>
+            <classification subType="Sec_Get_Rev_Data_Ver_Begin"             subTypeValue="127"/>
+            <classification subType="Sec_Get_Rev_Data_Ver_End"             subTypeValue="128"/>
+            <classification subType="Sec_Set_Rev_Data_Begin"             subTypeValue="129"/>
+            <classification subType="Sec_Set_Rev_Data_End"             subTypeValue="130"/>
+            <classification subType="Sec_Perf_Security_Update_Begin"             subTypeValue="131"/>
+            <classification subType="Sec_Perf_Security_Update_End"             subTypeValue="132"/>
+            <classification subType="Sec_Get_Content_Enable_Hash_Begin"             subTypeValue="133"/>
+            <classification subType="Sec_Get_Content_Enable_Hash_End"             subTypeValue="134"/>
+            <classification subType="Sec_Get_Event_Begin"             subTypeValue="135"/>
+            <classification subType="Sec_Get_Event_End"             subTypeValue="136"/>
+            <classification subType="Secpriv_Get_Security_Ver_Begin"             subTypeValue="137"/>
+            <classification subType="Secpriv_Get_Security_Ver_End"             subTypeValue="138"/>
+            <classification subType="Secpriv_Get_Macine_Cert_Begin"             subTypeValue="139"/>
+            <classification subType="Secpriv_Get_Macine_Cert_End"             subTypeValue="140"/>
+            <classification subType="Secpriv_Set_Rev_Data_Begin"             subTypeValue="141"/>
+            <classification subType="Secpriv_Set_Rev_Data_End"             subTypeValue="142"/>
+            <classification subType="Secpriv_Get_Rev_Data_Begin"             subTypeValue="143"/>
+            <classification subType="Secpriv_Get_Rev_Data_End"             subTypeValue="144"/>
+            <classification subType="Secpriv_Get_Rev_Data_Version_Begin"             subTypeValue="145"/>
+            <classification subType="Secpriv_Get_Rev_Data_Version_End"             subTypeValue="146"/>
+            <classification subType="Secpriv_Cancel_Async_Op_Begin"             subTypeValue="147"/>
+            <classification subType="Secpriv_Cancel_Async_Op_End"             subTypeValue="148"/>
+            <classification subType="Secpriv_Chk_Cert_For_Rev_Begin"             subTypeValue="149"/>
+            <classification subType="Secpriv_Chk_Cert_For_Rev_End"             subTypeValue="150"/>
+            <classification subType="Secpriv_Get_Content_Enablers_For_Rev_Begin"             subTypeValue="151"/>
+            <classification subType="Secpriv_Get_Content_Enablers_For_Rev_End"             subTypeValue="152"/>
+            <classification subType="Secpriv_Get_Content_Enable_From_Hashes_Begin"             subTypeValue="153"/>
+            <classification subType="Secpriv_Get_Content_Enable_From_Hashes_End"             subTypeValue="154"/>
+            <classification subType="Secpriv_Perform_Sec_Update_Begin"             subTypeValue="155"/>
+            <classification subType="Secpriv_Perform_Sec_Update_End"             subTypeValue="156"/>
+            <classification subType="Secpriv_Get_Event_Begin"             subTypeValue="157"/>
+            <classification subType="Secpriv_Get_Event_End"             subTypeValue="158"/>
+            <classification subType="Secpriv_Begin_Get_Event_Begin"             subTypeValue="159"/>
+            <classification subType="Secpriv_Begin_Get_Event_End"             subTypeValue="160"/>
+            <classification subType="Secpriv_End_Get_Event_Begin"             subTypeValue="161"/>
+            <classification subType="Secpriv_End_Get_Event_End"             subTypeValue="162"/>
+            <classification subType="Secpriv_Queue_Event_Begin"             subTypeValue="163"/>
+            <classification subType="Secpriv_Queue_Event_End"             subTypeValue="164"/>
+            <classification subType="Dll_Main_Begin"             subTypeValue="165"/>
+            <classification subType="Dll_Main_End"             subTypeValue="166"/>
+            <classification subType="Globalobj_Init_Begin"             subTypeValue="167"/>
+            <classification subType="Globalobj_Init_End"             subTypeValue="168"/>
+            <classification subType="Globalobj_Validate_App_Cert_Begin"             subTypeValue="169"/>
+            <classification subType="Globalobj_Validate_App_Cert_End"             subTypeValue="170"/>
+            <classification subType="Refresh_Rev_Start_Begin"             subTypeValue="171"/>
+            <classification subType="Refresh_Rev_Start_End"             subTypeValue="172"/>
+            <classification subType="Providerpriv_Create_Obj_Begin"             subTypeValue="173"/>
+            <classification subType="Providerpriv_Create_Obj_End"             subTypeValue="174"/>
+            <classification subType="Transmitter_Set_Lic_Challenge_Begin"             subTypeValue="175"/>
+            <classification subType="Transmitter_Set_Lic_Challenge_End"             subTypeValue="176"/>
+            <classification subType="Transmitter_Get_Root_Lic_Response_Begin"             subTypeValue="177"/>
+            <classification subType="Transmitter_Get_Root_Lic_Response_End"             subTypeValue="178"/>
+            <classification subType="Transmitter_Get_Leaf_Lic_Response_Begin"             subTypeValue="179"/>
+            <classification subType="Transmitter_Get_Leaf_Lic_Response_End"             subTypeValue="180"/>
+            <classification subType="Transmitterpriv_Set_Lic_Challenge_Begin"             subTypeValue="181"/>
+            <classification subType="Transmitterpriv_Set_Lic_Challenge_End"             subTypeValue="182"/>
+            <classification subType="Transmitterpriv_Get_Root_Lic_Response_Begin"             subTypeValue="183"/>
+            <classification subType="Transmitterpriv_Get_Root_Lic_Response_End"             subTypeValue="184"/>
+            <classification subType="Transmitterpriv_Get_Leaf_Lic_Response_Begin"             subTypeValue="185"/>
+            <classification subType="Transmitterpriv_Get_Leaf_Lic_Response_End"             subTypeValue="186"/>
+            <classification subType="Receiver_Get_Event_Begin"             subTypeValue="187"/>
+            <classification subType="Receiver_Get_Event_End"             subTypeValue="188"/>
+            <classification subType="Receiver_Begin_Get_Event_Begin"             subTypeValue="189"/>
+            <classification subType="Receiver_End_Get_Event_Begin"             subTypeValue="191"/>
+            <classification subType="Receiver_End_Get_Event_End"             subTypeValue="192"/>
+            <classification subType="Receiver_Queue_Event_Begin"             subTypeValue="193"/>
+            <classification subType="Receiver_Queue_Event_End"             subTypeValue="194"/>
+            <classification subType="Receiver_Get_Reg_Challenge_Begin"             subTypeValue="195"/>
+            <classification subType="Receiver_Get_Reg_Challenge_End"             subTypeValue="196"/>
+            <classification subType="Receiver_Process_Reg_Response_Begin"             subTypeValue="197"/>
+            <classification subType="Receiver_Process_Reg_Response_End"             subTypeValue="198"/>
+            <classification subType="Receiver_Get_Lic_Challenge_Begin"             subTypeValue="199"/>
+            <classification subType="Receiver_Get_Lic_Challenge_End"             subTypeValue="200"/>
+            <classification subType="Receiver_Process_Lic_Update_Begin"             subTypeValue="201"/>
+            <classification subType="Receiver_Process_Lic_Update_End"             subTypeValue="202"/>
+            <classification subType="Receiver_Process_Lic_Response_Begin"             subTypeValue="203"/>
+            <classification subType="Receiver_Process_Lic_Response_End"             subTypeValue="204"/>
+            <classification subType="Licman_Queue_Event_Begin"             subTypeValue="205"/>
+            <classification subType="Licman_Queue_Event_End"             subTypeValue="206"/>
+            <classification subType="Licman_End_Get_Event_Begin"             subTypeValue="207"/>
+            <classification subType="Licman_End_Get_Event_End"             subTypeValue="208"/>
+            <classification subType="Licman_Begin_Get_Qurue_Event_Begin"             subTypeValue="209"/>
+            <classification subType="Licman_Begin_Get_Qurue_Event_End"             subTypeValue="210"/>
+            <classification subType="Licman_Get_Event_Begin"             subTypeValue="211"/>
+            <classification subType="Licman_Get_Event_End"             subTypeValue="212"/>
+            <classification subType="Encrypt_Encrypt_Scatter_Begin"             subTypeValue="213"/>
+            <classification subType="Encrypt_Encrypt_Scatter_End"             subTypeValue="214"/>
+            <classification subType="Encrypt_Init_Encrypt_Scatter_Begin"             subTypeValue="215"/>
+            <classification subType="Encrypt_Init_Encrypt_Scatter_End"             subTypeValue="216"/>
+            <classification subType="Mutualauthbase_Mutual_Authenticate_Begin"             subTypeValue="217"/>
+            <classification subType="Mutualauthbase_Mutual_Authenticate_End"             subTypeValue="218"/>
+
+            <template>
+              <WMDRM_SDK_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+              </WMDRM_SDK_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- DRM Manager Events -->
+        <event eventID="1" message="" guid="{ea57444f-55ed-4a3c-8e61-6d005ac55ce2}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Decrypt_High_Level_Begin"             subTypeValue="1"/>
+            <classification subType="Decrypt_High_Level_End"             subTypeValue="2"/>
+            <classification subType="Obfuscate_Begin"             subTypeValue="3"/>
+            <classification subType="Obfuscate_End"             subTypeValue="4"/>
+            <classification subType="Secret_Key_Hide_Begin"             subTypeValue="5"/>
+            <classification subType="Secret_Key_Hide_End"             subTypeValue="6"/>
+            <classification subType="Payload_Decrypt_Begin"             subTypeValue="7"/>
+            <classification subType="Payload_Decrypt_End"             subTypeValue="8"/>
+            <classification subType="Output_Encrypt_Begin"             subTypeValue="9"/>
+            <classification subType="Output_Encrypt_End"             subTypeValue="10"/>
+            <classification subType="Reset_Begin"             subTypeValue="11"/>
+            <classification subType="Reset_End"             subTypeValue="12"/>
+            <classification subType="Reinit_Begin"             subTypeValue="13"/>
+            <classification subType="Reinit_End"             subTypeValue="14"/>
+            <classification subType="Encrypt_Begin"             subTypeValue="15"/>
+            <classification subType="Encrypt_End"             subTypeValue="16"/>
+            <classification subType="Get_Version_Begin"             subTypeValue="17"/>
+            <classification subType="Get_Version_End"             subTypeValue="18"/>
+            <classification subType="Set_Version_Begin"             subTypeValue="19"/>
+            <classification subType="Set_Version_End"             subTypeValue="20"/>
+            <classification subType="Can_Bind_Begin" Start="true"  Layer="5" LayerName="DRM Manager" Name="Can Bind"              subTypeValue="21"/>
+            <classification subType="Can_Bind_End"   Start="false"  Layer="5" LayerName="DRM Manager" Name="Can Bind"          subTypeValue="22"/>
+            <classification subType="Can_Decrypt_Begin" Start="true" Layer="4" LayerName="DRM Manager" Name="Can Decrypt"           subTypeValue="23"/>
+            <classification subType="Can_Decrypt_End"  Start="false" Layer="4" LayerName="DRM Manager" Name="Can Decrypt"          subTypeValue="24"/>
+            <classification subType="Set_App_Cert_Begin"             subTypeValue="25"/>
+            <classification subType="Set_App_Cert_End"             subTypeValue="26"/>
+            <classification subType="Set_Rights_Begin"             subTypeValue="27"/>
+            <classification subType="Set_Rights_End"             subTypeValue="28"/>
+            <classification subType="Set_Rights_Ex_Begin"             subTypeValue="29"/>
+            <classification subType="Set_Rights_Ex_End"             subTypeValue="30"/>
+            <classification subType="Generate_New_License_Begin"             subTypeValue="31"/>
+            <classification subType="Generate_New_License_End"             subTypeValue="32"/>
+            <classification subType="Acquire_License_Begin"             subTypeValue="33"/>
+            <classification subType="Acquire_License_End"             subTypeValue="34"/>
+            <classification subType="Cancel_License_Acquisition_Begin"             subTypeValue="35"/>
+            <classification subType="Cancel_License_Acquisition_End"             subTypeValue="36"/>
+            <classification subType="Monitor_License_Acquisition_Begin"             subTypeValue="37"/>
+            <classification subType="Monitor_License_Acquisition_End"             subTypeValue="38"/>
+            <classification subType="Cancel_Monitor_License_Acquisition_Begin"             subTypeValue="39"/>
+            <classification subType="Cancel_Monitor_License_Acquisition_End"             subTypeValue="40"/>
+            <classification subType="Individualize_Begin"             subTypeValue="41"/>
+            <classification subType="Individualize_End"             subTypeValue="42"/>
+            <classification subType="Cancel_Individualization_Begin"             subTypeValue="43"/>
+            <classification subType="Cancel_Individualization_End"             subTypeValue="44"/>
+            <classification subType="Set_Enhanced_Data_Begin" Start="true"  Layer="5" LayerName="DRM Manager" Name="Set Enhanced Data"              subTypeValue="45"/>
+            <classification subType="Set_Enhanced_Data_End"  Start="false"  Layer="5" LayerName="DRM Manager" Name="Set Enhanced Data"           subTypeValue="46"/>
+            <classification subType="Get_Enhanced_Data_Begin"             subTypeValue="47"/>
+            <classification subType="Get_Enhanced_Data_End"             subTypeValue="48"/>
+            <classification subType="Have_Enhanced_Data_Begin"             subTypeValue="49"/>
+            <classification subType="Have_Enhanced_Data_End"             subTypeValue="50"/>
+            <classification subType="Have_License_Data_End"             subTypeValue="51"/>
+            <classification subType="Have_License_Data_Begin"             subTypeValue="52"/>
+            <classification subType="Get_Attribute_By_Name_Begin"             subTypeValue="53"/>
+            <classification subType="Get_Attribute_By_Name_End"             subTypeValue="54"/>
+            <classification subType="Set_Attribute_Begin"             subTypeValue="55"/>
+            <classification subType="Set_Attribute_End"             subTypeValue="56"/>
+            <classification subType="Set_V1_License_Url_Begin"             subTypeValue="57"/>
+            <classification subType="Set_V1_License_Url_End"             subTypeValue="58"/>
+            <classification subType="Set_V1_Content_Id_Begin"             subTypeValue="59"/>
+            <classification subType="Set_V1_Content_Id_End"             subTypeValue="60"/>
+            <classification subType="Get_Stream_Format_Begin"             subTypeValue="61"/>
+            <classification subType="Get_Stream_Format_End"             subTypeValue="62"/>
+            <classification subType="Sap_Encrypt_Begin"             subTypeValue="63"/>
+            <classification subType="Sap_Encrypt_End"             subTypeValue="64"/>
+            <classification subType="Verify_Certificate_Begin"             subTypeValue="65"/>
+            <classification subType="Verify_Certificate_End"             subTypeValue="66"/>
+            <classification subType="Verify_Module_Begin"             subTypeValue="67"/>
+            <classification subType="Verify_Module_End"             subTypeValue="68"/>
+            <classification subType="Check_For_Right_Begin"             subTypeValue="69"/>
+            <classification subType="Check_For_Right_End"             subTypeValue="70"/>
+            <classification subType="Report_Right_Usage_Begin"             subTypeValue="71"/>
+            <classification subType="Report_Right_Usage_End"             subTypeValue="72"/>
+            <classification subType="Create_Rights_Manager_Obj_Begin"             subTypeValue="73"/>
+            <classification subType="Create_Rights_Manager_Obj_End"             subTypeValue="74"/>
+            <classification subType="Rights_Manager_Obj_Keyexchange_Begin"             subTypeValue="75"/>
+            <classification subType="Rights_Manager_Obj_Keyexchange_End"             subTypeValue="76"/>
+            <classification subType="Verify_Keyexchange_Begin"             subTypeValue="77"/>
+            <classification subType="Verify_Keyexchange_End"             subTypeValue="78"/>
+            <classification subType="Verify_Caller_Begin"             subTypeValue="79"/>
+            <classification subType="Verify_Caller_End"             subTypeValue="80"/>
+            <classification subType="Check_Clock_Rollback_Begin"             subTypeValue="81"/>
+            <classification subType="Check_Clock_Rollback_End"             subTypeValue="82"/>
+            <classification subType="Verify_Module_Worker_Begin"             subTypeValue="83"/>
+            <classification subType="Verify_Module_Worker_End"             subTypeValue="84"/>
+            <classification subType="Create_Bb_Shim_Begin"             subTypeValue="85"/>
+            <classification subType="Create_Bb_Shim_End"             subTypeValue="86"/>
+            <classification subType="Drm_Acquire_License_Begin"             subTypeValue="87"/>
+            <classification subType="Drm_Acquire_License_End"             subTypeValue="88"/>
+            <classification subType="Drm_Form_Licaq_Request_String_Begin"             subTypeValue="89"/>
+            <classification subType="Drm_Form_Licaq_Request_String_End"             subTypeValue="90"/>
+            <classification subType="Drm_Licaq_Process_Ulinks_Begin"             subTypeValue="91"/>
+            <classification subType="Drm_Licaq_Process_Ulinks_End"             subTypeValue="92"/>
+            <classification subType="Drm_Licaq_Janus_Createrequest_Begin"             subTypeValue="93"/>
+            <classification subType="Drm_Licaq_Janus_Createrequest_End"             subTypeValue="94"/>
+            <classification subType="Drm_Getv1challenge_Begin"             subTypeValue="95"/>
+            <classification subType="Drm_Getv1challenge_End"             subTypeValue="96"/>
+            <classification subType="Drmv1_Requestlicense_Begin"             subTypeValue="97"/>
+            <classification subType="Drmv1_Requestlicense_End"             subTypeValue="98"/>
+            <classification subType="Drmv1_Requestlicense_Crypto_Begin"             subTypeValue="99"/>
+            <classification subType="Drmv1_Requestlicense_Crypto_End"             subTypeValue="100"/>
+            <classification subType="Initv2_Begin" Start="true"  Layer="4" LayerName="DRM Manager" Name="Init V2"            subTypeValue="101"/>
+            <classification subType="Initv2_End"   Start="false"  Layer="4" LayerName="DRM Manager" Name="Init V2"          subTypeValue="102"/>
+            <classification subType="Openlicensestore_Begin" Start="true"  Layer="3" LayerName="DRM Manager" Name="Open License Store"            subTypeValue="103"/>
+            <classification subType="Openlicensestore_End"   Start="false"  Layer="3" LayerName="DRM Manager" Name="Open License Store"          subTypeValue="104"/>
+            <classification subType="Closelicensestore_Begin"             subTypeValue="105"/>
+            <classification subType="Closelicensestore_End"             subTypeValue="106"/>
+            <classification subType="Createdecrypter_Begin"             subTypeValue="107"/>
+            <classification subType="Createdecrypter_End"             subTypeValue="108"/>
+            <classification subType="Verifydecrypter_Begin"             subTypeValue="109"/>
+            <classification subType="Verifydecrypter_End"             subTypeValue="110"/>
+            <classification subType="Decryptscatter_Begin"  Start="true"  Layer="4" LayerName="DRM Manager" Name="Decrypt"           subTypeValue="111"/>
+            <classification subType="Decryptscatter_End"    Start="false"  Layer="4" LayerName="DRM Manager" Name="Decrypt"         subTypeValue="112"/>
+            <classification subType="Canbindtov2license_Begin"  Start="true"  Layer="4" LayerName="DRM Manager" Name="Can Bind to V2"           subTypeValue="113"/>
+            <classification subType="Canbindtov2license_End"  Start="false"  Layer="4" LayerName="DRM Manager" Name="Can Bind to V2"           subTypeValue="114"/>
+            <classification subType="Bindtov2license_Begin"             subTypeValue="115"/>
+            <classification subType="Bindtov2license_End"             subTypeValue="116"/>
+            <classification subType="Internalacquirelicense_Begin" Start="true"  Layer="5" LayerName="DRM Manager" Name="Internal Acquire License"             subTypeValue="117"/>
+            <classification subType="Internalacquirelicense_End"  Start="false"  Layer="5" LayerName="DRM Manager" Name="Internal Acquire License"           subTypeValue="118"/>
+            <classification subType="Generatev1licensedata_Begin"             subTypeValue="119"/>
+            <classification subType="Generatev1licensedata_End"             subTypeValue="120"/>
+            <classification subType="Getproperty_Begin"             subTypeValue="121"/>
+            <classification subType="Getproperty_End"             subTypeValue="122"/>
+            <classification subType="Decryptv2_Begin"             subTypeValue="123"/>
+            <classification subType="Decryptv2_End"             subTypeValue="124"/>
+            <classification subType="Setv1kid_Begin"             subTypeValue="125"/>
+            <classification subType="Setv1kid_End"             subTypeValue="126"/>
+            <classification subType="Deletelicense_Begin"             subTypeValue="127"/>
+            <classification subType="Deletelicense_End"             subTypeValue="128"/>
+            <classification subType="Onstatus_Begin"             subTypeValue="129"/>
+            <classification subType="Onstatus_End"             subTypeValue="130"/>
+            <classification subType="V1monitoringlicenseacquisition_Begin"             subTypeValue="131"/>
+            <classification subType="V1monitoringlicenseacquisition_End"             subTypeValue="132"/>
+            <classification subType="Getlicenseid_Begin"             subTypeValue="133"/>
+            <classification subType="Getlicenseid_End"             subTypeValue="134"/>
+            <classification subType="Getoutputleveldata_Begin"  Start="true"  Layer="5" LayerName="DRM Manager" Name="Get Output Level"           subTypeValue="135"/>
+            <classification subType="Getoutputleveldata_End"    Start="false"  Layer="5" LayerName="DRM Manager" Name="Get Output Level"         subTypeValue="136"/>
+            <classification subType="Processwmdrmnetlicenseblob_Begin"             subTypeValue="137"/>
+            <classification subType="Processwmdrmnetlicenseblob_End"             subTypeValue="138"/>
+            <classification subType="Indi_Onstatus_Begin"             subTypeValue="139"/>
+            <classification subType="Indi_Onstatus_End"             subTypeValue="140"/>
+            <classification subType="Getminsecuritylevel_Begin"             subTypeValue="141"/>
+            <classification subType="Getminsecuritylevel_End"             subTypeValue="142"/>
+            <classification subType="Get_Revinfo_Begin"  Start="true"  Layer="4" LayerName="DRM Manager" Name="Get Rev Info"           subTypeValue="143"/>
+            <classification subType="Get_Revinfo_End"   Start="false"  Layer="4" LayerName="DRM Manager" Name="Get Rev Info"          subTypeValue="144"/>
+            <classification subType="Getpolicy_Begin"             subTypeValue="145"/>
+            <classification subType="Getpolicy_End"             subTypeValue="146"/>
+            <classification subType="Initoutputprotection_Begin"             subTypeValue="147"/>
+            <classification subType="Initoutputprotection_End"             subTypeValue="148"/>
+            <classification subType="Initializescatter_Begin"             subTypeValue="149"/>
+            <classification subType="Initializescatter_End"             subTypeValue="150"/>
+            <classification subType="Initscatter_Begin"             subTypeValue="151"/>
+            <classification subType="Initscatterclone_End"             subTypeValue="152"/>
+            <classification subType="Haverights_Begin"             subTypeValue="153"/>
+            <classification subType="Haverights_End"             subTypeValue="154"/>
+            <classification subType="Getlicstringval_Begin"             subTypeValue="155"/>
+            <classification subType="Getlicstringval_End"             subTypeValue="156"/>
+            <classification subType="Verify_Content_Header_Signature_Begin"             subTypeValue="157"/>
+            <classification subType="Verify_Content_Header_Signature_End"             subTypeValue="158"/>
+            <classification subType="Initv2_Chkpt1"             subTypeValue="159"/>
+            <classification subType="Initv2_Chkpt2"             subTypeValue="160"/>
+            <classification subType="Initv2_Chkpt3"             subTypeValue="161"/>
+            <classification subType="Initv2_Chkpt4"             subTypeValue="162"/>
+            <classification subType="Initv2_Chkpt5"             subTypeValue="163"/>
+            <classification subType="Initv2_Chkpt6"             subTypeValue="164"/>
+            <classification subType="Initv2_Chkpt7"             subTypeValue="165"/>
+            <classification subType="Initv2_Chkpt8"             subTypeValue="166"/>
+
+            <template>
+              <DRM_Manager_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+              </DRM_Manager_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+
+        <!-- WMDRM ITA Events -->
+        <event eventID="1" message="" guid="{1B8E9738-61F9-4337-BF27-83BBE55BDC95}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Get_Decrypter_Begin"             subTypeValue="1"/>
+            <classification subType="Get_Decrypter_End"             subTypeValue="2"/>
+            <classification subType="Request_Access_Begin"  Start="true"  Layer="5" LayerName="DRM ITA" Name="Request Access"           subTypeValue="3"/>
+            <classification subType="Request_Access_End"    Start="false"  Layer="5" LayerName="DRM ITA" Name="Request Access"         subTypeValue="4"/>
+            <classification subType="Verify_Kernel_State_Begin"  Start="true"  Layer="5" LayerName="DRM ITA" Name="Verify Kernel State"           subTypeValue="5"/>
+            <classification subType="Verify_Kernel_State_End"   Start="false"  Layer="5" LayerName="DRM ITA" Name="Verify Kernel State"          subTypeValue="6"/>
+            <classification subType="Peauth_Initialization_Begin" Start="true"  Layer="5" LayerName="DRM ITA" Name="PEAuth Init"            subTypeValue="7"/>
+            <classification subType="Peauth_Initialization_End"  Start="false"  Layer="5" LayerName="DRM ITA" Name="PEAuth Init"           subTypeValue="8"/>
+            <classification subType="Get_Policy_Begin"  Start="true"  Layer="5" LayerName="DRM ITA" Name="Get Policy"           subTypeValue="9"/>
+            <classification subType="Get_Policy_End"    Start="false"  Layer="5" LayerName="DRM ITA" Name="Get Policy"         subTypeValue="10"/>
+            <classification subType="Bind_Access_Begin"  Start="true"  Layer="5" LayerName="DRM ITA" Name="Bind Access"           subTypeValue="11"/>
+            <classification subType="Bind_Access_End"   Start="false"  Layer="5" LayerName="DRM ITA" Name="Bind Access"           subTypeValue="12"/>
+            <classification subType="Update_Access_Begin"             subTypeValue="13"/>
+            <classification subType="Update_Access_End"             subTypeValue="14"/>
+            <classification subType="Process_Wmdrmnet_Policy_Change_Begin"             subTypeValue="15"/>
+            <classification subType="Process_Wmdrmnet_Policy_Change_End"             subTypeValue="16"/>
+            <classification subType="Verify_Certificate_Begin"             subTypeValue="17"/>
+            <classification subType="Verify_Certificate_End"             subTypeValue="18"/>
+            <classification subType="Context_Init_Begin"             subTypeValue="19"/>
+            <classification subType="Context_Init_End"             subTypeValue="20"/>
+            <classification subType="Context_Init_Polices_Begin"             subTypeValue="21"/>
+            <classification subType="Context_Init_Polices_End"             subTypeValue="22"/>
+            <classification subType="Context_Fetchasf_Encryption_Obj_Begin"             subTypeValue="23"/>
+            <classification subType="Context_Fetchasf_Encryption_Obj_End"             subTypeValue="24"/>
+            <classification subType="Context_Init_Manager_Begin"             subTypeValue="25"/>
+            <classification subType="Context_Init_Manager_End"             subTypeValue="26"/>
+            <classification subType="Context_Init_From_Encryption_Obj_Begin"             subTypeValue="27"/>
+            <classification subType="Context_Init_From_Encryption_Obj_End"             subTypeValue="28"/>
+            <classification subType="Context_Init_Net_License_Representation_Begin"             subTypeValue="29"/>
+            <classification subType="Context_Init_Net_License_Representation_End"             subTypeValue="30"/>
+            <classification subType="Context_Load_Begin"             subTypeValue="31"/>
+            <classification subType="Context_Load_End"             subTypeValue="32"/>
+            <classification subType="Context_Save_Begin"             subTypeValue="33"/>
+            <classification subType="Context_Save_End"             subTypeValue="34"/>
+            <classification subType="Context_Create_Ita_Begin"             subTypeValue="35"/>
+            <classification subType="Context_Create_Ita_End"             subTypeValue="36"/>
+            <classification subType="Context_Request_Access_Begin"             subTypeValue="37"/>
+            <classification subType="Context_Request_Access_End"             subTypeValue="38"/>
+            <classification subType="Context_Getpolicy_Begin"             subTypeValue="39"/>
+            <classification subType="Context_Getpolicy_End"             subTypeValue="40"/>
+            <classification subType="Context_Bind_Access_Begin"             subTypeValue="41"/>
+            <classification subType="Context_Bind_Access_End"             subTypeValue="42"/>
+            <classification subType="Context_Getdecryptor_Begin"             subTypeValue="43"/>
+            <classification subType="Context_Getdecryptor_End"             subTypeValue="44"/>
+            <classification subType="Context_Verify_Certificate_Begin"             subTypeValue="45"/>
+            <classification subType="Context_Verify_Certificate_End"             subTypeValue="46"/>
+            <classification subType="Context_Cache_Sap_Bit_Begin"             subTypeValue="47"/>
+            <classification subType="Context_Cache_Sap_Bit_End"             subTypeValue="48"/>
+            <classification subType="Context_Process_Net_Policy_Change_Begin"             subTypeValue="49"/>
+            <classification subType="Context_Process_Net_Policy_Change_End"             subTypeValue="50"/>
+            <classification subType="Context_Init_From_Encryption_Info_Begin"             subTypeValue="51"/>
+            <classification subType="Context_Init_From_Encryption_Info_End"             subTypeValue="52"/>
+
+            <template>
+              <WMDRM_ITA_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+              </WMDRM_ITA_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+      </EventSource>
+
+
+
+
+      <EventSource name="XYPARSER" >
+          <!-- Renderer Rend Events -->
+        <event eventID="1" message="$(string.ImageId)" guid="{b857a029-6523-4dde-af98-f5b7e796d99a}" level="1">
+          <diagnosticInstance version="0">
+
+          <classification subType="Start_Rend"/>
+
+            <template>
+              <Renderer_>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag Key="true" >%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+                  <pSample>%UInt64;</pSample>
+                  <llSampleTime  YAxis="true" >%Int64;</llSampleTime>
+                  <llSampleDuration XAxis="true" >%Int64;</llSampleDuration>
+                  <llClockTime>%Int64;</llClockTime>
+              </Renderer_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="CACHEREADER" >
+        <!-- Cache Reader Status -->
+        <event eventID="1" message="$(string.ImageId)" guid="{69765E1D-CE42-4cb1-BA65-7C518784240B}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Status"/>
+
+            <template>
+              <Cache_Reader_>
+                <pObject Key="true" >%UInt64;</pObject>
+                <dwReporterTag >%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <llInitialOffset>%Int64;</llInitialOffset>
+                <llFinalOffset>%Int64;</llFinalOffset>
+                <dwBytesInCache YAxis="true" Scale="1">%UInt32;</dwBytesInCache>
+                <dwCacheSize>%UInt32;</dwCacheSize>
+                <cbSectorSize>%UInt32;</cbSectorSize>
+              </Cache_Reader_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="CADENCE" >
+        <event eventID="14" message="$(string.ImageId)" guid="{5ccf1378-6b2c-4c0f-bd56-8eeb9e4c5c77}" level="1">
+          <diagnosticInstance version="0">
+            <classification subType="Info" />
+            <template>
+              <Dxgk_SCHEDULER_VSYNC_DPC>
+                <pDxgAdapter>%UInt64;</pDxgAdapter>
+                <VidPnTargetId>%UInt32;</VidPnTargetId>
+                <ScannedPhysicalAddress>%UInt64;</ScannedPhysicalAddress>
+                <VidPnSourceId Key="true">%UInt32;</VidPnSourceId>
+                <FrameNumber>%UInt32;</FrameNumber>
+                <FrameQPCTime>%Int64;</FrameQPCTime>
+                <hFlipDevice>%UInt64;</hFlipDevice>
+                <FlipType>%UInt32;</FlipType>
+                <FlipFenceId>%UInt64;</FlipFenceId>
+              </Dxgk_SCHEDULER_VSYNC_DPC>
+            </template>
+          </diagnosticInstance>
+        </event>
+        <event eventID="13" message="$(string.ImageId)" guid="{58dee33f-2b46-4ff4-902d-50435512ff50}" level="1">
+          <diagnosticInstance version="0">
+            <classification subType="Info" />
+            <template>
+              <Dxgk_SCHEDULER_VSYNC_INTERRUPT>
+                <pDxgAdapter>%UInt64;</pDxgAdapter>
+                <VidPnTargetId Key="true">%UInt32;</VidPnTargetId>
+                <ScannedPhysicalAddress>%UInt64;</ScannedPhysicalAddress>
+              </Dxgk_SCHEDULER_VSYNC_INTERRUPT>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="CRIMSONCADENCE" >
+             <event channel="17" guid="{802ec45a-1e99-4b83-9920-87c98277ba9d}" level="0"  >
+               <diagnosticInstance version="0">
+                 <classification subType="Info" subTypeValue="181" OpCode="0" Task="10" />
+                 <template>
+                   <Name>
+                    <VidPnTargetId Key="true">%UInt32;</VidPnTargetId>
+                   </Name>
+                 </template>
+               </diagnosticInstance>
+             </event>
+             <event channel="17" guid="{802ec45a-1e99-4b83-9920-87c98277ba9d}" level="0"  >
+               <diagnosticInstance version="0">
+                 <classification subType="Info" subTypeValue="17" OpCode="0" Task="11" />
+                 <template>
+                   <Name>
+                    <VidPnTargetId Key="true">%UInt32;</VidPnTargetId>
+                   </Name>
+                 </template>
+               </diagnosticInstance>
+             </event>
+           </EventSource>
+
+
+
+      <EventSource name="CADENCE1" >
+        <!-- Renderer Rend Events -->
+        <event eventID="1" message="$(string.ImageId)" guid="{b857a029-6523-4dde-af98-f5b7e796d99a}" level="1">
+          <diagnosticInstance version="0">
+            <classification subType="End_Rend"/>
+            <template>
+              <Renderer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag Key="true" >%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <pSample>%UInt64;</pSample>
+                <llSampleTime>%Int64;</llSampleTime>
+                <llSampleDuration>%Int64;</llSampleDuration>
+                <llClockTime>%Int64;</llClockTime>
+              </Renderer_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+      </EventSource>
+
+      <EventSource name="DWMFLIPCADENCE" >
+        <event eventID="4" message="$(string.ImageId)" guid="{22412531-670b-4cd3-81d1-e709c154ae3d}" level="1">
+          <diagnosticInstance version="0">
+            <classification subType="Info" />
+            <template>
+              <Dxgk_FLIP>
+                <pDmaBuffer>%UInt64;</pDmaBuffer>
+                <VidPnSourceId Key="true">%UInt32;</VidPnSourceId>
+                <FlipToAllocation>%UInt64;</FlipToAllocation>
+                <FlipInterval>%UInt32;</FlipInterval>
+                <FlipWithNoWait>%Boolean;</FlipWithNoWait>
+                <MMIOFlip>%Boolean;</MMIOFlip>
+              </Dxgk_FLIP>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <!--classification subType="Info" value="33" Task="123" /-->
+      <EventSource name="AUDIOGLITCHCRIMSON" >
+        <event eventID="0" message="$(string.ImageId)" guid="{AE4BD3BE-F36F-45B6-8D21-BDD6FB832853}" level="4">
+          <diagnosticInstance version="0">
+            <classification value="-2"  Task="123" />
+            <template>
+              <Audio_Glitch>
+                <pCCrossProcessServerInputEndpoint>%UInt64;</pCCrossProcessServerInputEndpoint>
+                <WriteOffset>%UInt32;</WriteOffset>
+                <ReadOffset>%UInt32;</ReadOffset>
+                <BufferSize>%UInt32;</BufferSize>
+                <BytesAvailable>%UInt32;</BytesAvailable>
+              </Audio_Glitch>
+            </template>
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+
+      <EventSource name="DWMCRIMSONCADENCE" >
+         <event channel="17" guid="{802ec45a-1e99-4b83-9920-87c98277ba9d}" level="0"  >
+           <diagnosticInstance version="0">
+             <classification subType="Info" subTypeValue="168" OpCode="0" Task="3" />
+             <template>
+               <Name>
+               </Name>
+             </template>
+           </diagnosticInstance>
+         </event>
+        </EventSource>
+
+        <EventSource name="PRESENTCRIMSONCADENCE" >
+           <event channel="17" guid="{802ec45a-1e99-4b83-9920-87c98277ba9d}" level="0"  >
+             <diagnosticInstance version="0">
+               <classification subType="Info" subTypeValue="184" OpCode="0" Task="107" />
+               <template>
+                 <Name>
+                 </Name>
+               </template>
+             </diagnosticInstance>
+           </event>
+          </EventSource>
+
+
+
+
+      <EventSource name="CADENCE2" >
+        <event eventID="1" message="$(string.ImageId)" guid="{0de25c99-dda4-4074-b914-be14980cd237}" level="1">
+
+          <diagnosticInstance version="0">
+            <classification subType="Start" />
+            <classification subType="End" />
+            <template>
+              <VBlank_Present_>
+                <tCurrent>%UInt64;</tCurrent>
+                <tPresent>%UInt64;</tPresent>
+                <cRefreshCurrent>%UInt64;</cRefreshCurrent>
+                <cRefreshPresent>%UInt64;</cRefreshPresent>
+                <fForce>%UInt32;</fForce>
+              </VBlank_Present_>
+            </template>
+            <classification subType="End" />
+            <template>
+              <VBlank_Present_>
+              </VBlank_Present_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+
+      </EventSource>
+
+
+      <EventSource name="Render Actual End Delay" >
+        <!-- Renderer Rend Events -->
+        <event eventID="1" message="$(string.ImageId)" guid="{b857a029-6523-4dde-af98-f5b7e796d99a}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Actual_Rend"/>
+
+            <template>
+              <Renderer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <pSample>%UInt64;</pSample>
+                <llSampleTime YAxis="true" Scale="1">%Int64;</llSampleTime>
+                <llSampleDuration>%Int64;</llSampleDuration>
+                <llClockTime YAxis="true" Scale="-1">%Int64;</llClockTime>
+              </Renderer_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="MFPARSER" >
+        <!-- Renderer Rend Events -->
+        <event eventID="1" message="$(string.ImageId)" guid="{b857a029-6523-4dde-af98-f5b7e796d99a}" level="1">
+          <diagnosticInstance version="0">
+
+          <classification subType="Recv_Sample"/>
+          <classification subType="Start_Rend"/>
+          <classification subType="End_Rend"/>
+          <classification subType="Alloc_Sample"/>
+          <classification subType="End_Mix"/>
+          <classification subType="Start_Decode"/>
+          <classification subType="End_Decode"/>
+          <classification subType="Start_Deinterlace"/>
+          <classification subType="End_Deinterlace"/>
+          <classification subType="Start_Procamp"/>
+          <classification subType="End_Procamp"/>
+          <classification subType="Start_Frc"/>
+          <classification subType="End_Frc"/>
+          <classification subType="Mid_Rend"/>
+          <classification subType="Map_Rend"/>
+
+            <template>
+              <Renderer_>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag Key="true" >%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+                  <pSample>%UInt64;</pSample>
+                  <llSampleTime  YAxis="true" >%Int64;</llSampleTime>
+                  <llSampleDuration XAxis="true" >%Int64;</llSampleDuration>
+                  <llClockTime>%Int64;</llClockTime>
+              </Renderer_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- Renderer Sample Event -->
+        <event eventID="1" message="$(string.ImageId)" guid="{08DE626F-5C51-4597-A958-46B0F97E0F5A}" level="1">
+          <diagnosticInstance version="0">
+
+          <classification subType="Alloc_Sample"/>
+          <classification subType="Recv_Sample"/>
+
+            <template>
+              <Renderer_>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+                  <pSample>%UInt64;</pSample>
+                  <llSampleTime YAxis="true">%Int64;</llSampleTime>
+                  <llSampleDuration>%Int64;</llSampleDuration>
+                  <llClockTime>%Int64;</llClockTime>
+              </Renderer_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- Buffer Event -->
+        <!--event eventID="1" message="$(string.ImageId)" guid="{cfb318fe-9439-4974-9bbd-dde5a6c2af1b}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Input"/>
+            <classification subType="Output"/>
+
+            <template>
+              <Buffer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwObjectCategory>%UInt32;</dwObjectCategory>
+                <cbSample>%UInt32;</cbSample>
+                <pStream>%UInt64;</pStream>
+                <llTimestamp YAxis="true">%UInt64;</llTimestamp>
+                <pClock>%UInt64;</pClock>
+                <pBuffer>%UInt64;</pBuffer>
+                <cbBuffer>%UInt32;</cbBuffer>
+                <llDuration>%UInt64;</llDuration>
+              </Buffer_>
+            </template>
+
+          </diagnosticInstance>
+        </event-->
+
+        <!-- Processing Events -->
+        <!--event eventID="1" message="$(string.ImageId)" guid="{c9652f07-bef6-466b-a04e-38b68852edd5}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Input"/>
+            <classification subType="Output"/>
+
+            <template>
+              <Process_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwObjectCategory>%UInt32;</dwObjectCategory>
+                <dwPadding1>%UInt32;</dwPadding1>
+                <ulBytes>%UInt32;</ulBytes>
+                <dwPadding2>%UInt32;</dwPadding2>
+                <pvSample>%UInt64;</pvSample>
+                <llSampleTime YAxis="true">%Int64;</llSampleTime>
+                <ullProcessTime>%UInt64;</ullProcessTime>
+
+              </Process_>
+            </template>
+
+          </diagnosticInstance>
+        </event-->
+
+
+        <!-- Video Render Event  -->
+        <event eventID="1" message="$(string.ImageId)" guid="{582bb2a3-bec2-404f-b8cb-b8e267c974e4}" level="1">
+          <diagnosticInstance version="0">
+
+          <classification subType="Render"/>
+
+            <template>
+              <Video_>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+                  <pSample>%UInt64;</pSample>
+                  <llSampleTime YAxis="true">%Int64;</llSampleTime>
+                  <llSampleDuration>%Int64;</llSampleDuration>
+                  <llClockTime>%Int64;</llClockTime>
+                  <hwndVideo>%UInt64;</hwndVideo>
+                  <dwRefreshRate>%UInt32;</dwRefreshRate>
+                  <dwWidth>%UInt32;</dwWidth>
+                  <dwHeight>%UInt32;</dwHeight>
+                  <dwLeft>%UInt32;</dwLeft>
+                  <dwTop>%UInt32;</dwTop>
+                  <dwRight>%UInt32;</dwRight>
+                  <dwBottom>%UInt32;</dwBottom>
+                  <dwLeft1>%UInt32;</dwLeft1>
+                  <dwTop1>%UInt32;</dwTop1>
+                  <dwRight1>%UInt32;</dwRight1>
+                  <dwBottom1>%UInt32;</dwBottom1>
+              </Video_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- Audio Render Event  -->
+        <event eventID="1" message="$(string.ImageId)" guid="{582bb2a3-bec2-404f-b8cb-b8e267c974e4}" level="1">
+          <diagnosticInstance version="0">
+
+          <classification subType="Render"/>
+
+            <template>
+              <Audio_>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+                  <pSample>%UInt64;</pSample>
+                  <llSampleTime YAxis="true">%Int64;</llSampleTime>
+                  <llSampleDuration>%Int64;</llSampleDuration>
+                  <llMasterTime>%Int64;</llMasterTime>
+                  <llDeviceTime>%Int64;</llDeviceTime>
+              </Audio_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- Muxer Events -->
+        <event eventID="1" message="$(string.ImageId)" guid="{EC2A3817-AAC4-4d20-8DAD-1F0B0DAECBBE}" level="1">
+          <diagnosticInstance version="0">
+
+          <classification subType="ProcessSample"/>
+          <classification subType="AddPayload"/>
+          <classification subType="OnCompletedPacket"/>
+            <template>
+              <Muxer_>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag Key="true">%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+                  <wStreamNumber>%UInt32;</wStreamNumber>
+                  <llSampleTime YAxis="true">%Int64;</llSampleTime>
+                  <cbSample>%UInt32;</cbSample>
+                  <llPacketNumber>%Int64;</llPacketNumber>
+                  <llPacketSendTime>%Int64;</llPacketSendTime>
+                  <cbPacket>%UInt32;</cbPacket>
+              </Muxer_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+      </EventSource>
+
+      <EventSource name="MTPOPERATIONS" >
+        <!-- operation start and end event -->
+        <event eventID="1" message="$(string.ImageId)" guid="{37B4B68B-B89D-48fc-91EF-A1A89EF3B43E}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Start" Start="true"  Layer="2" LayerName="MTP Operations" Name="MTP OPERATIONS" subTypeValue="3"/>
+            <classification subType="End" Start="false"  Layer="2" LayerName="MTP Operations" Name="MTP OPERATIONS" subTypeValue="4"/>
+
+            <template>
+              <MTP_OP_>
+                <UniqueHandle>%UInt64;</UniqueHandle>
+                <dwTransactionID>%UInt32;</dwTransactionID>
+                <dwCode key="true">%UInt32;</dwCode>
+                <nParam>%UInt32;</nParam>
+                <dwParam0>%UInt32;</dwParam0>
+                <dwParam1>%UInt32;</dwParam1>
+                <dwParam2>%UInt32;</dwParam2>
+                <dwParam3>%UInt32;</dwParam3>
+                <dwParam4>%UInt32;</dwParam4>
+              </MTP_OP_>
+            </template>
+          </diagnosticInstance>
+        </event>
+
+      </EventSource>
+
+      <EventSource name="WMCINTERVAL" >
+
+        <!-- CDS_Browse event -->
+        <event eventID="1" message="" guid="{742D056C-E5C4-49e6-B281-325B8561B6BD}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Start"  Start="true"  Layer="4" LayerName="CDS Browse" Name="Browse" subTypeValue="1"/>
+            <classification subType="Stop"   Start="false" Layer="4" LayerName="CDS Browse" Name="Browse" subTypeValue="2"/>
+
+            <template>
+              <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwBrowseType>%UInt32;</dwBrowseType>
+                <dwStartingIndex>%UInt32;</dwStartingIndex>
+                <dwRequestedCount>%UInt32;</dwRequestedCount>
+                <dwNumReturned>%UInt32;</dwNumReturned>
+                <dwTotalMatches>%UInt32;</dwTotalMatches>
+                <hrStatus>%UInt32;</hrStatus>
+                <strArgs>%String;</strArgs>
+              </CDS_Browse_>
+            </template>
+
+
+            <classification subType="Filter_Endpoint_Start" Start="true"  Layer="3" LayerName="CDS Browse" Name="Filter End Point" subTypeValue="3"/>
+            <classification subType="Filter_Endpoint_Stop"  Start="false" Layer="3" LayerName="CDS Browse" Name="Filter End Point" subTypeValue="4"/>
+            <classification subType="Query_Content_Provider_Start" Start="true"  Layer="3" LayerName="CDS Browse" Name="Query Content Proivder" subTypeValue="7"/>
+            <classification subType="Query_Content_Provider_Stop"  Start="false" Layer="3" LayerName="CDS Browse" Name="Query Content Proivder" subTypeValue="8"/>
+
+            <template>
+              <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+              </CDS_Browse_>
+            </template>
+
+
+            <classification subType="Setup_Start" Start="true"  Layer="3" LayerName="CDS Browse" Name="Setup" subTypeValue="5"/>
+            <classification subType="Setup_Stop"  Start="false" Layer="3" LayerName="CDS Browse" Name="Setup" subTypeValue="6"/>
+
+            <template>
+              <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <bCanPublishAllAlbumArts>%UInt32;</bCanPublishAllAlbumArts>
+                <cFilterItems>%UInt32;</cFilterItems>
+                <cSortItems>%UInt32;</cSortItems>
+              </CDS_Browse_>
+            </template>
+
+            <classification subType="Write_Result_Start" Start="true"  Layer="3" LayerName="CDS Browse" Name="Write Result" subTypeValue="9"/>
+            <classification subType="Write_Result_Stop"  Start="false" Layer="3" LayerName="CDS Browse" Name="Write Result" subTypeValue="10"/>
+
+            <template>
+              <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwNumWritten>%UInt32;</dwNumWritten>
+                <dwTotalResultLen>%UInt32;</dwTotalResultLen>
+              </CDS_Browse_>
+            </template>
+
+            <classification subType="Sort_Criteria"                 subTypeValue="11"/>
+
+            <template>
+              <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <ullSortCriteria1>%UInt64;</ullSortCriteria1>
+                <ullSortCriteria2>%UInt64;</ullSortCriteria2>
+              </CDS_Browse_>
+            </template>
+
+
+            <classification subType="Filter_Fields"                 subTypeValue="12"/>
+
+            <template>
+              <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <ullFilterFlags1>%UInt64;</ullFilterFlags1>
+                <ullFilterFlags2>%UInt64;</ullFilterFlags2>
+              </CDS_Browse_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+
+
+        <!-- CDS_Search event -->
+        <event eventID="1" message="" guid="{AFEE2862-A8B2-42db-B191-192D410B5A36}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Start"  Start="true"  Layer="4" LayerName="CDS Search" Name="Search" subTypeValue="1"/>
+            <classification subType="Stop"   Start="false" Layer="4" LayerName="CDS Search" Name="Search" subTypeValue="2"/>
+
+            <template>
+              <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwStartingIndex>%UInt32;</dwStartingIndex>
+                <dwRequestedCount>%UInt32;</dwRequestedCount>
+                <dwNumReturned>%UInt32;</dwNumReturned>
+                <dwTotalMatches>%UInt32;</dwTotalMatches>
+                <hrStatus>%UInt32;</hrStatus>
+                <strArgs>%String;</strArgs>
+              </CDS_Search_>
+            </template>
+
+            <classification subType="Filter_Endpoint_Start" Start="true"  Layer="3" LayerName="CDS Search" Name="Filter End Point" subTypeValue="3"/>
+            <classification subType="Filter_Endpoint_Stop"  Start="false" Layer="3" LayerName="CDS Search" Name="Filter End Point" subTypeValue="4"/>
+            <classification subType="Query_Content_Provider_Start" Start="true"  Layer="3" LayerName="CDS Search" Name="Query Content Proivder" subTypeValue="7"/>
+            <classification subType="Query_Content_Provider_Stop"  Start="false" Layer="3" LayerName="CDS Search" Name="Query Content Proivder" subTypeValue="8"/>
+
+            <template>
+              <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+              </CDS_Search_>
+            </template>
+
+            <classification subType="Setup_Start" Start="true"  Layer="3" LayerName="CDS Search" Name="Setup" subTypeValue="5"/>
+            <classification subType="Setup_Stop"  Start="false" Layer="3" LayerName="CDS Search" Name="Setup" subTypeValue="6"/>
+
+            <template>
+              <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <bCanPublishAllAlbumArts>%UInt32;</bCanPublishAllAlbumArts>
+                <cFilterItems>%UInt32;</cFilterItems>
+                <cSortItems>%UInt32;</cSortItems>
+              </CDS_Search_>
+            </template>
+
+            <classification subType="Write_Result_Start" Start="true"  Layer="3" LayerName="CDS Search" Name="Write Result" subTypeValue="9"/>
+            <classification subType="Write_Result_Stop"  Start="false" Layer="3" LayerName="CDS Search" Name="Write Result" subTypeValue="10"/>
+
+            <template>
+              <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwNumWritten>%UInt32;</dwNumWritten>
+                <dwTotalResultLen>%UInt32;</dwTotalResultLen>
+              </CDS_Search_>
+            </template>
+
+            <classification subType="Sort_Criteria"                 subTypeValue="11"/>
+
+            <template>
+              <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <ullSortCriteria1>%UInt64;</ullSortCriteria1>
+                <ullSortCriteria2>%UInt64;</ullSortCriteria2>
+              </CDS_Search_>
+            </template>
+
+            <classification subType="Filter_Fields"                 subTypeValue="12"/>
+
+            <template>
+              <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <ullFilterFlags1>%UInt64;</ullFilterFlags1>
+                <ullFilterFlags2>%UInt64;</ullFilterFlags2>
+              </CDS_Search_>
+            </template>
+
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- CDS_ObjWriter event -->
+        <event eventID="1" message="" guid="{AA796251-D276-482a-8499-D83044124F8A}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Write_Result_Start" Start="true"  Layer="5" LayerName="CDS Obj Writer" Name="Write Result" subTypeValue="1"/>
+            <classification subType="Write_Result_Stop"  Start="false" Layer="5" LayerName="CDS Obj Writer" Name="Write Result" subTypeValue="2"/>
+
+            <template>
+              <CDS_ObjWriter_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <bCanPublishAllAlbumArts>%UInt32;</bCanPublishAllAlbumArts>
+                <dwNumReturned>%UInt32;</dwNumReturned>
+                <hrStatus>%UInt32;</hrStatus>
+              </CDS_ObjWriter_>
+            </template>
+
+            <classification subType="Write_Object_Start" Start="true"  Layer="5" LayerName="CDS Obj Writer" Name="Write Object" subTypeValue="3"/>
+            <classification subType="Write_Object_Stop"  Start="false" Layer="5" LayerName="CDS Obj Writer" Name="Write Object" subTypeValue="4"/>
+
+            <template>
+              <CDS_ObjWriter_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <iElement>%UInt32;</iElement>
+              </CDS_ObjWriter_>
+            </template>
+
+            <classification subType="Write_Element_Start" Start="true"  Layer="4" LayerName="CDS Obj Writer" Name="Write Element" subTypeValue="5"/>
+            <classification subType="Write_Element_Stop"  Start="false" Layer="4" LayerName="CDS Obj Writer" Name="Write Element" subTypeValue="6"/>
+
+            <template>
+              <CDS_ObjWriter_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <cdsElementValue>%UInt32;</cdsElementValue>
+                <bSelected>%UInt32;</bSelected>
+                <hrStatus>%UInt32;</hrStatus>
+              </CDS_ObjWriter_>
+            </template>
+
+            <classification subType="Act_Write_Element_Start" Start="true"  Layer="3" LayerName="CDS Obj Writer" Name="Act Write Element" subTypeValue="7"/>
+            <classification subType="Act_Write_Element_Stop"  Start="false" Layer="3" LayerName="CDS Obj Writer" Name="Act Write Element" subTypeValue="8"/>
+
+            <template>
+              <CDS_ObjWriter_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <cdsElementValue>%UInt32;</cdsElementValue>
+                <valueIndex>%UInt32;</valueIndex>
+                <bElementExists>%UInt32;</bElementExists>
+                <hrStatus>%UInt32;</hrStatus>
+              </CDS_ObjWriter_>
+            </template>
+
+            <classification subType="Act_Write_Res_Element_Start"       Start="true"  Layer="2" LayerName="CDS Obj Writer" Name="Act Write Res Element" subTypeValue="9"/>
+            <classification subType="Act_Write_Res_Element_Stop"        Start="false" Layer="2" LayerName="CDS Obj Writer" Name="Act Write Res Element" subTypeValue="10"/>
+            <classification subType="Act_Write_Album_Art_Element_Start" Start="true"  Layer="2" LayerName="CDS Obj Writer" Name="Act Write Album Art Element" subTypeValue="11"/>
+            <classification subType="Act_Write_Album_Art_Element_Stop"  Start="false" Layer="2" LayerName="CDS Obj Writer" Name="Act Write Album Art Element" subTypeValue="12"/>
+
+            <template>
+              <CDS_ObjWriter_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwCompatFlags>%UInt32;</dwCompatFlags>
+                <hrStatus>%UInt32;</hrStatus>
+              </CDS_ObjWriter_>
+            </template>
+
+            <classification subType="Get_Res_Elements_Start"             subTypeValue="13"/>
+            <classification subType="Get_Res_Elements_Stop"              subTypeValue="14"/>
+
+            <template>
+              <CDS_ObjWriter_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <lElementsCount>%UInt32;</lElementsCount>
+                <hrStatus>%UInt32;</hrStatus>
+              </CDS_ObjWriter_>
+            </template>
+
+            <classification subType="Write_Inner_Attrib_Start"  Start="true"  Layer="2" LayerName="CDS Obj Writer" Name="Write Inner Attrib" subTypeValue="15"/>
+            <classification subType="Write_Inner_Attrib_Stop"   Start="false" Layer="2" LayerName="CDS Obj Writer" Name="Write Inner Attrib" subTypeValue="16"/>
+            <classification subType="Write_Object_Attrib_Start"          subTypeValue="19"/>
+            <classification subType="Write_Object_Attrib_Stop"           subTypeValue="20"/>
+
+            <template>
+              <CDS_ObjWriter_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <cdsElementValue>%UInt32;</cdsElementValue>
+                <dwNumAttribWritten>%UInt32;</dwNumAttribWritten>
+                <hrStatus>%UInt32;</hrStatus>
+              </CDS_ObjWriter_>
+            </template>
+
+            <classification subType="Get_Album_Art_Data_Start" Start="true"  Layer="2" LayerName="CDS Obj Writer" Name="Get Album Art Data" subTypeValue="17"/>
+            <classification subType="Get_Album_Art_Data_Stop"  Start="false"  Layer="2" LayerName="CDS Obj Writer" Name="Get Album Art Data" subTypeValue="18"/>
+
+            <template>
+              <CDS_ObjWriter_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <hrStatus>%UInt32;</hrStatus>
+              </CDS_ObjWriter_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+
+        <!-- CDS_ObjWriter operation event -->
+        <event eventID="1" message="" guid="{BC8462DE-FE7E-4951-8D0C-0AB585D98E17}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Get_Element_Value_Start"    Start="true"  Layer="1" LayerName="CDS Obj Writer Operation" Name="Get Elemenet Value" subTypeValue="1"/>
+            <classification subType="Get_Element_Value_Stop"     Start="false" Layer="1" LayerName="CDS Obj Writer Operation" Name="Get Elemenet Value" subTypeValue="2"/>
+            <classification subType="Get_Element_Value_Ex_Start" Start="true"  Layer="1" LayerName="CDS Obj Writer Operation" Name="Get Elemenet Value Ex" subTypeValue="5"/>
+            <classification subType="Get_Element_Value_Ex_Stop"  Start="false" Layer="1" LayerName="CDS Obj Writer Operation" Name="Get Elemenet Value Ex" subTypeValue="6"/>
+
+            <template>
+              <CDS_Objwriter_Operation_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <CDS_ElementValue>%UInt32;</CDS_ElementValue>
+                <valueIndex>%UInt32;</valueIndex>
+                <hrStatus>%UInt32;</hrStatus>
+              </CDS_Objwriter_Operation_>
+            </template>
+
+            <classification subType="Get_Element_Attrib_Value_Start" Start="true"  Layer="1" LayerName="CDS Obj Writer Operation" Name="Get Elemenet Attrib Value" subTypeValue="3"/>
+            <classification subType="Get_Element_Attrib_Value_Stop"  Start="false"  Layer="1" LayerName="CDS Obj Writer Operation" Name="Get Elemenet Attrib Value" subTypeValue="4"/>
+
+            <template>
+              <CDS_Objwriter_Operation_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <CDS_ElementValue>%UInt32;</CDS_ElementValue>
+                <valueIndex>%UInt32;</valueIndex>
+                <CDS_AttributeValue>%UInt32;</CDS_AttributeValue>
+                <hrStatus>%UInt32;</hrStatus>
+              </CDS_Objwriter_Operation_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- Media_Receiver_Service event -->
+        <event eventID="1" message="" guid="{F4C66662-B199-4d25-AFCA-F318F111F237}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Is_Authorized_Start" Start="true"  Layer="4" LayerName="Media Receiver" Name="Is Authorized" subTypeValue="1"/>
+            <classification subType="Is_Authorized_Stop"  Start="false" Layer="4" LayerName="Media Receiver" Name="Is Authorized" subTypeValue="2"/>
+
+            <template>
+              <Media_Receiver_Service_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <bDeviceIDGiven>%UInt32;</bDeviceIDGiven>
+                <bIsAuthorized>%UInt32;</bIsAuthorized>
+                <hrStatus>%UInt32;</hrStatus>
+              </Media_Receiver_Service_>
+            </template>
+
+            <classification subType="Filter_Endpoint_Start" Start="true"  Layer="3" LayerName="Media Receiver" Name="Filter End Point" subTypeValue="3"/>
+            <classification subType="Filter_Endpoint_Stop"  Start="false" Layer="3" LayerName="Media Receiver" Name="Filter End Point" subTypeValue="4"/>
+
+            <template>
+              <Media_Receiver_Service_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+              </Media_Receiver_Service_>
+            </template>
+
+            <classification subType="Is_Validated_Start" Start="true"  Layer="4" LayerName="Media Receiver" Name="Is Validated" subTypeValue="5"/>
+            <classification subType="Is_Validated_Stop"  Start="false" Layer="4" LayerName="Media Receiver" Name="Is Validated" subTypeValue="6"/>
+
+            <template>
+              <Media_Receiver_Service_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <bDeviceIDGiven>%UInt32;</bDeviceIDGiven>
+                <bIsValidated>%UInt32;</bIsValidated>
+                <hrStatus>%UInt32;</hrStatus>
+              </Media_Receiver_Service_>
+            </template>
+
+
+            <classification subType="Register_Device_Start"                   Start="true"  Layer="4" LayerName="Media Receiver" Name="Register Device" subTypeValue="9"/>
+            <classification subType="Register_Device_Stop"                    Start="false" Layer="4" LayerName="Media Receiver" Name="Register Device" subTypeValue="10"/>
+            <classification subType="Register_Device_Create_Device_Reg_Start" Start="true"  Layer="3" LayerName="Media Receiver" Name="Create Device Reg" subTypeValue="11"/>
+            <classification subType="Register_Device_Create_Device_Reg_Stop"  Start="false" Layer="3" LayerName="Media Receiver" Name="Create Device Reg" subTypeValue="12"/>
+            <classification subType="Register_Device_Parse_Req_Start"         Start="true"  Layer="3" LayerName="Media Receiver" Name="Parse Req" subTypeValue="13"/>
+            <classification subType="Register_Device_Parse_Req_Stop"          Start="false" Layer="3" LayerName="Media Receiver" Name="Parse Req" subTypeValue="14"/>
+            <classification subType="Register_Device_Reg_Device_Start"        Start="true"  Layer="3" LayerName="Media Receiver" Name="Register Device Reg Device" subTypeValue="15"/>
+            <classification subType="Register_Device_Reg_Device_Stop"         Start="false" Layer="3" LayerName="Media Receiver" Name="Register Device Reg Device" subTypeValue="16"/>
+            <classification subType="Register_Device_Start_Detection_Start"   Start="true"  Layer="3" LayerName="Media Receiver" Name="Register Device Start Detection" subTypeValue="17"/>
+            <classification subType="Register_Device_Start_Detection_Stop"    Start="false" Layer="3" LayerName="Media Receiver" Name="Register Device Start Detection" subTypeValue="18"/>
+
+            <template>
+              <Media_Receiver_Service_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <hrStatus>%UInt32;</hrStatus>
+              </Media_Receiver_Service_>
+            </template>
+
+
+            <classification subType="Query_Mediaserver_Start" Start="true"  Layer="3" LayerName="Media Receiver" Name="Query Media Server" subTypeValue="7"/>
+            <classification subType="Query_Mediaserver_Stop"  Start="false" Layer="3" LayerName="Media Receiver" Name="Query Media Server" subTypeValue="8"/>
+
+            <template>
+              <Media_Receiver_Service_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <bIsAllowedCall>%UInt32;</bIsAllowedCall>
+                <bIsValidatedCall>%UInt32;</bIsValidatedCall>
+                <bResult>%UInt32;</bResult>
+              </Media_Receiver_Service_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- MDE Content Server event -->
+        <event eventID="1" message="" guid="{E47B2764-73F0-4179-8AB0-789BC5A39006}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Generate_Nontrans_Res_Element_Start"  subTypeValue="1"/>
+            <classification subType="Generate_Nontrans_Res_Element_Stop"   subTypeValue="2"/>
+            <classification subType="Generate_Trans_Res_Element_Start"     subTypeValue="3"/>
+            <classification subType="Generate_Trans_Res_Element_Stop"      subTypeValue="4"/>
+            <classification subType="Generate_Res_Element_Start"           subTypeValue="5"/>
+            <classification subType="Generate_Res_Element_Stop"            subTypeValue="6"/>
+            <classification subType="Generate_Album_Art_Element_Start"     subTypeValue="7"/>
+            <classification subType="Generate_Album_Art_Element_Stop"      subTypeValue="8"/>
+
+            <template>
+              <MDE_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwNumElementsInList>%UInt32;</dwNumElementsInList>
+                <hrStatus>%UInt32;</hrStatus>
+              </MDE_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+        <!-- MDE callback event -->
+        <event eventID="1" message="" guid="{BFAFD28D-A7B3-41e1-B9CF-0790487D5AB2}" level="1">
+          <diagnosticInstance version="0">
+
+            <classification subType="Begin_Authenticate_Start"    subTypeValue="1"/>
+            <classification subType="Begin_Authenticate_Stop"     subTypeValue="2"/>
+            <classification subType="Begin_Authorize_Start"       subTypeValue="5"/>
+            <classification subType="Begin_Authorize_Stop"        subTypeValue="6"/>
+            <classification subType="Begin_Url_Transform_Start"   subTypeValue="9"/>
+            <classification subType="Begin_Url_Transform_Stop"    subTypeValue="10"/>
+            <classification subType="Begin_Select_Profile_Start"  subTypeValue="13"/>
+            <classification subType="Begin_Select_Profile_Stop"   subTypeValue="14"/>
+            <classification subType="Begin_Close_Start"           subTypeValue="23"/>
+            <classification subType="Begin_Close_Stop"            subTypeValue="24"/>
+
+            <template>
+              <MDE_Callback_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <pNetEvent>%Pointer;</pNetEvent>
+                <pCallback>%Pointer;</pCallback>
+                <pState>%Pointer;</pState>
+                <hrStatus>%UInt32;</hrStatus>
+              </MDE_Callback_>
+            </template>
+
+            <classification subType="End_Authenticate_Start"      subTypeValue="3"/>
+            <classification subType="End_Authenticate_Stop"       subTypeValue="4"/>
+            <classification subType="End_Authorize_Start"         subTypeValue="7"/>
+            <classification subType="End_Authorize_Stop"          subTypeValue="8"/>
+            <classification subType="End_Url_Transform_Start"     subTypeValue="11"/>
+            <classification subType="End_Url_Transform_Stop"      subTypeValue="12"/>
+            <classification subType="End_Select_Profile_Start"    subTypeValue="15"/>
+            <classification subType="End_Select_Profile_Stop"     subTypeValue="16"/>
+            <classification subType="End_Close_Start"             subTypeValue="25"/>
+            <classification subType="End_Close_Stop"              subTypeValue="26"/>
+
+            <template>
+              <MDE_Callback_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <pResult>%Pointer;</pResult>
+                <hrStatus>%UInt32;</hrStatus>
+              </MDE_Callback_>
+            </template>
+
+            <classification subType="Get_Local_Path_Start"        subTypeValue="17"/>
+            <classification subType="Get_Local_Path_Stop"         subTypeValue="18"/>
+
+            <template>
+              <MDE_Callback_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <fAlbumArt>%UInt32;</fAlbumArt>
+                <fIsStream>%UInt32;</fIsStream>
+                <hrStatus>%UInt32;</hrStatus>
+              </MDE_Callback_>
+            </template>
+
+            <classification subType="Get_Object_Start"            subTypeValue="19"/>
+            <classification subType="Get_Object_Stop"             subTypeValue="20"/>
+
+            <template>
+              <MDE_Callback_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <hrStatus>%UInt32;</hrStatus>
+              </MDE_Callback_>
+            </template>
+
+            <classification subType="Get_Profile_Start"           subTypeValue="21"/>
+            <classification subType="Get_Profile_Stop"            subTypeValue="22"/>
+
+            <template>
+              <MDE_Callback_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <fAlbumArt>%UInt32;</fAlbumArt>
+                <fTranscode>%UInt32;</fTranscode>
+                <dwFormatID>%UInt32;</dwFormatID>
+                <hrStatus>%UInt32;</hrStatus>
+              </MDE_Callback_>
+            </template>
+
+          </diagnosticInstance>
+        </event>
+
+
+      </EventSource>
+ </events>
+
+</instrumentation>
+
+</assembly>

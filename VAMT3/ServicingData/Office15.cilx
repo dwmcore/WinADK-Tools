@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="0FF1CE15-4353-4442-B9F0-B0E1A41C182F">
+  <VamtSystemData>
+<SupportedGVLKs>
+
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 AccessVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>NG2JY-H4JBT-HQXYP-78QH9-4JM2D</KeyValue>
+        <SupportedEditions>AccessVL</SupportedEditions>
+        <SupportedSku>6EE7622C-18D8-4005-9FB7-92DB644A279B</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 ExcelVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>VGPNG-Y7HQW-9RHP7-TKPV3-BG7GB</KeyValue>
+        <SupportedEditions>ExcelVL</SupportedEditions>
+        <SupportedSku>F7461D52-7C2B-43B2-8744-EA958E0BD09A</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 InfoPathVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>DKT8B-N7VXH-D963P-Q4PHY-F8894</KeyValue>
+        <SupportedEditions>InfoPathVL</SupportedEditions>
+        <SupportedSku>A30B8040-D68A-423F-B0B5-9CE292EA5A8F</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 LyncVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>2MG3G-3BNTT-3MFW9-KDQW3-TCK7R</KeyValue>
+        <SupportedEditions>LyncVL</SupportedEditions>
+        <SupportedSku>1B9F11E3-C85C-4E1B-BB29-879AD2C909E3</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 MondoVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>42QTK-RN8M7-J3C4G-BBGYM-88CYV</KeyValue>
+        <SupportedEditions>MondoVL</SupportedEditions>
+        <SupportedSku>DC981C6B-FC8E-420F-AA43-F8F33E5C0923</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 OneNoteVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>TGN6P-8MMBC-37P2F-XHXXK-P34VW</KeyValue>
+        <SupportedEditions>OneNoteVL</SupportedEditions>
+        <SupportedSku>EFE1F3E6-AEA2-4144-A208-32AA872B6545</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 OutlookVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>QPN8Q-BJBTJ-334K3-93TGY-2PMBT</KeyValue>
+        <SupportedEditions>OutlookVL</SupportedEditions>
+        <SupportedSku>771C3AFA-50C5-443F-B151-FF2546D863A0</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 PowerPointVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>4NT99-8RJFH-Q2VDH-KYG2C-4RD4F</KeyValue>
+        <SupportedEditions>PowerPointVL</SupportedEditions>
+        <SupportedSku>8C762649-97D1-4953-AD27-B7E2C25B972E</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 ProjectProVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>FN8TT-7WMH6-2D4X9-M337T-2342K</KeyValue>
+        <SupportedEditions>ProjectProVL</SupportedEditions>
+        <SupportedSku>4A5D124A-E620-44BA-B6FF-658961B33B9A</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 ProjectStdVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>6NTH3-CW976-3G3Y2-JK3TX-8QHTT</KeyValue>
+        <SupportedEditions>ProjectStdVL</SupportedEditions>
+        <SupportedSku>427A28D1-D17C-4ABF-B717-32C780BA6F07</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 ProPlusVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>YC7DK-G2NP3-2QQC3-J6H88-GVGXT</KeyValue>
+        <SupportedEditions>ProPlusVL</SupportedEditions>
+        <SupportedSku>B322DA9C-A2E2-4058-9E4E-F59A6970BD69</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 PublisherVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>PN2WF-29XG2-T9HJ7-JQPJR-FCXK4</KeyValue>
+        <SupportedEditions>PublisherVL</SupportedEditions>
+        <SupportedSku>00C79FF1-6850-443D-BF61-71CDE0DE305F</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 StandardVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>KBKQT-2NMXY-JJWGP-M62JB-92CD4</KeyValue>
+        <SupportedEditions>StandardVL</SupportedEditions>
+        <SupportedSku>B13AFB38-CD79-4AE5-9F7F-EED058D750CA</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 VisioProVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>C2FG9-N6J68-H8BTJ-BW3QX-RM3B3</KeyValue>
+        <SupportedEditions>VisioProVL</SupportedEditions>
+        <SupportedSku>E13AC10E-75D0-4AFF-A0CD-764982CF541C</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 VisioStdVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>J484Y-4NKBF-W2HMG-DBMJC-PGWR7</KeyValue>
+        <SupportedEditions>VisioStdVL</SupportedEditions>
+        <SupportedSku>AC4EFAF0-F81F-4F61-BDF7-EA32B02AB117</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Office 2013 WordVL:GVLK</KeyDescription>
+        <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+        <KeyValue>6Q7VD-NX8JD-WJ2VH-88V73-4GBJ7</KeyValue>
+        <SupportedEditions>WordVL</SupportedEditions>
+        <SupportedSku>D9F5B1C6-5386-495A-88F9-9AD6B41AC9B3</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+		</SupportedGVLKs>
+		
+    <SupportedVolumeApplications>
+      <VolumeApplication>
+        <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+        <ApplicationName>Office</ApplicationName>
+        <OnlineHelpUri></OnlineHelpUri>
+      </VolumeApplication>
+    </SupportedVolumeApplications>
+
+    <ProductMappings>
+      <ProductMapping>
+        <Sku>2E28138A-847F-42BC-9752-61B03FFF33CD</Sku>
+        <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+        <KmsId>E6A6F1BF-9D40-40C3-AA9F-C77BA21578C0</KmsId>
+        <VersionName>2013</VersionName>
+        <SupportsAd>1</SupportsAd>
+        <ProductName>Office 2013</ProductName>
+        <ProductFamily>Client</ProductFamily>
+        <Edition></Edition>
+      </ProductMapping>
+    </ProductMappings>
+  </VamtSystemData>
+</VolumeActivationManagementToolData>

@@ -1,0 +1,87 @@
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+	<assemblyIdentity version="1.0.0.0" processorArchitecture="x86" name="?????" type="win32"/>
+    <memberships>
+        <categoryMembership>
+            <id name="Microsoft.Windows.Event" version="1.0.0.0" publicKeyToken="################" />
+            <categoryInstance subcategory="{########-####-####-####-############}">
+            </categoryInstance>
+            <eventData>
+                <globalChannel name="Application"/>
+                <applicationChannel name="Operational"/>
+            </eventData>
+        </categoryMembership>
+    </memberships>
+    <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+        <events componentType="application">
+            <eventSubTypes>
+                <subType name="_StateChangeRequest" value="1" />
+                <subType name="_StateChangeResult" value="2" />
+                <subType name="_StartDma" value="3" />
+                <subType name="_StopDma" value="4" />
+                <subType name="_PowerChangeRequest" value="5" />
+                <subType name="_PowerChangeResult" value="6" />
+            </eventSubTypes>
+            
+            <event eventID="101" message="$(string.PC)" guid="{2DB2AE4C-D01B-40de-A78B-849F331A916B}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_StateChangeRequest" />        <!-- 0x1 -->
+                    <template>
+                        <HDAudio_Stream>
+                            <EventType>%UInt32;</EventType>
+                            <OldState>%UInt32;</OldState>
+                            <NewState>%UInt32;</NewState>
+                        </HDAudio_Stream>
+                    </template>
+                    <classification subType="_StateChangeResult" />     <!-- 0x2 -->
+                    <template>
+                        <HDAudio_Stream>
+                            <EventType>%UInt32;</EventType>
+                            <NewState>%UInt32;</NewState>
+                            <Result>%UInt32;</Result>
+                        </HDAudio_Stream>
+                    </template>
+                    <classification subType="_StartDma" />       <!-- 0x3 -->
+                    <template>
+                        <HDAudio_Stream>
+                            <EventType>%UInt32;</EventType>
+                            <WasDMARunning>%UInt32;</WasDMARunning>
+                        </HDAudio_Stream>
+                    </template>
+                    <classification subType="_StopDma" />         <!-- 0x4 -->
+                    <template>
+                        <HDAudio_Stream>
+                            <EventType>%UInt32;</EventType>
+                            <Result>%UInt32;</Result>
+                        </HDAudio_Stream>
+                    </template>                    
+                </diagnosticInstance>
+            </event>
+            <event eventID="102" message="$(string.PC)" guid="{4E072227-62F6-4d5e-B260-564513BC4744}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_PowerChangeRequest" />
+                    <!-- 0x5 -->
+                    <template>
+                        <HDAudio_Event>
+                            <EventType>%UInt32;</EventType>
+                            <CurrentDeviceState>%UInt32;</CurrentDeviceState>
+                            <NewDeviceState>%UInt32;</NewDeviceState>
+                            <NewSystemState>%UInt32;</NewSystemState>
+                            <Status>%UInt32;</Status>
+                        </HDAudio_Event>
+                    </template>
+                    <classification subType="_PowerChangeResult" />
+                    <!-- 0x6 -->
+                    <template>
+                        <HDAudio_Event>
+                            <EventType>%UInt32;</EventType>
+                            <CurrentDeviceState>%UInt32;</CurrentDeviceState>
+                            <NewDeviceState>%UInt32;</NewDeviceState>
+                            <NewSystemState>%UInt32;</NewSystemState>
+                            <Status>%UInt32;</Status>
+                        </HDAudio_Event>
+                    </template>
+                </diagnosticInstance>
+            </event>
+        </events>
+    </instrumentation>
+</assembly>

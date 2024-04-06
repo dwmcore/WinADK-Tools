@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="E5872FAD-48A9-45CA-9F67-04F480B37155">
+
+  <VamtSystemData>
+
+    <SupportedGVLKs>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Thin PC Volume:GVLK</KeyDescription>
+        <KeyId>12345-00170-868-000000-03-1033-6001.0000-1962009</KeyId>
+        <KeyValue>73KQT-CD9G6-K7TQG-66MRP-CQ22C</KeyValue>
+        <SupportedEditions>Embedded</SupportedEditions>
+        <SupportedSku>AA6DD3AA-C2B4-40E2-A544-A6BBB3F5C395</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+    </SupportedGVLKs>
+
+  </VamtSystemData>
+</VolumeActivationManagementToolData>

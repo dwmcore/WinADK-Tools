@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <eventSubTypes>
+        <!-- Object event -->
+        <subType name="Create"                   value="1"/>
+      </eventSubTypes>
+
+      <!-- DVD Nav -->
+      <event eventID="1" message="$(string.ImageId)" guid="{bc047137-5fe5-4b9f-8456-9230f89decf9}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="NDISTCPIPReceive" value="16"/>
+          <template>
+            <NDISTCPIPReceive>
+              <NetLuid>%UInt32;</NetLuid>
+              <NumberOfNetBufferLists>%UInt32;</NumberOfNetBufferLists>
+			  <DurationOfCall>%UInt64;</DurationOfCall>
+			  <ProcessorIndex>%UInt32;</ProcessorIndex>
+            </NDISTCPIPReceive>
+          </template>
+		  
+          <classification subType="NDISPeriodicReceivesWorkItemEnd" value="18"/>
+          <template>
+            <NDISPeriodicReceivesWorkItemEnd>
+              <NetLuid>%UInt32;</NetLuid>
+              <WorkItemDuration>%UInt64;</WorkItemDuration>
+			  <NumberOfNetBufferLists>%UInt32;</NumberOfNetBufferLists>
+			  <ProcessorIndex>%UInt32;</ProcessorIndex>
+            </NDISPeriodicReceivesWorkItemEnd>
+          </template>
+		  
+          <classification subType="NDISPeriodicReceivesWorkItemStart" value="20"/>
+          <template>
+            <NDISPeriodicReceivesWorkItemStart>
+              <NetLuid>%UInt32;</NetLuid>
+			  <ProcessorIndex>%UInt32;</ProcessorIndex>
+            </NDISPeriodicReceivesWorkItemStart>
+          </template>
+		  
+		  
+        </diagnosticInstance>
+      </event>
+	  
+    </events>
+
+</instrumentation>
+
+</assembly>
+

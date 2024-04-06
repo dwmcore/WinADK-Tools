@@ -1,0 +1,93 @@
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+	<assemblyIdentity version="1.0.0.0" processorArchitecture="x86" name="?????" type="win32"/>
+    <memberships>
+        <categoryMembership>
+            <id name="Microsoft.Windows.Event" version="1.0.0.0" publicKeyToken="################" />
+            <categoryInstance subcategory="{########-####-####-####-############}">
+            </categoryInstance>
+            <eventData>
+                <globalChannel name="Application"/>
+                <applicationChannel name="Operational"/>
+            </eventData>
+        </categoryMembership>
+    </memberships>
+    <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+        <events componentType="application">
+            <eventSubTypes>
+                <subType name= "_Default" value="0" />
+
+            </eventSubTypes>
+            
+            <event eventID="1" message="$(string.OBJECT)" guid="{017C355C-E863-452f-9E17-2BDB6F82DCE1}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_Default" />
+                    <template>
+                        <EH_READOUT_EVENT>
+                            <msGetSample>%UInt32;</msGetSample>
+                            <msReadSample>%UInt32;</msReadSample>
+                            <hrReadSample>%UInt32;</hrReadSample>
+                            <StreamPos>%Int64;</StreamPos>
+                            <rtStreamTime>%Int64;</rtStreamTime>
+                            <pinIndex>%UInt32;</pinIndex>
+                            <hrSendSample>%UInt32;</hrSendSample>                            
+                        </EH_READOUT_EVENT>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+          <event eventID="2" message="$(string.OBJECT)" guid="{bd00c5b1-f2e9-11d9-835d-0007e95ead8d}" level="#">
+            <diagnosticInstance version="0">
+              <classification subType="_Default" />
+              <template>
+                <EH_MEDIA_SAMPLE_IN_EVENT>
+                  <msOverload>%UInt32;</msOverload>
+                  <msStart>%UInt32;</msStart>
+                  <SyncPoint>%UInt32;</SyncPoint>
+                  <Discontinuity>%UInt32;</Discontinuity>
+                  <Count>%uInt32;</Count>
+                  <PayloadSize>%Int32;</PayloadSize>
+                  <Ctx>%UInt64;</Ctx>
+                </EH_MEDIA_SAMPLE_IN_EVENT>
+              </template>
+            </diagnosticInstance>
+          </event>
+
+          <event eventID="3" message="$(string.OBJECT)" guid="{bd00c5b2-f2e9-11d9-835d-0007e95ead8d}" level="#">
+            <diagnosticInstance version="0">
+              <classification subType="_Default" />
+              <template>
+                <EH_MEDIA_SAMPLE_OUT_EVENT>
+                  <msOverload>%UInt32;</msOverload>
+                  <msStart>%UInt32;</msStart>
+                  <SyncPoint>%UInt32;</SyncPoint>
+                  <Discontinuity>%UInt32;</Discontinuity>
+                  <Count>%uInt32;</Count>
+                  <PayloadSize>%Int32;</PayloadSize>
+                  <Ctx>%UInt64;</Ctx>
+                  <hrDelivery>%UInt32;</hrDelivery>
+                </EH_MEDIA_SAMPLE_OUT_EVENT>
+              </template>
+            </diagnosticInstance>
+          </event>
+
+          <event eventID="3" message="$(string.OBJECT)" guid="{418786e0-9a50-4620-a540-6b27daf3eb62}" level="#">
+            <diagnosticInstance version="0">
+              <classification subType="_Default" />
+              <template>
+                <EH_PRESENTER_FRAME_TIMES>
+                  <frameNumber>%Int64;</frameNumber>
+                  <streamTime>%Int64;</streamTime>
+                  <presentationTime>%Int64;</presentationTime>
+                  <systemTime>%Int64;</systemTime>
+                  <clockTime>%Int64;</clockTime>
+                  <performanceFrequency>%Int64;</performanceFrequency>
+                </EH_PRESENTER_FRAME_TIMES>
+              </template>
+            </diagnosticInstance>
+          </event>
+
+
+        </events>
+    </instrumentation>
+</assembly>
+

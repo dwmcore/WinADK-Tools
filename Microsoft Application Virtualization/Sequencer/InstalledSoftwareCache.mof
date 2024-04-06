@@ -1,0 +1,40 @@
+#pragma autorecover
+#pragma namespace("\\\\.\\root\\ccm\\invagt")
+
+//**************************************************************************
+//* Class: 	AI_InstalledSoftwareCache 
+//* Used By:	Asset Intelligence for caching intermediate results while
+//* 		collecting artifacts for software applications
+//**************************************************************************
+class AI_InstalledSoftwareCache
+{
+        [key]   
+        string     SoftwareCode;
+        [key]   
+        string     InstallType;
+        
+        string     CM_DSLID;
+        string     ProductName;
+        string     ARPDisplayName;
+        string     ProductVersion;
+        string     Publisher;
+        string     VersionMajor;
+        string     VersionMinor;
+        string     ServicePack;
+        string     Language;
+        string     ProductID;
+        string     InstalledLocation;
+        string     InstallSource;
+        string     UninstallString;
+        string     LocalPackage;
+        string     UpgradeCode;
+        string     InstallDate;
+        string     RegisteredUser;
+        string     SoftwarePropertiesHash;
+        string     SoftwarePropertiesHashEx;
+        string     InstallDirectoryValidation;
+        string     ChannelCode;
+        string     EvidenceSource;
+        string     OsComponent; // ACT team, no entry in EvidenceSource
+        string     PackageCode; // ACT team, no entry in EvidenceSource
+};

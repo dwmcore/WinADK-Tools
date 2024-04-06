@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <eventSubTypes>
+        <subType name="START_TRANSPORT"                    value="100"/>
+        <subType name="STOP_TRANSPORT"                     value="101"/>
+        <subType name="START_STRUCTURAL_REDIRECTION"       value="102"/>
+        <subType name="STOP_STRUCTURAL_REDIRECTION"        value="103"/>
+        <subType name="START_DESKTOP_COMPOSITION"          value="104"/>
+        <subType name="STOP_DESKTOP_COMPOSITION"           value="105"/>
+        <subType name="REFRESH_DESKTOP_COMPOSITION"        value="106"/>
+        <subType name="RESET_STREAM"                       value="107"/>
+        <subType name="START_KERNEL_REDIRECTION"           value="108"/>
+        <subType name="STOP_KERNEL_REDIRECTION"            value="109"/>
+
+        <subType name="MODE_CHANGE"                        value="160" />
+
+        <subType name="EXCEPTION"                          value="170" />
+        <subType name="DISPLAY_MODE"                       value="171" />
+        <subType name="DISPLAY_ADAPTER_ID"                 value="172" />
+
+        <subType name="SHUTDOWN_MSG"                       value="200" />
+
+      </eventSubTypes>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{65358e40-aa15-470a-a166-e478a3b02800}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="START_TRANSPORT"                      />
+        <classification subType="STOP_TRANSPORT"                       />
+        <classification subType="START_STRUCTURAL_REDIRECTION"         />
+        <classification subType="STOP_STRUCTURAL_REDIRECTION"          />
+        <classification subType="START_DESKTOP_COMPOSITION"            />
+        <classification subType="STOP_DESKTOP_COMPOSITION"             />
+        <classification subType="REFRESH_DESKTOP_COMPOSITION"          />
+        <classification subType="RESET_STREAM"                         />
+        <classification subType="START_KERNEL_REDIRECTION"             />
+        <classification subType="STOP_KERNEL_REDIRECTION"              />
+          <template>
+            <DWM_RSM_/>
+          </template>
+
+        <classification subType="MODE_CHANGE" />
+          <template>
+            <DWM_SM_>
+            <height>%UInt32;</height>
+            <width>%UInt32;</width>
+            <depth>%UInt32;</depth>
+            </DWM_SM_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{4E9E5AA8-D4EA-431b-83F5-613E4F8A156F}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Start" />
+          <template>
+            <DWM_GRAPHICS_STREAM_CHANGE_>
+                <dwProcessId>%UInt32;</dwProcessId>
+            </DWM_GRAPHICS_STREAM_CHANGE_>
+          </template>
+
+          <classification subType="End" />
+          <template>
+            <DWM_GRAPHICS_STREAM_CHANGE_>
+                <dwProcessId>%UInt32;</dwProcessId>
+            </DWM_GRAPHICS_STREAM_CHANGE_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{64c31b8d-e3e4-4e1d-9044-5afe7c472bbf}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Start" />
+          <template>
+            <DWM_WIN32_REDIRECTION_>
+            </DWM_WIN32_REDIRECTION_>
+          </template>
+
+          <classification subType="End" />
+          <template>
+            <DWM_WIN32_REDIRECTION_>
+            </DWM_WIN32_REDIRECTION_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <event eventID="1" message="$(string.ImageId)" guid="{c60637bb-4fc7-4e1b-a624-98830a6704d7}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Start" />
+          <template>
+            <UDWM_>
+            <dwPreferences>%UInt32;</dwPreferences>
+            <dwPolicies>%UInt32;</dwPolicies>
+            <fSchedule>%UInt32;</fSchedule>
+            <rDpiScaleX>%double;</rDpiScaleX>
+            <rDpiScaleY>%double;</rDpiScaleY>
+            </UDWM_>
+          </template>
+
+
+          <classification subType="SHUTDOWN_MSG" />
+          <template>
+            <UDWM_>
+            </UDWM_>
+          </template>
+
+          <classification subType="End" />
+          <template>
+            <UDWM_>
+            <hrShutdown>%Pointer;</hrShutdown>            
+            </UDWM_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <event eventID="1" message="$(string.ImageId)" guid="{36695694-6d88-4f1d-826c-4a3ffbaf0af8}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="DISPLAY_MODE" />
+          <template>
+            <DWM_CONFIG_>
+              <idxAdapter>%UInt32;</idxAdapter>
+              <width>%UInt32;</width>
+              <height>%UInt32;</height>
+              <rate>%UInt32;</rate>
+              <format>%UInt32;</format>
+              <fHW>%UInt32;</fHW>
+            </DWM_CONFIG_>
+          </template>
+
+
+          <classification subType="DISPLAY_ADAPTER_ID" />
+          <template>
+            <DWM_CONFIG_>
+              <idxAdapter>%UInt32;</idxAdapter>
+              <padding>%UInt32;</padding>
+              <Version>%UInt64;</Version>
+              <VendorId>%Pointer;</VendorId>
+              <DeviceId>%Pointer;</DeviceId>
+              <SubSystemId>%Pointer;</SubSystemId>
+              <Revision>%Pointer;</Revision>
+              <DriverGUID>%Guid;</DriverGUID>
+              <WHQLLevel>%UInt32;</WHQLLevel>              
+              <Description>%AnsiString;</Description>
+            </DWM_CONFIG_>
+          </template>
+
+          <classification subType="EXCEPTION" />
+          <template>
+            <DWM_CONFIG_>
+              <ExceptionCode>%Pointer;</ExceptionCode>
+              <ExceptionFlags>%Pointer;</ExceptionFlags>
+              <padding>%Pointer;</padding>
+              <ExceptionAddress>%Pointer;</ExceptionAddress>  
+            </DWM_CONFIG_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{92bb5cee-a57e-4eee-a5fd-5b65306cbd00}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Start" />
+          <template>
+            <REMOTING>
+            </REMOTING>
+          </template>
+
+          <classification subType="End" />
+          <template>
+            <REMOTING>
+            </REMOTING>
+          </template>
+                
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{95EA05F8-F7AE-4b1f-B1FF-033FCB06517E}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Start" />
+          <template>
+            <DWMAnimation>
+              <AnimationId>%UInt32;</AnimationId>
+              <HWND>%Pointer;</HWND>
+            </DWMAnimation>
+          </template>
+                
+          <classification subType="End" />
+          <template>
+            <DWMAnimation>
+              <AnimationId>%UInt32;</AnimationId>
+              <HWND>%Pointer;</HWND>
+            </DWMAnimation>
+          </template>
+
+          <classification subType="Info" />
+          <template>
+            <DWMAnimation>
+            </DWMAnimation>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{F906CA84-F5DB-4a2f-8BB1-509D656E9C23}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Start" />
+          <template>
+            <DWMLPCMessage>
+              <CommandId>%UInt32;</CommandId>
+            </DWMLPCMessage>
+          </template>
+
+          <classification subType="End" />
+          <template>
+            <DWMLPCMessage>
+            </DWMLPCMessage>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+ </events>
+
+</instrumentation>
+
+</assembly>

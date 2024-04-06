@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Applications>
+    <!-- For sequencing a package -->
+    <Application>
+        <Name>sample_application_name</Name>
+        <InstallerFolder>c:\sample_app\</InstallerFolder>
+        <Installer>sample_app_installer.exe</Installer>
+        <InstallerOptions>/S /p</InstallerOptions>
+        <CustomScriptFolder>c:\sample_app\customscripts</CustomScriptFolder>
+        <TimeoutInMinutes>30</TimeoutInMinutes>
+        <Cmdlet>true</Cmdlet>
+        <Enabled>true</Enabled>
+    </Application>
+    <!-- For updating a package -->
+    <Application>
+        <Name>new_version_sample_application_name</Name>
+        <InstallerFolder>d:\new_version\</InstallerFolder>
+        <Installer>new_version_app_installer.exe</Installer>
+        <InstallerOptions>/quiet</InstallerOptions>
+        <Package>d:\UpdateMe\old_version.appv</Package>
+        <Cmdlet>false</Cmdlet>
+        <Enabled>true</Enabled>
+    </Application>
+</Applications>

@@ -1,0 +1,1759 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <eventSubTypes>
+        <!-- Object event -->
+        <subType name="Create"                   value="1"/>
+        <subType name="Delete"                   value="2"/>
+
+        <!-- AudioRenderer Starvation event -->
+        <subType name="Start"                    value="1"/>
+        <subType name="Stop"                     value="2"/>
+        <subType name="Previous_Discontinuity"   value="128"/>
+
+        <!-- Video Frame glitch event -->
+        <subType name="Frame_Glitch"             value="0"/>
+
+        <!-- FlipEx Queue -->
+        <subType name="FlipEx_Queue"             value="0"/>
+        
+        <!-- Data drop event -->
+        <subType name="Late_Arrival"             value="1"/>
+        <subType name="Late_Finish"              value="2"/>
+        <subType name="Bad_Data"                 value="4"/>
+        <subType name="Insufficient_Bit"         value="8"/>
+        <subType name="Net_Data_Loss"            value="16"/>
+        <subType name="Overrun"                  value="32"/>
+        <subType name="Stale"                    value="64"/>
+        <subType name="Mux_Failed"               value="128"/>
+
+        <subType name="Parse_Package_Failed"     value="256"/>
+        <subType name="Discarded"                value="512"/>
+        
+        <!-- Clock Get Time event -->
+        <subType name="Get_Time"                 value="0"/>
+
+        <!--  Predicted Video Sample Event -->
+        <subType name="Video_Sample"                   value="0"/>
+
+        <!-- Stream Event -->
+        <subType name="Create"                   value="1"/>
+        <subType name="Delete"                   value="2"/>
+
+        <!-- Media Type Change Event -->
+        <subType name="Change"                   value="0"/>
+
+        <!-- Buffer Event -->
+        <subType name="Input"                   value="1"/>
+        <subType name="Output"                   value="2"/>
+
+        <!-- Processing Events -->
+        <subType name="Input"              value="1"/>
+        <subType name="Output"                   value="2"/>
+        <subType name="Queue"                   value="3"/>
+
+        <!-- DiskIO Request Events  -->
+        <subType name="Read"                   value="1"/>
+        <subType name="Write"                   value="2"/>
+
+        <!-- DiskIO Complete Events  -->
+        <subType name="Complete"                   value="0"/>
+
+        <!-- File Open Event -->
+        <subType name="Open"                   value="0"/>
+
+        <!-- Renderer Rend Events -->
+        <subType name="Recv_Sample"                   value="1"/>
+        <subType name="Start_Rend"                   value="2"/>
+        <subType name="End_Rend"                   value="3"/>
+        <subType name="Alloc_Sample"                   value="4"/>
+        <subType name="Start_Mix"                   value="6"/>
+        <subType name="End_Mix"                   value="7"/>
+        <subType name="Start_Decode"                   value="8"/>
+        <subType name="End_Decode"                   value="9"/>
+        <subType name="Start_Deinterlace"                   value="10"/>
+        <subType name="End_Deinterlace"                   value="11"/>
+        <subType name="Start_Procamp"                   value="12"/>
+        <subType name="End_Procamp"                   value="13"/>
+        <subType name="Start_Frc"                   value="14"/>
+        <subType name="End_Frc"                   value="15"/>
+        <subType name="Mid_Rend"                   value="16"/>
+        <subType name="Map_Rend"                   value="17"/>
+        <subType name="Actual_Rend"                   value="18"/>
+
+        <!-- Renderer Sample Event -->
+        <subType name="Recv_Sample"                   value="1"/>
+        <subType name="Alloc_Sample"                   value="4"/>
+
+        <!-- DXVA Event -->
+        <subType name="Event"                   value="0"/>
+
+        <!-- State Change Events -->
+        <subType name="Stop"                   value="1"/>
+        <subType name="Pause"                   value="2"/>
+        <subType name="Start"                   value="3"/>
+
+        <!--Transform Creation Event  -->
+        <subType name="Create"                   value="0"/>
+
+        <!-- Topoloader API Events  -->
+        <subType name="Start"                   value="1"/>
+        <subType name="End"                   value="2"/>
+
+        <!-- packet Sink Events -->
+        <subType name="Lost"                   value="1"/>
+        <subType name="Recover_RTX"                   value="2"/>
+        <subType name="Recover_FEC"                   value="3"/>
+
+        <!-- Net Source Events -->
+        <subType name="Disconnect"                   value="1"/>
+        <subType name="Reconnect_Start"                   value="2"/>
+        <subType name="Reconnect_Stop"                   value="3"/>
+        <subType name="Announce"                   value="4"/>
+        <subType name="Eos"                   value="5"/>
+        <subType name="Streamswitch"                   value="6"/>
+        <subType name="Streamswitch_Done"                   value="7"/>
+        <subType name="Buffering_Start"                   value="8"/>
+        <subType name="Buffering_Stop"                   value="9"/>
+        <subType name="Connect_Start"                   value="10"/>
+        <subType name="Connect_Stop"                   value="11"/>
+        <subType name="Open_Start"                   value="12"/>
+        <subType name="Open_Stop"                   value="13"/>
+        <subType name="Mcast_Join_Done"                   value="14"/>
+
+        <!-- HTTP ByteStream Events -->
+        <subType name="Start"                   value="1"/>
+        <subType name="Stop"                   value="2"/>
+
+        <!-- Media Cache Events -->
+        <subType name="Readsample"                   value="1"/>
+        <subType name="Onreadsample"                   value="2"/>
+        <subType name="Writesample"                   value="3"/>
+        <subType name="Onwritesample"                   value="4"/>
+        <subType name="Seek"                   value="5"/>
+        <subType name="Onseek"                   value="6"/>
+        <subType name="Trim "                   value="7"/>
+        <subType name="Ontrim"                   value="8"/>
+
+        <!-- Session Bitpump Events -->
+        <subType name="Start_Async_Call"                   value="1"/>
+        <subType name="End_Async_Call"                   value="2"/>
+        <subType name="Receive"                   value="3"/>
+        <subType name="Error"                   value="4"/>
+        <subType name="Critical_Error"                   value="5"/>
+        <subType name="Start_Sync_Call"                   value="6"/>
+        <subType name="End_Sync_Call"                   value="7"/>
+        <subType name="Wait_for_Sample"                   value="8"/>
+
+        <!-- Media Session Events -->
+        <subType name="Begin_Set_Topology"       value="1"/>
+        <subType name="End_Set_Topology"         value="2"/>
+        <subType name="Begin_Start"         value="3"/>
+        <subType name="End_Start"         value="4"/>
+        <subType name="Begin_Stop"         value="5"/>
+        <subType name="End_Stop"         value="6"/>
+        <subType name="Begin_Pause"         value="7"/>
+        <subType name="End_Pause"         value="8"/>
+        <subType name="Begin_Close"         value="9"/>
+        <subType name="End_Close"         value="10"/>
+        <subType name="Begin_Shutdown"         value="11"/>
+        <subType name="End_Shutdown"         value="12"/>
+        <subType name="Begin_Presentationswitch"         value="13"/>
+        <subType name="End_Presentationswitch"         value="14"/>
+
+        <!-- Sequencer Events  -->
+        <subType name="Start"                   value="1"/>
+        <subType name="Stop"                   value="2"/>
+        <subType name="OnContextEvent"                   value="3"/>
+        <subType name="ProcessSample"                   value="4"/>
+        <subType name="OnStreamEvent"                   value="5"/>
+        <subType name="BeginCreateObjectFromNode"                   value="6"/>
+        <subType name="EndCreateObjectFromNode"                   value="7"/>
+
+        <!-- Quality Manager Events  -->
+        <subType name="SetQualityLevel"                   value="1"/>
+        <subType name="SetDropMode"                   value="2"/>
+        <subType name="SetDropTime"                   value="3"/>
+
+        <!-- Adjust Sample Time Events  -->
+        <subType name="OneShot"                   value="1"/>
+        <subType name="Repeat"                   value="2"/>
+
+        <!-- Video Render Event  -->
+        <subType name="Render"                   value="0"/>
+
+        <!-- Audio Render Event  -->
+        <subType name="Render"                   value="0"/>
+
+        <!-- Metadata Events  -->
+        <subType name="Created"                   value="1"/>
+        <subType name="Loaded"                   value="2"/>
+        <subType name="GetCount"                   value="3"/>
+        <subType name="GetAt"                   value="4"/>
+        <subType name="GetValue"                   value="5"/>
+        <subType name="SetValue"                   value="6"/>
+        <subType name="Flush"                   value="7"/>
+        <subType name="OnGetCount"                   value="8"/>
+        <subType name="OnGetAt"                   value="9"/>
+        <subType name="OnGetValue"                   value="10"/>
+        <subType name="OnSetValue"                   value="11"/>
+        <subType name="OnFlush"                   value="12"/>
+
+        <!-- Muxer Events -->
+        <subType name="ProcessSample"                   value="1"/>
+        <subType name="AddPayload"                   value="2"/>
+        <subType name="OnCompletedPacket"                   value="3"/>
+
+        <!-- Timer Late Event -->
+        <subType name="Late"                   value="0"/>
+
+        <!-- Lock Events  -->        
+        <subType name="Try_Acquire"              value="1"/>
+        <subType name="Acquired"                 value="2"/>
+        <subType name="Released"                 value="3"/>
+
+        <!-- Stack Event  -->
+        <subType name="Event"                   value="0"/>
+
+        <!-- MFGraph Events  -->
+        <subType name="Start_Play"                   value="1"/>
+        <subType name="End_Play"                   value="2"/>
+        <subType name="Start_Stop"                   value="3"/>
+        <subType name="End_Stop"                   value="4"/>
+        <subType name="Start_Pause"                   value="5"/>
+        <subType name="End_Pause"                   value="6"/>
+        <subType name="Start_Render"                   value="7"/>
+        <subType name="End_Render"                   value="8"/>
+        <subType name="Start_Find_Interface_On_Filter"                   value="9"/>
+        <subType name="End_Find_Interface_On_Filter"                   value="10"/>
+        <subType name="Start_Scan"                   value="11"/>
+        <subType name="End_Scan"                   value="12"/>
+        <subType name="Start_Set_Rate"                   value="13"/>
+        <subType name="End_Set_Rate"                   value="14"/>
+        <subType name="Start_Insert_Node"                   value="15"/>
+        <subType name="End_Insert_Node"                   value="16"/>
+        <subType name="Start_Begin_Batch_Insert"                   value="17"/>
+        <subType name="End_Begin_Batch_Insert"                   value="18"/>
+        <subType name="Start_End_Batch_Insert"                   value="19"/>
+        <subType name="End_End_Batch_Insert"                   value="20"/>
+        <subType name="Start_Close"                   value="21"/>
+        <subType name="End_Close"                   value="22"/>
+        <subType name="Start_Set_Volume"                   value="23"/>
+        <subType name="End_Set_Volume"                   value="24"/>
+        <subType name="Start_Set_Stop_Position"                   value="25"/>
+        <subType name="End_Set_Stop_Position"                   value="26"/>
+        <subType name="Start_Set_Current_Position"                   value="27"/>
+        <subType name="End_Set_Current_Position"                   value="28"/>
+        <subType name="Start_Set_Context"                   value="29"/>
+        <subType name="End_Set_Context"                   value="30"/>
+        <subType name="Start_Queue"                   value="31"/>
+        <subType name="End_Queue"                   value="32"/>
+        <subType name="Start_Init"                   value="33"/>
+        <subType name="End_Init"                   value="34"/>
+        <subType name="Start_Init_Ex"                   value="35"/>
+        <subType name="End_Init_Ex"                   value="36"/>
+        <subType name="Start_Get_Type"                   value="37"/>
+        <subType name="End_Get_Type"                   value="38"/>
+        <subType name="Start_Is_Reused"                   value="39"/>
+        <subType name="End_Is_Reused"                   value="40"/>
+        <subType name="Start_Get_Url"                   value="41"/>
+        <subType name="End_Get_Url"                   value="42"/>
+        <subType name="Start_Get_Context"                   value="43"/>
+        <subType name="End_Get_Context"                   value="44"/>
+        <subType name="Start_Get_Cookie"                   value="45"/>
+        <subType name="End_Get_Cookie"                   value="46"/>
+        <subType name="Start_Set_Cookie"                   value="47"/>
+        <subType name="End_Set_Cookie"                   value="48"/>
+        <subType name="Start_Get_Open_State"                   value="49"/>
+        <subType name="End_Get_Open_State"                   value="50"/>
+        <subType name="Start_Get_Rate"                   value="51"/>
+        <subType name="End_Get_Rate"                   value="52"/>
+        <subType name="Start_Get_Current_Position"                   value="53"/>
+        <subType name="End_Get_Current_Position"                   value="54"/>
+        <subType name="Start_Get_Stop_Position"                   value="55"/>
+        <subType name="End_Get_Stop_Position"                   value="56"/>
+        <subType name="Start_Get_Volume"                   value="57"/>
+        <subType name="End_Get_Volume"                   value="58"/>
+        <subType name="Start_Get_Media_Caps"                   value="59"/>
+        <subType name="End_Get_Media_Caps"                   value="60"/>
+        <subType name="Start_Get_Control_Caps"                   value="61"/>
+        <subType name="End_Get_Control_Caps"                   value="62"/>
+        <subType name="Start_Get_Seek_Caps"                   value="63"/>
+        <subType name="End_Get_Seek_Caps"                   value="64"/>
+        <subType name="Start_Get_Jump_Caps"                   value="65"/>
+        <subType name="End_Get_Jump_Caps"                   value="66"/>
+        <subType name="Start_Set_Auto_Rewind"                   value="67"/>
+        <subType name="End_Set_Auto_Rewind"                   value="68"/>
+        <subType name="Start_Notify_State_Change"                   value="69"/>
+        <subType name="End_Notify_State_Change"                   value="70"/>
+        <subType name="Start_Notify_Playback_End"                   value="71"/>
+        <subType name="End_Notify_Playback_End"                   value="72"/>
+        <subType name="Start_Notify_Rate_Change"                   value="73"/>
+        <subType name="End_Notify_Rate_Change"                   value="74"/>
+        <subType name="Start_Notify_Error"                   value="75"/>
+        <subType name="End_Notify_Error"                   value="76"/>
+        <subType name="Start_Notify_License"                   value="77"/>
+        <subType name="End_Notify_License"                   value="78"/>
+        <subType name="Start_Notify_Cred"                   value="79"/>
+        <subType name="End_Notify_Cred"                   value="80"/>
+        <subType name="Start_Notify_Individualization"                   value="81"/>
+        <subType name="End_Notify_Individualization"                   value="82"/>
+        <subType name="Start_Find_Plugin"                   value="83"/>
+        <subType name="End_Find_Plugin"                   value="84"/>
+        <subType name="Start_Notify_Revocation"                   value="85"/>
+        <subType name="End_Notify_Revocation"                   value="86"/>
+        <subType name="Start_Handle_Presentation_Switch"                   value="87"/>
+        <subType name="End_Handle_Presentation_Switch"                   value="88"/>
+        <subType name="Start_Notify_Fullscreen"                   value="89"/>
+        <subType name="End_Notify_Fullscreen"                   value="90"/>
+        <subType name="Start_Notify_Custom_License"                   value="91"/>
+        <subType name="End_Notify_Custom_License"                   value="92"/>
+        <subType name="Start_Notify_Device_Loss_Gain"                   value="93"/>
+        <subType name="End_Notify_Device_Loss_Gain"                   value="94"/>
+
+        <!-- WMP Playback events -->
+        <subType name="Open"                   value="1"/>
+        <subType name="Queue"                   value="2"/>
+        <subType name="Start"                   value="3"/>
+        <subType name="Graph_Error_Open"                   value="4"/>
+        <subType name="Graph_Error_Queue"                   value="5"/>
+
+        <!-- PE Auth Comm -->
+        <subType name="Start_Acquire_Sessionkey"                   value="1"/>
+        <subType name="End_Acquire_Sessionkey"                   value="2"/>
+        <subType name="Start_Kernelstate_Inquiry"                   value="3"/>
+        <subType name="End_Kernelstate_Inquiry"                   value="4"/>
+        <subType name="Start_Reload_Grl"                   value="5"/>
+        <subType name="End_Reload_Grl"                   value="6"/>
+        <subType name="Start_Renew_Sessionkey"                   value="7"/>
+        <subType name="End_Renew_Sessionkey"                   value="8"/>
+        <subType name="Start_Get_Comp_List"                   value="9"/>
+        <subType name="End_End_Comp_List"                   value="10"/>
+
+        <!-- Cache Reader Status -->
+        <subType name="Status"                   value="0"/>
+
+        <!-- OPQueue event -->
+        <subType name="OPQueue_Start" value="1" />
+        <subType name="OPQueue_Complete" value="2" />
+
+        <!-- EVR Queue event -->
+        <!-- EVR DeQueue event -->
+        <subType name="Info" value="0" />
+
+        <!-- EVR Sleep event -->
+        <subType name="Copy_Surface_Source" value="1" />
+        <subType name="Copy_Surface_Destination" value="2" />
+        <subType name="Present" value="3" />
+        <subType name="Media_Sample_Lock" value="4" />
+
+        <!-- Property Handler Event -->
+        <subType name="Init_Start" value="1" />
+        <subType name="Init_End" value="2" />
+        <subType name="GetValue_Start" value="3" />
+        <subType name="GetValue_End" value="4" />
+        <subType name="SetValue_Start" value="5" />
+        <subType name="SetValue_End" value="6" />
+        <subType name="Commit_Start" value="7" />
+        <subType name="Commit_End" value="8" />
+        <!-- Capture Source Events -->
+        <subType name="Startup_Latency"                   value="1"/>
+        <subType name="ReadyQueue_Empty"                   value="2"/>
+        <subType name="ReadyQueue_Full"                   value="3"/>
+
+
+      </eventSubTypes>
+
+      <!-- Object event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{ca04227a-f03e-4382-a168-8050befd3a49}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Create"/>
+        <classification subType="Delete"/>
+
+          <template>
+            <MFObject_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pLockObject>%Byte;</pLockObject>
+            </MFObject_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Capture source event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{C2EECC32-3EEB-4b91-B702-58CBC5856010}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Startup_Latency"/>
+        <classification subType="ReadyQueue_Empty"/>
+        <classification subType="ReadyQueue_Full"/>
+
+          <template>
+            <Capture_Source>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <ullDuration>%UInt64;</ullDuration>
+            </Capture_Source>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+      
+      <!-- AudioRenderer Starvation event -->						    
+      <event eventID="1" message="$(string.ImageId)" guid="{daa05fdd-8072-4d5f-8033-ad6f6b1834a5}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Start"/>
+        <classification subType="Stop"/>
+        <classification subType="Previous_Discontinuity"/>
+
+          <template>
+            <Audio_Glitch_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <ullByteCount>%UInt64;</ullByteCount>
+            </Audio_Glitch_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- OPQueue event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{96C0E294-5EFC-43A3-A440-0BD78D032978}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="OPQueue_Start"/>
+          <classification subType="OPQueue_Complete"/>
+          
+          <template>
+            <OPQueue>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <lOperation>%Int32;</lOperation>
+              <hrStatus>%Int32;</hrStatus>
+            </OPQueue>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- EVR Queue Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{3a918990-b731-4deb-93b0-55248f887ec4}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info"/>
+
+          <template>
+            <EVRQueue>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <pSample>%UInt64;</pSample>
+              <llTargetQPC>%UInt64;</llTargetQPC>
+              <llSubmittedQPC>%UInt64;</llSubmittedQPC>
+            </EVRQueue>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- EVR Sleep Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{c114f738-957f-4c53-afbc-14a1c36fcd4f}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info"/>
+          <classification subType="Copy_Surface_Source" />
+          <classification subType="Copy_Surface_Destination" />
+          <classification subType="Present" />
+          <classification subType="Media_Sample_Lock" />
+
+          <template>
+            <EVRSleep>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <hThread>%UInt64;</hThread>
+              <uType>%UInt32;</uType>
+              <iWidth>%Int32;</iWidth>
+              <iHeight>%Int32;</iHeight>
+              <dwFormat>%UInt32;</dwFormat>
+              <dwRetry>%UInt32;</dwRetry>
+            </EVRSleep>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- EVR DeQueue Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{c8809dd6-2b1c-4f21-8cbd-016aca980293}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info"/>
+
+          <template>
+            <EVRDeQueue>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <pSample>%UInt64;</pSample>
+              <llOriginalTargetQPC>%UInt64;</llOriginalTargetQPC>
+              <llTargetQPC>%UInt64;</llTargetQPC>
+              <llSubmittedQPC>%UInt64;</llSubmittedQPC>
+              <llNow>%UInt64;</llNow>
+              <llPresentTime>%UInt64;</llPresentTime>
+              <cDWMFramesPresented>%Int64;</cDWMFramesPresented>
+              <cDWMRefreshStart>%Int64;</cDWMRefreshStart>
+              <cBuffersEmpty>%UInt32;</cBuffersEmpty>
+              <cRefreshFrame>%Int64;</cRefreshFrame>
+              
+            </EVRDeQueue>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+      
+      <!-- Video Frame glitch event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{a48f85e2-8317-49fb-ba3f-936e627b98fb}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Frame_Glitch"/>
+        
+          <template>
+            <Video_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pSample>%UInt64;</pSample>
+                <llSampleTime>%Int64;</llSampleTime>
+                <llTargetSystemTime>%Int64;</llTargetSystemTime>
+                <llOffset>%Int64;</llOffset>
+            </Video_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Video Frame glitch event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{c8809dd6-2b1c-4f21-8cbd-016aca980293}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="FlipEx_Queue"/>
+
+          <template>
+            <Video_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <pSample>%UInt64;</pSample>
+              <llOriginalTargetQPC>%UInt64;</llOriginalTargetQPC>
+              <llTargetQPC>%UInt64;</llTargetQPC>
+              <llSubmittedQPC>%UInt64;</llSubmittedQPC>
+              <llNow>%UInt64;</llNow>
+              <llPresentTime>%UInt64;</llPresentTime>
+              <FramesPresented>%Int64;</FramesPresented>
+              <DWMRefreshStart>%Int64;</DWMRefreshStart>
+              <BuffersEmpty>%UInt32;</BuffersEmpty>
+              <QueueDepth>%Int64;</QueueDepth>
+            </Video_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Data drop event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{d91d194a-b161-4536-b56b-0af6c176e7b7}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Late_Arrival"/>
+        <classification subType="Late_Finish"/>
+        <classification subType="Bad_Data"/>
+        <classification subType="Insufficient_Bit"/>
+        <classification subType="Net_Data_Loss"/>
+        <classification subType="Overrun"/>
+        <classification subType="Stale"/>
+        <classification subType="Mux_Failed"/>
+        <classification subType="Late_submit"/>
+
+          <template>
+            <MF_Data_Drop_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <dwDataType>%UInt32;</dwDataType>
+                <cbDropped>%UInt32;</cbDropped>
+                <llSampleTime>%UInt64;</llSampleTime>
+                <dwReasons>%UInt32;</dwReasons>
+            </MF_Data_Drop_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- ClockGetTime Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{d66a2a37-5724-4fbf-b384-0b489ccac093}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Get_Time"/>
+        
+          <template>
+            <Clock_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <llClockTime>%UInt64;</llClockTime>
+            </Clock_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!--  Predicted Video Sample Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{6e2e9480-8622-49c9-bfb2-d9e3a14b27d3}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Video_Sample"/>
+
+          <template>
+            <Predicted_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+            </Predicted_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- Stream Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{21805bd5-7410-4498-b5d9-4f57a71294d6}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Create"/>
+        <classification subType="Delete"/>
+
+          <template>
+            <Stream_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+            </Stream_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Media Type Change Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{ca04227a-f03e-4382-a168-8050befd3a49}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Change"/>
+
+          <template>
+            <Media_Type_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pStream>%UInt64;</pStream>
+                <cbNewType>%Int32;</cbNewType>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pbNewType>%AnsiString;</pbNewType>             
+            </Media_Type_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- Buffer Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{cfb318fe-9439-4974-9bbd-dde5a6c2af1b}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Input"/>
+        <classification subType="Output"/>
+        <classification subType="Queue"/>
+
+          <template>
+            <Buffer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <dwObjectCategory>%UInt32;</dwObjectCategory>
+                <cbSample>%UInt32;</cbSample>
+                <pStream>%UInt64;</pStream>
+                <llTimestamp>%UInt64;</llTimestamp>
+                <pClock>%UInt64;</pClock>
+                <pBuffer>%UInt64;</pBuffer>
+                <cbBuffer>%UInt32;</cbBuffer>
+                <llDuration>%UInt64;</llDuration>
+            </Buffer_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Processing Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{c9652f07-bef6-466b-a04e-38b68852edd5}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Input"/>
+        <classification subType="Output"/>
+
+          <template>
+            <Process_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <dwObjectCategory>%UInt32;</dwObjectCategory>
+                <dwPadding1>%UInt32;</dwPadding1>
+                <ulBytes>%UInt32;</ulBytes>
+                <dwPadding2>%UInt32;</dwPadding2>
+                <pvSample>%UInt64;</pvSample>
+                <llSampleTime>%Int64;</llSampleTime>
+                <ullProcessTime>%UInt64;</ullProcessTime>
+
+            </Process_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- DiskIO Request Events  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{a5687caa-208e-4bd5-8042-a486b19be4e7}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Read"/>
+        <classification subType="Write"/>
+
+          <template>
+            <DiskIO_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <hFile>%UInt64;</hFile>
+                <llOffset>%UInt64;</llOffset>
+                <byteCount>%UInt32;</byteCount>       
+            </DiskIO_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- DiskIO Complete Event  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{8afb0b5f-eabc-41e0-a25d-91dc6173195e}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Complete"/>
+
+          <template>
+            <DiskIO_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <hFile>%UInt64;</hFile>
+            </DiskIO_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- File Open Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{c25c3351-9ad3-4338-83ce-c73f83bfefd4}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Open"/>
+
+          <template>
+            <File_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <hFile>%UInt64;</hFile>
+                <szName>%String;</szName>
+            </File_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Renderer Rend Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{b857a029-6523-4dde-af98-f5b7e796d99a}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Recv_Sample"/>
+        <classification subType="Start_Rend"/>
+        <classification subType="End_Rend"/>
+        <classification subType="Alloc_Sample"/>
+        <classification subType="Start_Mix"/>
+        <classification subType="End_Mix"/>
+        <classification subType="Start_Decode"/>
+        <classification subType="End_Decode"/>
+        <classification subType="Start_Deinterlace"/>
+        <classification subType="End_Deinterlace"/>
+        <classification subType="Start_Procamp"/>
+        <classification subType="End_Procamp"/>
+        <classification subType="Start_Frc"/>
+        <classification subType="End_Frc"/>
+        <classification subType="Mid_Rend"/>
+        <classification subType="Map_Rend"/>
+        <classification subType="Actual_Rend"/>
+
+          <template>
+            <Renderer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pSample>%UInt64;</pSample>
+                <llSampleTime>%Int64;</llSampleTime>
+                <llSampleDuration>%Int64;</llSampleDuration>
+                <llClockTime>%Int64;</llClockTime>
+            </Renderer_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Renderer Sample Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{08DE626F-5C51-4597-A958-46B0F97E0F5A}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Alloc_Sample"/>
+        <classification subType="Recv_Sample"/>
+
+          <template>
+            <Renderer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pSample>%UInt64;</pSample>
+                <llSampleTime>%Int64;</llSampleTime>
+                <llSampleDuration>%Int64;</llSampleDuration>
+                <llClockTime>%Int64;</llClockTime>
+            </Renderer_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- DXVA Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{28E45CAF-7C4A-421a-B299-9310F92432E2}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pSample>%UInt64;</pSample>
+                <llClockTime>%Int64;</llClockTime>
+            </DXVA_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- State Change Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{f6ea3eb9-cf8f-4933-8612-41fff8af3e22}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Stop"/>
+        <classification subType="Pause"/>
+        <classification subType="Start"/>
+
+          <template>
+            <State_Change_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+            </State_Change_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!--Transform Creation Event  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{1BF54FD9-9534-40e6-AD15-559E3BCFAA66}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Create"/>
+
+          <template>
+            <Transform_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <guidTransform>%Guid;</guidTransform>
+                <pTransform>%UInt64;</pTransform>
+                <bUserTransform>%Boolean;</bUserTransform>
+            </Transform_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Topoloader API Events  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{E78B8410-9535-4b19-AFC3-94AAF91453E1}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Start"/>
+        <classification subType="End"/>
+
+          <template>
+            <Topoloader_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <dwApiCode>%UInt32;</dwApiCode>
+            </Topoloader_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- packet Sink Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{2C0408D6-D56B-4c54-8444-AE76A7E88BCA}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Lost"/>
+        <classification subType="Recover_RTX"/>
+        <classification subType="Recover_FEC"/>
+        
+          <template>
+            <PacketSink_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>       
+                <RtpSeq>%UInt32;</RtpSeq>
+                <PacketNum>%UInt32;</PacketNum>
+            </PacketSink_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Net Source Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{2C0408D7-D56B-4c54-8444-AE76A7E88BCA}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Disconnect"/>
+        <classification subType="Reconnect_Start"/>
+        <classification subType="Reconnect_Stop"/>
+        <classification subType="Announce"/>
+        <classification subType="Eos"/>
+        <classification subType="Streamswitch"/>
+        <classification subType="Streamswitch_Done"/>
+        <classification subType="Buffering_Start"/>
+        <classification subType="Buffering_Stop"/>
+        <classification subType="Connect_Start"/>
+        <classification subType="Connect_Stop"/>
+        <classification subType="Open_Start"/>
+        <classification subType="Open_Stop"/>
+        <classification subType="Mcast_Join_Done"/>
+
+          <template>
+            <Net_Source_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <Arg1>%UInt32;</Arg1>
+                <Arg2>%UInt32;</Arg2>
+            </Net_Source_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- HTTP ByteStream Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{C4D0C07E-0484-4793-A777-25B592E3C81B}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Start"/>
+        <classification subType="Stop"/>
+
+          <template>
+            <HTTP_ByteStream_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+            </HTTP_ByteStream_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Media Cache Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{4007FE7D-8A35-4d26-A68D-E4CAA269BF63}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Readsample"/>
+        <classification subType="Onreadsample"/>
+        <classification subType="Writesample"/>
+        <classification subType="Onwritesample"/>
+        <classification subType="Seek"/>
+        <classification subType="Onseek"/>
+        <classification subType="Trim"/>
+        <classification subType="Ontrim"/>
+
+          <template>
+            <Media_Cache_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <SegID>%UInt32;</SegID>
+                <nPending>%UInt32;</nPending>
+                <llTime>%Int64;</llTime>
+                <pSample>%UInt64;</pSample>
+            </Media_Cache_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Session Bitpump Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{70aeed03-7c02-42d6-a8d8-e3266c9c6e19}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Start_Async_Call"/>
+        <classification subType="End_Async_Call"/>
+        <classification subType="Receive"/>
+        <classification subType="Error"/>
+        <classification subType="Critical_Error"/>
+        <classification subType="Start_Sync_Call"/>
+        <classification subType="End_Sync_Call"/>
+        <classification subType="Wait_for_Sample"/>
+
+          <template>
+            <Session_Bitpump_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <dwState>%UInt32;</dwState>
+                <dwContext>%UInt32;</dwContext>
+                <hr>%UInt32;</hr>
+            </Session_Bitpump_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Media Session Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{568a2f63-deb8-4348-88d3-36f3763ed1f6}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Begin_Set_Topology"/>
+        <classification subType="End_Set_Topology"/>
+        <classification subType="Begin_Start"/>
+        <classification subType="End_Start"/>
+        <classification subType="Begin_Stop"/>
+        <classification subType="End_Stop"/>
+        <classification subType="Begin_Pause"/>
+        <classification subType="End_Pause"/>
+        <classification subType="Begin_Close"/>
+        <classification subType="End_Close"/>
+        <classification subType="Begin_Shutdown"/>
+        <classification subType="End_Shutdown"/>
+        <classification subType="Begin_Presentationswitch"/>
+        <classification subType="End_Presentationswitch"/>
+
+          <template>
+            <MFSession_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pParam1>%UInt64;</pParam1>
+            </MFSession_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Sequencer Events  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{c12f92fe-4c72-47ec-94f6-7961fb7b7d36}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Start"/>
+        <classification subType="Stop"/>
+        <classification subType="OnContextEvent"/>
+        <classification subType="ProcessSample"/>
+        <classification subType="OnStreamEvent"/>
+        <classification subType="BeginCreateObjectFromNode"/>
+        <classification subType="EndCreateObjectFromNode"/>
+
+          <template>
+            <Sequencer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pObject>%UInt64;</pObject>
+                <dwMET>%UInt32;</dwMET>
+                <llTime>%Int64;</llTime>
+                <pParam1>%UInt64;</pParam1>
+                <pwszURL>%UInt64;</pwszURL>
+            </Sequencer_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- Quality Manager Events  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{e730c440-047e-481a-b567-394c148c2185}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="SetQualityLevel"/>
+        <classification subType="SetDropMode"/>
+        <classification subType="SetDropTime"/>
+
+        <StrTable Name="KnobIdStr">
+          <String Name="DECODER_KNOB"               value="1"/>
+          <String Name="VIDEOSINK_KNOB"           value="2"/>
+          <String Name="SOURCE_KNOB"               value="3"/>
+        </StrTable>
+
+          <template>
+            <QM_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <dwKnobId Key="true" StringTable="KnobIdStr" >%UInt32;</dwKnobId>
+                <dwPrevLevel>%UInt32;</dwPrevLevel>
+                <dwNewLevel>%UInt32;</dwNewLevel>
+                <llDropTime>%Int64;</llDropTime>
+            </QM_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Adjust Sample Time Events  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{0b023f29-00bc-4f42-912f-632260fc870d}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="OneShot"/>
+        <classification subType="Repeat"/>
+
+          <template>
+            <Adjust_Sample_Time_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <llOriginalSampleTime>%Int64;</llOriginalSampleTime>
+                <llAdjustment>%Int64;</llAdjustment>
+            </Adjust_Sample_Time_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Video Render Event  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{582bb2a3-bec2-404f-b8cb-b8e267c974e4}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Render"/>
+
+          <template>
+            <Video_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pSample>%UInt64;</pSample>
+                <llSampleTime>%Int64;</llSampleTime>
+                <llSampleDuration>%Int64;</llSampleDuration>
+                <llClockTime>%Int64;</llClockTime>
+                <hwndVideo>%UInt64;</hwndVideo>
+                <dwRefreshRate>%UInt32;</dwRefreshRate>
+                <dwWidth>%UInt32;</dwWidth>
+                <dwHeight>%UInt32;</dwHeight>
+                <dwLeft>%UInt32;</dwLeft>
+                <dwTop>%UInt32;</dwTop>
+                <dwRight>%UInt32;</dwRight>
+                <dwBottom>%UInt32;</dwBottom>
+                <dwLeft1>%UInt32;</dwLeft1>
+                <dwTop1>%UInt32;</dwTop1>
+                <dwRight1>%UInt32;</dwRight1>
+                <dwBottom1>%UInt32;</dwBottom1>
+            </Video_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Audio Render Event  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{582bb2a3-bec2-404f-b8cb-b8e267c974e4}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Render"/>
+
+          <template>
+            <Audio_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pSample>%UInt64;</pSample>
+                <llSampleTime>%Int64;</llSampleTime>
+                <llSampleDuration>%Int64;</llSampleDuration>
+                <llMasterTime>%Int64;</llMasterTime>
+                <llDeviceTime>%Int64;</llDeviceTime>
+            </Audio_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- PropertyHandler Events  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{13789057-37AD-4448-801A-98DA51EA6C75}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Info"/>
+          <classification subType="Init_Start"  />
+          <classification subType="Init_End"  />
+          <classification subType="GetValue_Start"  />
+          <classification subType="GetValue_End"  />
+          <classification subType="SetValue_Start" />
+          <classification subType="SetValue_End"  />
+          <classification subType="Commit_Start" />
+          <classification subType="Commit_End"  />
+
+          <template>
+            <PropertyHandler_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <dwContentType>%UInt32;</dwContentType>
+            </PropertyHandler_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Property Handler Event -->
+
+
+      <!-- Metadata Events  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{DAE07B68-C8C5-4c81-B633-88227D7C6891}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Created"/>
+        <classification subType="Loaded"/>
+        <classification subType="GetCount"/>
+        <classification subType="GetAt"/>
+        <classification subType="GetValue"/>
+        <classification subType="SetValue"/>
+        <classification subType="Flush"/>
+        <classification subType="OnGetCount"/>
+        <classification subType="OnGetAt"/>
+        <classification subType="OnGetValue"/>
+        <classification subType="OnSetValue"/>
+        <classification subType="OnFlush"/>
+
+          <template>
+            <Metadata_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <hr>%UInt32;</hr>
+                <pKey>%UInt64;</pKey>
+                <pVar>%UInt64;</pVar>
+                <dwIdxCnt>%UInt32;</dwIdxCnt>
+            </Metadata_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Muxer Events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{EC2A3817-AAC4-4d20-8DAD-1F0B0DAECBBE}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="ProcessSample"/>
+        <classification subType="AddPayload"/>
+        <classification subType="OnCompletedPacket"/>
+          <template>
+            <Muxer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+                <wStreamNumber>%UInt32;</wStreamNumber>
+                <llSampleTime>%Int64;</llSampleTime>
+                <cbSample>%UInt32;</cbSample>
+                <llPacketNumber>%Int64;</llPacketNumber>
+                <llPacketSendTime>%Int64;</llPacketSendTime>
+                <cbPacket>%UInt32;</cbPacket>
+            </Muxer_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Timer Late Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{73d4bd03-1382-48e1-b39f-8a255cf9bffd}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Late"/>
+
+          <template>
+            <Timer_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <llEventTime>%Int64;</llEventTime>
+                <llLateBy>%Int64;</llLateBy>
+                <pCallback>%UInt64;</pCallback>	
+            </Timer_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Lock Events  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{1be6dfeb-7843-4443-8533-bdf8782f2761}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Try_Acquire"/>
+        <classification subType="Acquired"/>
+        <classification subType="Released"/>
+
+          <template>
+            <MFLock_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <pLockObject>%UInt64;</pLockObject>
+            </MFLock_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- Stack Event  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{201d5081-4704-440e-bc9c-ed3b6fae4945}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Event"/>
+
+          <template>
+            <Stack_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <aFrame1>%UInt64;</aFrame1>
+                <aFrame2>%UInt64;</aFrame2>
+                <aFrame3>%UInt64;</aFrame3>
+            </Stack_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- MFGraph Events  -->
+      <event eventID="1" message="$(string.ImageId)" guid="{DEF1CE86-DD89-4774-B4D4-A31135512D8B}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Start_Play"/>
+        <classification subType="End_Play"/>
+        <classification subType="Start_Stop"/>
+        <classification subType="End_Stop"/>
+        <classification subType="Start_Pause"/>
+        <classification subType="End_Pause"/>
+        <classification subType="Start_Render"/>
+        <classification subType="End_Render"/>
+        <classification subType="Start_Find_Interface_On_Filter"/>
+        <classification subType="End_Find_Interface_On_Filter"/>
+        <classification subType="Start_Scan"/>
+        <classification subType="End_Scan"/>
+        <classification subType="Start_Set_Rate"/>
+        <classification subType="End_Set_Rate"/>
+        <classification subType="Start_Insert_Node"/>
+        <classification subType="End_Insert_Node"/>
+        <classification subType="Start_Begin_Batch_Insert"/>
+        <classification subType="End_Begin_Batch_Insert"/>
+        <classification subType="Start_End_Batch_Insert"/>
+        <classification subType="End_End_Batch_Insert"/>
+        <classification subType="Start_Close"/>
+        <classification subType="End_Close"/>
+        <classification subType="Start_Set_Volume"/>
+        <classification subType="End_Set_Volume"/>
+        <classification subType="Start_Set_Stop_Position"/>
+        <classification subType="End_Set_Stop_Position"/>
+        <classification subType="Start_Set_Current_Position"/>
+        <classification subType="End_Set_Current_Position"/>
+        <classification subType="Start_Set_Context"/>
+        <classification subType="End_Set_Context"/>
+        <classification subType="Start_Queue"/>
+        <classification subType="End_Queue"/>
+        <classification subType="Start_Init"/>
+        <classification subType="End_Init"/>
+        <classification subType="Start_Init_Ex"/>
+        <classification subType="End_Init_Ex"/>
+        <classification subType="Start_Get_Type"/>
+        <classification subType="End_Get_Type"/>
+        <classification subType="Start_Is_Reused"/>
+        <classification subType="End_Is_Reused"/>
+        <classification subType="Start_Get_Url"/>
+        <classification subType="End_Get_Url"/>
+        <classification subType="Start_Get_Context"/>
+        <classification subType="End_Get_Context"/>
+        <classification subType="Start_Get_Cookie"/>
+        <classification subType="End_Get_Cookie"/>
+        <classification subType="Start_Set_Cookie"/>
+        <classification subType="End_Set_Cookie"/>
+        <classification subType="Start_Get_Open_State"/>
+        <classification subType="End_Get_Open_State"/>
+        <classification subType="Start_Get_Rate"/>
+        <classification subType="End_Get_Rate"/>
+        <classification subType="Start_Get_Current_Position"/>
+        <classification subType="End_Get_Current_Position"/>
+        <classification subType="Start_Get_Stop_Position"/>
+        <classification subType="End_Get_Stop_Position"/>
+        <classification subType="Start_Get_Volume"/>
+        <classification subType="End_Get_Volume"/>
+        <classification subType="Start_Get_Media_Caps"/>
+        <classification subType="End_Get_Media_Caps"/>
+        <classification subType="Start_Get_Control_Caps"/>
+        <classification subType="End_Get_Control_Caps"/>
+        <classification subType="Start_Get_Seek_Caps"/>
+        <classification subType="End_Get_Seek_Caps"/>
+        <classification subType="Start_Get_Jump_Caps"/>
+        <classification subType="End_Get_Jump_Caps"/>
+        <classification subType="Start_Set_Auto_Rewind"/>
+        <classification subType="End_Set_Auto_Rewind"/>
+        <classification subType="Start_Notify_State_Change"/>
+        <classification subType="End_Notify_State_Change"/>
+        <classification subType="Start_Notify_Playback_End"/>
+        <classification subType="End_Notify_Playback_End"/>
+        <classification subType="Start_Notify_Rate_Change"/>
+        <classification subType="End_Notify_Rate_Change"/>
+        <classification subType="Start_Notify_Error"/>
+        <classification subType="End_Notify_Error"/>
+        <classification subType="Start_Notify_License"/>
+        <classification subType="End_Notify_License"/>
+        <classification subType="Start_Notify_Cred"/>
+        <classification subType="End_Notify_Cred"/>
+        <classification subType="Start_Notify_Individualization"/>
+        <classification subType="End_Notify_Individualization"/>
+        <classification subType="Start_Find_Plugin"/>
+        <classification subType="End_Find_Plugin"/>
+        <classification subType="Start_Notify_Revocation"/>
+        <classification subType="End_Notify_Revocation"/>
+        <classification subType="Start_Handle_Presentation_Switch"/>
+        <classification subType="End_Handle_Presentation_Switch"/>
+        <classification subType="Start_Notify_Fullscreen"/>
+        <classification subType="End_Notify_Fullscreen"/>
+        <classification subType="Start_Notify_Custom_License"/>
+        <classification subType="End_Notify_Custom_License"/>
+        <classification subType="Start_Notify_Device_Loss_Gain"/>
+        <classification subType="End_Notify_Device_Loss_Gain"/>
+
+          <!-- MFGraph has two event structures defined, here using only one type -->
+          <template>
+            <MFGraph_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <hr>%UInt32;</hr>             
+            </MFGraph_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- WMP Playback events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{EEF1CE86-DD89-4774-B4D4-A31135512D8B}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Open"/>
+        <classification subType="Queue"/>
+        <classification subType="Start"/>
+        <classification subType="Graph_Error_Open"/>
+        <classification subType="Graph_Error_Queue"/>
+
+          <template>
+            <WMP_Playback_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <GraphType>%BYTE;</GraphType>
+                <LastHr>%UInt32;</LastHr>             
+                <szFileName>%String;</szFileName>             
+            </WMP_Playback_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- PE Auth Comm -->
+      <event eventID="1" message="$(string.ImageId)" guid="{8E9E23E8-094D-466a-A935-1F00E87C8994}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Start_Acquire_Sessionkey"/>
+        <classification subType="End_Acquire_Sessionkey"/>
+        <classification subType="Start_Kernelstate_Inquiry"/>
+        <classification subType="End_Kernelstate_Inquiry"/>
+        <classification subType="Start_Reload_Grl"/>
+        <classification subType="End_Reload_Grl"/>
+        <classification subType="Start_Renew_Sessionkey"/>
+        <classification subType="End_Renew_Sessionkey"/>
+        <classification subType="Start_Get_Comp_List"/>
+        <classification subType="End_End_Comp_List"/>
+
+          <template>
+            <PEAuth_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+            </PEAuth_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Cache Reader Status -->
+      <event eventID="1" message="$(string.ImageId)" guid="{69765E1D-CE42-4cb1-BA65-7C518784240B}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Status"/>
+
+          <template>
+            <Cache_Reader_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <llInitialOffset>%Int64;</llInitialOffset>
+                <llFinalOffset>%Int64;</llFinalOffset>
+                <dwBytesInCache>%UInt32;</dwBytesInCache>             
+                <dwCacheSize>%UInt32;</dwCacheSize>             
+                <cbSectorSize>%UInt32;</cbSectorSize>             
+            </Cache_Reader_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- MEDIATYPE_CHANGE_EVENT -->
+      <event eventID="1" message="$(string.ImageId)" guid="{88bc3905-9dda-4e4a-876f-f7efffd9435b}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Status"/>
+
+          <template>
+            <MEDIATYPE_CHANGE_EVENT>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <pStream>%UInt64;</pStream>
+              <cbNewType>%UInt32;</cbNewType>
+              <dwPadding1>%UInt32;</dwPadding1>
+              <pbNewType>%UInt64;</pbNewType>
+            </MEDIATYPE_CHANGE_EVENT>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Unusual Streaming Event Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{fb3062ed-2d22-4ddc-b68e-b0ed564915e6}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Start"/>
+          <classification subType="Stop"/>
+          <template>
+            <UNUSUAL_STREAMING_EVENT>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <dwEvent>%UInt32;</dwEvent>
+            </UNUSUAL_STREAMING_EVENT>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- DXVA2 Decode events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{b4de17a1-c5b2-44fe-86d5-d97a648114ff}" level="1">
+        <diagnosticInstance version="0">
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA2Trace_DecodeDevCreated>
+            <pObject>%UInt64;</pObject>
+            <pD3DDevice>%UInt64;</pD3DDevice>
+            <DeviceGuid>%Guid;</DeviceGuid>
+            <Width>%UInt32;</Width>
+            <Height>%UInt32;</Height>
+            <Enter>%Boolean;</Enter>
+            </DXVA2Trace_DecodeDevCreated>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{853ebdf2-4160-421d-8893-63dcea4f18bb}" level="1">
+        <diagnosticInstance version="0">
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA2Trace_DecodeDevDestroyed>
+            <pObject>%UInt64;</pObject>
+            <Enter>%Boolean;</Enter>
+            </DXVA2Trace_DecodeDevDestroyed>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{9fd1acf6-44cb-4637-bc62-2c11a9608f90}" level="1">
+        <diagnosticInstance version="0">
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA2Trace_DecodeDevBeginFrame>
+            <pObject>%UInt64;</pObject>
+            <pRenderTarget>%UInt64;</pRenderTarget>
+            <Enter>%Boolean;</Enter>
+            </DXVA2Trace_DecodeDevBeginFrame>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{850aeb4c-d19a-4609-b3b4-bcbf0e22121e}" level="1">
+        <diagnosticInstance version="0">
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA2Trace_DecodeDevExecute>
+            <pObject>%UInt64;</pObject>
+            <Enter>%Boolean;</Enter>
+            </DXVA2Trace_DecodeDevExecute>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{57b128fb-72cb-4137-a575-d91fa3160897}" level="1">
+        <diagnosticInstance version="0">
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA2Trace_DecodeDevGetBuffer>
+            <pObject>%UInt64;</pObject>
+            <BufferType>%UInt32;</BufferType>
+            <Enter>%Boolean;</Enter>
+            </DXVA2Trace_DecodeDevGetBuffer>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{9fb3cb33-47dc-4899-98c8-c0c6cd7cd3cb}" level="1">
+        <diagnosticInstance version="0">
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA2Trace_DecodeDevEndFrame>
+            <pObject>%UInt64;</pObject>
+            <Enter>%Boolean;</Enter>
+            </DXVA2Trace_DecodeDevEndFrame>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- DXVA2 VideoProcess events -->
+      <event eventID="1" message="$(string.ImageId)" guid="{895508c6-540d-4c87-98f8-8dcbf2dabb2a}" level="1">
+        <diagnosticInstance version="0">
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA2Trace_VideoProcessDevCreated>
+            <pObject>%UInt64;</pObject>
+            <pD3DDevice>%UInt64;</pD3DDevice>
+            <DeviceGuid>%Guid;</DeviceGuid>
+            <RTFourCC>%UInt32;</RTFourCC>
+            <Width>%UInt32;</Width>
+            <Height>%UInt32;</Height>
+            <Enter>%Boolean;</Enter>
+            </DXVA2Trace_VideoProcessDevCreated>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{f97f30b1-fb49-42c7-8ee8-88bdfa92d4e2}" level="1">
+        <diagnosticInstance version="0">
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA2Trace_VideoProcessDevDestroyed>
+            <pObject>%UInt64;</pObject>
+            <Enter>%Boolean;</Enter>
+            </DXVA2Trace_VideoProcessDevDestroyed>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="1" message="$(string.ImageId)" guid="{69089cc0-71ab-42d0-953a-2887bf05a8af}" level="1">
+        <diagnosticInstance version="0">
+        <classification subType="Event"/>
+
+          <template>
+            <DXVA2Trace_VideoProcessBlt>
+            <pObject>%Uint64;</pObject>
+            <pRenderTarget>%Uint64;</pRenderTarget>
+            <TargetFrameTime>%Uint64;</TargetFrameTime>
+            <TargetRect_Left>%Uint32;</TargetRect_Left>
+            <TargetRect_Top>%Uint32;</TargetRect_Top>
+            <TargetRect_Right>%Uint32;</TargetRect_Right>
+            <TargetRect_Bottom>%Uint32;</TargetRect_Bottom>
+            <Enter>%Boolean;</Enter>
+            </DXVA2Trace_VideoProcessBlt>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- POWER SIGNAL SYNC Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{bd61d789-35e7-4c2d-a742-c40a5c1e01dc}" level="1">
+
+        <diagnosticInstance version="0">
+
+        <classification subType="Open"/>
+
+          <template>
+            <PowerSignalSync_>
+                <dwValue>%UInt32;</dwValue>
+            </PowerSignalSync_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+ </events>
+
+</instrumentation>
+
+</assembly>
+

@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="VolumeActivationManagementToolData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="SoftwareLicensingData" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Products" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Product" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ActionsAllowed" type="xs:string" minOccurs="0" />
+                          <xs:element name="ApplicationName" type="xs:string" minOccurs="0" />
+                          <xs:element name="ApplicationId" type="xs:string" minOccurs="0" />
+                          <xs:element name="CMID" type="xs:string" minOccurs="0" />
+                          <xs:element name="ExportGuid" type="xs:string" minOccurs="0" />
+                          <xs:element name="FullyQualifiedDomainName" type="xs:string" minOccurs="0" />
+                          <xs:element name="GenuineStatus" type="xs:string" minOccurs="0" />
+                          <xs:element name="GraceExpirationDate" type="xs:string" minOccurs="0" />
+                          <xs:element name="InstallationId" type="xs:string" minOccurs="0" />
+                          <xs:element name="KmsHost" type="xs:string" minOccurs="0" />
+                          <xs:element name="KmsPort" type="xs:string" minOccurs="0" />
+                          <xs:element name="LastActionStatus" type="xs:string" minOccurs="0" />
+                          <xs:element name="LastErrorCode" type="xs:string" minOccurs="0" />
+                          <xs:element name="LastUpdated" type="xs:string" minOccurs="0" />
+                          <xs:element name="LicenseFamily" type="xs:string" minOccurs="0" />
+                          <xs:element name="LicenseStatus" type="xs:string" minOccurs="0" />
+                          <xs:element name="LicenseStatusLastUpdated" type="xs:string" minOccurs="0" />
+                          <xs:element name="LicenseStatusReason" type="xs:string" minOccurs="0" />
+                          <xs:element name="PartialProductKey" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductDescription" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductKeyId" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductName" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductKeyType" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductVersion" type="xs:string" minOccurs="0" />
+                          <xs:element name="Sku" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductKeyTypeName" type="xs:string" minOccurs="0" />
+                          <xs:element name="LicenseStatusText" type="xs:string" minOccurs="0" />
+                          <xs:element name="GenuineStatusText" type="xs:string" minOccurs="0" />
+                          <xs:element name="ResourceLanguage" type="xs:string" minOccurs="0" />
+                          <xs:element name="SoftwareProtectionService" type="xs:string" minOccurs="0" />
+                          <xs:element name="VLActivationType" type="xs:string" minOccurs="0" />
+                          <xs:element name="VLActivationTypeEnabled" type="xs:string" minOccurs="0" />
+                          <xs:element name="AdActivationObjectName" type="xs:string" minOccurs="0" />
+                          <xs:element name="AdActivationObjectDN" type="xs:string" minOccurs="0" />
+                          <xs:element name="AdActivationCsvlkSkuId" type="xs:string" minOccurs="0" />
+                          <xs:element name="AdActivationCsvlkPid" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="AvailableProducts" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="AvailableProduct" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ApplicationName" type="xs:string" minOccurs="0" />
+                          <xs:element name="ApplicationId" type="xs:string" minOccurs="0" />
+                          <xs:element name="FullyQualifiedDomainName" type="xs:string" minOccurs="0" />
+                          <xs:element name="Sku" type="xs:string" minOccurs="0" />
+                          <xs:element name="SoftwareProtectionService" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ProductKeys" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ProductKey" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="KeyDescription" type="xs:string" minOccurs="0" />
+                          <xs:element name="KeyId" type="xs:string" minOccurs="0" />
+                          <xs:element name="KeyType" type="xs:string" minOccurs="0" />
+                          <xs:element name="KeyValue" type="xs:string" minOccurs="0" />
+                          <xs:element name="LastUpdate" type="xs:string" minOccurs="0" />
+                          <xs:element name="LastErrorCode" type="xs:string" minOccurs="0" />
+                          <xs:element name="RemainingActivations" type="xs:string" minOccurs="0" />
+                          <xs:element name="SupportedEditions" type="xs:string" minOccurs="0" />
+                          <xs:element name="SupportedSku" type="xs:string" minOccurs="0" />
+                          <xs:element name="UserRemarks" type="xs:string" minOccurs="0" />
+                          <xs:element name="KeyTypeName" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="VolumeActivationClients" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="VolumeActivationClient" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FullyQualifiedDomainName" type="xs:string" minOccurs="0" />
+                          <xs:element name="DomainWorkgroupName" type="xs:string" minOccurs="0" />
+                          <xs:element name="IsKmsHost" type="xs:string" minOccurs="0" />
+                          <xs:element name="NetworkType" type="xs:string" minOccurs="0" />
+                          <xs:element name="OSEdition" type="xs:string" minOccurs="0" />
+                          <xs:element name="OSVersion" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PendingActiveDirectoryForestActivations" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PendingActiveDirectoryForestActivation" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="InstallationId" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductKeyId" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductKey" type="xs:string" minOccurs="0" />
+                          <xs:element name="ActivationObjectName" type="xs:string" minOccurs="0" />
+                          <xs:element name="ConfirmationId" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="TotalProducts" type="xs:string" />
+            <xs:attribute name="TotalAvailableProducts" type="xs:string" />
+            <xs:attribute name="TotalVolumeClients" type="xs:string" />
+            <xs:attribute name="TotalProductKeys" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VamtSystemData" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SupportedGVLKs" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="BuiltInGvlk" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="KeyDescription" type="xs:string" minOccurs="0" />
+                          <xs:element name="KeyId" type="xs:string" minOccurs="0" />
+                          <xs:element name="KeyValue" type="xs:string" minOccurs="0" />
+                          <xs:element name="SupportedEditions" type="xs:string" minOccurs="0" />
+                          <xs:element name="SupportedSku" type="xs:string" minOccurs="0" />
+                          <xs:element name="KeyType" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="SupportedVolumeApplications" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="VolumeApplication" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ApplicationId" type="xs:string" minOccurs="0" />
+                          <xs:element name="ApplicationName" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="SupportedProductKeyTypes" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ProductKeyTypeName" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="KeyType" type="xs:string" minOccurs="0" />
+                          <xs:element name="KeyTypeName" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ProductMappings" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ProductMapping" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Sku" type="xs:string" minOccurs="0" />
+                          <xs:element name="ApplicationId" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductName" type="xs:string" minOccurs="0" />
+                          <xs:element name="Edition" type="xs:string" minOccurs="0" />
+                          <xs:element name="VersionName" type="xs:string" minOccurs="0" />
+                          <xs:element name="ProductFamily" type="xs:string" minOccurs="0" />
+                          <xs:element name="SupportsAd" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="VamtVersion" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="VolumeActivationManagementToolData" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

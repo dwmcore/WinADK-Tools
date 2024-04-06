@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" standalone='yes'?>
+
+<WindowsPerformanceRecorder Version="1.0" Author="Jose Baldner" Team="HEX Media Performance Team" Comments="Test" Company="Microsoft Corporation" Copyright="Microsoft Corporation" Tag="Media">
+  <Profiles>
+
+    <!-- System Collectors -->
+    <SystemCollector Id="SystemCollector_Media" Name="NT Kernel Logger" Realtime="false">
+      <BufferSize Value="1024"/>
+      <Buffers Value="80"/>
+    </SystemCollector>
+
+    <!-- Event Collectors -->
+    <EventCollector Id="EventCollector_Media_Light" Name="Streaming Media Light Event Collector" Private="false" ProcessPrivate="false" Secure="false" Realtime="false">
+      <BufferSize Value="128"/>
+      <Buffers Value="40"/>
+    </EventCollector>
+
+    <EventCollector Id="EventCollector_Media_Verbose" Name="Streaming Media Verbose Event Collector" Private="false" ProcessPrivate="false" Secure="false" Realtime="false">
+      <BufferSize Value="1024"/>
+      <Buffers Value="40"/>
+    </EventCollector>
+
+    <!-- System Providers -->
+    <SystemProvider Id="SystemProvider_Base">
+      <Keywords>
+        <Keyword Value="CpuConfig"/>
+        <Keyword Value="Loader"/>
+        <Keyword Value="ProcessThread"/>
+        <Keyword Value="MemoryInfo"/>
+        <Keyword Value="MemoryInfoWS"/>
+        <Keyword Value="HardFaults"/>
+        <Keyword Value="CSwitch"/>
+      </Keywords>
+    </SystemProvider>
+    
+    <SystemProvider Id="SystemProvider_Media" Base="SystemProvider_Base">
+      <Keywords Operation="Add">
+        <Keyword Value="DiskIO"/>
+        <Keyword Value="DPC"/>
+        <Keyword Value="Interrupt"/>
+        <Keyword Value="ReadyThread"/>
+        <Keyword Value="HardFaults"/>
+        <Keyword Value="SampledProfile"/>
+        <Keyword Value="NetworkTrace"/>
+        <Keyword Value="Registry"/>
+      </Keywords>
+      <Stacks Operation="Add">
+        <Stack Value="CSwitch"/>
+        <Stack Value="HardFault"/>
+        <Stack Value="SampledProfile"/>
+        <Stack Value="ReadyThread"/>
+      </Stacks>
+    </SystemProvider>
+
+    <SystemProvider Id="SystemProvider_Media_Verbose" Base="SystemProvider_Media">
+      <Keywords Operation="Add">
+        <Keyword Value="IdleStates"/>
+        <Keyword Value="ClockInterrupt"/>
+        <Keyword Value="Power" />
+        <Keyword Value="Timer"/>
+      </Keywords>
+      <Stacks Operation="Add">
+        <Stack Value="PagefaultHard" />
+      </Stacks>
+    </SystemProvider>
+
+    <!-- Event Providers -->
+    <EventProvider Id="EventProvider_Eco-Asmts-MediaAssessment" Name="Eco-Asmts-MediaAssessment"/>
+    <EventProvider Id="EventProvider_Microsoft-WindowsPhone-MediaEngine-Phone-Legacy" Name="DEB4B02B-5245-4A5C-93DD-98316D670EBB" Level="5"/>
+    <EventProvider Id="EventProvider_Microsoft-Windows-MediaEngine" Name="8f2048e0-f260-4f57-a8d1-932376291682"/>
+    <EventProvider Id="EventProvider_Microsoft-Windows-MMCSS" Name="Microsoft-Windows-MMCSS"/>
+    <EventProvider Id="EventProvider_Microsoft-Windows-Audio" Name="Microsoft-Windows-Audio"/>
+    <EventProvider Id="EventProvider_Microsoft-IE" Name="Microsoft-IE"/>
+    <EventProvider Id="Microsoft-Windows-MediaFoundation-Platform"  Name="bc97b970-0d00-482f-8745-b8d7d5759f99"/>
+    <EventProvider Id="Microsoft_Windows_MediaFoundation_Performance_Core" Name="B20E65AC-C905-4014-8F78-1B6A508142EB"/>
+    <EventProvider Id="Microsoft-Windows-MediaFoundation-Performance-Extended" Name="bc97b971-d001-482f-8745-b8d7d5759f99"/>
+    <EventProvider Id="Microsoft_Windows_MediaFoundation_Performance_Threading" Name="0c1ce4ca-b223-4bec-8aa2-156f6a292344"/>
+    <EventProvider Id="Microsoft-Windows-MF" Name="a7364e1a-894f-4b3d-a930-2ed9c8c4c811"/>
+    <EventProvider Id="Microsoft-Windows-MediaFoundation-MFReadWrite" Name="4b7eac67-fc53-448c-a49d-7cc6db524da7"/>
+    <EventProvider Id="Microsoft-Windows-MediaFoundation-MSVProc" Name="A4112D1A-6DFA-476e-BB75-E350D24934E1"/>
+    <EventProvider Id="EventProvider_Microsoft-Windows-Dwm-Core" Name="9e9bba3c-2e38-40cb-99f4-9e8281425164" Level="6">
+      <Keywords>
+        <Keyword Value="0xffff"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_Audio-Engine-Verbose" Name="A6A00EFD-21F2-4A99-807E-9B3BF1D90285" Level="3">
+      <Keywords>
+        <Keyword Value="0xffff"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_Warp" Name="ee685ec4-8270-4b08-9e4e-8b356f48f92f" Level="18"/>
+    <EventProvider Id="EventProvider_DWMAPI" Name="292a52c4-fa27-4461-b526-54a46430bd54" Level="6"/>
+    <EventProvider Id="EventProvider_DWM" Name="d29d56ea-4867-4221-b02e-cfd998834075" Level="6"/>
+    <EventProvider Id="EventProvider_DwmRedir" Name="7d99f6a4-1bec-4c09-9703-3aaa8148347f" Level="6"/>
+    <EventProvider Id="EventProvider_Microsoft-Windows-DxgKrnl" Name="Microsoft-Windows-DxgKrnl" Level="5" NonPagedMemory="true">
+      <Keywords>
+        <Keyword Value="0x75"/>
+      </Keywords>
+      <CaptureStateOnSave>
+        <Keyword Value="0x75"/>
+      </CaptureStateOnSave>
+    </EventProvider>
+    
+    <EventProvider Id="EventProvider_DX" Name="DX" Level="5">
+      <Keywords>
+        <Keyword Value="0xffff"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_Microsoft-Windows-Win32k" Name="8c416c79-d49b-4f01-a467-e56d3aa8234c" Level="255" NonPagedMemory="true">
+      <Keywords>
+        <Keyword Value="0x2e2000"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_D3D11" Name="db6f6ddb-ac77-4e88-8253-819df9bbf140" Level="6">
+      <Keywords>
+        <Keyword Value="0xffffffffffffffff"/>
+      </Keywords>
+      <CaptureStateOnSave>
+        <Keyword Value="0xf"/>
+      </CaptureStateOnSave>
+    </EventProvider>
+    <EventProvider Id="EventProvider_D3D10_1" Name="9B7E4C8F-342C-4106-A19F-4F2704F689F0" Level="6">
+      <Keywords>
+        <Keyword Value="0xf"/>
+      </Keywords>
+      <CaptureStateOnSave>
+        <Keyword Value="0xf"/>
+      </CaptureStateOnSave>
+    </EventProvider>
+    <EventProvider Id="EventProvider_D3D10" Name="9B7E4C0F-342C-4106-A19F-4F2704F689F0" Level="6">
+      <Keywords>
+        <Keyword Value="0xf"/>
+      </Keywords>
+      <CaptureStateOnSave>
+        <Keyword Value="0xf"/>
+      </CaptureStateOnSave>
+    </EventProvider>
+    <EventProvider Id="EventProvider_D3D10Level9" Name="7E7D3382-023C-43cb-95D2-6F0CA6D70381">
+      <Keywords>
+        <Keyword Value="0x1"/>
+      </Keywords>
+      <CaptureStateOnSave>
+        <Keyword Value="0x1"/>
+      </CaptureStateOnSave>
+    </EventProvider>
+    <EventProvider Id="EventProvider_DShow" Name="28cf047a-2437-4b24-b653-b9446a419a69"/>
+    <EventProvider Id="EventProvider_Microsoft-Windows-MediaFoundation-Performance" Name="f404b94e-27e0-4384-bfe8-1d8d390b0aa3"/>
+    <EventProvider Id="EventProvider_MFWMI" Name="362007f7-6e50-4044-9082-dfa078c63a73" Level="5">
+      <Keywords>
+        <Keyword Value="0xffff"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_DXVA2" Name="a0386e75-f70c-464c-a9ce-33c44e091623" Level="5">
+      <Keywords>
+        <Keyword Value="0xffff"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_ScheduleGuid" Name="8cc44e31-7f28-4f45-9938-4810ff517464" Level="6">
+      <Keywords>
+        <Keyword Value="0xffff"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_Microsoft-Windows-Shell-Core" Name="30336ed4-e327-447c-9de0-51b652c86108"/>
+    <EventProvider Id="EventProvider_UMD" Name="a688ee40-d8d9-4736-b6f9-6b74935ba3b1" Level="5">
+      <Keywords>
+        <Keyword Value="0xffff"/>
+      </Keywords>
+      <CaptureStateOnSave>
+        <Keyword Value="0xffff"/>
+      </CaptureStateOnSave>
+    </EventProvider>
+    <EventProvider Id="EventProvider_CODEC" Name="ea6d6e3b-7014-4ab1-85db-4a50cda32a82" Level="5">
+      <Keywords>
+        <Keyword Value="0xffff"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_KMFD" Name="E7C7EDF9-D0E4-4338-8AE3-BCA3C5B4B4A3"/>
+    <EventProvider Id="EventProvider_UMFD" Name="a70bc228-e778-4061-86fa-debb03fda64a"/>
+
+    <EventProvider Id="EventProvider_Microsoft-Windows-UserModePowerService_CaptureState" Name="Microsoft-Windows-UserModePowerService" NonPagedMemory="true">
+      <CaptureStateOnSave>
+        <Keyword Value="0x0"/>
+      </CaptureStateOnSave>
+    </EventProvider>
+
+    <EventProvider Id="EventProvider_Microsoft-Windows-Kernel-Processor-Power_CaptureState" Name="Microsoft-Windows-Kernel-Processor-Power" NonPagedMemory="true" >
+      <CaptureStateOnSave>
+        <Keyword Value="0x2"/>
+      </CaptureStateOnSave>
+    </EventProvider>
+
+    <EventProvider Id="EventProvider_Microsoft-Windows-MediaFoundation-MFCaptureEngine"  Name="B8197C10-845F-40CA-82AB-9341E98CFC2B" /> 
+    <EventProvider Id="EventProvider_Microsoft-Windows-WinRT-Error" Name="a86f8471-c31d-4fbc-a035-665d06047b03" />
+
+    <EventProvider Id="EventProvider_Microsoft-Windows-Kernel-Power" Name="Microsoft-Windows-Kernel-Power" NonPagedMemory="true" />
+    <EventProvider Id="EventProvider_Microsoft-Windows-Kernel-Pep" Name="Microsoft-Windows-Kernel-Pep" NonPagedMemory="true" />
+    <EventProvider Id="EventProvider_Microsoft-Windows-PDC" Name="Microsoft-Windows-PDC" NonPagedMemory="true" />
+    
+    <EventProvider Id="NDIS" Name="dd7a21e6-a651-46d4-b7c2-66543067b869"/>
+    <EventProvider Id="HTTP" Name="Microsoft-Windows-WinHttp"/>
+    <EventProvider Id="KERNELNET" Name="Microsoft-Windows-Kernel-Network"/>	
+    <EventProvider Id="TCPIP" Name="Microsoft-Windows-TCPIP"/>	
+    <EventProvider Id="NWIFI" Name="microsoft-windows-nwifi"/>	
+
+    <EventProvider Id="EventProvider_MICROSOFT_WINDOWS_VIDEOEDITING"  Name="ACABB288-1997-439b-808B-6FFB52B3488F" /> 
+    <EventProvider Id="EventProvider_EDITING_TELEMETRY" Name="1123dc81-0423-4f27-bf57-6619e6bf85cc" />
+    <EventProvider Id="EventProvider_NCSI" Name="Microsoft-Windows-NCSI" />
+
+
+    <!-- Profiles -->
+    <Profile Id="MediaProfile.Verbose.File" LoggingMode="File" Name="MediaProfile" DetailLevel="Verbose" Description="WindowsXRay FULL_TH Power Performance">
+      <ProblemCategories>
+        <ProblemCategory Value="First Level Triage"/>
+      </ProblemCategories>
+      <Collectors>
+        <SystemCollectorId Value="SystemCollector_Media">
+          <SystemProviderId Value="SystemProvider_Media_Verbose"/>
+        </SystemCollectorId>
+        <EventCollectorId Value="EventCollector_Media_Verbose">
+          <EventProviders>
+            <EventProviderId Value="EventProvider_Microsoft-Windows-MediaEngine"/>
+            <EventProviderId Value="EventProvider_Microsoft-WindowsPhone-MediaEngine-Phone-Legacy"/>
+            <EventProviderId Value="Microsoft-Windows-MediaFoundation-Platform"/>
+            <EventProviderId Value="Microsoft_Windows_MediaFoundation_Performance_Core"/>
+            <EventProviderId Value="Microsoft-Windows-MediaFoundation-Performance-Extended"/>
+            <EventProviderId Value="Microsoft_Windows_MediaFoundation_Performance_Threading"/>
+            <EventProviderId Value="Microsoft-Windows-MF"/>
+            <EventProviderId Value="Microsoft-Windows-MediaFoundation-MFReadWrite"/>
+            <EventProviderId Value="Microsoft-Windows-MediaFoundation-MSVProc"/>			
+            <EventProviderId Value="EventProvider_Microsoft-Windows-Audio"/>
+            <EventProviderId Value="EventProvider_Microsoft-IE"/>
+            <EventProviderId Value="EventProvider_Microsoft-Windows-Dwm-Core"/>
+            <EventProviderId Value="EventProvider_Audio-Engine-Verbose"/>
+            <EventProviderId Value="EventProvider_Warp"/>
+            <EventProviderId Value="EventProvider_DWMAPI"/>
+            <EventProviderId Value="EventProvider_DWM"/>
+            <EventProviderId Value="EventProvider_DwmRedir"/>
+            <EventProviderId Value="EventProvider_Microsoft-Windows-DxgKrnl"/>
+            <EventProviderId Value="EventProvider_DX"/>
+            <EventProviderId Value="EventProvider_Microsoft-Windows-Win32k"/>
+            <EventProviderId Value="EventProvider_D3D11"/>
+            <EventProviderId Value="EventProvider_D3D10_1"/>
+            <EventProviderId Value="EventProvider_D3D10"/>
+            <EventProviderId Value="EventProvider_D3D10Level9"/>
+            <EventProviderId Value="EventProvider_DShow"/>
+            <EventProviderId Value="EventProvider_Microsoft-Windows-MediaFoundation-Performance"/>
+            <EventProviderId Value="EventProvider_MFWMI"/>
+            <EventProviderId Value="EventProvider_DXVA2"/>
+            <EventProviderId Value="EventProvider_ScheduleGuid"/>
+            <EventProviderId Value="EventProvider_Microsoft-Windows-Shell-Core"/>
+            <EventProviderId Value="EventProvider_UMD"/>
+            <EventProviderId Value="EventProvider_CODEC"/>
+            <EventProviderId Value="EventProvider_KMFD"/>
+            <EventProviderId Value="EventProvider_UMFD"/>
+            <EventProviderId Value="EventProvider_Microsoft-Windows-Kernel-Power" /> 
+            <EventProviderId Value="EventProvider_Microsoft-Windows-Kernel-Pep" /> 
+            <EventProviderId Value="EventProvider_Microsoft-Windows-PDC" /> 
+            <EventProviderId Value="EventProvider_Microsoft-Windows-Kernel-Processor-Power_CaptureState" />
+            <EventProviderId Value="EventProvider_Microsoft-Windows-UserModePowerService_CaptureState" />
+            <EventProviderId Value="NDIS" />
+            <EventProviderId Value="EventProvider_Microsoft-Windows-MMCSS"/>
+            <EventProviderId Value="HTTP" />
+            <EventProviderId Value="KERNELNET" />	
+            <EventProviderId Value="TCPIP" />	
+            <EventProviderId Value="NWIFI" />	
+            <EventProviderId Value="EventProvider_Microsoft-Windows-MediaFoundation-MFCaptureEngine"/>
+            <EventProviderId Value="EventProvider_Microsoft-Windows-WinRT-Error"/>
+            <EventProviderId Value="EventProvider_MICROSOFT_WINDOWS_VIDEOEDITING"/> 
+            <EventProviderId Value="EventProvider_EDITING_TELEMETRY"/>
+            <EventProviderId Value="EventProvider_NCSI" />
+          </EventProviders>
+        </EventCollectorId>
+      </Collectors>
+    </Profile>
+
+
+  </Profiles>
+
+  <TraceMergeProperties>
+    <TraceMergeProperty  Id="TraceMerge_Default" Name="TraceMerge_Default" Base="">
+      <DeletePreMergedTraceFiles Value="true"/>
+      <CustomEvents>
+        <CustomEvent Value="ImageId"/>
+        <CustomEvent Value="BuildInfo"/>
+        <CustomEvent Value="VolumeMapping"/>
+        <CustomEvent Value="EventMetadata"/>
+        <CustomEvent Value="PerfTrackMetadata"/>
+        <CustomEvent Value="WinSAT"/>
+        <CustomEvent Value="NetworkInterface"/>
+      </CustomEvents>
+    </TraceMergeProperty>
+  </TraceMergeProperties>
+
+</WindowsPerformanceRecorder>

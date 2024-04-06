@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?> 
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1">
+<instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+  <events>
+    <eventSubTypes>
+      <subType name="_INTERRUPT" value="79" />
+      <subType name="_EXPIRATION_START" value="80" /> 
+      <subType name="_EXPIRATION" value="81" /> 
+      <subType name="_SET_PERIODIC" value="82" />
+      <subType name="_SET_ONE_SHOT" value="83" />
+      <subType name="_SET_THREAD_TIMER" value="84" /> 
+      <subType name="_CANCEL" value="85" />
+      <subType name="_TIME_ADJUSTMENT" value="86" /> 
+      <subType name="_MODE_SWITCH" value="87"/>
+      <subType name="_TIME_UPDATE" value="88"/>
+      <subType name="_DYNAMIC_TICK_VETO" value="89"/>
+      <subType name="_CONFIGURATION" value="90"/>
+      <subType name="IPI" value="91"/>
+      <subType name="EXIT_IRR" value="61"/>
+      <subType name="EXIT_CX" value="62"/>
+    </eventSubTypes>
+    <event guid="{ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}" level="0">
+      <diagnosticInstance version="2">
+        <classification subType="_EXPIRATION_START" /> 
+        <template>
+          <TIMER>
+              <CurrentInterruptTime>%UINT64;</CurrentInterruptTime>
+          </TIMER>
+        </template>
+        <classification subType="_EXPIRATION" /> 
+        <template>
+          <TIMER>
+              <ExpectedDueTime>%UINT64;</ExpectedDueTime>
+              <TimerAddress>%POINTER;</TimerAddress>
+              <DeferredRoutine>%POINTER;</DeferredRoutine>
+          </TIMER>
+        </template>
+        <classification subType="_SET_PERIODIC" /> 
+        <template>
+          <TIMER>
+              <ExpectedDueTime>%UINT64;</ExpectedDueTime>
+              <TimerAddress>%POINTER;</TimerAddress>
+              <TargetProcessorGroup>%UINT16;</TargetProcessorGroup>
+              <TargetProcessorNumber>%BYTE;</TargetProcessorNumber>           
+              <Flags>%BYTE;</Flags>
+              <Period>%UINT32;</Period>
+          </TIMER>
+        </template>
+        <classification subType="_SET_ONE_SHOT" /> 
+        <template>
+          <TIMER>
+              <ExpectedDueTime>%UINT64;</ExpectedDueTime>
+              <TimerAddress>%POINTER;</TimerAddress>
+              <TargetProcessorGroup>%UINT16;</TargetProcessorGroup>
+              <TargetProcessorNumber>%BYTE;</TargetProcessorNumber>           
+              <Flags>%BYTE;</Flags>
+          </TIMER>
+        </template>
+        <classification subType="_SET_THREAD_TIMER" /> 
+        <template>
+          <TIMER>
+              <ExpectedDueTime>%UINT64;</ExpectedDueTime>
+              <TimerAddress>%POINTER;</TimerAddress>
+              <TargetProcessorGroup>%UINT16;</TargetProcessorGroup>
+              <TargetProcessorNumber>%BYTE;</TargetProcessorNumber>           
+              <Flags>%BYTE;</Flags>
+          </TIMER>
+        </template>
+        <classification subType="_CANCEL" /> 
+        <template>
+          <TIMER>
+              <TimerAddress>%POINTER;</TimerAddress>             
+          </TIMER>
+        </template>
+        <classification subType="_TIME_ADJUSTMENT" /> 
+        <template>
+          <TIMER>
+          </TIMER>
+        </template>
+        <classification subType="_INTERRUPT" /> 
+        <template>
+          <CLOCK>
+              <CurrentInterruptTime>%UINT64;</CurrentInterruptTime>
+              <Flags>%UINT16;</Flags>
+          </CLOCK>
+        </template>
+        <classification subType="IPI" /> 
+        <template>
+          <BREAK_EVENT_>
+              <StartTime>%UINT64;</StartTime>
+              <Flags>%UINT32;</Flags>
+          </BREAK_EVENT_>
+        </template>
+        <classification subType="_MODE_SWITCH" /> 
+        <template>
+          <CLOCK>
+              <ExpectedDueTime>%UINT64;</ExpectedDueTime>
+              <Mode>%BYTE;</Mode>
+          </CLOCK>
+        </template>
+        <classification subType="_TIME_UPDATE" /> 
+        <template>
+          <CLOCK>
+              <CurrentInterruptTime>%UINT64;</CurrentInterruptTime>
+              <ClockOwner>%UINT32;</ClockOwner>
+          </CLOCK>
+        </template>
+        <classification subType="_DYNAMIC_TICK_VETO" /> 
+        <template>
+          <CLOCK>
+              <ReasonFlags>%BYTE;</ReasonFlags>
+          </CLOCK>
+        </template>
+        <classification subType="_CONFIGURATION" /> 
+        <template>
+          <CLOCK>
+              <KnownType>%UINT32;</KnownType>
+              <Capabilities>%UINT32;</Capabilities>
+              <DisableFlags>%BYTE;</DisableFlags>
+          </CLOCK>
+        </template>
+        <classification subType="EXIT_IRR" /> 
+        <template>
+          <IDLE_>
+              <IRR0>%UINT32;</IRR0>
+              <IRR1>%UINT32;</IRR1>
+              <IRR2>%UINT32;</IRR2>
+              <IRR3>%UINT32;</IRR3>
+              <IRR4>%UINT32;</IRR4>
+              <IRR5>%UINT32;</IRR5>
+              <IRR6>%UINT32;</IRR6>
+              <IRR7>%UINT32;</IRR7>
+          </IDLE_>
+        </template>
+       </diagnosticInstance>
+    </event>
+    <event guid="{e43445e0-0903-48c3-b878-ff0fccebdd04}" level="0">
+      <diagnosticInstance version="2">
+        <classification subType="EXIT_IRR" /> 
+        <template>
+          <IDLE_>
+              <IRR0>%UINT32;</IRR0>
+              <IRR1>%UINT32;</IRR1>
+              <IRR2>%UINT32;</IRR2>
+              <IRR3>%UINT32;</IRR3>
+              <IRR4>%UINT32;</IRR4>
+              <IRR5>%UINT32;</IRR5>
+              <IRR6>%UINT32;</IRR6>
+              <IRR7>%UINT32;</IRR7>
+          </IDLE_>
+        </template>
+        <classification subType="EXIT_CX" /> 
+        <template>
+          <IDLE_EVENT_>
+              <C3PKG>%UINT64;</C3PKG>
+              <C6PKG>%UINT64;</C6PKG>
+              <C7PKG>%UINT64;</C7PKG>
+              <C3CORE>%UINT64;</C3CORE>
+              <C6CORE>%UINT64;</C6CORE>
+          </IDLE_EVENT_>
+        </template>
+      </diagnosticInstance>
+    </event>
+  </events>
+</instrumentation>
+</assembly>

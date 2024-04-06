@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+       VamtVersion="3.0.5.0"
+       ServiceDataFileId="E8AFB237-3344-4F46-8C7F-DE9198DD0D1F">
+  <VamtSystemData>
+    <SupportedGVLKs>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2019 RTM ServerStandard Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>N76RK-Y8DB4-TCGMV-TB6JB-RC4BP</KeyValue>
+        <SupportedEditions>ServerStandard</SupportedEditions>
+        <SupportedSku>de32eafd-aaee-4662-9444-c1befb41bde2</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2019 RTM ServerDatacenter Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>PR3DM-NGHRJ-RXJQT-FFJPV-JQPH6</KeyValue>
+        <SupportedEditions>ServerDatacenter</SupportedEditions>
+        <SupportedSku>34e1ae55-27f8-4950-8877-7a03be5fb181</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2019 RTM ServerStandardACor Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>PHN2T-WHKP4-X8RTQ-TD9TT-D3YPC</KeyValue>
+        <SupportedEditions>ServerStandardACor</SupportedEditions>
+        <SupportedSku>73e3957c-fc0c-400d-9184-5f7b6f2eb409</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2019 RTM ServerDatacenterACor Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>TX3M3-HN6CW-2D8RM-QKCVK-WT3F3</KeyValue>
+        <SupportedEditions>ServerDatacenterACor</SupportedEditions>
+        <SupportedSku>90c362e5-0da1-4bfd-b53b-b87d309ade43</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2019 RTM ServerAzureCor Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>VNJG3-QDK8Q-C3DPY-6HKRM-2PR8Y</KeyValue>
+        <SupportedEditions>ServerAzureCor</SupportedEditions>
+        <SupportedSku>a99cc1f0-7719-4306-9645-294102fbff95</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2019 RTM ServerARM64 Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>2M3WR-NQW7W-7MX3H-TYCRD-8MBPW</KeyValue>
+        <SupportedEditions>ServerARM64</SupportedEditions>
+        <SupportedSku>8de8eb62-bbe0-40ac-ac17-f75595071ea3</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server 2019 RTM ServerRdsh Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>VMKVQ-3MN6B-BVM9F-YWV97-R9FCX</KeyValue>
+        <SupportedEditions>ServerRdsh</SupportedEditions>
+        <SupportedSku>ec868e65-fadf-4759-b23e-93fe37f2cc29</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+      <BuiltInGvlk>
+        <KeyDescription>Windows Server Essentials 2019 RTM ServerSolution Volume:GVLK</KeyDescription>
+        <KeyId>12345-03789-000-000000-00-1033-14366.0000-2212022</KeyId>
+        <KeyValue>TBNX2-VFP7M-JT6GH-FV2FF-GX2KG</KeyValue>
+        <SupportedEditions>ServerSolution</SupportedEditions>
+        <SupportedSku>034d3cbb-5d4b-4245-b3f8-f84571314078</SupportedSku>
+        <KeyType>Gvlk</KeyType>
+      </BuiltInGvlk>
+    </SupportedGVLKs>
+  </VamtSystemData>
+</VolumeActivationManagementToolData>
+

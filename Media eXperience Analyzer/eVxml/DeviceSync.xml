@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <eventSubTypes>
+        <!-- Object event -->
+        <subType name="Create"                   value="1"/>
+      </eventSubTypes>
+
+      <!-- Device Events Status -->
+      <event eventID="32769" message="$(string.ImageId)" guid="" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="MP_TYPE_ELAPSETIME_BEGIN" value="1" Start="true"  Layer="4" LayerName="Operation" StartType="2"/>
+          <classification subType="MP_TYPE_ ELAPSETIME_END" value="2" Start="false"  Layer="4" LayerName="Operation" StartType="1" />
+          <template>
+            <MTPPERF_OPERATION>
+              <dwTransactionID>%UInt32;</dwTransactionID>
+              <wOperationID>%Byte;</wOperationID>
+              <wREserved>%Byte;</wREserved>
+              <dwCommand1>%UInt32;</dwCommand1>
+              <dwCommand2>%UInt32;</dwCommand2>
+              <dwCommand3>%UInt32;</dwCommand3>
+              <dwCommand4>%UInt32;</dwCommand4>
+              <dwCommand5>%UInt32;</dwCommand5>
+            </MTPPERF_OPERATION>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+      <event eventID="32770" message="$(string.ImageId)" guid="" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="MP_TYPE_UNDEFINED" value="0"/>
+          <classification subType="MP_TYPE_ELAPSETIME_BEGIN" value="1" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="2"/>
+          <classification subType="MP_TYPE_ ELAPSETIME_END" value="2" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="1" />
+          <classification subType="MP_TYPE_RECEIVEUSB_BEGIN" value="3" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="4"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_END" value="4" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_CANCEL" value="5" Start="false" Cancel="true" Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_SENDUSB_BEGIN" value="6" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="7"/>
+          <classification subType="MP_TYPE_SENDUSB_END" value="7" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_SENDUSB_CANCEL" value="8" Start="false" Cancel="true" Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_BEGIN" value="9" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="10"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_END" value="10" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="9"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_BEGIN" value="11" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="12"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_END" value="12" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="11"/>
+          <classification subType="MP_TYPE_SENDDATA_BEGIN" value="13" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="14"/>
+          <classification subType="MP_TYPE_SENDDATA_END" value="14" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="13"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_BEGIN" value="15" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="16"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_END" value="16" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="15"/>
+          <template>
+            <MTPPERF_COMMAND>
+              <dwTransactionID>%UInt32;</dwTransactionID>
+              <wOperationID>%Byte;</wOperationID>
+              <wREserved>%Byte;</wREserved>
+            </MTPPERF_COMMAND>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+      
+      <event eventID="32771" message="$(string.ImageId)" guid="" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="MP_TYPE_UNDEFINED" value="0"/>
+          <classification subType="MP_TYPE_ELAPSETIME_BEGIN" value="1" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="2"/>
+          <classification subType="MP_TYPE_ ELAPSETIME_END" value="2" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="1" />
+          <classification subType="MP_TYPE_RECEIVEUSB_BEGIN" value="3" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="4"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_END" value="4" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_CANCEL" value="5" Start="false" Cancel="true" Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_SENDUSB_BEGIN" value="6" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="7"/>
+          <classification subType="MP_TYPE_SENDUSB_END" value="7" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_SENDUSB_CANCEL" value="8" Start="false" Cancel="true" Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_BEGIN" value="9" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="10"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_END" value="10" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="9"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_BEGIN" value="11" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="12"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_END" value="12" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="11"/>
+          <classification subType="MP_TYPE_SENDDATA_BEGIN" value="13" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="14"/>
+          <classification subType="MP_TYPE_SENDDATA_END" value="14" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="13"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_BEGIN" value="15" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="16"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_END" value="16" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="15"/>
+          <template>
+            <MTPPERF_DATA>
+              <dwTransactionID>%UInt32;</dwTransactionID>
+              <wOperationID>%Byte;</wOperationID>
+              <wREserved>%Byte;</wREserved>
+              <DataSize>%UInt64;</DataSize>
+            </MTPPERF_DATA>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+      <event eventID="32772" message="$(string.ImageId)" guid="" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="MP_TYPE_UNDEFINED" value="0"/>
+          <classification subType="MP_TYPE_ELAPSETIME_BEGIN" value="1" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="2"/>
+          <classification subType="MP_TYPE_ ELAPSETIME_END" value="2" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="1" />
+          <classification subType="MP_TYPE_RECEIVEUSB_BEGIN" value="3" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="4"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_END" value="4" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_CANCEL" value="5" Start="false" Cancel="true" Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_SENDUSB_BEGIN" value="6" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="7"/>
+          <classification subType="MP_TYPE_SENDUSB_END" value="7" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_SENDUSB_CANCEL" value="8" Start="false" Cancel="true" Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_BEGIN" value="9" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="10"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_END" value="10" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="9"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_BEGIN" value="11" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="12"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_END" value="12" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="11"/>
+          <classification subType="MP_TYPE_SENDDATA_BEGIN" value="13" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="14"/>
+          <classification subType="MP_TYPE_SENDDATA_END" value="14" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="13"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_BEGIN" value="15" Start="true"  Layer="3" LayerName="Command/Data/Response" Name="Operation" StartType="16"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_END" value="16" Start="false"  Layer="3" LayerName="Command/Data/Response" Name="Renderer" StartType="15"/>
+          <template>
+            <MTPPERF_RESPONSE>
+              <dwTransactionID>%UInt32;</dwTransactionID>
+              <wOperationID>%Byte;</wOperationID>
+              <wREserved>%Byte;</wREserved>
+              <ResponseCode>%Byte;</ResponseCode>
+            </MTPPERF_RESPONSE>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="16385" message="$(string.ImageId)" guid="" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="MP_TYPE_UNDEFINED" value="0"/>
+          <classification subType="MP_TYPE_ELAPSETIME_BEGIN" value="1" Start="true"  Layer="1" LayerName="Transport" Name="Operation" StartType="2"/>
+          <classification subType="MP_TYPE_ ELAPSETIME_END" value="2" Start="false"  Layer="1" LayerName="Transport" Name="Renderer" StartType="1" />
+          <classification subType="MP_TYPE_RECEIVEUSB_BEGIN" value="3" Start="true"  Layer="1" LayerName="Transport" Name="Operation" StartType="4"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_END" value="4" Start="false"  Layer="1" LayerName="Transport" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_CANCEL" value="5" Start="false" Cancel="true" Layer="1" LayerName="Transport" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_SENDUSB_BEGIN" value="6" Start="true"  Layer="1" LayerName="Transport" Name="Operation" StartType="7"/>
+          <classification subType="MP_TYPE_SENDUSB_END" value="7" Start="false"   Layer="1" LayerName="Transport" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_SENDUSB_CANCEL" value="8" Start="false" Cancel="true" Layer="1" LayerName="Transport" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_BEGIN" value="9" Start="true"  Layer="1" LayerName="Transport" Name="Operation" StartType="10"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_END" value="10" Start="false"  Layer="1" LayerName="Transport" Name="Renderer" StartType="9"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_BEGIN" value="11" Start="true"  Layer="1" LayerName="Transport" Name="Operation" StartType="12"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_END" value="12" Start="false"  Layer="1" LayerName="Transport" Name="Renderer" StartType="11"/>
+          <classification subType="MP_TYPE_SENDDATA_BEGIN" value="13" Start="true"  Layer="1" LayerName="Transport" Name="Operation" StartType="14"/>
+          <classification subType="MP_TYPE_SENDDATA_END" value="14" Start="false"  Layer="1" LayerName="Transport" Name="Renderer" StartType="13"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_BEGIN" value="15" Start="true"  Layer="1" LayerName="Transport" Name="Operation" StartType="16"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_END" value="16" Start="false"  Layer="1" LayerName="Transport" Name="Renderer" StartType="15"/>
+          <template>
+            <MTPPERF_TRANSPORT>
+              <dwTransactionID>%UInt32;</dwTransactionID>
+              <wOperationID>%Byte;</wOperationID>
+              <wREserved>%Byte;</wREserved>
+              <TransferSize>%UInt32;</TransferSize>
+              <Ep>%Char;</Ep>
+            </MTPPERF_TRANSPORT>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="8193" message="$(string.ImageId)" guid="" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="MP_TYPE_UNDEFINED" value="0"/>
+          <classification subType="MP_TYPE_ELAPSETIME_BEGIN" value="1" Start="true"  Layer="2" LayerName="Access Object" Name="Operation" StartType="2"/>
+          <classification subType="MP_TYPE_ ELAPSETIME_END" value="2" Start="false"  Layer="2" LayerName="Access Object" Name="Renderer" StartType="1" />
+          <classification subType="MP_TYPE_RECEIVEUSB_BEGIN" value="3" Start="true"  Layer="2" LayerName="Access Object" Name="Operation" StartType="4"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_END" value="4" Start="false"  Layer="2" LayerName="Access Object" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_CANCEL" value="5" Start="false" Cancel="true" Layer="2" LayerName="Access Object" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_SENDUSB_BEGIN" value="6" Start="true"  Layer="2" LayerName="Access Object" Name="Operation" StartType="7"/>
+          <classification subType="MP_TYPE_SENDUSB_END" value="7" Start="false"  Layer="2" LayerName="Access Object" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_SENDUSB_CANCEL" value="8" Start="false" Cancel="true" Layer="2" LayerName="Access Object" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_BEGIN" value="9" Start="true"  Layer="2" LayerName="Access Object" Name="Operation" StartType="10"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_END" value="10" Start="false"  Layer="2" LayerName="Access Object" Name="Renderer" StartType="9"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_BEGIN" value="11" Start="true"  Layer="2" LayerName="Access Object" Name="Operation" StartType="12"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_END" value="12" Start="false"  Layer="2" LayerName="Access Object" Name="Renderer" StartType="11"/>
+          <classification subType="MP_TYPE_SENDDATA_BEGIN" value="13" Start="true"  Layer="2" LayerName="Access Object" Name="Operation" StartType="14"/>
+          <classification subType="MP_TYPE_SENDDATA_END" value="14" Start="false"  Layer="2" LayerName="Access Object" Name="Renderer" StartType="13"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_BEGIN" value="15" Start="true"  Layer="2" LayerName="Access Object" Name="Operation" StartType="16"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_END" value="16" Start="false"  Layer="2" LayerName="Access Object" Name="Renderer" StartType="15"/>
+          <template>
+            <MTPPERF_ACCESSOBJECT>
+              <dwTransactionID>%UInt32;</dwTransactionID>
+              <wOperationID>%Byte;</wOperationID>
+              <wREserved>%Byte;</wREserved>
+              <DataSize>%UInt32;</DataSize>
+              <Status>%Char;</Status>
+            </MTPPERF_ACCESSOBJECT>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <event eventID="4097" message="$(string.ImageId)" guid="" level="1">
+        <diagnosticInstance version="0">
+          <classification subType="MP_TYPE_UNDEFINED" value="0"/>
+          <classification subType="MP_TYPE_ELAPSETIME_BEGIN" value="1" Start="true"  Layer="1" LayerName="Layer 1" Name="Operation" StartType="2"/>
+          <classification subType="MP_TYPE_ ELAPSETIME_END" value="2" Start="false"  Layer="1" LayerName="Layer 1" Name="Renderer" StartType="1" />
+          <classification subType="MP_TYPE_RECEIVEUSB_BEGIN" value="3" Start="true"  Layer="1" LayerName="Layer 1" Name="Operation" StartType="4"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_END" value="4" Start="false"  Layer="1" LayerName="Layer 1" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_RECEIVEUSB_CANCEL" value="5" Start="false" Cancel="true" Layer="1" LayerName="Layer 1" Name="Renderer" StartType="3"/>
+          <classification subType="MP_TYPE_SENDUSB_BEGIN" value="6" Start="true"  Layer="1" LayerName="Layer 1" Name="Operation" StartType="7"/>
+          <classification subType="MP_TYPE_SENDUSB_END" value="7" Start="false"  Layer="1" LayerName="Layer 1" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_SENDUSB_CANCEL" value="8" Start="false" Cancel="true" Layer="1" LayerName="Layer 1" Name="Renderer" StartType="6"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_BEGIN" value="9" Start="true"  Layer="1" LayerName="Layer 1" Name="Operation" StartType="10"/>
+          <classification subType="MP_TYPE_READMTPOBJECT_END" value="10" Start="false"  Layer="1" LayerName="Layer 1" Name="Renderer" StartType="9"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_BEGIN" value="11" Start="true"  Layer="1" LayerName="Layer 1" Name="Operation" StartType="12"/>
+          <classification subType="MP_TYPE_WRITEMTPOBJECT_END" value="12" Start="false"  Layer="1" LayerName="Layer 1" Name="Renderer" StartType="11"/>
+          <classification subType="MP_TYPE_SENDDATA_BEGIN" value="13" Start="true"  Layer="1" LayerName="Layer 1" Name="Operation" StartType="14"/>
+          <classification subType="MP_TYPE_SENDDATA_END" value="14" Start="false"  Layer="1" LayerName="Layer 1" Name="Renderer" StartType="13"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_BEGIN" value="15" Start="true"  Layer="1" LayerName="Layer 1" Name="Operation" StartType="16"/>
+          <classification subType="MP_TYPE_RECEIVEDATA_END" value="16" Start="false"  Layer="1" LayerName="Layer 1" Name="Renderer" StartType="15"/>
+          <template>
+            <MTPPERF_STRINGMSG>
+              <Message>%String8;</Message>
+            </MTPPERF_STRINGMSG>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+    </events>
+
+</instrumentation>
+
+</assembly>
+

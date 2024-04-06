@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VolumeActivationManagementToolData
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    VamtVersion="3.0.5.0"
+    ServiceDataFileId="0FF1CE15-1909-4442-B9F0-B0E1A41C182F">
+    <VamtSystemData>
+        <SupportedGVLKs>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 Access2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>9N9PT-27V4Y-VJ2PD-YXFMF-YTFQT</KeyValue>
+                <SupportedEditions>Access2019VL</SupportedEditions>
+                <SupportedSku>9E9BCEEB-E736-4F26-88DE-763F87DCC485</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 Excel2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>TMJWT-YYNMB-3BKTF-644FC-RVXBD</KeyValue>
+                <SupportedEditions>Excel2019VL</SupportedEditions>
+                <SupportedSku>237854E9-79FC-4497-A0C1-A70969691C6B</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 Outlook2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>7HD7K-N4PVK-BHBCQ-YWQRW-XW4VK</KeyValue>
+                <SupportedEditions>Outlook2019VL</SupportedEditions>
+                <SupportedSku>C8F8A301-19F5-4132-96CE-2DE9D4ADBD33</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 PowerPoint2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>RRNCX-C64HY-W2MM7-MCH9G-TJHMQ</KeyValue>
+                <SupportedEditions>PowerPoint2019VL</SupportedEditions>
+                <SupportedSku>3131FD61-5E4F-4308-8D6D-62BE1987C92C</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 ProjectPro2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>B4NPR-3FKK7-T2MBV-FRQ4W-PKD2B</KeyValue>
+                <SupportedEditions>ProjectPro2019VL</SupportedEditions>
+                <SupportedSku>2CA2BF3F-949E-446A-82C7-E25A15EC78C4</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 ProjectStd2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>C4F7P-NCP8C-6CQPT-MQHV9-JXD2M</KeyValue>
+                <SupportedEditions>ProjectStd2019VL</SupportedEditions>
+                <SupportedSku>1777F0E3-7392-4198-97EA-8AE4DE6F6381</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 ProPlus2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP</KeyValue>
+                <SupportedEditions>ProPlus2019VL</SupportedEditions>
+                <SupportedSku>85DD8B5F-EAA4-4AF3-A628-CCE9E77C9A03</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 Publisher2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>G2KWX-3NW6P-PY93R-JXK2T-C9Y9V</KeyValue>
+                <SupportedEditions>Publisher2019VL</SupportedEditions>
+                <SupportedSku>9D3E4CCA-E172-46F1-A2F4-1D2107051444</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 SkypeforBusiness2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>NCJ33-JHBBY-HTK98-MYCV8-HMKHJ</KeyValue>
+                <SupportedEditions>SkypeforBusiness2019VL</SupportedEditions>
+                <SupportedSku>734C6C6E-B0BA-4298-A891-671772B2BD1B</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 Standard2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK</KeyValue>
+                <SupportedEditions>Standard2019VL</SupportedEditions>
+                <SupportedSku>6912A74B-A5FB-401A-BFDB-2E3AB46F4B02</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 VisioPro2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>9BGNQ-K37YR-RQHF2-38RQ3-7VCBB</KeyValue>
+                <SupportedEditions>VisioPro2019VL</SupportedEditions>
+                <SupportedSku>5B5CF08F-B81A-431D-B080-3450D8620565</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 VisioStd2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>7TQNQ-K3YQQ-3PFH7-CCPPM-X4VQ2</KeyValue>
+                <SupportedEditions>VisioStd2019VL</SupportedEditions>
+                <SupportedSku>E06D7DF3-AAD0-419D-8DFB-0AC37E2BDF39</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+            <BuiltInGvlk>
+                <KeyDescription>Office 2019 Word2019VL:GVLK</KeyDescription>
+                <KeyId>00000-00000-000-000000-00-0000-0000.0000-0000000</KeyId>
+                <KeyValue>PBX3G-NWMT6-Q7XBW-PYJGG-WXD33</KeyValue>
+                <SupportedEditions>Word2019VL</SupportedEditions>
+                <SupportedSku>059834FE-A8EA-4BFF-B67B-4D006B5447D3</SupportedSku>
+                <KeyType>Gvlk</KeyType>
+            </BuiltInGvlk>
+        </SupportedGVLKs>
+        <SupportedVolumeApplications>
+            <VolumeApplication>
+                <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+                <ApplicationName>Office</ApplicationName>
+                <OnlineHelpUri></OnlineHelpUri>
+            </VolumeApplication>
+        </SupportedVolumeApplications>
+        <ProductMappings>
+            <ProductMapping>
+                <Sku>70512334-47B4-44DB-A233-BE5EA33B914C</Sku>
+                <ApplicationId>0ff1ce15-a989-479d-af46-f275c6370663</ApplicationId>
+                <KmsId>617D9EB1-EF36-4F82-86E0-A65AE07B96C6</KmsId>
+                <VersionName>2019</VersionName>
+                <SupportsAd>1</SupportsAd>
+                <ProductName></ProductName>
+                <ProductFamily></ProductFamily>
+                <Edition></Edition>
+            </ProductMapping>
+        </ProductMappings>
+    </VamtSystemData>
+</VolumeActivationManagementToolData>

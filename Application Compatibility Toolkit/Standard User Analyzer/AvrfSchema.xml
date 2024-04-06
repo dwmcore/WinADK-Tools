@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<!--
+Copyright (c) Microsoft Corporation. All rights reserved.
+-->
+<xs:schema id="logfile" targetNamespace="Application Verifier" xmlns:mstns="Application Verifier" xmlns="Application Verifier" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="logfile" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:Prefix="avrf">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="logEntry" msdata:Prefix="avrf">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="message" msdata:Prefix="avrf" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+              <xs:element name="formatmessage" msdata:Prefix="avrf" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+              <xs:element name="parameter1" msdata:Prefix="avrf" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+              <xs:element name="parameter2" msdata:Prefix="avrf" type="xs:string" minOccurs="0" msdata:Ordinal="3" />
+              <xs:element name="parameter3" msdata:Prefix="avrf" type="xs:string" minOccurs="0" msdata:Ordinal="4" />
+              <xs:element name="parameter4" msdata:Prefix="avrf" type="xs:string" minOccurs="0" msdata:Ordinal="5" />
+              <xs:element name="IsNoise" msdata:Prefix="avrf" type="xs:boolean" default="1" minOccurs="1" msdata:Ordinal="6" />
+              <xs:element name="stackTrace" msdata:Prefix="avrf" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="trace" msdata:Prefix="avrf" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:simpleContent msdata:Prefix="avrf" msdata:ColumnName="trace_Text" msdata:Ordinal="0">
+                          <xs:extension base="xs:string">
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="Time" form="unqualified" type="xs:string" />
+            <xs:attribute name="LayerName" form="unqualified" type="xs:string" />
+            <xs:attribute name="StopCode" form="unqualified" type="xs:string" />
+            <xs:attribute name="Severity" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

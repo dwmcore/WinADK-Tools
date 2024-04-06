@@ -1,0 +1,1026 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:customControls="clr-namespace:Microsoft.WindowsXRay.Controls"
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero">
+
+    <!-- ===================================================================
+
+         Toolbar Theme Parts
+
+         =================================================================== -->
+
+    <!-- ControlToolbar Theme Properties -->
+    <SolidColorBrush x:Key="ControlToolbar_PanelBackgroundBrush" Color="LightCyan"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonBackgroundBrush" Color="MediumPurple"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonMouseOverBackgroundBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonMouseOverBorderBrush" Color="Black"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonMouseOverBorderTargetBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonMouseOverBorderTargetBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonKeyboardFocusedBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonKeyboardFocusedBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonKeyboardFocusedBorderTargetBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonKeyboardFocusedBorderTargetBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonMouseOverAndCheckedBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonMouseOverAndCheckedBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonMouseOverAndCheckedBorderTargetBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonMouseOverAndCheckedBorderTargetBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonKeyboardFocusedAndCheckedBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonKeyboardFocusedAndCheckedBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonKeyboardFocusedAndCheckedBorderTargetBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonKeyboardFocusedAndCheckedBorderTargetBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonPressedBackgroundBrush" Color="DarkTurquoise"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonPressedBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonPressedBorderTargetBackgroundBrush" Color="DarkTurquoise"/>
+    <SolidColorBrush x:Key="ControlToolbar_ToggleButtonPressedBorderTargetBorderBrush" Color="Navy"/>
+
+
+    <!-- NavigationToolbar Theme Properties -->
+    <SolidColorBrush x:Key="NavigationToolbar_PanelBackgroundBrush" Color="LightCyan"/>
+
+    <SolidColorBrush x:Key="NavigationToolbar_ButtonBackgroundBrush" Color="MediumPurple"/>
+    <SolidColorBrush x:Key="NavigationToolbar_ButtonForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="NavigationToolbar_ButtonMouseOverBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="NavigationToolbar_ButtonMouseOverBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="NavigationToolbar_ButtonKeyboardFocusedBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="NavigationToolbar_ButtonKeyboardFocusedBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="NavigationToolbar_ButtonPressedBackgroundBrush" Color="DarkTurquoise"/>
+    <SolidColorBrush x:Key="NavigationToolbar_ButtonPressedBorderBrush" Color="Navy"/>
+
+
+    <!-- CpuToolbar Theme Properties -->
+    <SolidColorBrush x:Key="CpuToolbar_PanelBackgroundBrush" Color="LightCyan"/>
+
+    <SolidColorBrush x:Key="CpuToolbar_ButtonBackgroundBrush" Color="MediumPurple"/>
+    <SolidColorBrush x:Key="CpuToolbar_ButtonForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="CpuToolbar_ButtonMouseOverBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="CpuToolbar_ButtonMouseOverBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="CpuToolbar_ButtonKeyboardFocusedBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="CpuToolbar_ButtonKeyboardFocusedBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="CpuToolbar_ButtonPressedBackgroundBrush" Color="DarkTurquoise"/>
+    <SolidColorBrush x:Key="CpuToolbar_ButtonPressedBorderBrush" Color="Navy"/>
+
+
+    <!-- ModeToolbar Theme Properties -->
+    <SolidColorBrush x:Key="ModeToolbar_PanelBackgroundBrush" Color="LightCyan"/>
+
+    <SolidColorBrush x:Key="ModeToolbar_ButtonBackgroundBrush" Color="MediumPurple"/>
+    <SolidColorBrush x:Key="ModeToolbar_ButtonForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="ModeToolbar_ButtonMouseOverBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="ModeToolbar_ButtonMouseOverBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ModeToolbar_ButtonKeyboardFocusedBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="ModeToolbar_ButtonKeyboardFocusedBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ModeToolbar_ButtonPressedBackgroundBrush" Color="DarkTurquoise"/>
+    <SolidColorBrush x:Key="ModeToolbar_ButtonPressedBorderBrush" Color="Navy"/>
+
+
+    <!-- MenuToolbar Theme Properties -->
+    <SolidColorBrush x:Key="MenuToolbar_MenuBackgroundBrush" Color="LightCyan"/>
+    <SolidColorBrush x:Key="MenuToolbar_MenuForegroundBrush" Color="Indigo"/>
+    <System:Double x:Key="MenuToolbar_MenuFontSize">16</System:Double>
+    <FontFamily x:Key="MenuToolbar_MenuFontFamily">Arial</FontFamily>
+
+
+
+    <!-- ===================================================================
+
+         Window Theme Parts
+
+         =================================================================== -->
+
+    <!-- SplashChooser Theme Properties -->
+    <SolidColorBrush x:Key="SplashChooser_WindowBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="SplashChooser_WindowForegroundBrush" Color="Indigo"/>
+    <SolidColorBrush x:Key="SplashChooser_WindowBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="SplashChooser_TextBlockForegroundBrush" Color="Indigo"/>
+
+    <System:Double x:Key="SplashChooser_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="SplashChooser_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="SplashChooser_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="SplashChooser_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="SplashChooser_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="SplashChooser_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="SplashChooser_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="SplashChooser_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="SplashChooser_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="SplashChooser_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="SplashChooser_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="SplashChooser_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="SplashChooser_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="SplashChooser_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="SplashChooser_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <!-- Splash Theme Properties -->
+    <SolidColorBrush x:Key="Splash_WindowBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Splash_WindowForegroundBrush" Color="Indigo"/>
+    <SolidColorBrush x:Key="Splash_WindowBorderBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="Splash_TextBlockForegroundBrush" Color="Black"/>
+
+    <System:Double x:Key="Splash_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="Splash_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="Splash_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="Splash_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="Splash_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="Splash_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="Splash_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="Splash_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Splash_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="Splash_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="Splash_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Splash_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="Splash_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="Splash_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Splash_ButtonPressedForegroundBrush" Color="Black"/>
+
+    <SolidColorBrush x:Key="Splash_ListViewBackgroundBrush" Color="LightSteelBlue"/>
+    <System:Double x:Key="Splash_ListViewFontSize">14</System:Double>
+    <FontFamily x:Key="Splash_ListViewFontFamily">Arial</FontFamily>
+    <SolidColorBrush x:Key="Splash_ListViewBorderBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Splash_ListViewForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="Splash_ListViewMouseOverBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Splash_ListViewDisabledBackgroundBrush" Color="LightSteelBlue"/>
+
+
+    <!-- Main Window Theme Properties -->
+    <SolidColorBrush x:Key="Main_WindowBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Main_WindowForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="Main_WindowContentBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Main_WindowContentBorderBrush" Color="Black"/>
+
+
+    <!-- ColorPicker Window Theme Properties -->
+    <SolidColorBrush x:Key="ColorPicker_WindowBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="ColorPicker_WindowForegroundBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="ColorPicker_WindowBorderBrush" Color="Black"/>
+
+    <System:Double x:Key="ColorPicker_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="ColorPicker_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="ColorPicker_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="ColorPicker_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="ColorPicker_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="ColorPicker_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="ColorPicker_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="ColorPicker_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ColorPicker_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="ColorPicker_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="ColorPicker_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ColorPicker_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="ColorPicker_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ColorPicker_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ColorPicker_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <!-- CosmosInput Window Theme Properties -->
+    <SolidColorBrush x:Key="CosmosInput_WindowBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="CosmosInput_WindowBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="CosmosInput_WindowForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="CosmosInput_TextBlockForegroundBrush" Color="Black"/>
+
+    <System:Double x:Key="CosmosInput_ButtonFontSize">14</System:Double>
+    <FontFamily x:Key="CosmosInput_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="CosmosInput_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="CosmosInput_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="CosmosInput_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="CosmosInput_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="CosmosInput_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="CosmosInput_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="CosmosInput_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="CosmosInput_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="CosmosInput_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="CosmosInput_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="CosmosInput_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="CosmosInput_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="CosmosInput_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <!-- ExportDataset Window Theme Properties -->
+    <SolidColorBrush x:Key="ExportDataSet_WindowBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="ExportDataSet_WindowForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="ExportDataSet_LabelForegroundBrush" Color="Indigo"/>
+
+    <System:Double x:Key="ExportDataSet_ButtonFontSize">14</System:Double>
+    <FontFamily x:Key="ExportDataSet_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="ExportDataSet_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="ExportDataSet_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="ExportDataSet_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="ExportDataSet_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="ExportDataSet_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="ExportDataSet_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ExportDataSet_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="ExportDataSet_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="ExportDataSet_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ExportDataSet_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="ExportDataSet_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ExportDataSet_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ExportDataSet_ButtonPressedForegroundBrush" Color="Black"/>
+
+    <SolidColorBrush x:Key="ExportDataSet_ListViewBackgroundBrush" Color="Azure"/>
+    <SolidColorBrush x:Key="ExportDataSet_ListViewBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="ExportDataSet_ListViewForegroundBrush" Color="Navy"/>
+    <SolidColorBrush x:Key="ExportDataSet_ListViewMouseOverBackgroundBrush" Color="GhostWhite"/>
+    <SolidColorBrush x:Key="ExportDataSet_ListViewDisabledBackgroundBrush" Color="Gray"/>
+
+
+    <!-- Help Window Theme Properties -->
+    <SolidColorBrush x:Key="Help_WindowBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Help_WindowForegroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Help_WindowBorderBrush" Color="#FF222222"/>
+
+    <SolidColorBrush x:Key="Help_TextBlockForegroundBrush" Color="Black"/>
+
+    <System:Double x:Key="Help_ButtonFontSize">14</System:Double>
+    <FontFamily x:Key="Help_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="Help_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="Help_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="Help_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="Help_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="Help_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="Help_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Help_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="Help_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="Help_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Help_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="Help_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="Help_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Help_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <!-- ProfileName Window Theme Properties -->
+    <SolidColorBrush x:Key="ProfileName_WindowBackgroundBrush" Color="LightSteelBlue"/>
+
+    <SolidColorBrush x:Key="ProfileName_TextBlockForegroundBrush" Color="Indigo"/>
+
+    <System:Double x:Key="ProfileName_ButtonFontSize">14</System:Double>
+    <FontFamily x:Key="ProfileName_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="ProfileName_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="ProfileName_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="ProfileName_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="ProfileName_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="ProfileName_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="ProfileName_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ProfileName_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="ProfileName_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="ProfileName_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ProfileName_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="ProfileName_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ProfileName_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ProfileName_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <!-- Shortcut Window Theme Properties -->
+    <SolidColorBrush x:Key="Shortcut_WindowBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Shortcut_WindowForegroundBrush" Color="White"/>
+    <SolidColorBrush x:Key="Shortcut_WindowBorderBrush" Color="Black"/>
+
+    <SolidColorBrush x:Key="Shortcut_TextBlockForegroundBrush" Color="Black"/>
+
+    <System:Double x:Key="Shortcut_ButtonFontSize">14</System:Double>
+    <FontFamily x:Key="Shortcut_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="Shortcut_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="Shortcut_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="Shortcut_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="Shortcut_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="Shortcut_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="Shortcut_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Shortcut_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="Shortcut_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="Shortcut_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Shortcut_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="Shortcut_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="Shortcut_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Shortcut_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+
+    <!-- ===================================================================
+
+         Menu Theme Parts
+
+         =================================================================== -->
+
+    <!-- Top Menu -->
+    <SolidColorBrush x:Key="Main_MenuBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Main_MenuForegroundBrush" Color="Indigo"/>
+    <System:Double x:Key="Main_MenuFontSize">16</System:Double>
+    <FontFamily x:Key="Main_MenuFontFamily">Arial</FontFamily>
+
+
+    <!-- Sub Menu Items -->
+    <SolidColorBrush x:Key="SubmenuItem_BackgroundBrush" Color="AliceBlue"/>
+    <SolidColorBrush x:Key="SubmenuItem_BorderBrush" Color="CornflowerBlue"/>
+
+    <LinearGradientBrush x:Key="SubmenuItem_HighlightedBackgroundFillBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#34C5EBFF" Offset="0"/>
+        <GradientStop Color="#3481D8FF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="SubmenuItem_HighlightedBackgroundStrokeBrush" Color="#8071CBF1"/>
+    <SolidColorBrush x:Key="SubmenuItem_HighlightedBorderStrokeBrush" Color="#40FFFFFF"/>
+
+
+    <!-- Sub Menu Header -->
+    <LinearGradientBrush x:Key="SubmenuHeader_HighlightedBackgroundFillBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#34C5EBFF" Offset="0"/>
+        <GradientStop Color="#3481D8FF" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="SubmenuHeader_HighlightedBackgroundStrokeBrush" Color="#8071CBF1"/>
+    <SolidColorBrush x:Key="SubmenuHeader_HighlightedBorderStrokeBrush" Color="#40FFFFFF"/>
+
+
+    <!-- TopLevel Header -->
+    <LinearGradientBrush x:Key="TopLevelHeader_KeyboardFocusedFillBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#28717070" Offset="0"/>
+        <GradientStop Color="#50717070" Offset="0.75"/>
+        <GradientStop Color="#90717070" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="TopLevelHeader_SubmenuOpenFillBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#28717070" Offset="0"/>
+        <GradientStop Color="#50717070" Offset="0.75"/>
+        <GradientStop Color="#90717070" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="TopLevelItem_KeyboardFocusedFillBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#28717070" Offset="0"/>
+        <GradientStop Color="#50717070" Offset="0.75"/>
+        <GradientStop Color="#90717070" Offset="1"/>
+    </LinearGradientBrush>
+
+
+
+    <!-- ===================================================================
+
+         Context Menu Theme Parts
+
+         =================================================================== -->
+
+    <System:Double x:Key="ContextMenu_FontSize">12</System:Double>
+    <FontFamily x:Key="ContextMenu_FontFamily">Arial</FontFamily>
+    <FontWeight x:Key="ContextMenu_FontWeight">Normal</FontWeight>
+
+    <SolidColorBrush x:Key="ContextMenu_ForegroundBrush" Color="Navy"/>
+    <SolidColorBrush x:Key="ContextMenu_BackgroundBrush" Color="MintCream"/>
+    <SolidColorBrush x:Key="ContextMenu_BorderBrush" Color="MidnightBlue"/>
+
+
+
+    <!-- ===================================================================
+
+         Panel Theme Parts
+
+         =================================================================== -->
+
+    <!-- Panel View Header -->
+
+    <System:Double x:Key="ViewHeader_FontSize">14</System:Double>
+    <FontFamily x:Key="ViewHeader_FontFamily">Arial</FontFamily>
+    <FontWeight x:Key="ViewHeader_FontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="ViewHeader_BackgroundBrush" Color="RoyalBlue"/>
+    <SolidColorBrush x:Key="ViewHeader_ForegroundBrush" Color="FloralWhite"/>
+
+    <SolidColorBrush x:Key="ViewHeader_ActiveBackgroundBrush" Color="BlueViolet"/>
+
+    <SolidColorBrush x:Key="ViewHeader_GlyphButtonHoverBackgroundBrush" Color="Silver"/>
+    <SolidColorBrush x:Key="ViewHeader_GlyphButtonHoverBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="ViewHeader_GlyphButtonPressedBackgroundBrush" Color="GhostWhite"/>
+    <SolidColorBrush x:Key="ViewHeader_GlyphButtonPressedBorderBrush" Color="Purple"/>
+
+
+    <!-- ViewFrame Theme Properties -->
+    <SolidColorBrush x:Key="ViewFrame_BorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="ViewFrame_BackgroundBrush" Color="Black"/>
+
+    <SolidColorBrush x:Key="DocumentGroupControl_BackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="DocumentGroupControl_BorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="DocumentGroupControl_ForegroundBrush" Color="FloralWhite"/>
+
+    <System:Double x:Key="DocumentGroupControlTabItem_FontSize">12</System:Double>
+    <FontFamily x:Key="DocumentGroupControlTabItem_FontFamily">Arial</FontFamily>
+    <FontWeight x:Key="DocumentGroupControlTabItem_FontWeight">Normal</FontWeight>
+
+    <SolidColorBrush x:Key="DocumentGroupControlTabItem_BackgroundBrush" Color="Silver"/>
+    <SolidColorBrush x:Key="DocumentGroupControlTabItem_ForegroundBrush" Color="FloralWhite"/>
+    <SolidColorBrush x:Key="DocumentGroupControlTabItem_MouseOverBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="DocumentGroupControlTabItem_SelectedBackgroundBrush" Color="BlueViolet"/>
+
+
+    <SolidColorBrush x:Key="DocumentGroupControlTabItem_GlyphButtonHoverBackgroundBrush" Color="Silver"/>
+    <SolidColorBrush x:Key="DocumentGroupControlTabItem_GlyphButtonHoverBorderBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="DocumentGroupControlTabItem_GlyphButtonPressedBackgroundBrush" Color="GhostWhite"/>
+    <SolidColorBrush x:Key="DocumentGroupControlTabItem_GlyphButtonPressedBorderBrush" Color="Purple"/>
+    <SolidColorBrush x:Key="DocumentGroupControlTabItem_GlyphButtonFillBrush" Color="#222222"/>
+
+
+    <SolidColorBrush x:Key="TabGroupControl_BackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="TabGroupControl_BorderBrush" Color="LightSlateGray"/>
+
+    <SolidColorBrush x:Key="TabGroupControlTabItem_BackgroundBrush" Color="Silver"/>
+    <SolidColorBrush x:Key="TabGroupControlTabItem_ForegroundBrush" Color="FloralWhite"/>
+
+    <SolidColorBrush x:Key="TabGroupControlTabItem_MouseOverBackgroundBrush" Color="SkyBlue"/>
+
+    <SolidColorBrush x:Key="TabGroupControlTabItem_SelectedBorderBrush" Color="Blue"/>
+    <SolidColorBrush x:Key="TabGroupControlTabItem_SelectedBackgroundBrush" Color="BlueViolet"/>
+
+    <SolidColorBrush x:Key="AutoHideTabItem_BackgroundBrush" Color="LightSteelBlue"/>
+
+    <SolidColorBrush x:Key="FloatingWindow_BackgroundBrush" Color="LightSlateGray"/>
+    <SolidColorBrush x:Key="FloatingWindow_ForegroundBrush" Color="Black"/>
+
+    <SolidColorBrush x:Key="SplitterGrip_BackgroundBrush" Color="SlateGray"/>
+
+
+    <!-- Bitmap Panel Theme Properties -->
+    <SolidColorBrush x:Key="Bitmap_PanelBackgroundBrush" Color="LightSteelBlue"/>
+
+
+    <!-- CallStackPanel Theme Properties -->
+    <SolidColorBrush x:Key="CallStack_PanelBackgroundBrush" Color="LightSteelBlue"/>
+
+    <System:Double x:Key="CallStack_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="CallStack_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="CallStack_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="CallStack_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="CallStack_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="CallStack_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="CallStack_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="CallStack_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="CallStack_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="CallStack_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="CallStack_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="CallStack_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="CallStack_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="CallStack_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="CallStack_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <System:Double x:Key="CallStack_DataGridFontSize">12</System:Double>
+    <FontFamily x:Key="CallStack_DataGridFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="CallStack_DataGridFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="CallStack_DataGridRowBackgroundBrush" Color="LightCyan"/>
+    <SolidColorBrush x:Key="CallStack_DataGridBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="CallStack_DataGridBorderBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="CallStack_DataGridForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="CallStack_DataGridRowSelectedBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="CallStack_DataGridRowMouseOverBackgroundBrush" Color="Aquamarine"/>
+
+    <SolidColorBrush x:Key="CallStack_DataGridColumnHeaderBackgroundBrush" Color="Silver"/>
+    <SolidColorBrush x:Key="CallStack_DataGridColumnHeaderMouseOverBackgroundBrush" Color="SkyBlue"/>
+
+
+    <!-- EventLogger Theme Properties -->
+    <SolidColorBrush x:Key="EventLogger_TextBlockBackgroundBrush" Color="LightCyan"/>
+    <SolidColorBrush x:Key="EventLogger_TextBlockForegroundBrush" Color="Indigo"/>
+    <System:Double x:Key="EventLogger_TextBlockFontSize">12</System:Double>
+    <FontFamily x:Key="EventLogger_TextBlockFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="EventLogger_TextBlockFontWeight">Normal</FontWeight>
+
+
+    <!-- Create Criteria Panel Theme Properties -->
+    <SolidColorBrush x:Key="Fingerprinting_PanelBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Fingerprinting_TextBlockBackgroundBrush" Color="LightSteelBlue"/>
+
+
+    <!-- Diagnostic Theme Properties -->
+    <SolidColorBrush x:Key="Diagnostic_PanelBackgroundBrush" Color="LightSteelBlue"/>
+
+    <System:Double x:Key="Diagnostic_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="Diagnostic_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="Diagnostic_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="Diagnostic_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="Diagnostic_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="Diagnostic_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="Diagnostic_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="Diagnostic_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Diagnostic_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="Diagnostic_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="Diagnostic_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Diagnostic_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="Diagnostic_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="Diagnostic_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Diagnostic_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <System:Double x:Key="Diagnostic_DataGridFontSize">12</System:Double>
+    <FontFamily x:Key="Diagnostic_DataGridFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="Diagnostic_DataGridFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="Diagnostic_DataGridRowBackgroundBrush" Color="LightCyan"/>
+    <SolidColorBrush x:Key="Diagnostic_DataGridBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Diagnostic_DataGridBorderBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Diagnostic_DataGridForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="Diagnostic_DataGridRowSelectedBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="Diagnostic_DataGridRowMouseOverBackgroundBrush" Color="Aquamarine"/>
+
+    <SolidColorBrush x:Key="Diagnostic_DataGridColumnHeaderBackgroundBrush" Color="Silver"/>
+    <SolidColorBrush x:Key="Diagnostic_DataGridColumnHeaderMouseOverBackgroundBrush" Color="SkyBlue"/>
+
+
+    <SolidColorBrush x:Key="Diagnostic_ListViewBackgroundBrush" Color="LightCyan"/>
+    <SolidColorBrush x:Key="Diagnostic_ListViewBorderBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Diagnostic_ListViewForegroundBrush" Color="Indigo"/>
+    <SolidColorBrush x:Key="Diagnostic_ListViewMouseOverBackgroundBrush" Color="Purple"/>
+    <SolidColorBrush x:Key="Diagnostic_ListViewDisabledBackgroundBrush" Color="LightSteelBlue"/>
+
+
+    <SolidColorBrush x:Key="Diagnostic_TabItemForegroundBrush" Color="Indigo"/>
+    <SolidColorBrush x:Key="Diagnostic_TabItemBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="Diagnostic_TabItemBackgroundBrush" Color="Silver"/>
+    <SolidColorBrush x:Key="Diagnostic_TabItemMouseOverFillBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="Diagnostic_TabItemSelectedFillBrush" Color="Silver"/>
+
+    <SolidColorBrush x:Key="Diagnostic_TabContentBackgroundBrush" Color="LightSteelBlue"/>
+
+    <SolidColorBrush x:Key="Diagnostic_TabItemCloseButtonBackgroundBrush" Color="Gray"/>
+    <SolidColorBrush x:Key="Diagnostic_TabItemCloseButtonForegroundBrush" Color="Black"/>
+
+    <SolidColorBrush x:Key="Diagnostic_TabControlBackgroundBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="Diagnostic_TabControlBorderBrush" Color="Silver"/>
+
+
+    <!-- FlowDocument Panel Theme Properties -->
+    <SolidColorBrush x:Key="FlowDocument_PanelBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="FlowDocument_TextForegroundBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="FlowDocument_Header1Brush" Color="DarkMagenta"/>
+    <SolidColorBrush x:Key="FlowDocument_Header2Brush" Color="RoyalBlue"/>
+
+
+    <!-- InfoExtension Panel Theme Properties -->
+    <SolidColorBrush x:Key="InfoExtension_PanelBackgroundBrush" Color="LightSteelBlue"/>
+
+    <SolidColorBrush x:Key="InfoExtension_DataGridBackgroundBrush" Color="MintCream"/>
+    <SolidColorBrush x:Key="InfoExtension_DataGridForegroundBrush" Color="Indigo"/>
+    <System:Double x:Key="InfoExtension_DataGridFontSize">12</System:Double>
+
+    <SolidColorBrush x:Key="InfoExtension_DataGridColumnHeaderBackgroundBrush" Color="LightSlateGray"/>
+    <SolidColorBrush x:Key="InfoExtension_DataGridColumnHeaderForegroundBrush" Color="Navy"/>
+
+    <SolidColorBrush x:Key="InfoExtension_DataGridCellHighlightBrush" Color="Red"/>
+
+    <SolidColorBrush x:Key="InfoExtension_DataGridFocusEventBackgroundBrush" Color="LightSkyBlue"/>
+
+    <!--
+        ISSUE:
+
+        These styles have to be here, and they have to be Static Resources,
+        because the InfoExtension uses a WinForms custom control to which we
+        "apply" WPF styles.
+    -->
+
+    <Style x:Key="InfoExtension_DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Background" Value="{StaticResource InfoExtension_DataGridColumnHeaderBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource InfoExtension_DataGridColumnHeaderForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="InfoExtension_DataGridCellStyle" TargetType="{x:Type DataGridCell}">
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#807FFF00"/>
+            </Trigger>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#50800080"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="InfoExtension_DataGridRowStyle" TargetType="{x:Type DataGridRow}">
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#3200CED1"/>
+            </Trigger>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#8087CEEB"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="InfoExtension_DataGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="Background" Value="{StaticResource InfoExtension_DataGridBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource InfoExtension_DataGridForegroundBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource InfoExtension_DataGridFontSize}"/>
+        <Setter Property="ColumnHeaderStyle" Value="{StaticResource InfoExtension_DataGridColumnHeaderStyle}"/>
+        <Setter Property="CellStyle" Value="{StaticResource InfoExtension_DataGridCellStyle}"/>
+        <Setter Property="RowStyle" Value="{StaticResource InfoExtension_DataGridRowStyle}"/>
+    </Style>
+
+
+    <!-- Offset Panel Theme Properties -->
+    <SolidColorBrush x:Key="Offset_PanelBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Offset_LabelForegroundBrush" Color="Indigo"/>
+
+    <System:Double x:Key="Offset_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="Offset_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="Offset_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="Offset_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="Offset_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="Offset_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="Offset_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="Offset_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Offset_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="Offset_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="Offset_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Offset_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="Offset_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="Offset_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Offset_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <!-- ProfileExplorer Grid Theme Properties -->
+
+
+    <!-- Properties Panel Theme Properties -->
+    <SolidColorBrush x:Key="Properties_PanelBackgroundBrush" Color="LightSteelBlue"/>
+
+    <System:Double x:Key="Properties_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="Properties_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="Properties_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="Properties_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="Properties_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="Properties_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="Properties_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="Properties_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Properties_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="Properties_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="Properties_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Properties_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="Properties_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="Properties_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="Properties_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <System:Double x:Key="Properties_DataGridFontSize">12</System:Double>
+    <FontFamily x:Key="Properties_DataGridFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="Properties_DataGridFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="Properties_DataGridRowBackgroundBrush" Color="LightCyan"/>
+    <SolidColorBrush x:Key="Properties_DataGridBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Properties_DataGridBorderBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="Properties_DataGridForegroundBrush" Color="Indigo"/>
+
+    <SolidColorBrush x:Key="Properties_DataGridRowSelectedBackgroundBrush" Color="Aquamarine"/>
+    <SolidColorBrush x:Key="Properties_DataGridRowMouseOverBackgroundBrush" Color="Aquamarine"/>
+
+    <SolidColorBrush x:Key="Properties_DataGridColumnHeaderBackgroundBrush" Color="Silver"/>
+    <SolidColorBrush x:Key="Properties_DataGridColumnHeaderMouseOverBackgroundBrush" Color="SkyBlue"/>
+
+
+    <!-- SourceCode Panel Theme Properties -->
+    <SolidColorBrush x:Key="SourceCode_PanelBackgroundBrush" Color="Indigo"/>
+
+    <System:Double x:Key="SourceCode_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="SourceCode_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="SourceCode_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="SourceCode_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="SourceCode_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="SourceCode_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="SourceCode_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="SourceCode_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="SourceCode_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="SourceCode_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="SourceCode_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="SourceCode_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="SourceCode_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="SourceCode_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="SourceCode_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <!-- StackTree Panel Theme Properties -->
+    <SolidColorBrush x:Key="StackTree_PanelBackgroundBrush" Color="LightSteelBlue"/>
+
+
+    <!-- TreeView Panel Theme Properties -->
+    <SolidColorBrush x:Key="TreeView_PanelBackgroundBrush" Color="LightSteelBlue"/>
+
+    <System:Double x:Key="TreeView_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="TreeView_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="TreeView_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="TreeView_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="TreeView_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="TreeView_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="TreeView_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="TreeView_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="TreeView_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="TreeView_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="TreeView_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="TreeView_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="TreeView_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="TreeView_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="TreeView_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+    <SolidColorBrush x:Key="TreeView_BackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="TreeView_BorderBrush" Color="Black"/>
+
+    <LinearGradientBrush x:Key="TreeView_DisabledBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="DarkGray" Offset="0"/>
+        <GradientStop Color="Black" Offset="1"/>
+    </LinearGradientBrush>
+
+
+    <FontWeight x:Key="TreeViewItem_MouseOverFontWeight">Bold</FontWeight>
+    <SolidColorBrush x:Key="TreeViewItem_MouseOverForegroundBrush" Color="Purple"/>
+
+    <FontWeight x:Key="TreeViewItem_UncheckedFontWeight">Normal</FontWeight>
+    <SolidColorBrush x:Key="TreeViewItem_UncheckedForegroundBrush" Color="Gray"/>
+    <FontWeight x:Key="TreeViewItem_NullCheckedFontWeight">Bold</FontWeight>
+
+
+    <SolidColorBrush x:Key="TreeView_CheckBoxForegroundBrush" Color="MidnightBlue"/>
+
+    <System:Double x:Key="TreeView_CheckBoxFontSize">12</System:Double>
+    <FontFamily x:Key="TreeView_CheckBoxFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="TreeView_CheckBoxFontWeight">Bold</FontWeight>
+
+
+    <SolidColorBrush x:Key="TreeViewNode_ForegroundBrush" Color="MidnightBlue"/>
+
+    <System:Double x:Key="TreeViewNode_FontSize">12</System:Double>
+    <FontFamily x:Key="TreeViewNode_FontFamily">Arial</FontFamily>
+    <FontWeight x:Key="TreeViewNode_FontWeight">Normal</FontWeight>
+
+
+    <SolidColorBrush x:Key="TreeViewRootItem_MouseOverForegroundBrush" Color="Purple"/>
+
+    <System:Double x:Key="TreeViewRootItem_FontSize">16</System:Double>
+    <FontFamily x:Key="TreeViewRootItem_FontFamily">Arial</FontFamily>
+    <FontWeight x:Key="TreeViewRootItem_FontWeight">Normal</FontWeight>
+
+    <FontWeight x:Key="TreeViewRootItem_MouseOverFontWeight">Bold</FontWeight>
+
+
+    <!-- WPP Panel Theme Properties -->
+    <SolidColorBrush x:Key="WPP_PanelBackgroundBrush" Color="LightSteelBlue"/>
+
+    <System:Double x:Key="WPP_ButtonFontSize">12</System:Double>
+    <FontFamily x:Key="WPP_ButtonFontFamily">Arial</FontFamily>
+    <FontWeight x:Key="WPP_ButtonFontWeight">Bold</FontWeight>
+
+    <SolidColorBrush x:Key="WPP_ButtonBackgroundBrush" Color="SkyBlue"/>
+    <SolidColorBrush x:Key="WPP_ButtonBorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="WPP_ButtonForegroundBrush" Color="MidnightBlue"/>
+
+    <SolidColorBrush x:Key="WPP_ButtonKeyboardFocusedBackgroundBrush" Color="BlueViolet"/>
+    <SolidColorBrush x:Key="WPP_ButtonKeyboardFocusedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="WPP_ButtonKeyboardFocusedForegroundBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="WPP_ButtonMouseOverBackgroundBrush" Color="SlateGray"/>
+    <SolidColorBrush x:Key="WPP_ButtonMouseOverBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="WPP_ButtonMouseOverForegroundBrush" Color="MidnightBlue"/>
+
+    <LinearGradientBrush x:Key="WPP_ButtonPressedBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="Silver" Offset="0"/>
+        <GradientStop Color="GhostWhite" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="WPP_ButtonPressedBorderBrush" Color="Black"/>
+    <SolidColorBrush x:Key="WPP_ButtonPressedForegroundBrush" Color="Black"/>
+
+
+
+    <!-- ===================================================================
+
+         Glyph Button Theme Parts (Dock/Undock, Auto-hide, Close)
+
+         =================================================================== -->
+
+    <!-- GlyphButton Theme Properties -->
+    <LinearGradientBrush x:Key="GlyphButton_BackgroundBrush" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#FFAAAAAA" Offset="0"/>
+        <GradientStop Color="LightSteelBlue" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="GlyphButton_ForegroundBrush" Color="Indigo"/>
+
+
+
+    <!-- ===================================================================
+
+         Checkbox Theme Parts
+
+         =================================================================== -->
+
+    <!-- CheckBox Theme Properties -->
+    <SolidColorBrush x:Key="CheckBox_BackgroundBrush" Color="MintCream"/>
+    <SolidColorBrush x:Key="CheckBox_BorderBackgroundBrush" Color="Lavender"/>
+    <SolidColorBrush x:Key="CheckBox_BorderBrush" Color="MidnightBlue"/>
+    <SolidColorBrush x:Key="CheckBox_CheckedNullFillBrush" Color="MediumOrchid"/>
+    <SolidColorBrush x:Key="CheckBox_FillBrush" Color="MidnightBlue"/>
+
+
+
+    <!-- ===================================================================
+
+         Scroll Bar Theme Parts
+
+         =================================================================== -->
+
+    <!-- VerticalScrollBar Theme Properties -->
+    <LinearGradientBrush x:Key="VerticalScrollBar_BackgroundBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#E1E1E1" Offset="0"/>
+        <GradientStop Color="#EDEDED" Offset="0.20"/>
+        <GradientStop Color="#EDEDED" Offset="0.80"/>
+        <GradientStop Color="#E3E3E3" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="VerticalScrollBar_DisabledBackgroundBrush" Color="#F4F4F4"/>
+
+
+    <!-- HorizontalScrollBar Theme Properties -->
+    <LinearGradientBrush x:Key="HorizontalScrollBar_BackgroundBrush" EndPoint="1,0" StartPoint="0,0">
+        <GradientStop Color="#E1E1E1" Offset="0"/>
+        <GradientStop Color="#EDEDED" Offset="0.20"/>
+        <GradientStop Color="#EDEDED" Offset="0.80"/>
+        <GradientStop Color="#E3E3E3" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="HorizontalScrollBar_GridBackgroundBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="HorizontalScrollBar_DisabledBackgroundBrush" Color="#F4F4F4"/>
+
+
+    <!-- ScrollBarButton -->
+    <SolidColorBrush x:Key="ScrollBarButton_FillBrush" Color="#FF505050"/>
+    <SolidColorBrush x:Key="ScrollBarButton_MouseOverFillBrush" Color="#FF0080C0"/>
+
+
+    <!-- ScrollBarThumb -->
+    <SolidColorBrush x:Key="ScrollBarThumb_FillBrush" Color="#FF505050"/>
+    <SolidColorBrush x:Key="ScrollBarThumb_MouseOverFillBrush" Color="#FF0080C0"/>
+
+
+    <!-- ScrollViewer -->
+    <LinearGradientBrush x:Key="ScrollViewer_RectangleFillBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="DarkGray" Offset="0"/>
+        <GradientStop Color="Black" Offset="1"/>
+    </LinearGradientBrush>
+
+
+
+    <!-- ===================================================================
+
+         Native Panel Colors
+
+         NOTE: These must be of type SolidColorBrush.
+
+         =================================================================== -->
+
+    <SolidColorBrush x:Key="Panel_ActiveBorderColor" Color="#C84B0082"/>
+    <SolidColorBrush x:Key="Panel_DefaultBorderColor" Color="#9B87CEEB"/>
+    <SolidColorBrush x:Key="Panel_BackgroundColor" Color="#FFDCDCFA"/>
+    <SolidColorBrush x:Key="Panel_BoxOutlineColor" Color="#7D000000"/>
+    <SolidColorBrush x:Key="Panel_BoxOutlineBorderColor" Color="#FF000000"/>
+    <SolidColorBrush x:Key="Panel_ColumnOutlineColor" Color="#7D000000"/>
+    <SolidColorBrush x:Key="Panel_ColumnOutlineBorderColor" Color="#FF000000"/>
+    <SolidColorBrush x:Key="Panel_GridColor" Color="#1E000000"/>
+    <SolidColorBrush x:Key="Panel_HelpAxisColor" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="Panel_HelpBackgroundColor" Color="#D2000000"/>
+    <SolidColorBrush x:Key="Panel_HelpTextColor" Color="#FFB4B478"/>
+    <SolidColorBrush x:Key="Panel_LabelColor" Color="#3C800080"/>
+    <SolidColorBrush x:Key="Panel_NoDataLabelColor" Color="#64FFFFFF"/>
+    <SolidColorBrush x:Key="Panel_RulerColor" Color="#FF7FFFD4"/>
+    <SolidColorBrush x:Key="Panel_ScaleActiveBackgroundColor" Color="#1E80FF00"/>
+    <SolidColorBrush x:Key="Panel_ScaleBackgroundColor" Color="#64808080"/>
+    <SolidColorBrush x:Key="Panel_ScaleTextColor" Color="#FF000000"/>
+    <SolidColorBrush x:Key="Panel_ScanLineColor" Color="#370096FF"/>
+    <SolidColorBrush x:Key="Panel_SelectionColor" Color="#B40000FF"/>
+    <SolidColorBrush x:Key="Panel_UnitHighlightColor" Color="#FF0000FF"/>
+    <SolidColorBrush x:Key="Panel_UnitHighlightSelectionColor" Color="#FFFF0000"/>
+    <SolidColorBrush x:Key="Panel_UnitTextColor" Color="#FF000000"/>
+
+</ResourceDictionary>

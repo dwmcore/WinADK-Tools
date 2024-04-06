@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) Microsoft Corporation.  All rights reserved.
+  
+  Public events for Sequencer
+  
+  ** Update the design document when you add or modify messages **
+-->
+<instrumentationManifest xmlns="http://schemas.microsoft.com/win/2004/08/events" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<instrumentation>
+		<events>
+			<provider guid="{0d21725f-a0bd-4d1d-ae8e-6910f1093419}" messageFileName="appvetw.modernizer.dll" name="Microsoft-AppV-Sequencer" resourceFileName="appvetw.modernizer.dll" symbol="ModernizerPublicEvents">
+				<channels>
+					<channel chid="Admin" enabled="true" isolation="System" name="Microsoft-AppV-Sequencer/Admin" symbol="CHANNEL_APPV_SEQUENCER_ADMIN" type="Admin">
+						<logging>
+							<retention>false</retention>
+							<maxSize>10485760</maxSize>
+						</logging>
+					</channel>
+					<channel chid="Operational" enabled="true" isolation="System" name="Microsoft-AppV-Sequencer/Operational" symbol="CHANNEL_APPV_SEQUENCER_OPERATIONAL" type="Operational">
+						<logging>
+							<retention>false</retention>
+							<maxSize>10485760</maxSize>
+						</logging>
+					</channel>
+				</channels>
+				<levels></levels>
+				<keywords></keywords>
+				<filters></filters>
+				<maps>
+					<valueMap name="FileEventID" symbol="MAP_FILE_EVENT_ID">
+						<!-- The map value corresponds to File Monitor Provider events defined in ModernzierPrivate.man -->
+						<map message="$(string.Map.FileEventID.CreateFileEvent)" symbol="_CREATE_FILE_EVENT" value="0x1"></map>
+						<map message="$(string.Map.FileEventID.ReadFile)" symbol="_READ_FILE" value="0x2"></map>
+						<map message="$(string.Map.FileEventID.WriteFile)" symbol="_WRITE_FILE" value="0x3"></map>
+						<map message="$(string.Map.FileEventID.DeleteFile)" symbol="_DELETE_FILE" value="0x4"></map>
+						<map message="$(string.Map.FileEventID.RenameFile)" symbol="_RENAME_FILE" value="0x5"></map>
+					</valueMap>
+				</maps>
+				<tasks></tasks>
+				<opcodes></opcodes>
+				<templates>
+					<template tid="NtStatusEvent">
+						<data inType="win:UInt32" name="Status" outType="win:NTSTATUS"></data>
+					</template>
+					<template tid="ExceptionMessageEvent">
+						<data inType="win:UnicodeString" name="Message"></data>
+					</template>
+					<template tid="PathAndExceptionMessageEvent">
+						<data inType="win:UnicodeString" name="Path"></data>
+						<data inType="win:UnicodeString" name="Message"></data>
+					</template>
+					<template tid="ProcessInfoAndExceptionMessageEvent">
+						<data inType="win:UnicodeString" name="exception"></data>
+						<data inType="win:UnicodeString" name="path"></data>
+						<data inType="win:UnicodeString" name="args"></data>
+						<data inType="win:UnicodeString" name="workingdir"></data>
+					</template>
+					<template tid="NamePidScopeExp">
+						<data inType="win:UnicodeString" name="Name"></data>
+						<data inType="win:UInt32" name="Pid"></data>
+						<data inType="win:UInt32" name="Scope"></data>
+						<data inType="win:UnicodeString" name="Exp"></data>
+					</template>
+					<template tid="RegistryRootAndKeyNameEvent">
+						<data inType="win:UnicodeString" name="Root"></data>
+						<data inType="win:UnicodeString" name="KeyName"></data>
+					</template>
+					<template tid="MonitorLogStatisticsEvent">
+						<data inType="win:UInt32" name="EventsLost"></data>
+					</template>
+					<template tid="HR_GUID">
+						<data inType="win:Int32" name="hr" outType="win:HResult"></data>
+						<data inType="win:GUID" name="guid"></data>
+					</template>
+					<template tid="tPidPid">
+						<data inType="win:Pointer" name="pid1" outType="win:HexInt64"></data>
+						<data inType="win:Pointer" name="pid2" outType="win:HexInt64"></data>
+					</template>
+					<template tid="SignedInt32">
+						<data inType="win:Int32" name="signedInt"></data>
+					</template>
+					<template tid="tRC">
+						<data inType="win:UInt64" name="RC"></data>
+					</template>
+					<template tid="tFileOperation">
+						<data inType="win:UInt32" map="FileEventID" name="operation"></data>
+						<data inType="win:UnicodeString" name="path"></data>
+					</template>
+					<template tid="tStringString">
+						<data inType="win:UnicodeString" name="str1"></data>
+						<data inType="win:UnicodeString" name="str2"></data>
+					</template>
+					<template tid="tString">
+						<data inType="win:UnicodeString" name="path"></data>
+					</template>
+					<template tid="tStringInt">
+						<data inType="win:UnicodeString" name="path"></data>
+						<data inType="win:Int32" name="Int32"></data>
+					</template>
+					<template tid="tStringStringInt">
+						<data inType="win:UnicodeString" name="path1"></data>
+						<data inType="win:UnicodeString" name="path2"></data>
+						<data inType="win:Int32" name="Int32"></data>
+					</template>
+					<template tid="tPathPathString">
+						<data inType="win:UnicodeString" name="path1"></data>
+						<data inType="win:UnicodeString" name="path2"></data>
+						<data inType="win:UnicodeString" name="Int32"></data>
+					</template>
+					<template tid="tStringStringWin32Retcode">
+						<data inType="win:UnicodeString" name="str1"></data>
+						<data inType="win:UnicodeString" name="str2"></data>
+						<data inType="win:Int32" name="RC"></data>
+					</template>
+					<template tid="tStringStringString">
+						<data inType="win:UnicodeString" name="str1"></data>
+						<data inType="win:UnicodeString" name="str2"></data>
+						<data inType="win:UnicodeString" name="str3"></data>
+					</template>
+					<template tid="tStringStringStringString">
+						<data inType="win:UnicodeString" name="str1"></data>
+						<data inType="win:UnicodeString" name="str2"></data>
+						<data inType="win:UnicodeString" name="str3"></data>
+						<data inType="win:UnicodeString" name="str4"></data>
+					</template>
+				</templates>
+				<events>
+					<!-- Driver events (values 1-99) -->
+					<event channel="Operational" level="win:Informational" message="$(string.Event.DriverLoaded)" symbol="DriverLoaded" value="1"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.DriverUnloaded)" symbol="DriverUnloaded" value="2"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.DriverLoadFailed)" symbol="DriverLoadFailed" template="NtStatusEvent" value="3"></event>
+					<!-- Registry Minifilter events (values 100-199) -->
+					<event channel="Operational" level="win:Informational" message="$(string.Event.RegistryMinifilterLoaded)" symbol="RegistryMinifilterLoaded" value="100"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.RegistryMinifilterUnloaded)" symbol="RegistryMinifilterUnloaded" value="101"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.RegistryMinifilterLoadFailed)" symbol="RegistryMinifilterLoadFailed" template="NtStatusEvent" value="102"></event>
+					<!-- MinifilterControllerSubsystem events (200-299) -->
+					<event channel="Admin" level="win:Error" message="$(string.Event.DriverLoadException)" symbol="DriverLoadException" template="ExceptionMessageEvent" value="200"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.DriverUnloadException)" symbol="DriverUnloadException" template="ExceptionMessageEvent" value="201"></event>
+					<!-- ProcessMonitorSubsystem events (300-399) -->
+					<event channel="Admin" level="win:Error" message="$(string.Event.FailedConnectingToDriver)" symbol="FailedConnectingToDriver" template="ExceptionMessageEvent" value="300"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.FailedMonitoringProcess)" symbol="FailedMonitoringProcess" template="NamePidScopeExp" value="301"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.FailedMonitoringChildProcess)" symbol="FailedMonitoringChildProcess" template="tPidPid" value="302"></event>
+					<!-- VFS Processing events (400-499) -->
+					<event channel="Admin" level="win:Error" message="$(string.Event.FileNotFoundException)" symbol="FileNotFoundException" template="ExceptionMessageEvent" value="400"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.DirectoryNotFoundException)" symbol="DirectoryNotFoundException" template="ExceptionMessageEvent" value="401"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Event.VolumeToDriveMappingNotFound)" symbol="VolumeToDriveMappingNotFound" template="ExceptionMessageEvent" value="402"></event>
+					<event channel="Admin" level="win:Informational" message="$(string.Event.FileMonitorLogStatistics)" symbol="FileMonitorLogStatistics" template="MonitorLogStatisticsEvent" value="403"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Event.FileNotAddedToPackage)" symbol="FileNotAddedToPackage" template="PathAndExceptionMessageEvent" value="404"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Event.ManifestNotAddedToPackage)" symbol="ManifestNotAddedToPackage" template="ExceptionMessageEvent" value="405"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.DirectoryNotAccessibleException)" symbol="DirectoryNotAccessibleException" template="ExceptionMessageEvent" value="406"></event>
+					<!-- TracingSubsystem events (500-599) -->
+					<event channel="Admin" level="win:Warning" message="$(string.Event.FailedToDeleteLogFile)" symbol="FailedToDeleteLogFile" template="PathAndExceptionMessageEvent" value="500"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.Tracing.FileOperationWithNegativeOffset)" symbol="FileOperationWithNegativeOffset" template="tFileOperation" value="501"></event>
+					<!-- RegistryMonitor event (600-699) -->
+					<event channel="Admin" level="win:Error" message="$(string.Event.RegistryRootAndKeyNameEvent)" symbol="AccessDeniedToRegistryKey" template="RegistryRootAndKeyNameEvent" value="600"></event>
+					<event channel="Admin" level="win:Informational" message="$(string.Event.RegistryMonitorLogStatistics)" symbol="RegistryMonitorLogStatistics" template="MonitorLogStatisticsEvent" value="601"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.ErrorCapturingRegistryValue)" symbol="ErrorCapturingRegistryValue" template="tStringString" value="602"></event>
+					<!-- Optimizer events (700-799) -->
+					<event channel="Admin" level="win:Informational" message="$(string.Event.OptimizerFileMonitorLogStatistics)" symbol="OptimizerFileMonitorLogStatistics" template="MonitorLogStatisticsEvent" value="700"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.FailedToCommunicateWithMinifilter)" symbol="FailedToCommunicateWithMinifilter" template="PathAndExceptionMessageEvent" value="701"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Event.FailedToPurgeFile)" symbol="FailedToPurgeFile" template="ExceptionMessageEvent" value="702"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.DisablePrefetch)" symbol="DisablePrefetch" template="SignedInt32" value="703"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.RestorePrefetch)" symbol="RestorePrefetch" template="SignedInt32" value="704"></event>
+					<!-- Tokenizer event (800-899) -->
+					<event channel="Admin" level="win:Error" message="$(string.Event.Tokenizer.KnownFolderException)" symbol="TokenizerKnownFolderException" template="HR_GUID" value="800"></event>
+					<!-- Native Subsystems events (900-999) -->
+					<event channel="Admin" level="win:Error" message="$(string.Event.NativePackagingSubsystem.OnPrePackagingError)" symbol="NativePackagingSubsystem_OnPrePackagingError" template="tRC" value="900"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.NativePackagingSubsystem.OnPackagingStartedError)" symbol="NativePackagingSubsystem_OnPackagingStartedError" template="tRC" value="901"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.NativePackagingSubsystem.OnPrePackagingCompleteError)" symbol="NativePackagingSubsystem_OnPrePackagingCompleteError" template="tRC" value="902"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.NativePackagingSubsystem.StartOnPrePackaging)" symbol="NativePackagingSubsystem_StartOnPrePackaging" value="903"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.NativePackagingSubsystem.StopOnPrePackaging)" symbol="NativePackagingSubsystem_StopOnPrePackaging" value="904"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.NativePackagingSubsystem.StartOnPrePackagingComplete)" symbol="NativePackagingSubsystem_StartOnPrePackagingComplete" value="905"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.NativePackagingSubsystem.StopOnPrePackagingComplete)" symbol="NativePackagingSubsystem_StopOnPrePackagingComplete" value="906"></event>
+					<!-- Ingredients events (1000-1099) -->
+					<event channel="Admin" level="win:Warning" message="$(string.Event.SkippingFileAtUnsupportedLocation)" symbol="SkippingFileAtUnsupportedLocation" template="tString" value="1000"></event>
+					<!-- Packaging events (1100-1199) -->
+					<event channel="Admin" level="win:Error" message="$(string.Event.ApplicationMightBeCorrupted)" symbol="ApplicationMightBeCorrupted" template="ExceptionMessageEvent" value="1100"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.IconIndexHasInvalidFormat)" symbol="IconIndexHasInvalidFormat" template="tString" value="1101"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.CouldNotExtractIconFromFile)" symbol="CouldNotExtractIconFromFile" template="tStringInt" value="1102"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Event.FileNotFoundForIconExtraction)" symbol="FileNotFoundForIconExtraction" template="tString" value="1103"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.IconIndexCausedIntegerOverflow)" symbol="IconIndexCausedIntegerOverflow" template="tString" value="1104"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.InvalidManifest)" symbol="InvalidManifest" value="1105"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Event.FileExclusion)" symbol="FileExclusion" template="ExceptionMessageEvent" value="1106"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Event.ReparsePointDetected)" symbol="ReparsePointDetected" template="tString" value="1107"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Event.RelsFile)" symbol="RelsFile" template="ExceptionMessageEvent" value="1108"></event>
+					<!-- Virtual Services events (1200-1299) -->
+					<event channel="Admin" level="win:Error" message="$(string.Event.UnsupportedServiceStartupType)" symbol="UnsupportedServiceStartupType" template="tStringString" value="1200"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.UnsupportedServiceObjectName)" symbol="UnsupportedServiceObjectName" template="tStringString" value="1201"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Event.UnsupportedServiceType)" symbol="UnsupportedServiceType" template="tStringString" value="1202"></event>
+					<!-- Devirtualizer events (1300-1399) -->
+					<event channel="Admin" level="win:Error" message="$(string.Devirtualizer.FailedToCreateOrOpenRegistryKey)" symbol="Devirtualizer_FailedToCreateOrOpenRegistryKey" template="tString" value="1300"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Devirtualizer.FailedToDeleteRegistryKey)" symbol="Devirtualizer_FailedToDeleteRegistryKey" value="1301"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Devirtualizer.FailedToSaveRegistryValue)" symbol="Devirtualizer_FailedToSaveRegistryValue" template="tString" value="1302"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Devirtualizer.FailedToDeleteRegistryValue)" symbol="Devirtualizer_FailedToDeleteRegistryValue" template="tString" value="1303"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Devirtualizer.PackageFileNotFound)" symbol="Devirtualizer_PackageFileNotFound" template="tString" value="1304"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Devirtualizer.InvalidArgumentCount)" symbol="Devirtualizer_InvalidArgumentCount" value="1305"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Devirtualizer.DevirtualizerFailed)" symbol="Devirtualizer_DevirtualizerFailed" template="tString" value="1306"></event>
+					<!-- AssetIntelligence Collection events (1400-1450) -->
+					<event channel="Admin" level="win:Error" message="$(string.AssetIntelligence.CouldNotFindVAppCollectorExecutable)" symbol="AssetIntelligence_CouldNotFindVAppCollectorExecutable" template="tString" value="1400"></event>
+					<event channel="Admin" level="win:Error" message="$(string.AssetIntelligence.VAppCollectorTimedOut)" symbol="AssetIntelligence_VAppCollectorTimedOut" template="tStringStringInt" value="1401"></event>
+					<event channel="Admin" level="win:Error" message="$(string.AssetIntelligence.ErrorCollectingAI)" symbol="AssetIntelligence_ErrorCollectingAI" value="1402"></event>
+					<event channel="Admin" level="win:Error" message="$(string.AssetIntelligence.VAppCollectorNonZeroReturnCode)" symbol="AssetIntelligence_VAppCollectorNonZeroReturnCode" template="SignedInt32" value="1403"></event>
+					<event channel="Admin" level="win:Error" message="$(string.AssetIntelligence.MissingWMINamespace)" symbol="AssetIntelligence_MissingWMINamespace" value="1404"></event>
+					<!-- Accelerator events (1500-1599) -->
+					<event channel="Admin" level="win:Error" message="$(string.Accelerator.DirectoryCreationFailed)" symbol="Accelerator_DirectoryCreationFailed" template="tStringString" value="1500"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Accelerator.FileExtractionFailed)" symbol="Accelerator_FileExtractionFailed" template="tStringString" value="1501"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Accelerator.RehydrationFailed)" symbol="Accelerator_RehydrationFailed" value="1502"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Accelerator.DehydrationFailed)" symbol="Accelerator_DehydrationFailed" value="1503"></event>
+					<!-- PendingFileRename subsystem events (1600-1609) -->
+					<event channel="Admin" level="win:Warning" message="$(string.PendingFileRenames.CouldNotReadRegistry)" symbol="PendingFileRenames_CouldNotReadRegistry" value="1601"></event>
+					<!-- Reboot Events (1610-1699) -->
+					<event channel="Admin" level="win:Error" message="$(string.Reboot.FailedToLaunchTask)" symbol="Reboot_FailedToLaunchTask" template="tStringStringWin32Retcode" value="1610"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Reboot.SomeRebootTasksFailed)" symbol="Reboot_SomeRebootTasksFailed" value="1611"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Reboot.RunDLLBadDLLFormat)" symbol="Reboot_RunDLLBadDLLFormat" template="tString" value="1612"></event>
+					<!-- Schema Normalization Events (1700-1709) -->
+					<event channel="Admin" level="win:Error" message="$(string.SchemaVersioning.FailedToNormalizeManifest)" symbol="SchemaVersioning_FailedToNormalizeManifest" template="tRC" value="1700"></event>
+					<event channel="Admin" level="win:Error" message="$(string.SchemaVersioning.FailedToNormalizeFilesystemMetadata)" symbol="SchemaVersioning_FailedToNormalizeFilesystemMetadata" template="tRC" value="1701"></event>
+					<event channel="Admin" level="win:Error" message="$(string.SchemaVersioning.FailedToNormalizeStreamMap)" symbol="SchemaVersioning_FailedToNormalizeStreamMap" template="tRC" value="1702"></event>
+					<!-- ShortNamePackagingSubsystem Events (1710-1719) -->
+					<event channel="Operational" level="win:Informational" message="$(string.Event.ShortNamePackagingSubystem.Start)" symbol="ShortNamePackagingSubystem_Start" value="1710"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.ShortNamePackagingSubystem.Stop)" symbol="ShortNamePackagingSubystem_Stop" value="1711"></event>
+					<!-- RunOnceRunner Events (1720-1729) -->
+					<event channel="Operational" level="win:Informational" message="$(string.Event.RunOnceRunner.OnStartMonitoringFinished.Start)" symbol="RunOnceRunner_OnStartMonitoringFinished_ResumingAfterReboot_Start" value="1720"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.RunOnceRunner.OnStartMonitoringFinished.Stop)" symbol="RunOnceRunner_OnStartMonitoringFinished_ResumingAfterReboot_Stop" value="1721"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.StaticDependencySubsystemEventResponseStart)" symbol="StaticDependencySubsystemEventResponseStart" template="tString" value="1800"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.StaticDependencySubsystemEventResponseStop)" symbol="StaticDependencySubsystemEventResponseStop" template="tString" value="1801"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.AddingStaticDependencySectionToFilesystemMetadata)" symbol="AddingStaticDependencySectionToFilesystemMetadata" value="1802"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.AddingEmptyDirectoriesSectionToFilesystemMetadata)" symbol="AddingEmptyDirectoriesSectionToFilesystemMetadata" value="1803"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.AddingOpaqueDirectoriesSectionToFilesystemMetadata)" symbol="AddingOpaqueDirectoriesSectionToFilesystemMetadata" value="1804"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.AddingFilesystemSectionToFilesystemMetadata)" symbol="AddingFilesystemSectionToFilesystemMetadata" value="1805"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.ServiceArbiter_EnablingService)" symbol="ServiceArbiter_EnablingService" template="tString" value="1806"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.ServiceArbiter_StartingService)" symbol="ServiceArbiter_StartingService" template="tString" value="1807"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.ServiceArbiter_StoppingAndDisablingService)" symbol="ServiceArbiter_StoppingAndDisablingService" template="tString" value="1808"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.AddingIconsToPublishingFeatureBlockMap)" symbol="AddingIconsToPublishingFeatureBlockMap" value="1809"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.AddingPEHeadersToPublishingFeatureBlockMap)" symbol="AddingPEHeadersToPublishingFeatureBlockMap" value="1810"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Event.AddingFilesToPublishingFeatureBlockMap)" symbol="AddingFilesToPublishingFeatureBlockMap" value="1811"></event>
+					<!-- FileSystemMetadata events (2000-2010) -->
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.FSMetadata.PackagingStarting.Start)" symbol="FSMetadata_PackagingStarting_Start" template="tString" value="2000"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.FSMetadata.PackagingStarting.Stop)" symbol="FSMetadata_PackagingStarting_Stop" value="2001"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.FSMetadata.PackagingStarted.Start)" symbol="FSMetadata_PackagingStarted_Start" value="2002"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.FSMetadata.PackagingStarted.Stop)" symbol="FSMetadata_PackagingStarted_Stop" value="2003"></event>
+					<!-- RegistryMonitorSubsystem events (2011-2020) -->
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.RegistryMonitorSubsystem.MonitoringStopped.Start)" symbol="RegistryMonitorSubsystem_MonitoringStopped_Start" value="2011"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.RegistryMonitorSubsystem.MonitoringStopped.Stop)" symbol="RegistryMonitorSubsystem_MonitoringStopped_Stop" value="2012"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.RegistryMonitorSubsystem.SnapshotTaken.Start)" symbol="RegistryMonitorSubsystem_SnapshotTaken_Start" value="2013"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.RegistryMonitorSubsystem.SnapshotTaken.Stop)" symbol="RegistryMonitorSubsystem_SnapshotTaken_Stop" value="2014"></event>
+					<!-- RegistryPackagingSubsystem events (2021-2030) -->
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.RegistryPackagingSubsystem.PrePackaging.Start)" symbol="RegistryPackagingSubsystem_PrePackaging_Start" value="2021"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.RegistryPackagingSubsystem.PrePackaging.Stop)" symbol="RegistryPackagingSubsystem_PrePackaging_Stop" value="2022"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.RegistryPackagingSubsystem.PackagingStarted.Start)" symbol="RegistryPackagingSubsystem_PackagingStarted_Start" value="2023"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.Sequencer.RegistryPackagingSubsystem.PackagingStarted.Stop)" symbol="RegistryPackagingSubsystem_PackagingStarted_Stop" value="2024"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.VFontPackaging.Start)" symbol="VFontPackaging_Start" value="2100"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.VFontPackaging.Complete)" symbol="VFontPackaging_Complete" value="2101"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.DirectoryMetadataPackaging.Start)" symbol="DirectoryMetadataPackaging_Start" value="2102"></event>
+					<event channel="Operational" level="win:Informational" message="$(string.DirectoryMetadataPackaging.Complete)" symbol="DirectoryMetadataPackaging_Complete" value="2103"></event>
+					<!-- Sequencer events (5000-beyond) -->
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToMonitorShell)" symbol="Sequencer_FailedToMonitorShell" template="ExceptionMessageEvent" value="5000"></event>
+					<event channel="Admin" level="win:Error" message="$(String.Sequencer.FailedToStartProcess)" symbol="Sequencer_FailedToStartProcess" template="ProcessInfoAndExceptionMessageEvent" value="5001"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToStartMonitoring)" symbol="Sequencer_FailedToStartMonitoring" template="ExceptionMessageEvent" value="5002"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToStopMonitoring)" symbol="Sequencer_FailedToStopMonitoring" template="ExceptionMessageEvent" value="5003"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToStartOptimizing)" symbol="Sequencer_FailedToStartOptimizing" template="ExceptionMessageEvent" value="5004"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToStopOptimizing)" symbol="Sequencer_FailedToStopOptimizing" template="ExceptionMessageEvent" value="5005"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToPreparePackage)" symbol="Sequencer_FailedToPreparePackage" template="ExceptionMessageEvent" value="5006"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToFinalizePackage)" symbol="Sequencer_FailedToFinalizePackage" template="ExceptionMessageEvent" value="5007"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToEditPackage)" symbol="Sequencer_FailedToEditPackage" template="ExceptionMessageEvent" value="5010"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Sequencer.PackageDescriptionTooLong)" symbol="Sequencer_PackageDescriptionTooLong" value="5011"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.GenerateMSICodePageFailed)" symbol="Sequencer_GenerateMSICodePageFailed" template="SignedInt32" value="5012"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.CopyFileFailed)" symbol="Sequencer_CopyFileFailed" template="tPathPathString" value="5013"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.MsiOpenDatabaseFailed)" symbol="Sequencer_MsiOpenDatabaseFailed" value="5014"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.GenerateMSIFailed)" symbol="Sequencer_GenerateMSIFailed" template="ExceptionMessageEvent" value="5015"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Sequencer.DeleteInvalidMSIFailed)" symbol="Sequencer_DeleteInvalidMSIFailed" template="tStringInt" value="5016"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.SampleGenerationFailed)" symbol="Sequencer_FailedToGenerateSampleConfiguration" template="PathAndExceptionMessageEvent" value="5017"></event>
+					<!-- Encoder tools error messages-->
+					<event channel="Admin" level="win:Error" message="$(string.EncTools.SaveApplicationsListFailed)" symbol="EncTools_SaveApplicationsListFailed" template="tRC" value="5018"></event>
+					<event channel="Admin" level="win:Error" message="$(string.EncTools.DuplicateActionNameFound)" symbol="EncTools_DuplicateActionNameFound" template="tStringString" value="5019"></event>
+					<event channel="Admin" level="win:Error" message="$(string.EncTools.GenerateUniqueActionNameFailed)" symbol="EncTools_GenerateUniqueActionNameFailed" template="tString" value="5020"></event>
+					<event channel="Admin" level="win:Error" message="$(string.EncTools.DuplicateAppFileTypeFound)" symbol="EncTools_DuplicateAppFileTypeFound" template="tString" value="5021"></event>
+					<event channel="Admin" level="win:Error" message="$(string.EncTools.DuplicateAppFileExtensionFound)" symbol="EncTools_DuplicateAppFileExtensionFound" template="tString" value="5022"></event>
+					<event channel="Admin" level="win:Error" message="$(string.EncTools.SaveFileAssociationsFailed)" symbol="EncTools_SaveFileAssociationsFailed" template="tRC" value="5023"></event>
+					<event channel="Admin" level="win:Error" message="$(string.EncTools.LoadManifestForShortcutsFailed)" symbol="EncTools_LoadManifestForShortcutsFailed" template="tRC" value="5024"></event>
+					<event channel="Admin" level="win:Error" message="$(string.EncTools.SerializeShortcutsFailed)" symbol="EncTools_SerializeShortcutsFailed" template="tRC" value="5025"></event>
+					<event channel="Admin" level="win:Error" message="$(string.EncTools.SaveShortcutsFailed)" symbol="EncTools_SaveShortcutsFailed" template="tRC" value="5026"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToPrepareForReboot)" symbol="Sequencer_FailedToPrepareForReboot" template="ExceptionMessageEvent" value="5027"></event>
+					<event channel="Admin" level="win:Error" message="$(string.Sequencer.FailedToRunOldManifestScripts)" symbol="Sequencer_FailedToRunOldManifestScripts" template="ExceptionMessageEvent" value="5028"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Sequencer.FailedToDeleteFile)" symbol="Sequencer_FailedToDeleteFile" template="PathAndExceptionMessageEvent" value="5029"></event>
+					<!-- events 5030,5031,5033 (sxs privatization failure) have been removed. To promote compatibility with previously captured event logs, do not reuse -->
+					<event channel="Admin" level="win:Warning" message="$(string.Sequencer.16BitAppsDetected)" symbol="Sequencer_16BitAppsDetected" template="tString" value="5032"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.EncTools.SkippedInvalidApplication)" symbol="EncTools_SkippedInvalidApplication" template="tString" value="5034"></event>
+					<!-- VCRuntimeDetected event has 3 params: name, bitness, version -->
+					<event channel="Admin" level="win:Informational" message="$(string.Sequencer.VCRuntimeDetected)" symbol="Sequencer_VCRuntimeDetected" template="tStringStringString" value="5035"></event>
+					<event channel="Admin" level="win:Warning" message="$(string.Sequencer.SxSAssemblyMissingPayloadFile)" symbol="Sequencer_SxSAssemblyMissingPayloadFile" template="tStringStringStringString" value="5036"></event>
+				</events>
+			</provider>
+		</events>
+	</instrumentation>
+	<localization>
+		<resources culture="en-US">
+			<stringTable>
+				<string id="Event.DriverLoaded" value="Monitoring driver loaded."></string>
+				<string id="Event.DriverLoadException" value="Unable to load driver (%1)."></string>
+				<string id="Event.DriverUnloaded" value="Monitoring driver unloaded."></string>
+				<string id="Event.DriverUnloadException" value="Unable to unload driver (%1)."></string>
+				<string id="Event.DriverLoadFailed" value="Monitoring driver failed to load (%1)."></string>
+				<string id="Event.RegistryMinifilterLoaded" value="Registry minifilter loaded."></string>
+				<string id="Event.RegistryMinifilterLoadFailed" value="Registry minifilter failed to load (%1)."></string>
+				<string id="Event.RegistryMinifilterUnloaded" value="Registry minifilter unloaded."></string>
+				<string id="Event.FailedConnectingToDriver" value="Failed connecting to driver. Error(%1)."></string>
+				<string id="Event.FailedMonitoringProcess" value="Failed monitoring process %1. Pid(%2), Scope(%3), Error(%4)."></string>
+				<string id="Event.FailedMonitoringChildProcess" value="Failed monitoring a child process. Pid(%1), Parent Pid(%2)."></string>
+				<string id="Event.FileNotFoundException" value="File not found, cannot add it to the package: (%1)."></string>
+				<string id="Event.DirectoryNotFoundException" value="Directory not found, cannot add it to the package: (%1)."></string>
+				<string id="Event.FailedToDeleteLogFile" value="Unable to delete log file '(%1)' (%2)."></string>
+				<string id="Event.VolumeToDriveMappingNotFound" value="No mapping exists from volume path to drive letter, ignoring file (%1)."></string>
+				<string id="Event.FileNotAddedToPackage" value="The file '%1' could not be added to the package (%2)."></string>
+				<string id="Event.DirectoryNotAccessibleException" value="The directory is not accessible by the sequencer. All directories and files within this directory will be ignored. Directory: (%1)."></string>
+				<string id="Event.ManifestNotAddedToPackage" value="The manifest could not be added to the package (%1)."></string>
+				<string id="Event.RegistryRootAndKeyNameEvent" value="Access denied to registry key '(%1)\(%2)'."></string>
+				<string id="Event.RegistryMonitorLogStatistics" value="Registry monitor log lost %1 event(s). If more than zero events were lost the package may be invalid."></string>
+				<string id="Event.FileMonitorLogStatistics" value="Monitoring: File monitor log lost %1 event(s). If more than zero events were lost the package may be invalid."></string>
+				<string id="Event.OptimizerFileMonitorLogStatistics" value="Optimization: File monitor log lost %1 event(s). If more than zero events were lost the streaming map may be incomplete."></string>
+				<string id="Event.FailedToCommunicateWithMinifilter" value="Optimizer failed to purge file (%1) from cache due to filter communication problem, error (%2)."></string>
+				<string id="Event.FailedToPurgeFile" value="Optimizer failed to purge file (%1) from cache, streaming map might not include this file."></string>
+				<string id="Event.DisablePrefetch" value="Disabling Prefetch, changing HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters\EnablePrefetcher from its original value (%1) to 0."></string>
+				<string id="Event.RestorePrefetch" value="Restoring Prefetch settings, changing HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters\EnablePrefetcher to its original value (%1)."></string>
+				<string id="Event.Tokenizer.KnownFolderException" value="Error accessing known folder (%2). Error: %1."></string>
+				<string id="Event.NativePackagingSubsystem.OnPrePackagingError" value="Packaging Subsystem failed to create Manifest entries. Error: %1."></string>
+				<string id="Event.NativePackagingSubsystem.OnPackagingStartedError" value="Packaging Subsystem failed to create package. Error: %1."></string>
+				<string id="Event.NativePackagingSubsystem.OnPrePackagingCompleteError" value="Packaging Subsystem failed to save Manifest entries. Error: %1."></string>
+				<string id="Event.NativePackagingSubsystem.StartOnPrePackaging" value="Packaging Subsystem has started responding to event OnPrePackaging."></string>
+				<string id="Event.NativePackagingSubsystem.StopOnPrePackaging" value="Packaging Subsystem has stopped responding to event OnPrePackaging."></string>
+				<string id="Event.NativePackagingSubsystem.StartOnPrePackagingComplete" value="Packaging Subsystem has started responding to event OnPrePackagingComplete."></string>
+				<string id="Event.NativePackagingSubsystem.StopOnPrePackagingComplete" value="Packaging Subsystem has stopped responding to event OnPrePackagingComplete."></string>
+				<string id="Sequencer.FailedToMonitorShell" value="The Microsoft App-V Sequencer failed to monitor the Windows shell. Reason: 'Message(%1)'."></string>
+				<string id="Event.Tracing.FileOperationWithNegativeOffset" value="Encountered file %1 operation with negative offset. The operation will be ignored. File path: %2."></string>
+				<string id="Event.ErrorCapturingRegistryValue" value="Could not capture registry value. Key(%1). Value(%2)."></string>
+				<string id="Event.IconIndexHasInvalidFormat" value="Icon index has invalid format for icon entry '%1' in the manifest."></string>
+				<string id="Event.CouldNotExtractIconFromFile" value="Could not extract icon from file '%1' at index '%2'."></string>
+				<string id="Event.FileNotFoundForIconExtraction" value="Could not extract icon from file '%1' because file is not found."></string>
+				<string id="Event.IconIndexCausedIntegerOverflow" value="Icon index caused Int32 overflow for icon entry '%1' in the manifest."></string>
+				<string id="Event.InvalidManifest" value="The package manifest failed validation.  The package may not be valid."></string>
+				<string id="Event.FileExclusion" value="The following file was excluded from packaging: %1"></string>
+				<string id="Event.ReparsePointDetected" value="Excluding reparse point detected during packaging: '%1'."></string>
+				<string id="Event.RelsFile" value="The following .rels file was detected and its extension has been changed to .rels_appv in created package: %1"></string>
+				<string id="Event.RunOnceRunner.OnStartMonitoringFinished.Start" value="The Run Once Execution Subsystem is responding to the OnStartMonitoringFinished event. Starting Reboot.exe for executing Windows RunOnce tasks."></string>
+				<string id="Event.RunOnceRunner.OnStartMonitoringFinished.Stop" value="The Run Once Execution Subsystem is stopping the OnStartMonitoringFinished event. Windows RunOnce tasks have been successfully executed."></string>
+				<string id="Event.ShortNamePackagingSubystem.Start" value="Short Name Packaging Subystem has started adding shortnames to FilesystemMetadata.xml."></string>
+				<string id="Event.ShortNamePackagingSubystem.Stop" value="Short Name Packaging Subystem has finished adding shortnames to FilesystemMetadata.xml."></string>
+				<string id="Event.UnsupportedServiceStartupType" value="The startup type %1 for service %2 is unsupported. The service will not be part of the package."></string>
+				<string id="Event.UnsupportedServiceObjectName" value="The service %1 should be run as %2. Currently, we only support services running as LocalSystem. The service will not be part of the package."></string>
+				<string id="Event.UnsupportedServiceType" value="The service type %1 for service %2 is unsupported. The service will not be part of the package."></string>
+				<string id="Map.FileEventID.CreateFileEvent" value="create"></string>
+				<string id="Map.FileEventID.ReadFile" value="read"></string>
+				<string id="Map.FileEventID.WriteFile" value="write"></string>
+				<string id="Map.FileEventID.DeleteFile" value="delete"></string>
+				<string id="Map.FileEventID.RenameFile" value="rename"></string>
+				<string id="Event.SkippingFileAtUnsupportedLocation" value="The file '%1' was skipped. Files which are neither in a known folder, nor on the same drive as install path, are not supported."></string>
+				<string id="Event.ApplicationMightBeCorrupted" value="Internal operation failed with exception (%1), indicating that App-V Sequencer installation might be corrupted needing reinstall."></string>
+				<string id="Sequencer.FailedToStartProcess" value="An attempt to launch the provided process failed (%1). Parameters for process launch were Path: %2 Arguments: %3 WorkingDirectory: %4."></string>
+				<string id="Sequencer.FailedToStopMonitoring" value="An attempt to stop the monitoring session failed (%1)."></string>
+				<string id="Sequencer.FailedToStartMonitoring" value="An attempt to start the monitoring session failed (%1)."></string>
+				<string id="Sequencer.FailedToStopOptimizing" value="An attempt to stop the optimizing session failed (%1)."></string>
+				<string id="Sequencer.FailedToStartOptimizing" value="An attempt to start the optimizing session failed (%1)."></string>
+				<string id="Sequencer.FailedToPreparePackage" value="An attempt to prepare the package for saving failed (%1)."></string>
+				<string id="Sequencer.FailedToFinalizePackage" value="An attempt to finalize the package failed (%1)."></string>
+				<string id="Sequencer.FailedToEditPackage" value="An attempt to prepare the package for editing failed (%1)."></string>
+				<string id="Sequencer.PackageDescriptionTooLong" value="The provided package description was too long and was truncated."></string>
+				<string id="Sequencer.GenerateMSICodePageFailed" value="An attempt to generate MSI code page failed (%1)."></string>
+				<string id="Sequencer.CopyFileFailed" value="An attempt to copy file from '%1' to '%2' failed (%3)."></string>
+				<string id="Sequencer.MsiOpenDatabaseFailed" value="An attempt to open MSI database failed."></string>
+				<string id="Sequencer.GenerateMSIFailed" value="Failed to generate MSI (%1)."></string>
+				<string id="Sequencer.DeleteInvalidMSIFailed" value="Deletion of invalid MSI '%1' failed (%2)."></string>
+				<string id="Sequencer.SampleGenerationFailed" value="Failed to generate the following dynamic configuration sample: '%1' with error (%2)"></string>
+				<string id="Sequencer.FailedToPrepareForReboot" value="An attempt to prepare for a system reboot failed (%1)."></string>
+				<string id="Sequencer.FailedToRunOldManifestScripts" value="Running package scripts from the Manifest of the package being upgraded failed (%1)."></string>
+				<string id="Sequencer.FailedToDeleteFile" value="Failed to delete file: %1. %nError: %2."></string>
+				<string id="Sequencer.16BitAppsDetected" value="Sequencer skipped creating extensions for '%1' since 16-bit applications are not supported."></string>
+				<string id="Sequencer.VCRuntimeDetected" value="The Visual C++ Runtime %1 version %3 (%2) was detected and packaged."></string>
+				<string id="Sequencer.SxSAssemblyMissingPayloadFile" value="The Side-by-Side assembly %1 version %3 (%2) was detected but the file '%4' is missing. The assembly will not be packaged."></string>
+				<string id="Devirtualizer.FailedToCreateOrOpenRegistryKey" value="An attempt to create or open a registry key failed (%1)."></string>
+				<string id="Devirtualizer.FailedToDeleteRegistryKey" value="An attempt to delete a registry key failed."></string>
+				<string id="Devirtualizer.FailedToSaveRegistryValue" value="An attempt to save a registry value failed (%1)."></string>
+				<string id="Devirtualizer.FailedToDeleteRegistryValue" value="An attempt to delete a registry value failed (%1)."></string>
+				<string id="Devirtualizer.PackageFileNotFound" value="The specified package file '%1' is not found."></string>
+				<string id="Devirtualizer.InvalidArgumentCount" value="Invalid number of arguments are specified to devirtualizer."></string>
+				<string id="Devirtualizer.DevirtualizerFailed" value="Failed to devirtualize the package (%1)."></string>
+				<string id="AssetIntelligence.CouldNotFindVAppCollectorExecutable" value="An attempt to launch a scan for Asset Intelligence failed because the executable '%1' was not found in the App-V Sequencer install directory.  This indicates that the App-V Sequencer has a corrupt installation and needs to be reinstalled."></string>
+				<string id="AssetIntelligence.MissingWMINamespace" value="An attempt to collect Asset Intelligence for the App-V Package failed because of a missing required WMI namespace.  This indicates that the App-V Sequencer has a corrupt installation and needs to be reinstalled."></string>
+				<string id="AssetIntelligence.VAppCollectorTimedOut" value="An attempt to scan for Asset Intelligence failed because the alotted time for scanning has expired.  To disable the scan timeout create the DWORD value '%1' under registry key 'HKEY_LOCAL_MACHINE\%2' and set it to '%3'.  After creating the new value sequence your application again."></string>
+				<string id="AssetIntelligence.ErrorCollectingAI" value="An attempt to scan the App-V package for Asset Intelligence failed. The sequenced App-V package will not contain Asset Intelligence for use on the App-V Client."></string>
+				<string id="AssetIntelligence.VAppCollectorNonZeroReturnCode" value="The scan for Asset Intelligence exited with error code (%1)."></string>
+				<string id="Accelerator.DirectoryCreationFailed" value="Failed to create directory %1 (%2)."></string>
+				<string id="Accelerator.FileExtractionFailed" value="Failed to extract file to %1 (%2)."></string>
+				<string id="Accelerator.RehydrationFailed" value="An error occurred while creating the Package."></string>
+				<string id="Accelerator.DehydrationFailed" value="An error occurred while creating the Accelerator."></string>
+				<string id="PendingFileRenames.CouldNotReadRegistry" value="The registry value PendingFileRenameOperations under the HKLM\System\CurrentControlSet\Control\Session Manager key could not be read or had the wrong format. Any file renames occurring during the reboot will not be captured."></string>
+				<string id="EncTools.SaveApplicationsListFailed" value="Failed to save applications to the manifest with error  (%1)."></string>
+				<string id="EncTools.InvalidAppAction" value="The file action '%1' belongs to multiple file types."></string>
+				<string id="EncTools.DuplicateActionNameFound" value="An action with the name '%1' is already added to the file type '%2'."></string>
+				<string id="EncTools.GenerateUniqueActionNameFailed" value="Failed to generate unique action name for the action '%1'."></string>
+				<string id="EncTools.DuplicateAppFileTypeFound" value="The application file type '%1' already exists in the file association."></string>
+				<string id="EncTools.DuplicateAppFileExtensionFound" value="The application file extension '%1' already exists in the file association."></string>
+				<string id="EncTools.SaveFileAssociationsFailed" value="Failed to save file associations into the manifest (%1)."></string>
+				<string id="EncTools.LoadManifestForShortcutsFailed" value="Failed to load package manifest (%1)."></string>
+				<string id="EncTools.SerializeShortcutsFailed" value="Failed to serialize shortcuts into the manifest (%1)."></string>
+				<string id="EncTools.SaveShortcutsFailed" value="Failed to save shortcuts into the manifest (%1)."></string>
+				<string id="EncTools.SkippedInvalidApplication" value="An invalid application read from the manifest has been skipped (%1)."></string>
+				<string id="Reboot.FailedToLaunchTask" value="App-V Reboot.exe failed to launch the RunOnce task with name '%1' and value '%2' with error %3. Execute this task manually or the result of its actions will not be included in the package."></string>
+				<string id="Reboot.SomeRebootTasksFailed" value="App-V Reboot.exe was not able to execute all RunOnce tasks. Execute these tasks manually or the result of their actions will not be included in the package."></string>
+				<string id="Reboot.RunDLLBadDLLFormat" value="App-V Reboot.exe was not able to load the dll '%1' because its executable format was not recognized."></string>
+				<string id="SchemaVersioning.FailedToNormalizeManifest" value="Failed to normalize App-V Manifest to the current supported version. Error: %1."></string>
+				<string id="SchemaVersioning.FailedToNormalizeFilesystemMetadata" value="Failed to normalize App-V Filesystem Metadata to the current supported version. Error: %1."></string>
+				<string id="SchemaVersioning.FailedToNormalizeStreamMap" value="Failed to normalize App-V Stream Map to the current supported version. Error: %1."></string>
+				<string id="Sequencer.FSMetadata.PackagingStarting.Start" value="Filesystem Metadata Packaging Subsystem started responding to PackagingStarting event. Writing installation path to FilesystemMetadata. Install Path: %1."></string>
+				<string id="Sequencer.FSMetadata.PackagingStarting.Stop" value="Filesystem Metadata Packaging Subsystem stops responding to PackagingStarting event. Finished writing installation path to FileSystemMetadata.xml."></string>
+				<string id="Sequencer.FSMetadata.PackagingStarted.Start" value="Filesystem Metadata Packaging Subsystem starts responding to PackagingStarted event. Adding FilesystemMetadata.xml to the package."></string>
+				<string id="Sequencer.FSMetadata.PackagingStarted.Stop" value="Filesystem Metadata Packaging Subsystem stops responding to PackagingStarted event. FilesystemMetadata.xml added to the package."></string>
+				<string id="Sequencer.RegistryMonitorSubsystem.MonitoringStopped.Start" value="Registry Monitoring Subsystem starts responding to MonitoringStopped event. Pausing registry monitoring and writing registry to Ingredients.xml."></string>
+				<string id="Sequencer.RegistryMonitorSubsystem.MonitoringStopped.Stop" value="Registry Monitoring Subsystem stops responding to MonitoringStopped event. Resuming monitoring registry changes."></string>
+				<string id="Sequencer.RegistryMonitorSubsystem.SnapshotTaken.Start" value="Registry Monitoring Subsystem starts responding to SnapshotTaken event. Taking snapshot of current registry and writing to ingredients."></string>
+				<string id="Sequencer.RegistryMonitorSubsystem.SnapshotTaken.Stop" value="Registry Monitoring Subsystem stops responding to SnapshotTaken event. Snapshot of the registry has been written to the ingredients.xml."></string>
+				<string id="Sequencer.RegistryPackagingSubsystem.PrePackaging.Start" value="Registry Packaging Subsystem starts responding to PrePackaging event. Virtual package registry hive is being created and loaded."></string>
+				<string id="Sequencer.RegistryPackagingSubsystem.PrePackaging.Stop" value="Registry Packaging Subsystem stops responding to PrePackaging event. Virtual package registry hive created and loaded."></string>
+				<string id="Sequencer.RegistryPackagingSubsystem.PackagingStarted.Start" value="Registry Packaging Subsystem starts responding to PackagingStarted event. Virtual package registry hive is being written to the package."></string>
+				<string id="Sequencer.RegistryPackagingSubsystem.PackagingStarted.Stop" value="Registry Packaging Subsystem stops responding to PackagingStarted event. Virtual package registry hive has been written to the package."></string>
+				<string id="VFontPackaging.Start" value="Virtual Font Packaging Subsystem is responding to PrePackaging event. Collecting virtual fonts and writing them to the manifest."></string>
+				<string id="VFontPackaging.Complete" value="Virtual Font Packaging Subsystem has finished collecting and writing all fonts to the manifest."></string>
+				<string id="DirectoryMetadataPackaging.Start" value="Directory Metadata Packaging Subsystem started responding to PackagingStarted event. Classifying empty and opaque directories."></string>
+				<string id="DirectoryMetadataPackaging.Complete" value="Directory Metadata Packaging Subsystem has finished responding to the PackagingStarted event. Empty and opaque directories have been classified."></string>
+				<string id="Event.StaticDependencySubsystemEventResponseStart" value="The Static Dependency Packaging Subsystem is starting to respond to the event %1. Static dll dependency list is being built."></string>
+				<string id="Event.StaticDependencySubsystemEventResponseStop" value="The Static Dependency Packaging Subsystem has finished responding to the event %1. Static dll dependency list has been built and added to FilesystemMetadata.xml."></string>
+				<string id="Event.AddingStaticDependencySectionToFilesystemMetadata" value="The static dependencies section is being written to the FilesystemMetadata.xml."></string>
+				<string id="Event.AddingEmptyDirectoriesSectionToFilesystemMetadata" value="The empty directories section is being written to the FilesystemMetadata.xml."></string>
+				<string id="Event.AddingOpaqueDirectoriesSectionToFilesystemMetadata" value="The opaque directories section is being written to the FilesystemMetadata.xml."></string>
+				<string id="Event.AddingFilesystemSectionToFilesystemMetadata" value="The filesystem section is being written to the FilesystemMetadata.xml."></string>
+				<string id="Event.ServiceArbiter_EnablingService" value="The following service is being enabled for this monitoring session. Service Name: %1."></string>
+				<string id="Event.ServiceArbiter_StartingService" value="The following service is being started for this monitoring session. Service Name: %1."></string>
+				<string id="Event.ServiceArbiter_StoppingAndDisablingService" value="The following service is being stopped and disabled for this monitoring session. Service Name: %1."></string>
+				<string id="Event.AddingIconsToPublishingFeatureBlockMap" value="Icons are being added to the publishing feature block."></string>
+				<string id="Event.AddingPEHeadersToPublishingFeatureBlockMap" value="PE headers are being added to the publishing feature block."></string>
+				<string id="Event.AddingFilesToPublishingFeatureBlockMap" value="Scripts and related files are being added to the publishing feature block."></string>
+			</stringTable>
+		</resources>
+	</localization>
+	<cbb:debuggingInfo xmlns:cbb="urn:schemas-microsoft-com:asm.internal.v1">
+		<cbb:sourceManifest sourcePath="%sdxmaproot%\admin\appman\appv\shared\trace\public\modernizer\modernizerpublic.man"></cbb:sourceManifest>
+	</cbb:debuggingInfo>
+</instrumentationManifest>

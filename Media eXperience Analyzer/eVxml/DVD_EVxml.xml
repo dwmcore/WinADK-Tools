@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <eventSubTypes>
+        <!-- Object event -->
+        <subType name="Create"                   value="1"/>
+      </eventSubTypes>
+
+      <!-- DVD Nav -->
+      <event eventID="1" message="$(string.ImageId)" guid="{0ce94165-ff5a-4efa-9a37-d2b9fc916724}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+
+          <template>
+            <DVDTrace_Cache>
+              <pObject Key="true" >%UInt64;</pObject>
+              <prefetch>%UInt32;</prefetch>
+              <maxPrefetch>%UInt32;</maxPrefetch>
+              <free>%UInt32;</free>
+              <read>%UInt32;</read>
+              <pending>%UInt32;</pending>
+              <outstanding>%UInt32;</outstanding>
+            </DVDTrace_Cache>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- DVD Nav -->
+      <event eventID="1" message="$(string.ImageId)" guid="{15b029c0-9f92-427f-b6be-cf90090b483b}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+
+          <template>
+            <DVDTrace_VOBUParsed>
+              <pObject Key="true" >%UInt64;</pObject>
+              <VOBUStart>%UInt64;</VOBUStart>
+              <VOBUEnd>%UInt64;</VOBUEnd>
+              <VOBULength>%UInt64;</VOBULength>
+              <rtVOBUStart>%UInt64;</rtVOBUStart>
+              <rtCurrentClock>%UInt64;</rtCurrentClock>
+              <rtElapsed>%UInt64;</rtElapsed>
+              <rtDistAhead>%Int64;</rtDistAhead>
+              <bHours>%UCHAR;</bHours>
+              <bMinutes>%UCHAR;</bMinutes>
+              <bSeconds>%UCHAR;</bSeconds>
+              <bFrames>%UCHAR;</bFrames>
+            </DVDTrace_VOBUParsed>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- DVD Ap Check -->
+      <event eventID="1" message="$(string.ImageId)" guid="{60e85895-372a-4659-8b74-a8221dc155e0}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+
+          <StrTable Name="APCheck_Type">
+            <String Name="APCheck_ACP"               value="1"/>
+            <String Name="APCheck_Res"           value="2"/>
+            <String Name="APCheck_Digital"               value="3"/>
+            <String Name="APCheck_SRM"           value="4"/>
+          </StrTable>
+
+          <StrTable Name="APCheck_VideoStandard">
+            <String Name="APCheck_VS_Unknown"               value="0"/>
+            <String Name="APCheck_VS_NTSC"           value="1"/>
+            <String Name="APCheck_VS_PAL"               value="2"/>
+          </StrTable>
+
+          <template>
+            <DVDTrace_APCheck>
+              <dwType Key="true" StringTable="APCheck_Type" >%UInt32;</dwType>
+              <dwVideoStandard>%UInt32;</dwVideoStandard>
+              <dwData>%UInt32;</dwData>
+              <hResult>%UInt32;</hResult>
+              <bResult>%Boolean;</bResult>
+            </DVDTrace_APCheck>
+          </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- DVD DriveIOCTL_Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{5446fccb-cac3-442b-954d-7ed7e7ff8d1e}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+          <classification subType="DriveIOCTL_Spindown" value="1"/>
+          <classification subType="DriveIOCTL_Streaming" value="2"/>
+
+          <classification subType="DriveIOCTL_GetRegion" value="100"/>
+          <classification subType="DriveIOCTL_SetReadAhead" value="101"/>
+          <classification subType="DriveIOCTL_EndSession" value="102"/>
+          <classification subType="DriveIOCTL_StartSession" value="103"/>
+          <classification subType="DriveIOCTL_ReadKey" value="104"/>
+          <classification subType="DriveIOCTL_SendKey" value="105"/>
+          
+          <StrTable Name="DriveIOCTL_Type">
+            <String Name="DriveIOCTL_Spindown" value="1"/>
+            <String Name="DriveIOCTL_Streaming" value="2"/>
+            <String Name="DriveIOCTL_GetRegion" value="100"/>
+            <String Name="DriveIOCTL_SetReadAhead" value="101"/>
+            <String Name="DriveIOCTL_EndSession" value="102"/>
+            <String Name="DriveIOCTL_StartSession" value="103"/>
+            <String Name="DriveIOCTL_ReadKey" value="104"/>
+            <String Name="DriveIOCTL_SendKey" value="105"/>
+
+          </StrTable>
+         
+          <template>
+            <DVDTrace_DriveIOCTL>
+              <dwType Key="true" StringTable="DriveIOCTL_Type" >%UInt32;</dwType>
+              <dwData>%UInt32;</dwData>
+              <hResult>%UInt32;</hResult>
+              <dwSubType>%UInt32;</dwSubType>
+              <ullExecutionType>%UInt64;</ullExecutionType>
+            </DVDTrace_DriveIOCTL>
+          </template>
+        </diagnosticInstance>
+      </event>
+      
+      <!-- DVD DVDTrace_PendIO -->
+      <event eventID="1" message="$(string.ImageId)" guid="{abb759ab-0ae7-4345-8811-1fbe47cc998d}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+          <classification subType="DriveIOCTL_Spindown" value="1"/>
+          <classification subType="DriveIOCTL_Streaming" value="2"/>
+
+          <template>
+            <DVDTrace_FileInfo>
+              <Domain >%UCHAR;</Domain>
+              <VTSN>%UCHAR;</VTSN>
+              <Subfile>%UCHAR;</Subfile>
+              <Reserved>%UCHAR;</Reserved>
+              <dwSize>%UInt32;</dwSize>
+              <ullAbsoluteOffset>%UInt64;</ullAbsoluteOffset>
+              <ullFileOffset>%UInt64;</ullFileOffset>
+              <hResult>%UInt32;</hResult>
+            </DVDTrace_FileInfo>
+        </template>
+        </diagnosticInstance>
+      </event>
+
+      <!-- DVD Complete IO -->
+      <event eventID="1" message="$(string.ImageId)" guid="{62503bcd-3936-4500-a121-151e3f0523a0}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+
+          <template>
+            <DVDTrace_CompleteIO>
+              <dwOriginalSize>%UInt32;</dwOriginalSize>
+              <dwActualSize>%UInt32;</dwActualSize>
+              <ullAbsoluteOffset>%UInt64;</ullAbsoluteOffset>
+              <ullExecutionTime>%UInt64;</ullExecutionTime>              
+              <hResult>%UInt32;</hResult>
+            </DVDTrace_CompleteIO>
+          </template>
+        </diagnosticInstance>
+      
+    </event>
+
+      <!-- DVDTrace_SkipData -->
+      <event eventID="1" message="$(string.ImageId)" guid="{e999b5ea-4dd6-46c0-b9c2-8237c045ecca}" level="1">
+                                                           
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+
+          <template>
+            <DVDTrace_SkipData>
+              <dwValidSize>%UInt32;</dwValidSize>
+              <dwActualSize>%UInt32;</dwActualSize>
+              <ullFileOffset>%UInt64;</ullFileOffset>
+            </DVDTrace_SkipData>
+          </template>
+        </diagnosticInstance>
+
+      </event>
+
+
+      <!-- DVDTrace_SkipPTS -->
+      <event eventID="1" message="$(string.ImageId)" guid="{1bec2aee-d3d3-43f4-9d58-3d6c6829998f}" level="1">
+
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+
+          <template>
+            <DVDTrace_SkipPTS>
+              <llVOBUStart>%Int64;</llVOBUStart>
+              <llVOBUEnd>%Int64;</llVOBUEnd>
+              <llPTS>%Int64;</llPTS>
+              <dwStreamID>%UInt32;</dwStreamID>
+              <dwSubstreamID>%UInt32;</dwSubstreamID>
+            </DVDTrace_SkipPTS>
+          </template>
+        </diagnosticInstance>
+
+      </event>
+
+      <!-- DVDTrace_StateRestore -->
+      <event eventID="1" message="$(string.ImageId)" guid="{1bec2aef-d3d3-43f4-9d58-3d6c6829998f}" level="1">
+                                                            
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+
+          <template>
+            <DVDTrace_StateRestore>
+              <dwNavPack>%UInt32;</dwNavPack>
+              <dwDomain>%UInt32;</dwDomain>
+              <dwVTSN>%UInt32;</dwVTSN>
+              <dwCell>%UInt32;</dwCell>
+              <dwPhase>%UInt32;</dwPhase>
+              <dwGraphStopped>%UInt32;</dwGraphStopped>
+              <dwResetOnNextPlay>%UInt32;</dwResetOnNextPlay>
+              <dwPGCN>%UInt32;</dwPGCN>
+              <hrResult>%UInt32;</hrResult>
+            </DVDTrace_StateRestore>
+          </template>
+        </diagnosticInstance>
+
+      </event>      
+
+ 	<!-- DVDTrace_KeyExchange_Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{3fd6c063-e27e-4de8-8c32-0c161c652206}" level="1">
+                                                            
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+          <classification subType="KeyExchange_TitleKey" value="1"/>
+          <classification subType="KeyExchange_DiscKey" value="2"/>
+          <classification subType="KeyExchange_Region" value="3"/>
+          
+          <StrTable Name="KeyExchange">
+            <String Name="KeyExchange_TitleKey" value="1"/>
+            <String Name="KeyExchange_DiscKey" value="2"/>
+            <String Name="KeyExchange_Region" value="3"/>
+          </StrTable>
+          
+          <template>
+            <DVDTrace_KeyExchange_Event>
+              <dwType Key="true" StringTable="DriveIOCTL_Type" >%UInt32;</dwType>
+              <hrResult>%UInt32;</hrResult>
+              <ullExecutionTime>%UInt64;</ullExecutionTime>
+            </DVDTrace_KeyExchange_Event>
+          </template>
+        </diagnosticInstance>
+
+      </event>      
+
+      <!-- DVDTrace_SendSample_Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{180747cf-dd74-47f6-a92c-9b8d71341cb7}" level="1">
+
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+
+          <template>
+            <DVDTrace_SendSample_Event>
+              <rtStart>%Int64;</rtStart>
+              <rtNow>%Int64;</rtNow>
+              <rtAhead>%Int64;</rtAhead>
+              <wIsRunning>%UInt16;</wIsRunning>
+              <wStreamID>%UInt16;</wStreamID>
+            </DVDTrace_SendSample_Event>
+          </template>
+        </diagnosticInstance>
+
+      </event>
+
+      <!-- DVDTrace_SetLatency_Event -->
+      <event eventID="1" message="$(string.ImageId)" guid="{80826de9-a459-487c-81f0-090f7e50eefb}" level="1">
+
+        <diagnosticInstance version="0">
+
+          <classification subType="Unknown" value="0"/>
+
+          <template>
+            <DVDTrace_SetLatency_Event>
+              <dwLatency>%UInt32;</dwLatency>
+              <dwAttemptedLatency>%UInt32;</dwAttemptedLatency>
+              <StreamID>%UCHAR;</StreamID>
+              <SubStreamID>%UCHAR;</SubStreamID>
+            </DVDTrace_SetLatency_Event>
+          </template>
+        </diagnosticInstance>
+
+      </event>
+
+
+    </events>
+
+</instrumentation>
+
+</assembly>
+

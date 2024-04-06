@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) Microsoft Corporation.  All rights reserved.
+  
+  Private events for Sequencer
+-->
+<instrumentationManifest xmlns="http://schemas.microsoft.com/win/2004/08/events" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<instrumentation>
+		<events>
+			<!-- Provider for Sequencer debug log messages -->
+			<provider guid="{7561449A-FC50-469B-B76E-88F43CF79ECF}" messageFileName="appvetw.modernizer.private.dbg.dll" name="Microsoft-AppV-Sequencer-Debug" resourceFileName="appvetw.modernizer.private.dbg.dll" symbol="ModernizerDebugEvents">
+				<channels>
+					<channel chid="SequencerDebug" enabled="false" isolation="Application" name="Microsoft-AppV-Sequencer-Debug/Debug" symbol="CHANNEL_APPV_SEQUENCER_DEBUG" type="Debug"></channel>
+					<channel chid="PackageConverterDebug" enabled="false" isolation="Application" name="Microsoft-AppV-PackageConverter/Debug" symbol="CHANNEL_APPV_PACKAGECONVERTER_DEBUG" type="Debug"></channel>
+				</channels>
+				<levels></levels>
+				<keywords></keywords>
+				<filters></filters>
+				<maps>
+					<valueMap name="FileEventID" symbol="MAP_FILE_EVENT_ID">
+						<!-- The map value corresponds to File Monitor Provider events defined in ModernzierPrivate.man -->
+						<map message="$(string.Map.FileEventID.CreateFileEvent)" symbol="_CREATE_FILE_EVENT" value="0x1"></map>
+						<map message="$(string.Map.FileEventID.ReadFile)" symbol="_READ_FILE" value="0x2"></map>
+						<map message="$(string.Map.FileEventID.WriteFile)" symbol="_WRITE_FILE" value="0x3"></map>
+						<map message="$(string.Map.FileEventID.DeleteFile)" symbol="_DELETE_FILE" value="0x4"></map>
+						<map message="$(string.Map.FileEventID.RenameFile)" symbol="_RENAME_FILE" value="0x5"></map>
+					</valueMap>
+				</maps>
+				<tasks></tasks>
+				<opcodes></opcodes>
+				<templates>
+					<template tid="NtStatus">
+						<data inType="win:UInt32" name="Status" outType="win:NTSTATUS"></data>
+					</template>
+					<template tid="PID_Pos">
+						<data inType="win:Pointer" name="pid" outType="win:HexInt64"></data>
+						<data inType="win:Int32" name="Pos"></data>
+					</template>
+					<template tid="PID_Max_Pos">
+						<data inType="win:Pointer" name="pid" outType="win:HexInt64"></data>
+						<data inType="win:Int32" name="Max"></data>
+						<data inType="win:Int32" name="Pos"></data>
+					</template>
+					<template tid="MyLong">
+						<data inType="win:Int32" name="Long1"></data>
+					</template>
+					<template tid="MyULong">
+						<data inType="win:UInt32" name="UL1"></data>
+					</template>
+					<template tid="MyPointer">
+						<data inType="win:Pointer" name="P"></data>
+					</template>
+					<template tid="ULongPointer">
+						<data inType="win:UInt32" name="UL"></data>
+						<data inType="win:Pointer" name="P1"></data>
+					</template>
+					<template tid="NullFileObjectError">
+						<data inType="win:Pointer" name="FltObjects"></data>
+						<data inType="win:Pointer" name="FileObject"></data>
+					</template>
+					<template tid="CompletionRoutineResult">
+						<data inType="win:Boolean" name="BooleanReturn"></data>
+						<data inType="win:UInt32" name="EnumReturn"></data>
+					</template>
+					<template tid="HresultUlong">
+						<data inType="win:Int32" name="hr" outType="win:HResult"></data>
+						<data inType="win:UInt32" name="UL"></data>
+					</template>
+					<template tid="HresultPointer">
+						<data inType="win:Int32" name="hr" outType="win:HResult"></data>
+						<data inType="win:Pointer" name="P"></data>
+					</template>
+					<template tid="tHresultGUIDWString">
+						<data inType="win:Int32" name="hr" outType="win:HResult"></data>
+						<data inType="win:GUID" name="guid1"></data>
+						<data inType="win:UnicodeString" name="str"></data>
+					</template>
+					<template tid="tUInt64Pointer">
+						<data inType="win:UInt64" name="UI" outType="win:HexInt64"></data>
+						<data inType="win:Pointer" name="P"></data>
+					</template>
+					<template tid="tGUID">
+						<data inType="win:GUID" name="guid1"></data>
+					</template>
+					<template tid="WideCString">
+						<data inType="win:UInt16" name="NumChars"></data>
+						<data inType="win:UnicodeString" length="NumChars" name="WideCStringPtr"></data>
+					</template>
+					<template tid="UInt16AndUInt32">
+						<data inType="win:UInt16" name="UInt16"></data>
+						<data inType="win:UInt32" name="UInt32"></data>
+					</template>
+					<template tid="PathAndExceptionEvent">
+						<data inType="win:UnicodeString" name="path"></data>
+						<data inType="win:UnicodeString" name="message"></data>
+					</template>
+					<template tid="ProcessInfoAndExceptionEvent">
+						<data inType="win:UnicodeString" name="exception"></data>
+						<data inType="win:UnicodeString" name="path"></data>
+						<data inType="win:UnicodeString" name="args"></data>
+						<data inType="win:UnicodeString" name="workingdir"></data>
+						<data inType="win:Boolean" name="waitForExit"></data>
+					</template>
+					<template tid="tFileEventWithNegativeOffset">
+						<data inType="win:UInt32" map="FileEventID" name="event_id"></data>
+						<data inType="win:Int64" name="offset"></data>
+						<data inType="win:UnicodeString" name="path"></data>
+						<data inType="win:UInt16" name="buffer_length"></data>
+						<data inType="win:Binary" length="buffer_length" name="buffer" outType="xs:hexBinary"></data>
+					</template>
+					<template tid="tProcessLaunch">
+						<data inType="win:UnicodeString" name="fileName"></data>
+						<data inType="win:UnicodeString" name="arguments"></data>
+						<data inType="win:UnicodeString" name="workingDirectory"></data>
+						<data inType="win:Boolean" name="waitForExit"></data>
+					</template>
+					<template tid="tString">
+						<data inType="win:UnicodeString" name="str1"></data>
+					</template>
+					<template tid="tStringString">
+						<data inType="win:UnicodeString" name="str1"></data>
+						<data inType="win:UnicodeString" name="str2"></data>
+					</template>
+					<template tid="tStringStringString">
+						<data inType="win:UnicodeString" name="str1"></data>
+						<data inType="win:UnicodeString" name="str2"></data>
+						<data inType="win:UnicodeString" name="str3"></data>
+					</template>
+					<template tid="tStringWin32Retcode">
+						<data inType="win:UnicodeString" name="str1"></data>
+						<data inType="win:Int32" name="RC"></data>
+					</template>
+					<template tid="tStringStringWin32Retcode">
+						<data inType="win:UnicodeString" name="str1"></data>
+						<data inType="win:UnicodeString" name="str2"></data>
+						<data inType="win:Int32" name="RC"></data>
+					</template>
+					<template tid="TWString">
+						<data inType="win:UnicodeString" name="wstr"></data>
+					</template>
+					<template tid="TWString2">
+						<data inType="win:UnicodeString" name="wstr0"></data>
+						<data inType="win:UnicodeString" name="wstr1"></data>
+					</template>
+					<template tid="tUInt64">
+						<data inType="win:UInt64" name="UI" outType="win:HexInt64"></data>
+					</template>
+					<template tid="tHresult">
+						<data inType="win:Int32" name="hr" outType="win:HResult"></data>
+					</template>
+					<template tid="tWin32Retcode">
+						<data inType="win:Int32" name="RC"></data>
+					</template>
+					<template tid="SFHExceptionCaught">
+						<data inType="win:UnicodeString" name="description"></data>
+						<data inType="win:UInt64" name="lasterror" outType="win:HexInt64"></data>
+						<data inType="win:UInt64" name="return code" outType="win:HexInt64"></data>
+						<data inType="win:UnicodeString" name="local file path"></data>
+						<data inType="win:UnicodeString" name="target file path"></data>
+					</template>
+					<template tid="sxsConflictDetails">
+						<data inType="win:UnicodeString" name="newAssemblyName"></data>
+						<data inType="win:UnicodeString" name="newAssemblyVersion"></data>
+						<data inType="win:UnicodeString" name="newAssemblyArchitecture"></data>
+						<data inType="win:UnicodeString" name="newAssemblyTargetDir"></data>
+						<data inType="win:UnicodeString" name="existingAssemblyName"></data>
+						<data inType="win:UnicodeString" name="existingAssemblyVersion"></data>
+						<data inType="win:UnicodeString" name="existingAssemblyArchitecture"></data>
+					</template>
+					<template tid="tStringWin32ErrorCode">
+						<data inType="win:UnicodeString" name="str1"></data>
+						<data inType="win:UInt32" name="ErrorCode" outType="win:Win32Error"></data>
+					</template>
+				</templates>
+				<events>
+					<!-- Process Monitor - Kernel Mode - Events (1-99) -->
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.ProcessManager.Instantiate.Failed)" symbol="ProcessManager_Instantiate_Failed" value="1"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.Error.Initializing.Lock)" symbol="Error_Initialization_Lock" template="NtStatus" value="2"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.ProcessManager.StartMonitoring.Failed)" symbol="ProcessManager_StartMonitoring_Failed" template="NtStatus" value="3"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.ProcessManager.StopMonitoring.Failed)" symbol="ProcessManager_StopMonitoring_Failed" template="NtStatus" value="4"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.ProcessCollection.AddParentProcess.MaxLimitReached)" symbol="ProcessCollection_AddParentProcess_MaxLimitReached" template="PID_Max_Pos" value="5"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.ProcessCollection.AddMonitorProcess.MaxLimitReached)" symbol="ProcessCollection_AddMonitorProcess_MaxLimitReached" template="PID_Max_Pos" value="6"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.ProcessCollection.RemoveMonitorProcess.Success)" symbol="ProcessCollection_RemoveMonitorProcess_Success" template="PID_Pos" value="7"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.ProcessCollection.AddParentProcess.Success)" symbol="ProcessCollection_AddParentProcess_Success" template="PID_Pos" value="8"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.ProcessCollection.AddMonitorProcess.Success)" symbol="ProcessCollection_AddMonitorProcess_Success" template="PID_Pos" value="9"></event>
+					<event channel="SequencerDebug" level="win:Verbose" message="$(String.ProcessCollection.IsMonitoredProcess)" symbol="ProcessCollection_IsMonitoredProcess" template="PID_Pos" value="10"></event>
+					<event channel="SequencerDebug" level="win:Verbose" message="$(String.ProcessCollection.IsNotMonitoredProcess)" symbol="ProcessCollection_IsNotMonitoredProcess" template="PID_Pos" value="42"></event>
+					<event channel="SequencerDebug" level="win:Verbose" message="$(String.ProcessCollection.IsParentProcess)" symbol="ProcessCollection_IsParentProcess" template="PID_Pos" value="11"></event>
+					<event channel="SequencerDebug" level="win:Verbose" message="$(String.ProcessCollection.IsNotParentProcess)" symbol="ProcessCollection_IsNotParentProcess" template="PID_Pos" value="43"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.ProcessCollection.RemoveParentProcess.Success)" symbol="ProcessCollection_RemoveParentProcess_Success" template="PID_Pos" value="12"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.CommManager.Instantiate.Failed)" symbol="CommManager_Instantiate_Failed" value="13"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.ProcessManager.StartMonitoring.RundownResetFailed)" symbol="ProcessManager_StartMonitoring_RundownResetFailed" template="MyLong" value="14"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.CommManager.StartCommunications.RundownResetFailed)" symbol="CommManager_StartCommunications_RundownResetFailed" template="MyLong" value="15"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.StartCommunications.ErrorBuildingSecurityDescriptor)" symbol="CommManager_StartCommunications_ErrorBuildingSecurityDescriptor" template="NtStatus" value="16"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.CommManager.StartCommunications.CreatedCommunicationServerPort)" symbol="CommManager_StartCommunications_CreatedCommunicationServerPort" template="MyPointer" value="17"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.StartCommunications.Failed.Creating.Communication.Server.Port)" symbol="CommManager_StartCommunications_FailedCreatingCommunicationServerPort" template="NtStatus" value="18"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.CommManager.StopCommunications.ClosedCommunicationServerPort)" symbol="CommManager_StopCommunications_ClosedCommunicationServerPort" template="MyPointer" value="19"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.CommManager.StopCommunications.ClosedCommunicationClientPort)" symbol="CommManager_StopCommunications_ClosedCommunicationClientPort" template="MyPointer" value="20"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnConnect.NullConnectionContext)" symbol="CommManager_OnConnect_NullConnectionContext" value="21"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnConnect.InvalidConnectionContextSize)" symbol="CommManager_OnConnect_InvalidConnectionContextSize" template="MyULong" value="22"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnConnect.InvalidConnectionType)" symbol="CommManager_OnConnect_InvalidConnectionType" template="MyULong" value="23"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnConnect.AlreadyConnected)" symbol="CommManager_OnConnect_AlreadyConnected" template="ULongPointer" value="24"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.CommManager.OnConnect.AcceptedNewConnection)" symbol="CommManager_OnConnect_AcceptedNewConnection" template="ULongPointer" value="25"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.CommManager.OnDisconnect.ClosingConnection)" symbol="CommManager_OnDisconnect_ClosingConnection" template="ULongPointer" value="26"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnDisconnect.FilterPointerIsNull)" symbol="CommManager_OnDisconnect_FilterPointerIsNull" template="MyPointer" value="27"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnMessage.InsufficientInputBufferLength)" symbol="CommManager_OnMessage_InsufficientInputBufferLength" template="MyULong" value="28"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnMessage.InvalidInputBuffer)" symbol="CommManager_OnMessage_InvalidInputBuffer" template="ULongPointer" value="29"></event>
+					<event channel="SequencerDebug" level="win:Verbose" message="$(String.CommManager.OnMessage.InvalidOutputBuffer)" symbol="CommManager_OnMessage_InvalidOutputBuffer" template="ULongPointer" value="30"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.CommManager.OnMessage.Exception)" symbol="CommManager_OnMessage_Exception" template="NtStatus" value="31"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.CommManager.OnMessage.CannotServeMessageOnNonCommandConnection)" symbol="CommManager_OnMessage_CannotServeMessageOnNonCommandConnection" template="MyPointer" value="32"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnMessage.CommandNotSupported)" symbol="CommManager_OnMessage_CommandNotSupported" template="MyULong" value="33"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnCmdAddParent.InsufficientInputBufferLength)" symbol="CommManager_OnCmdAddParent_InsufficientInputBufferLength" template="MyULong" value="34"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnCmdAddMonitor.InsufficientInputBufferLength)" symbol="CommManager_OnCmdAddMonitor_InsufficientInputBufferLength" template="MyULong" value="35"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.CommManager.OnConnect.NullClientPort)" symbol="CommManager_OnConnect_NullClientPort" value="36"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.CommManager.OnDisconnect.NullConnectionCookie)" symbol="CommManager_OnDisconnect_NullConnectionCookie" value="37"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnDisconnect.MatchingClientPortNotFound)" symbol="CommManager_OnDisconnect_MatchingClientPortNotFound" template="MyPointer" value="38"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.CommManager.OnMessage.NullPortCookie)" symbol="CommManager_OnMessage_NullPortCookie" value="39"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.StartCommunications.FilterPointerIsNull)" symbol="CommManager_StartCommunications_FilterPointerIsNull" value="40"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnMessage.FailedAllocatingMemoryForMessageProcessing)" symbol="CommManager_OnMessage_FailedAllocatingMemoryForMessageProcessing" value="41"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnCmdPurgeFile.InsufficientInputBufferLength)" symbol="CommManager_OnCmdPurgeFile_InsufficientInputBufferLength" template="MyULong" value="44"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.CommManager.OnCmdPurgeFile.FileNameLengthBiggerThanBuffer)" symbol="CommManager_OnCmdPurgeFile_FileNameLengthBiggerThanBuffer" template="UInt16AndUInt32" value="45"></event>
+					<!-- Process Monitor - User Mode - Events (100-199) -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FltComm.Connect.CouldNotConnectCommunicationPort)" symbol="FltComm_Connect_CouldNotConnectCommunicationPort" template="HresultUlong" value="100"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.FltComm.Connect.Successful)" symbol="FltComm_Connect_Successful" template="MyPointer" value="101"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.FltComm.Disconnect.Disconnecting)" symbol="FltComm_Disconnect_Disconnecting" template="MyPointer" value="102"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FltComm.SendMessage.NullBuffer)" symbol="FltComm_SendMessage_NullBuffer" value="103"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FltComm.SendMessage.BufferLengthIsZero)" symbol="FltComm_SendMessage_BufferLengthIsZero" value="104"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FltComm.SendMessage.PortIsNotConnected)" symbol="FltComm_SendMessage_PortIsNotConnected" value="105"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FltComm.SendMessage.ErrorSendingMessage)" symbol="FltComm_SendMessage_ErrorSendingMessage" template="HresultPointer" value="106"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FltComm.SendMessage.ServerReturnedError)" symbol="FltComm_SendMessage_ServerReturnedError" template="tUInt64Pointer" value="107"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FltCommand.AddParent.Failed)" symbol="FltCommand_AddParent_Failed" template="MyULong" value="108"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FltCommand.AddMonitor.Failed)" symbol="FltCommand_Monitor_Failed" template="MyULong" value="109"></event>
+					<!-- Filter Communication Events -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FltCommand.PurgeFileFromCache.Failed)" symbol="FltCommand_PurgeFileFromCache_Failed" template="WideCString" value="190"></event>
+					<!-- File Monitor Events -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.ManagedFileNameInfoT.GetFileNameInfo.Failed)" symbol="FileMonitor_GetFileNameInfo_Failed" template="NtStatus" value="200"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.ConfigureFileMonRegistryEntries.Failed)" symbol="FileMonitor_ConfigureFileMonRegistryEntries_Failed" template="NtStatus" value="201"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.FltRegisterFilter.Failed)" symbol="FileMonitor_FltRegisterFilter_Failed" template="NtStatus" value="202"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.FltStartFiltering.Failed)" symbol="FileMonitor_FltStartFiltering_Failed" template="NtStatus" value="203"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.FileMonitor.Initialize.Success)" symbol="FileMonitor_Initialize_Success" template="NtStatus" value="204"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.IsVolumeOfInterest.FltGetDiskDeviceObject.Failed)" symbol="FileMonitor_IsVolumeOfInterest_FltGetDiskDeviceObject_Failed" template="NtStatus" value="205"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.IsVolumeOfInterest.GetVolumeGptAttributes.Failed)" symbol="FileMonitor_IsVolumeOfInterest_GetVolumeGptAttributes_Failed" template="NtStatus" value="206"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.GetVolumeGptAttributes.Failed)" symbol="FileMonitor_GetVolumeGptAttributes_Failed" template="NtStatus" value="207"></event>
+					<event channel="SequencerDebug" level="win:LogAlways" message="$(String.FileMonitor.FileMonUnload)" symbol="FileMonitor_FileMonUnload" value="208"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.IsNullFileObject.Error)" symbol="FileMonitor_IsNullFileObject_Error" template="NullFileObjectError" value="209"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.FileMonPostReadWrite.FltDoCompletionProcessingWhenSafe.Failed)" symbol="FileMonitor_FileMonPostReadWrite_FltDoCompletionProcessingWhenSafe_Failed" template="CompletionRoutineResult" value="210"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.FileMonPreSetInformation.OutOfMemory)" symbol="FileMonitor_FileMonPreSetInformation_OutOfMemory" value="211"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.FileMonPostSetInformation.CompletionContext)" symbol="FileMonitor_FileMonPostSetInformation_CompletionContext_Null" value="212"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.FileMonitor.FileMonPreMdlRead.FastIoDisallowed)" symbol="FileMonitor_FileMonPreMdlRead_FastIoDisallowed" value="214"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.FileMonPostSetInformation.FltIsDirectory.Failed)" symbol="FileMonitor_FileMonPostSetInformation_FltIsDirectory_Failed" value="215"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.FileMonitor.FileMonPostCreate.FltIsDirectory.Failed)" symbol="FileMonitor_FileMonPostCreate_FltIsDirectory_Failed" value="216"></event>
+					<!-- Tokenizer - Events (300-399) -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Tokenizer.KnownFolderException)" symbol="Tokenizer_KnownFolderException" template="tHresultGUIDWString" value="300"></event>
+					<!-- Packager - Events (400-499) -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.FileNotAddedToPackage)" symbol="Packager_FileNotAddedToPackage" template="PathAndExceptionEvent" value="400"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.FontFileDoesNotExist)" symbol="Packager_FontFileDoesNotExist" template="TWString" value="401"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.InvalidFontFilePath)" symbol="Packager_InvalidFontFilePath" template="TWString" value="402"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.Packager.FontInstalled)" symbol="Packager_FontInstalled" template="TWString2" value="403"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.FontNotInstalled)" symbol="Packager_FontNotInstalled" template="TWString" value="404"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.MalformedOrMissingScriptElement)" symbol="Packager_MalformedOrMissingScriptElement" template="tStringString" value="405"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.ExceptionConvertingIconIndex)" symbol="Packager_ExceptionConvertingIconIndex" template="TWString2" value="406"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.FilesystemMetadataIsCorrupt)" symbol="Packager_FilesystemMetadataIsCorrupt" template="TWString" value="407"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.IconIsAlreadyInThePackage)" symbol="Packager_IconIsAlreadyInThePackage" template="TWString" value="408"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.FailedToAddStreamMapToPackage)" symbol="Packager_FailedToAddStreamMapToPackage" template="TWString" value="409"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.FailedToAddFilesystemMetadataToPackage)" symbol="Packager_FailedToAddFilesystemMetadataToPackage" template="TWString" value="410"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.FailedToAddRegistryToPackage)" symbol="Packager_FailedToAddRegistryToPackage" template="TWString" value="411"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.MissingFileRemovedFromStreamMap)" symbol="Packager_MissingFileRemovedFromStreamMap" template="tString" value="412"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.SkippingZeroSizedExtractedIcon)" symbol="Packager_SkippingZeroSizedExtractedIcon" template="tString" value="413"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Packager.FilesystemMetadataWriterGeneratedShortNameForFile)" symbol="Packager_FilesystemMetadataWriterGeneratedShortNameForFile" template="tStringString" value="414"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.IntegerOverflowConvertingIconIndex)" symbol="Packager_IntegerOverflowConvertingIconIndex" template="TWString2" value="415"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.PEScannerFailedToBuildDependencyMapForFile)" symbol="Packager_PEScannerFailedToBuildDependencyMapForFile" template="SFHExceptionCaught" value="416"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.PEScannerFailedToCollectPEHeaderRangesForFile)" symbol="Packager_PEScannerFailedToCollectPEHeaderRangesForFile" template="SFHExceptionCaught" value="417"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.ManifestValidationError)" symbol="Packager_ManifestValidationError" template="tString" value="418"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.Packager.FileResolverExtractingFileToTemp)" symbol="Packager_FileResolverExtractingFileToTemp" template="tStringString" value="419"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Packager.FileResolverFailedToDeleteFileFromTemp)" symbol="Packager_FileResolverFailedToDeleteFileFromTemp" template="tStringString" value="420"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Packager.PackageHistoryError)" symbol="Packager_PackageHistoryError" template="tString" value="421"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Packager.SkippingPathBecauseOfInvalidCharacterWhileLocatingDependency)" symbol="Packager_SkippingPathBecauseOfInvalidCharacterWhileLocatingDependency" template="tStringString" value="422"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Packager.FilesystemMetadataWriterAddShortNameOperationException)" symbol="Packager_FilesystemMetadataWriterAddShortNameOperationException" template="tStringStringString" value="423"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Packager.PEScannerFailedToAccessResourceInPEHeader)" symbol="Packager_PEScannerFailedToAccessResourceInPEHeader" template="SFHExceptionCaught" value="424"></event>
+					<!-- Tracing - Events (500-599) -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Tracing.NegativeOffset)" symbol="Tracing_NegativeOffset" template="tFileEventWithNegativeOffset" value="500"></event>
+					<!-- Registry Monitor - Events (600-699) -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Registry.ExceptionGettingRegistryValue)" symbol="ExceptionGettingRegistryValue" template="tStringStringString" value="600"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Registry.UnexpectedRegistryPath)" symbol="UnexpectedRegistryPath" template="tString" value="601"></event>
+					<!-- Optimizer Monitor - Events (700-799) -->
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.PrefetchController.RegValueNotFound)" symbol="PrefetchController_RegValueNotFound" template="tStringString" value="700"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.PackageFileCollectionFactory.GetFileLengthException)" symbol="PackageFileCollectionFactory_GetFileLengthException" template="PathAndExceptionEvent" value="701"></event>
+					<!-- Ingredients - Events (800-899) -->
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Ingredients.ExceptionWritingFileSystemElement)" symbol="ExceptionWritingFileSystemElement" template="tString" value="800"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Ingredients.UnableToGetLongPath)" symbol="UnableToGetLongPath" template="tString" value="801"></event>
+					<!-- Devirtualizer Events (900 - 999) -->
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.Devirtualizer.DirectoryAlreadyExists)" symbol="Devirtualizer_DirectoryAlreadyExists" template="tStringString" value="900"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Devirtualizer.FailedToWriteFile)" symbol="Devirtualizer_FailedToWriteFile" template="tStringString" value="901"></event>
+					<!-- Package History Events (1000-1099) -->
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.PackageHistory.FailedToCreateHistoryItem)" symbol="PackageHistory_FailedToCreateHistoryItem" template="tString" value="1001"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.PackageHistory.FailedToPackageHistoryItem)" symbol="PackageHistory_FailedToPackageHistoryItem" template="tString" value="1002"></event>
+					<!-- Asset Intelligence Events (1100-1199) -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.AssetIntelligence.MissingDataElement)" symbol="AssetIntelligence_MissingDataElement" template="tString" value="1100"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.AssetIntelligence.FailedToLaunchVAppCollector)" symbol="AssetIntelligence_FailedToLaunchVAppCollector" template="PathAndExceptionEvent" value="1101"></event>
+					<!-- Accelerator Events (1200-1299) -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.FailedMsiHash)" symbol="Accelerator_FailedToGetMsiHash" template="tString" value="1200"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.FailedToCreateDehydrator)" symbol="Accelerator_FailedToCreateDehydrator" template="tString" value="1201"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.FailedToCreateAccelerator)" symbol="Accelerator_FailedToCreateAccelerator" template="tString" value="1202"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.UnsupportedAcceleratorVersion)" symbol="Accelerator_UnsupportedAcceleratorVersion" template="tString" value="1203"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.UnsupportedAcceleratorType)" symbol="Accelerator_UnsupportedAcceleratorType" template="tString" value="1204"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.FailedToCreateRehydrator)" symbol="Accelerator_FailedToCreateRehydrator" template="tString" value="1205"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.FailedToCreatePackage)" symbol="Accelerator_FailedToCreatePackage" template="tString" value="1206"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.FileMissingFromCabinet)" symbol="Accelerator_FileMissingFromCabinet" template="tString" value="1207"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.FailedToExplodeCabinetFile)" symbol="Accelerator_FailedToExplodeCabinetFile" template="tString" value="1208"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.FailedToCreateCabinetFile)" symbol="Accelerator_FailedToCreateCabinetFile" template="tString" value="1209"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.CabOperationTaskStarting)" symbol="Accelerator_CabOperationTaskStarting" value="1210"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.CabOperationTaskPackagerException)" symbol="Accelerator_CabOperationTaskPackagerException" template="tString" value="1211"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.CabOperationTaskSequencerException)" symbol="Accelerator_CabOperationTaskSequencerException" template="tString" value="1212"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Accelerators.CabOperationTaskEncoderToolsException)" symbol="Accelerator_CabOperationTaskEncoderToolsException" template="tString" value="1213"></event>
+					<!-- RunOnce Subsystem Events (1300-1349)-->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.RunOnceMonitorSubsystem.MoveToSavedLocation_PermissionDenied)" symbol="RunOnceMonitorSubsystem_MoveToSavedLocation_PermissionDenied" template="tString" value="1300"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.RunOnceMonitorSubsystem.RestoreFromSavedLocation_PermissionDenied)" symbol="RunOnceMonitorSubsystem_RestoreFromSavedLocation_PermissionDenied" template="tString" value="1301"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.RunOnceMonitorSubsystem.RebootExeFailed)" symbol="RunOnceMonitorSubsystem_RebootExeFailed" template="tHresult" value="1302"></event>
+					<!-- ProcessTrackerSubsystem Subsystem Events (1350-1399)-->
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.ProcessTrackerSubsystem.ProcessNotRunning)" symbol="ProcessTrackerSubsystem_ProcessNotRunning" template="tUInt64" value="1350"></event>
+					<!-- Package Converter Events (2000 - 2999) -->
+					<event channel="PackageConverterDebug" level="win:Warning" message="$(String.Warning.Missing.OsdElement)" symbol="PkgConvert_MissingOsdElement" template="tStringString" value="2000"></event>
+					<event channel="PackageConverterDebug" level="win:Warning" message="$(String.Converter.TokenDetectedButNotExpanded)" symbol="PkgConvert_TokenDetectedButNotExpanded" template="tStringString" value="2001"></event>
+					<event channel="PackageConverterDebug" level="win:Warning" message="$(String.Converter.UnmatchedDelimiterAroundToken)" symbol="PkgConvert_UnmatchedDelimiterAroundToken" template="tStringString" value="2002"></event>
+					<!-- Reboot.exe events (3000 - 3099) -->
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Reboot.RegistryOperationFailed)" symbol="Reboot_RegistryOperationFailed" template="tWin32Retcode" value="3000"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Reboot.RegistryOperationFailedOnKey)" symbol="Reboot_RegistryOperationFailedOnKey" template="tStringWin32Retcode" value="3001"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Reboot.FailedToLoadDependencyDlls)" symbol="Reboot_FailedToLoadDependencyDlls" value="3002"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Reboot.FailedToLoadDll)" symbol="Reboot_FailedToLoadDLL" template="tStringWin32Retcode" value="3003"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Reboot.FailedToUnloadDll)" symbol="Reboot_FailedToUnloadDLL" template="tWin32Retcode" value="3004"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Reboot.ExecutableNotFound)" symbol="Reboot_ExecutableNotFound" template="tString" value="3005"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Reboot.FailedToLaunchProcess)" symbol="Reboot_FailedToLaunchProcess" template="tStringWin32Retcode" value="3007"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Reboot.FailedToDeleteTaskValue)" symbol="Reboot_FailedToDeleteTaskValue" template="tStringString" value="3008"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Reboot.FailedToParseExecutable)" symbol="Reboot_FailedToParseExecutable" template="tString" value="3009"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Reboot.FailedToLoadAllDlls)" symbol="Reboot_FailedToLoadAllDlls" value="3010"></event>
+					<!-- Sequencer Logging Events (5000 and beyond) -->
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Sequencer.ShortcutHasBeenSkipped)" symbol="Sequencer_ShortcutHasBeenSkipped" template="tString" value="5000"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Sequencer.GetFileVersionException)" symbol="Sequencer_GetFileVersionException" template="PathAndExceptionEvent" value="5001"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.GetShellNameException)" symbol="Sequencer_GetShellNameException" template="PathAndExceptionEvent" value="5002"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.ProcessStartException)" symbol="Sequencer_ProcessStartException" template="ProcessInfoAndExceptionEvent" value="5003"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Sequencer.ApplicationLaunchIndexOutOfBounds)" symbol="Sequencer_ApplicationLaunchIndexOutOfBounds" value="5004"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.MonitoringEngine.GuardedActionException)" symbol="MonitoringEngine_GuardedActionException" template="tString" value="5005"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.DetectorPrescanFailure)" symbol="Sequencer_DetectorPrescanFailure" template="tStringString" value="5006"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.DetectorPostscanFailure)" symbol="Sequencer_DetectorPostscanFailure" template="tStringString" value="5007"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.SetServiceStateFailure)" symbol="Sequencer_SetServiceStateFailure" template="tStringString" value="5008"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.StopServiceFailure)" symbol="Sequencer_StopServiceFailure" template="tStringString" value="5009"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.ServiceNotFound)" symbol="Sequencer_ServiceNotFound" template="tString" value="5010"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.Sequencer.ProcessLaunchStarting)" symbol="Sequencer_ProcessLaunchStarting" template="tProcessLaunch" value="5011"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.Sequencer.ProcessLaunchStarted)" symbol="Sequencer_ProcessLaunchStarted" template="tProcessLaunch" value="5012"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.Sequencer.ProcessLaunchExited)" symbol="Sequencer_ProcessLaunchExited" template="tProcessLaunch" value="5013"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.FailedToGenerateGUID)" symbol="Sequencer_FailedToGenerateGUID" template="MyLong" value="5014"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.PackageIdIsEmpty)" symbol="Sequencer_PackageIdIsEmpty" value="5015"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.VersionIdIsEmpty)" symbol="Sequencer_VersionIdIsEmpty" value="5016"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.FailedToGenerateSampleConfigurationException)" symbol="Sequencer_FailedToGenerateSampleConfigurationException" template="tString" value="5017"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.EncTools.ManifestDocumentInstanceCreateFailed)" symbol="EncTools_ManifestDocumentInstanceCreateFailed" template="tUInt64" value="5018"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.EncTools.GetManifestDOMDocumentFailed)" symbol="EncTools_GetManifestDOMDocumentFailed" template="tUInt64" value="5019"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.EncTools.GetFileAssocFromManifestFailed)" symbol="EncTools_GetFileAssocFromManifestFailed" template="tUInt64" value="5020"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.EncTools.CreateManifestInstanceFailed)" symbol="EncTools_CreateManifestInstanceFailed" template="tUInt64" value="5021"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.EncTools.GetShortcutsFailed)" symbol="EncTools_GetShortcutsFailed" template="tUInt64" value="5022"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.EncTools.GetApplicationsFromMaanifestFailed)" symbol="EncTools_GetApplicationsFromMaanifestFailed" template="tUInt64" value="5023"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.StartServiceFailure)" symbol="Sequencer_StartServiceFailure" template="tStringString" value="5024"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.DetectorPrepareForRebootFailure)" symbol="Sequencer_DetectorPrepareForRebootFailure" template="tStringString" value="5025"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.DetectorResumeAfterRebootFailure)" symbol="Sequencer_DetectorResumeAfterRebootFailure" template="tStringString" value="5026"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.EncTools.ShortcutWithEmptyExeTargetSkipped)" symbol="EncTools_ShortcutWithEmptyExeTargetSkipped" template="TWString" value="5027"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Sequencer.SideBySideConflictDetails)" symbol="Sequencer_SideBySideConflictDetails" template="sxsConflictDetails" value="5028"></event>
+					<event channel="SequencerDebug" level="win:Warning" message="$(String.Sequencer.ExportReportToDiskFailed)" symbol="Sequencer_ExportReportToDiskFailed" template="tUInt64" value="5029"></event>
+					<!-- use this only for SequencerLogging.cpp for legacy SeqTrace messages -->
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.Sequencer.LegacyLogMsg)" symbol="Sequencer_LegacyLogMsg" template="tString" value="5030"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.IsShortNameDifferent.GetShortNameFailed)" symbol="SWFileUtils_IsShortNameDifferent_GetShortNameFailed" template="tStringWin32ErrorCode" value="5031"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.Sequencer.IsShortNameDifferent.GetLongNameFailed)" symbol="SWFileUtils_IsShortNameDifferent_GetLongNameFailed" template="tStringWin32ErrorCode" value="5032"></event>
+					<event channel="SequencerDebug" level="win:Error" message="$(String.EncoderHelp.DisplayHelpFailed)" symbol="EncoderHelp_DisplayHelpFailed" template="tStringWin32ErrorCode" value="5033"></event>
+					<event channel="SequencerDebug" level="win:Informational" message="$(String.EncoderHelp.DisplayHelp)" symbol="EncoderHelp_DisplayHelp" template="tString" value="5034"></event>
+				</events>
+			</provider>
+			<!-- Provider for Sequencer debug log messages -->
+		</events>
+	</instrumentation>
+	<localization>
+		<resources culture="en-US">
+			<stringTable>
+				<string id="Error.Initializing.Lock" value="Error initializing lock (%1)."></string>
+				<string id="ProcessManager.Instantiate.Failed" value="Could not instantiate ProcessManager in PagedPool."></string>
+				<string id="ProcessManager.StartMonitoring.Failed" value="Error registering process creation notification (%1)."></string>
+				<string id="ProcessManager.StartMonitoring.RundownResetFailed" value="Error resetting rundown (%1)."></string>
+				<string id="ProcessManager.StopMonitoring.Failed" value="Error unregistering process creation notification (%1)."></string>
+				<string id="ProcessCollection.AddParentProcess.MaxLimitReached" value="Adding parent PID(%1) failed because of limit. Max(%2), Pos(%3)."></string>
+				<string id="ProcessCollection.AddMonitorProcess.MaxLimitReached" value="Adding monitor PID(%1) failed because of limit. Max(%2), Pos(%3)."></string>
+				<string id="ProcessCollection.RemoveMonitorProcess.Success" value="Removed PID (%1) from monitor list. Pos(%2)."></string>
+				<string id="ProcessCollection.RemoveParentProcess.Success" value="Removed PID (%1) from parent list. Pos(%2)."></string>
+				<string id="ProcessCollection.AddParentProcess.Success" value="Added PID (%1) to parent list. Pos(%2)."></string>
+				<string id="ProcessCollection.AddMonitorProcess.Success" value="Added PID (%1) to monitor list. Pos(%2)."></string>
+				<string id="ProcessCollection.IsMonitoredProcess" value="PID (%1) is monitored. Pos(%2)."></string>
+				<string id="ProcessCollection.IsNotMonitoredProcess" value="PID (%1) is not monitored. Pos(%2)."></string>
+				<string id="ProcessCollection.IsParentProcess" value="PID (%1) is parent. Pos(%2)."></string>
+				<string id="ProcessCollection.IsNotParentProcess" value="PID (%1) is not parent. Pos(%2)."></string>
+				<string id="CommManager.Instantiate.Failed" value="Could not instantiate CommManager in PagedPool."></string>
+				<string id="CommManager.StartCommunications.FilterPointerIsNull" value="Filter pointer is null."></string>
+				<string id="CommManager.StartCommunications.RundownResetFailed" value="Error resetting rundown (%1)."></string>
+				<string id="CommManager.StartCommunications.ErrorBuildingSecurityDescriptor" value="Error building security descriptor for the port (%1)."></string>
+				<string id="CommManager.StartCommunications.CreatedCommunicationServerPort" value="Created communication server port (%1)."></string>
+				<string id="CommManager.StartCommunications.Failed.Creating.Communication.Server.Port" value="Error creating communication server port (%1)."></string>
+				<string id="CommManager.StopCommunications.ClosedCommunicationServerPort" value="Closed communication server port (%1)."></string>
+				<string id="CommManager.StopCommunications.ClosedCommunicationClientPort" value="Closed communication client port (%1)."></string>
+				<string id="CommManager.OnConnect.NullClientPort" value="Null client port."></string>
+				<string id="CommManager.OnConnect.NullConnectionContext" value="Null connection context."></string>
+				<string id="CommManager.OnConnect.InvalidConnectionContextSize" value="Invalid connection context size (%1)."></string>
+				<string id="CommManager.OnConnect.InvalidConnectionType" value="Invalid connection type is requested (%1)."></string>
+				<string id="CommManager.OnConnect.AlreadyConnected" value="There is already an active connection: Type(%1), Port(%2). Cannot accept new connection."></string>
+				<string id="CommManager.OnConnect.AcceptedNewConnection" value="Accepted new connection: Type(%1), Port(%2)."></string>
+				<string id="CommManager.OnDisconnect.ClosingConnection" value="Closing connection: Type(%1), Port(%2)."></string>
+				<string id="CommManager.OnDisconnect.FilterPointerIsNull" value="Filter pointer is null. Cannot close client port (%1)."></string>
+				<string id="CommManager.OnDisconnect.NullConnectionCookie" value="Null connection cookie. Cannot identify and close port."></string>
+				<string id="CommManager.OnDisconnect.MatchingClientPortNotFound" value="Matching client port (%1) not found."></string>
+				<string id="CommManager.OnMessage.InsufficientInputBufferLength" value="Invalid input buffer length (%1)."></string>
+				<string id="CommManager.OnMessage.InvalidInputBuffer" value="Invalid input buffer (%2) or length (%1)."></string>
+				<string id="CommManager.OnMessage.InvalidOutputBuffer" value="Invalid output buffer (%2) or length (%1). Output buffer will not be updated"></string>
+				<string id="CommManager.OnMessage.Exception" value="Exception (%1) occurred while processing message."></string>
+				<string id="CommManager.OnMessage.CannotServeMessageOnNonCommandConnection" value="Cannot serve message on non-command connection. Client Port (%1)."></string>
+				<string id="CommManager.OnMessage.CommandNotSupported" value="Command (%1) not supported."></string>
+				<string id="CommManager.OnMessage.NullPortCookie" value="Port cookie is null. Cannot process message"></string>
+				<string id="CommManager.OnMessage.FailedAllocatingMemoryForMessageProcessing" value="Could not allocate memory for message processing."></string>
+				<string id="CommManager.OnCmdAddParent.InsufficientInputBufferLength" value="Insufficient input buffer length (%1)."></string>
+				<string id="CommManager.OnCmdAddMonitor.InsufficientInputBufferLength" value="Insufficient input buffer length (%1)."></string>
+				<string id="CommManager.OnCmdPurgeFile.InsufficientInputBufferLength" value="Insufficient input buffer length (%1)."></string>
+				<string id="CommManager.OnCmdPurgeFile.FileNameLengthBiggerThanBuffer" value="Programmer error: file name length (%1) is more than space available in the buffer (%2)."></string>
+				<string id="FltComm.Connect.CouldNotConnectCommunicationPort" value="Error (%1) connecting (%2) to communication port."></string>
+				<string id="FltComm.Connect.Successful" value="Successfully connected to communication port (%1)."></string>
+				<string id="FltComm.Disconnect.Disconnecting" value="Disconnecting communication port (%1)."></string>
+				<string id="FltComm.SendMessage.NullBuffer" value="Buffer pointer is null. Cannot send message."></string>
+				<string id="FltComm.SendMessage.BufferLengthIsZero" value="Buffer length is zero. Cannot send message."></string>
+				<string id="FltComm.SendMessage.PortIsNotConnected" value="Communicaiton port is not connected. Cannot send message."></string>
+				<string id="FltComm.SendMessage.ErrorSendingMessage" value="Error (%1) sending message. Port (%2)."></string>
+				<string id="FltComm.SendMessage.ServerReturnedError" value="Server returned Error (%1) on sending message. Port (%2)."></string>
+				<string id="FltCommand.AddParent.Failed" value="Failed adding parent pid (%1)."></string>
+				<string id="FltCommand.AddMonitor.Failed" value="Failed adding monitor pid (%1)."></string>
+				<string id="FltCommand.PurgeFileFromCache.Failed" value="Failed to purge from cache manager file %2"></string>
+				<string id="FileMonitor.ManagedFileNameInfoT.GetFileNameInfo.Failed" value="Error in ManagedFileNameInfoT::GetFileNameInfo(), FltGetFileNameInformation() ntstatus = %1"></string>
+				<string id="FileMonitor.ConfigureFileMonRegistryEntries.Failed" value="Error in FileMonitorT::Initialize(), ConfigureFileMonRegistryEntries() ntstatus = %1"></string>
+				<string id="FileMonitor.FltRegisterFilter.Failed" value="Error in FileMonitorT::Initialize(), FltRegisterFilter() ntstatus = %1"></string>
+				<string id="FileMonitor.FltStartFiltering.Failed" value="Error in FileMonitorT::Initialize(), FltStartFiltering() ntstatus = %1"></string>
+				<string id="FileMonitor.Initialize.Success" value="Successful FileMonitorT::Initialize(), ntstatus = %1"></string>
+				<string id="FileMonitor.IsVolumeOfInterest.FltGetDiskDeviceObject.Failed" value="Error in FileMonitorT::IsVolumeOfInterest(), FltGetDiskDeviceObject() ntstatus = %1"></string>
+				<string id="FileMonitor.IsVolumeOfInterest.GetVolumeGptAttributes.Failed" value="Error in FileMonitorT::IsVolumeOfInterest(), GetVolumeGptAttributes() ntstatus = %1"></string>
+				<string id="FileMonitor.GetVolumeGptAttributes.Failed" value="Error building DeviceIoControlRequest in FileMonitorT::GetVolumeGptAttributes(), ntstatus = %1"></string>
+				<string id="FileMonitor.FileMonUnload" value="File Monitor mini-filter unloaded"></string>
+				<string id="FileMonitor.IsNullFileObject.Error" value="Error: Null file pointer passed for callback, FltObjects=(%1); FileObject=(%2)"></string>
+				<string id="FileMonitor.FileMonPostReadWrite.FltDoCompletionProcessingWhenSafe.Failed" value="Error: the I/O operation could not be safely posted, completionSuccessful=(%1); retValue=(%2)"></string>
+				<string id="FileMonitor.FileMonPreSetInformation.OutOfMemory" value="Error in FileMonitorT::FileMonPreSetInformation(), ExAllocatePoolWithTag() failed."></string>
+				<string id="FileMonitor.FileMonPostSetInformation.CompletionContext" value="Error in FileMonitorT::FileMonPostSetInformation(), CompletionContext=NULL for FileRenameInformation."></string>
+				<string id="FileMonitor.FileMonPreMdlRead.FastIoDisallowed" value="Fast IO disallowed for a process of interest."></string>
+				<string id="FileMonitor.FileMonPostSetInformation.FltIsDirectory.Failed" value="Error in FileMonitorT::FileMonPostSetInformation(), call to FltIsDirectory() failed."></string>
+				<string id="FileMonitor.FileMonPostCreate.FltIsDirectory.Failed" value="Error in FileMonitorT::FileMonPostCreate(), call to FltIsDirectory() failed."></string>
+				<string id="Tokenizer.KnownFolderException" value="Known Folder exception. hresult: %1, folder id: %2, message: %3."></string>
+				<string id="Tracing.NegativeOffset" value="Negative offset encountered for file operation: %1, Offset: %2, Path: %3, BufferLength: %4, Buffer: %5"></string>
+				<string id="PackageFileCollectionFactory.GetFileLengthException" value="An attempt to get the length of '%1' failed with Exception '%2'."></string>
+				<string id="Packager.FileNotAddedToPackage" value="A file could not be added to the package. Path: %1. Exception: %2."></string>
+				<string id="Packager.FontFileDoesNotExist" value="Font file '%1' does not exist."></string>
+				<string id="Packager.InvalidFontFilePath" value="Unable to process invalid font file '%1'."></string>
+				<string id="Packager.FilesystemMetadataIsCorrupt" value="The filesystem metadata is corrupt due to a non unique entry being added to the filesystem table: '%1'."></string>
+				<string id="Packager.FontInstalled" value="Font file '%1' installed as '%2'."></string>
+				<string id="Packager.FontNotInstalled" value="Unable to install font file '%1'."></string>
+				<string id="Packager.MalformedOrMissingScriptElement" value="The following expected element was malformed or missing in the manifest script XML: '%1'. This default value was used instead: '%2'."></string>
+				<string id="Packager.ExceptionConvertingIconIndex" value="Exception converting icon index for icon entry '%1'. Exception: %2."></string>
+				<string id="Packager.IconIsAlreadyInThePackage" value="Icon '%' is skipped as it is already in the package files."></string>
+				<string id="Packager.FailedToAddRegistryToPackage" value="The Registry.dat file could not be added to the package.  File path: %1"></string>
+				<string id="Packager.FailedToAddFilesystemMetadataToPackage" value="The FilesystemMetadata.xml file could not be added to the package. File path: %1"></string>
+				<string id="Packager.FailedToAddStreamMapToPackage" value="The StreamMap.xml file could not be added to the package. File path: %1"></string>
+				<string id="Packager.MissingFileRemovedFromStreamMap" value="The file '%1' has been removed from stream map as it couldn't be added to the package."></string>
+				<string id="Packager.SkippingZeroSizedExtractedIcon" value="Skipping zero sized extracted icon for Manifest entry: %1"></string>
+				<string id="Packager.FilesystemMetadataWriterGeneratedShortNameForFile" value="A random short name (%1) was generated for package file %2."></string>
+				<string id="Packager.IntegerOverflowConvertingIconIndex" value="Int32 overflow converting icon index for icon entry '%1'. Exception: %2."></string>
+				<string id="Packager.PEScannerFailedToCollectPEHeaderRangesForFile" value="Failed to collect PE Header ranges necessary for Disconnected Application Launch scenario for a single PE file. Description: %1, LastError: %2. ErrorCode: %3. LocalPath: %4. TargetPath: %5"></string>
+				<string id="Packager.PEScannerFailedToBuildDependencyMapForFile" value="Failed to build static PE dependency map necessary for proper DLL loading on the client for a single PE file. Description: %1, LastError: %2. ErrorCode: %3. LocalPath: %4. TargetPath: %5"></string>
+				<string id="Packager.FileResolverExtractingFileToTemp" value="FileResolver is extracting the package file to a temporary location. TargetPath: %1, LocalPath: %2."></string>
+				<string id="Packager.FileResolverFailedToDeleteFileFromTemp" value="FileResolver failed to clean up a file from the temporary location. LocalPath: %1, Exception: %2"></string>
+				<string id="Packager.PackageHistoryError" value="There was an erorr reading the Package History file, Exception: %1"></string>
+				<string id="Packager.SkippingPathBecauseOfInvalidCharacterWhileLocatingDependency" value="The candidate path %1 for locating dependency for %2 has an invalid character. The path will be skipped."></string>
+				<string id="Packager.ManifestValidationError" value="Manifest %1 is not valid."></string>
+				<string id="Packager.FilesystemMetadataWriterAddShortNameOperationException" value="InvalidOperationException adding ShortName '%1' to XElement '%2'. Exception: %3"></string>
+				<string id="Packager.PEScannerFailedToAccessResourceInPEHeader" value="Failed to access a memory address from PE Header resource section for adding icon group for a single PE file. Description: %1, LastError: %2. ErrorCode: %3. LocalPath: %4. TargetPath: %5"></string>
+				<string id="Registry.ExceptionGettingRegistryValue" value="Exception getting registry value. Key: %1, Value: %2. Exception: %3"></string>
+				<string id="Registry.UnexpectedRegistryPath" value="Unexpected registry path: %1. This key will not be saved as a part of the package."></string>
+				<string id="Ingredients.ExceptionWritingFileSystemElement" value="Exception writing file system element in Ingredients: %1."></string>
+				<string id="Ingredients.UnableToGetLongPath" value="Unable to retrieve local path: %1 for Icon Publishing Block."></string>
+				<string id="Sequencer.ShortcutHasBeenSkipped" value="A shortcut has been skipped because it cannot be resolved. Shortcut file path is %1."></string>
+				<string id="Sequencer.GetFileVersionException" value="An attempt to get the version information of '%1' failed with Exception '%2'."></string>
+				<string id="Sequencer.GetShellNameException" value="An attempt to get name the of the shell from '%1' failed with exception '%2'."></string>
+				<string id="Sequencer.ApplicationLaunchIndexOutOfBounds" value="The Application index specified for launch is out of bounds - the application cannot be launched."></string>
+				<string id="Sequencer.ProcessLaunchStarting" value="Starting to launch process\nFile Path: '%1'\nArguments: '%2'\nWorking Directory: '%3'\nWait For Exit: '%4'"></string>
+				<string id="Sequencer.ProcessLaunchStarted" value="Started to launch process\nFile Path: '%1'\nArguments: '%2'\nWorking Directory: '%3'\nWait For Exit: '%4'"></string>
+				<string id="Sequencer.ProcessLaunchExited" value="Exited launch process\nFile Path: '%1'\nArguments: '%2'\nWorking Directory: '%3'\nWait For Exit: '%4'"></string>
+				<string id="Map.FileEventID.CreateFileEvent" value="create"></string>
+				<string id="Map.FileEventID.ReadFile" value="read"></string>
+				<string id="Map.FileEventID.WriteFile" value="write"></string>
+				<string id="Map.FileEventID.DeleteFile" value="delete"></string>
+				<string id="Map.FileEventID.RenameFile" value="rename"></string>
+				<string id="Sequencer.ProcessStartException" value="An attempt to launch the provided process failed with exception '%1'. Parameters for process launch were Path: %2 Arguments: %3 WorkingDirectory: %4 WaitForExit: %5."></string>
+				<string id="MonitoringEngine.GuardedActionException" value="An attempt to perform a monitoring engine guarded action failed with exception '%1'."></string>
+				<string id="PrefetchController.RegValueNotFound" value="Unable to find prefetch settings for the operating system, registry value (%1) cannot be found under registry key (%2). This usually means that Prefetch is disabled on this OS."></string>
+				<string id="Sequencer.DetectorPrescanFailure" value="A detector failed during prescan. DetectorType: (%1). Error: (%2)"></string>
+				<string id="Sequencer.DetectorPostscanFailure" value="A detector failed during post scan. DetectorType: (%1). Error: (%2)"></string>
+				<string id="Sequencer.DetectorPrepareForRebootFailure" value="A detector failed while preparing for reboot. DetectorType: (%1). Error: (%2)"></string>
+				<string id="Sequencer.DetectorResumeAfterRebootFailure" value="A detector failed while resuming after a reboot. DetectorType: (%1). Error: (%2)"></string>
+				<string id="Sequencer.SetServiceStateFailure" value="An attempt to set the state of the service failed. ServiceName: (%1). Exception: (%2)"></string>
+				<string id="Sequencer.StopServiceFailure" value="An attempt to stop the service failed. ServiceName: (%1). Exception: (%2)"></string>
+				<string id="Sequencer.StartServiceFailure" value="An attempt to start the service failed. ServiceName: (%1). Exception: (%2)"></string>
+				<string id="Sequencer.ServiceNotFound" value="There was no process associated with the service. ServiceName: (%1)"></string>
+				<string id="Sequencer.FailedToGenerateGUID" value="Failed to generate GUID (%1)"></string>
+				<string id="Sequencer.PackageIdIsEmpty" value="Invalid parameter is passed to Generate MSI. Package Id is empty"></string>
+				<string id="Sequencer.VersionIdIsEmpty" value="Invalid parameter is passed to Generate MSI. Version Id is empty"></string>
+				<string id="Sequencer.FailedToGenerateSampleConfigurationException" value="Sample configuration generation failed with the following exception: (%1)."></string>
+				<string id="Sequencer.SideBySideConflictDetails" value="New Private Assembly Details :: \&#xA;                                                            \r\nAssembly Name: %1 \&#xA;                                                            \r\nAssembly Version: %2 \&#xA;                                                            \r\nProcessor Architecture: %3 \&#xA;                                                            \r\nTarget Payload Directory: %4 \&#xA;                                                            \r\n \&#xA;                                                            \r\nExisting Private Assembly Details :: \&#xA;                                                            \r\nAssembly Name: %5 \&#xA;                                                            \r\nAssembly Version: %6 \&#xA;                                                            \r\nProcessor Architecture: %7 "></string>
+				<string id="Sequencer.ExportReportToDiskFailed" value="Failed to write diagnostics report to disk. Error: %1."></string>
+				<string id="Sequencer.LegacyLogMsg" value="%1"></string>
+				<string id="Warning.Missing.OsdElement" value="Attempted to get element '%1' from OSD for '%2' but null was returned.  A generic blank replacement was used instead."></string>
+				<string id="Converter.TokenDetectedButNotExpanded" value="The token '%1' was detected in '%2' during package conversion but was not expanded."></string>
+				<string id="Converter.UnmatchedDelimiterAroundToken" value="One of the delimiters '%1' was unmatched in '%2' during package conversion. The end of the token was assumed to be either the following \ if it exists or the end of the string."></string>
+				<string id="Devirtualizer.DirectoryAlreadyExists" value="The directory '%1' could not be created because it already exists. Exception: %2."></string>
+				<string id="Devirtualizer.FailedToWriteFile" value="The file '%1' could not be written because due to an exception. Exception: %2."></string>
+				<string id="PackageHistory.FailedToCreateHistoryItem" value="Failed to create package history item. Exception: %1."></string>
+				<string id="PackageHistory.FailedToPackageHistoryItem" value="Failed to add package history file '%1' to the package."></string>
+				<string id="AssetIntelligence.MissingDataElement" value="Failed to get asset intelligence data.  Element '%1' was missing while reading the asset intelligence xml."></string>
+				<string id="AssetIntelligence.FailedToLaunchVAppCollector" value="Failed to launch VAppCollector using path '%1'. Exception: %2."></string>
+				<string id="Accelerators.FailedMsiHash" value="Failed to get MSI hash for file '%1'."></string>
+				<string id="Accelerators.FailedToCreateDehydrator" value="An error occurred while constructing the dehydrator object.  Exception: %1"></string>
+				<string id="Accelerators.FailedToCreateAccelerator" value="An error occurred while creating the package accelerator.  Exception: %1"></string>
+				<string id="Accelerators.UnsupportedAcceleratorVersion" value="The version specified in the accelerator description is not supported by this Sequencer. Version: '%1'."></string>
+				<string id="Accelerators.UnsupportedAcceleratorType" value="The type specified in the accelerator description is not supported by this Sequencer. Type: '%1'."></string>
+				<string id="Accelerators.FailedToCreateRehydrator" value="An error occurred while constructing the rehydrator object.  Exception: %1"></string>
+				<string id="Accelerators.FailedToCreatePackage" value="An error occurred while creating the package from the accelerator.  Exception: %1"></string>
+				<string id="Accelerators.FileMissingFromCabinet" value="Accelerator cabinet file is invalid.  Failed to locate '%1'."></string>
+				<string id="Accelerators.FailedToExplodeCabinetFile" value="An error occurred while extracting the accelerator cabinet file. Error: %1"></string>
+				<string id="Accelerators.FailedToCreateCabinetFile" value="An error occurred while creating the accelerator cabinet file. Error: %1"></string>
+				<string id="Accelerators.CabOperationTaskStarting" value="A cab operation task has started"></string>
+				<string id="Accelerators.CabOperationTaskPackagerException" value="An error occured in the packager task during a cab operation. Exception: %1"></string>
+				<string id="Accelerators.CabOperationTaskSequencerException" value="An error occured in the sequencer task during a cab operation. Exception: %1"></string>
+				<string id="Accelerators.CabOperationTaskEncoderToolsException" value="An error occured in the encoder tools task during a cab operation. Exception: %1"></string>
+				<string id="RunOnceMonitorSubsystem.MoveToSavedLocation_PermissionDenied" value="Permission denied while attempting to move RunOnce keys to saved location. Exception: %1."></string>
+				<string id="RunOnceMonitorSubsystem.RestoreFromSavedLocation_PermissionDenied" value="Permission denied while attempting to restore RunOnce keys from saved location. Exception: %1."></string>
+				<string id="RunOnceMonitorSubsystem.RebootExeFailed" value="Reboot.exe failed with exit code %1."></string>
+				<string id="ProcessTrackerSubsystem.ProcessNotRunning" value="ETW process tracing missed termination of process with pid %1 due to a pause in logging. The process is no longer running, therefore it is excluded from the final list of running processes which we wait on before calling StopMonitoring()."></string>
+				<string id="EncTools.ManifestDocumentInstanceCreateFailed" value="An attempt to create manifest document instance from the manifest failed (%1)."></string>
+				<string id="EncTools.GetManifestDOMDocumentFailed" value="Failed to get manfiest DOM document (%1)."></string>
+				<string id="EncTools.GetApplicationsFromMaanifestFailed" value="Failed to get list of applications from the manifest (%1)."></string>
+				<string id="EncTools.GetFileAssocFromManifestFailed" value="Failed to get file associations from the manifest (%1)."></string>
+				<string id="EncTools.CreateManifestInstanceFailed" value="Failed to create manifest instance while processing application shortcuts (%1)."></string>
+				<string id="EncTools.GetShortcutsFailed" value="Failed to get list of shortcuts from the manifest (%1)."></string>
+				<string id="EncTools.ShortcutWithEmptyExeTargetSkipped" value="Skipped shortcut ('%1') with empty executable target."></string>
+				<string id="Reboot.RegistryOperationFailed" value="Reboot.exe registry operation failed with result code %1."></string>
+				<string id="Reboot.RegistryOperationFailedOnKey" value="Reboot.exe registry operation on key %1 failed with error %2."></string>
+				<string id="Reboot.FailedToLoadDependencyDlls" value="Reboot.exe failed to load dependency dlls necessary for executing a RunOnceEx operation."></string>
+				<string id="Reboot.FailedToLoadDll" value="Reboot.exe failed to load dll %1 with error %2."></string>
+				<string id="Reboot.FailedToUnloadDll" value="Reboot.exe failed to unload a dll with error %1."></string>
+				<string id="Reboot.ExecutableNotFound" value="Reboot.exe failed to find the executable '%1' and is there unable to execute it."></string>
+				<string id="Reboot.FailedToLaunchProcess" value="Reboot.exe failed to launch process '%1' with error %2."></string>
+				<string id="Reboot.FailedToDeleteTaskValue" value="Reboot.exe failed to delete task value '%1' from key '%2'. This task may be re-executed the next time the system boots."></string>
+				<string id="Reboot.FailedToParseExecutable" value="Reboot.exe failed to launch process because unable to parse the executable '%1'."></string>
+				<string id="Reboot.FailedToLoadAllDlls" value="Reboot.exe failed to load all dependency DLLs. Some RunOnce tasks may fail as a result."></string>
+				<string id="Sequencer.IsShortNameDifferent.GetShortNameFailed" value="SWFileUtils::IsShortNameDifferent failed to get short name of '%1' (Error: %2)."></string>
+				<string id="Sequencer.IsShortNameDifferent.GetLongNameFailed" value="SWFileUtils::IsShortNameDifferent failed to get long name of '%1' (Error: %2)."></string>
+				<string id="EncoderHelp.DisplayHelpFailed" value="EncoderHelp::Display failed to display help topic %1 (Error: %2)."></string>
+				<string id="EncoderHelp.DisplayHelp" value="EncoderHelp::Display display help topic %1"></string>
+			</stringTable>
+		</resources>
+	</localization>
+	<cbb:debuggingInfo xmlns:cbb="urn:schemas-microsoft-com:asm.internal.v1">
+		<cbb:sourceManifest sourcePath="%sdxmaproot%\admin\appman\appv\shared\trace\private\modernizer\dbg\modernizerdbg.man"></cbb:sourceManifest>
+	</cbb:debuggingInfo>
+</instrumentationManifest>

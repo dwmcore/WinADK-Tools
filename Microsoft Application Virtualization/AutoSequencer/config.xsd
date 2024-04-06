@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Applications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Application">
+          <xs:complexType>
+            <xs:all>
+              <xs:element name="AppName" minOccurs='0' type="xs:string" />
+              <xs:element name="InstallerFolder" type="xs:string" />
+              <xs:element name="Installer" type="xs:string" />
+              <xs:element name="Cmdlet" type="xs:boolean" />
+              <xs:element name="InstallerOptions" minOccurs='0' type="xs:string" />
+              <xs:element name="CustomScriptFolder" minOccurs='0' type="xs:string" />
+              <xs:element name="Package" minOccurs='0' type="xs:string" />
+              <xs:element name="TimeoutInMinutes" minOccurs='0' type="xs:positiveInteger" />
+              <xs:element name="Enabled" minOccurs='0' type="xs:boolean" />
+            </xs:all>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

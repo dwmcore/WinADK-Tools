@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <!-- CDS_Browse event -->
+      <event eventID="1" message="" guid="{742D056C-E5C4-49e6-B281-325B8561B6BD}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Start"                         subTypeValue="1"/>
+        <classification subType="Stop"                          subTypeValue="2"/>
+
+          <template>
+            <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>           
+                <dwBrowseType>%UInt32;</dwBrowseType>
+                <dwStartingIndex>%UInt32;</dwStartingIndex>
+                <dwRequestedCount>%UInt32;</dwRequestedCount>
+                <dwNumReturned>%UInt32;</dwNumReturned>
+                <dwTotalMatches>%UInt32;</dwTotalMatches>
+                <hrStatus>%UInt32;</hrStatus>
+                <strArgs>%String;</strArgs>
+            </CDS_Browse_>
+          </template>
+
+
+        <classification subType="Filter_Endpoint_Start"         subTypeValue="3"/>
+        <classification subType="Filter_Endpoint_Stop"          subTypeValue="4"/>
+        <classification subType="Query_Content_Provider_Start"  subTypeValue="7"/>
+        <classification subType="Query_Content_Provider_Stop"   subTypeValue="8"/>
+
+          <template>
+            <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>
+            </CDS_Browse_>
+          </template>
+
+
+        <classification subType="Setup_Start"                   subTypeValue="5"/>
+        <classification subType="Setup_Stop"                    subTypeValue="6"/>
+
+          <template>
+            <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <bCanPublishAllAlbumArts>%UInt32;</bCanPublishAllAlbumArts>
+                <cFilterItems>%UInt32;</cFilterItems>
+                <cSortItems>%UInt32;</cSortItems>
+            </CDS_Browse_>
+          </template>
+
+        <classification subType="Write_Result_Start"            subTypeValue="9"/>
+        <classification subType="Write_Result_Stop"             subTypeValue="10"/>
+
+          <template>
+            <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <dwNumWritten>%UInt32;</dwNumWritten>
+                <dwTotalResultLen>%UInt32;</dwTotalResultLen>
+            </CDS_Browse_>
+          </template>
+
+        <classification subType="Sort_Criteria"                 subTypeValue="11"/>
+
+          <template>
+            <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <ullSortCriteria1>%UInt64;</ullSortCriteria1>
+                <ullSortCriteria2>%UInt64;</ullSortCriteria2>
+            </CDS_Browse_>
+          </template>
+
+
+        <classification subType="Filter_Fields"                 subTypeValue="12"/>
+
+          <template>
+            <CDS_Browse_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <ullFilterFlags1>%UInt64;</ullFilterFlags1>
+                <ullFilterFlags2>%UInt64;</ullFilterFlags2>
+            </CDS_Browse_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+
+      <!-- CDS_Search event -->
+      <event eventID="1" message="" guid="{AFEE2862-A8B2-42db-B191-192D410B5A36}" level="1">
+        <diagnosticInstance version="0">
+
+        <classification subType="Start"                         subTypeValue="1"/>
+        <classification subType="Stop"                          subTypeValue="2"/>
+
+          <template>
+            <CDS_Search_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <dwStartingIndex>%UInt32;</dwStartingIndex>
+              <dwRequestedCount>%UInt32;</dwRequestedCount>
+              <dwNumReturned>%UInt32;</dwNumReturned>
+              <dwTotalMatches>%UInt32;</dwTotalMatches>
+              <hrStatus>%UInt32;</hrStatus>
+              <strArgs>%String;</strArgs>
+            </CDS_Search_>
+          </template>
+
+        <classification subType="Filter_Endpoint_Start"         subTypeValue="3"/>
+        <classification subType="Filter_Endpoint_Stop"          subTypeValue="4"/>
+        <classification subType="Query_Content_Provider_Start"  subTypeValue="7"/>
+        <classification subType="Query_Content_Provider_Stop"   subTypeValue="8"/>
+
+          <template>
+            <CDS_Search_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+            </CDS_Search_>
+          </template>
+
+        <classification subType="Setup_Start"                   subTypeValue="5"/>
+        <classification subType="Setup_Stop"                    subTypeValue="6"/>
+
+          <template>
+            <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <bCanPublishAllAlbumArts>%UInt32;</bCanPublishAllAlbumArts>
+                <cFilterItems>%UInt32;</cFilterItems>
+                <cSortItems>%UInt32;</cSortItems>
+            </CDS_Search_>
+          </template>
+
+        <classification subType="Write_Result_Start"            subTypeValue="9"/>
+        <classification subType="Write_Result_Stop"             subTypeValue="10"/>
+
+          <template>
+            <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <dwNumWritten>%UInt32;</dwNumWritten>
+                <dwTotalResultLen>%UInt32;</dwTotalResultLen>
+            </CDS_Search_>
+          </template>
+
+        <classification subType="Sort_Criteria"                 subTypeValue="11"/>
+
+          <template>
+            <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <ullSortCriteria1>%UInt64;</ullSortCriteria1>
+                <ullSortCriteria2>%UInt64;</ullSortCriteria2>
+            </CDS_Search_>
+          </template>
+
+        <classification subType="Filter_Fields"                 subTypeValue="12"/>
+
+          <template>
+            <CDS_Search_>
+                <pObject>%UInt64;</pObject>
+                <dwReporterTag>%UInt32;</dwReporterTag>
+                <dwPadding>%UInt32;</dwPadding>             
+                <ullFilterFlags1>%UInt64;</ullFilterFlags1>
+                <ullFilterFlags2>%UInt64;</ullFilterFlags2>
+            </CDS_Search_>
+          </template>
+
+        
+        </diagnosticInstance>
+      </event>
+
+      <!-- CDS_ObjWriter event -->
+      <event eventID="1" message="" guid="{AA796251-D276-482a-8499-D83044124F8A}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Write_Result_Start"                 subTypeValue="1"/>
+          <classification subType="Write_Result_Stop"                  subTypeValue="2"/>
+
+          <template>
+            <CDS_ObjWriter_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <bCanPublishAllAlbumArts>%UInt32;</bCanPublishAllAlbumArts>
+              <dwNumReturned>%UInt32;</dwNumReturned>
+              <hrStatus>%UInt32;</hrStatus>
+            </CDS_ObjWriter_>
+          </template>
+
+          <classification subType="Write_Object_Start"                 subTypeValue="3"/>
+          <classification subType="Write_Object_Stop"                  subTypeValue="4"/>
+
+          <template>
+            <CDS_ObjWriter_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <iElement>%UInt32;</iElement>
+            </CDS_ObjWriter_>
+          </template>
+
+          <classification subType="Write_Element_Start"                subTypeValue="5"/>
+          <classification subType="Write_Element_Stop"                 subTypeValue="6"/>
+
+          <template>
+            <CDS_ObjWriter_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <cdsElementValue>%UInt32;</cdsElementValue>
+              <bSelected>%UInt32;</bSelected>
+              <hrStatus>%UInt32;</hrStatus>
+            </CDS_ObjWriter_>
+          </template>
+
+          <classification subType="Act_Write_Element_Start"            subTypeValue="7"/>
+          <classification subType="Act_Write_Element_Stop"             subTypeValue="8"/>
+
+          <template>
+            <CDS_ObjWriter_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <cdsElementValue>%UInt32;</cdsElementValue>
+              <valueIndex>%UInt32;</valueIndex>
+              <bElementExists>%UInt32;</bElementExists>
+              <hrStatus>%UInt32;</hrStatus>
+            </CDS_ObjWriter_>
+          </template>
+
+          <classification subType="Act_Write_Res_Element_Start"        subTypeValue="9"/>
+          <classification subType="Act_Write_Res_Element_Stop"         subTypeValue="10"/>
+          <classification subType="Act_Write_Album_Art_Element_Start"  subTypeValue="11"/>
+          <classification subType="Act_Write_Album_Art_Element_Stop"   subTypeValue="12"/>
+
+          <template>
+            <CDS_ObjWriter_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <dwCompatFlags>%UInt32;</dwCompatFlags>
+              <hrStatus>%UInt32;</hrStatus>
+            </CDS_ObjWriter_>
+          </template>
+
+          <classification subType="Get_Res_Elements_Start"             subTypeValue="13"/>
+          <classification subType="Get_Res_Elements_Stop"              subTypeValue="14"/>
+
+          <template>
+            <CDS_ObjWriter_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <lElementsCount>%UInt32;</lElementsCount>
+              <hrStatus>%UInt32;</hrStatus>
+            </CDS_ObjWriter_>
+          </template>
+
+          <classification subType="Write_Inner_Attrib_Start"           subTypeValue="15"/>
+          <classification subType="Write_Inner_Attrib_Stop"            subTypeValue="16"/>
+          <classification subType="Write_Object_Attrib_Start"          subTypeValue="19"/>
+          <classification subType="Write_Object_Attrib_Stop"           subTypeValue="20"/>
+
+          <template>
+            <CDS_ObjWriter_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <cdsElementValue>%UInt32;</cdsElementValue>
+              <dwNumAttribWritten>%UInt32;</dwNumAttribWritten>
+              <hrStatus>%UInt32;</hrStatus>
+            </CDS_ObjWriter_>
+          </template>
+
+          <classification subType="Get_Album_Art_Data_Start"           subTypeValue="17"/>
+          <classification subType="Get_Album_Art_Data_Stop"            subTypeValue="18"/>
+
+          <template>
+            <CDS_ObjWriter_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <hrStatus>%UInt32;</hrStatus>
+            </CDS_ObjWriter_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+
+      <!-- CDS_ObjWriter operation event -->
+      <event eventID="1" message="" guid="{BC8462DE-FE7E-4951-8D0C-0AB585D98E17}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Get_Element_Value_Start"            subTypeValue="1"/>
+          <classification subType="Get_Element_Value_Stop"             subTypeValue="2"/>
+          <classification subType="Get_Element_Value_Ex_Start"         subTypeValue="5"/>
+          <classification subType="Get_Element_Value_Ex_Stop"          subTypeValue="6"/>
+
+          <template>
+            <CDS_Objwriter_Operation_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <CDS_ElementValue>%UInt32;</CDS_ElementValue>
+              <valueIndex>%UInt32;</valueIndex>
+              <hrStatus>%UInt32;</hrStatus>
+            </CDS_Objwriter_Operation_>
+          </template>
+
+          <classification subType="Get_Element_Attrib_Value_Start"     subTypeValue="3"/>
+          <classification subType="Get_Element_Attrib_Value_Stop"      subTypeValue="4"/>
+
+          <template>
+            <CDS_Objwriter_Operation_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <CDS_ElementValue>%UInt32;</CDS_ElementValue>
+              <valueIndex>%UInt32;</valueIndex>
+              <CDS_AttributeValue>%UInt32;</CDS_AttributeValue>
+              <hrStatus>%UInt32;</hrStatus>
+            </CDS_Objwriter_Operation_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- Media_Receiver_Service event -->
+      <event eventID="1" message="" guid="{F4C66662-B199-4d25-AFCA-F318F111F237}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Is_Authorized_Start"                      subTypeValue="1"/>
+          <classification subType="Is_Authorized_Stop"                       subTypeValue="2"/>
+
+          <template>
+            <Media_Receiver_Service_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <bDeviceIDGiven>%UInt32;</bDeviceIDGiven>
+              <bIsAuthorized>%UInt32;</bIsAuthorized>
+              <hrStatus>%UInt32;</hrStatus>
+            </Media_Receiver_Service_>
+          </template>
+
+          <classification subType="Filter_Endpoint_Start"                    subTypeValue="3"/>
+          <classification subType="Filter_Endpoint_Stop"                     subTypeValue="4"/>
+
+          <template>
+            <Media_Receiver_Service_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+            </Media_Receiver_Service_>
+          </template>
+
+          <classification subType="Is_Validated_Start"                       subTypeValue="5"/>
+          <classification subType="Is_Validated_Stop"                        subTypeValue="6"/>
+
+          <template>
+            <Media_Receiver_Service_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <bDeviceIDGiven>%UInt32;</bDeviceIDGiven>
+              <bIsValidated>%UInt32;</bIsValidated>
+              <hrStatus>%UInt32;</hrStatus>
+            </Media_Receiver_Service_>
+          </template>
+
+
+          <classification subType="Register_Device_Start"                    subTypeValue="9"/>
+          <classification subType="Register_Device_Stop"                     subTypeValue="10"/>
+          <classification subType="Register_Device_Create_Device_Reg_Start"  subTypeValue="11"/>
+          <classification subType="Register_Device_Create_Device_Reg_Stop"   subTypeValue="12"/>
+          <classification subType="Register_Device_Parse_Req_Start"          subTypeValue="13"/>
+          <classification subType="Register_Device_Parse_Req_Stop"           subTypeValue="14"/>
+          <classification subType="Register_Device_Reg_Device_Start"         subTypeValue="15"/>
+          <classification subType="Register_Device_Reg_Device_Stop"          subTypeValue="16"/>
+          <classification subType="Register_Device_Start_Detection_Start"    subTypeValue="17"/>
+          <classification subType="Register_Device_Start_Detection_Stop"     subTypeValue="18"/>
+
+          <template>
+            <Media_Receiver_Service_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <hrStatus>%UInt32;</hrStatus>
+            </Media_Receiver_Service_>
+          </template>
+
+
+          <classification subType="Query_Mediaserver_Start"                  subTypeValue="7"/>
+          <classification subType="Query_Mediaserver_Stop"                   subTypeValue="8"/>
+
+          <template>
+            <Media_Receiver_Service_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <bIsAllowedCall>%UInt32;</bIsAllowedCall>
+              <bIsValidatedCall>%UInt32;</bIsValidatedCall>
+              <bResult>%UInt32;</bResult>
+            </Media_Receiver_Service_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- MDE Content Server event -->
+      <event eventID="1" message="" guid="{E47B2764-73F0-4179-8AB0-789BC5A39006}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Generate_Nontrans_Res_Element_Start"  subTypeValue="1"/>
+          <classification subType="Generate_Nontrans_Res_Element_Stop"   subTypeValue="2"/>
+          <classification subType="Generate_Trans_Res_Element_Start"     subTypeValue="3"/>
+          <classification subType="Generate_Trans_Res_Element_Stop"      subTypeValue="4"/>
+          <classification subType="Generate_Res_Element_Start"           subTypeValue="5"/>
+          <classification subType="Generate_Res_Element_Stop"            subTypeValue="6"/>
+          <classification subType="Generate_Album_Art_Element_Start"     subTypeValue="7"/>
+          <classification subType="Generate_Album_Art_Element_Stop"      subTypeValue="8"/>
+          
+          <template>
+            <MDE_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <dwNumElementsInList>%UInt32;</dwNumElementsInList>
+              <hrStatus>%UInt32;</hrStatus>
+            </MDE_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+      <!-- MDE callback event -->
+      <event eventID="1" message="" guid="{BFAFD28D-A7B3-41e1-B9CF-0790487D5AB2}" level="1">
+        <diagnosticInstance version="0">
+
+          <classification subType="Begin_Authenticate_Start"    subTypeValue="1"/>
+          <classification subType="Begin_Authenticate_Stop"     subTypeValue="2"/>
+          <classification subType="Begin_Authorize_Start"       subTypeValue="5"/>
+          <classification subType="Begin_Authorize_Stop"        subTypeValue="6"/>
+          <classification subType="Begin_Url_Transform_Start"   subTypeValue="9"/>
+          <classification subType="Begin_Url_Transform_Stop"    subTypeValue="10"/>
+          <classification subType="Begin_Select_Profile_Start"  subTypeValue="13"/>
+          <classification subType="Begin_Select_Profile_Stop"   subTypeValue="14"/>
+          <classification subType="Begin_Close_Start"           subTypeValue="23"/>
+          <classification subType="Begin_Close_Stop"            subTypeValue="24"/>
+
+          <template>
+            <MDE_Callback_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <pNetEvent>%Pointer;</pNetEvent>
+              <pCallback>%Pointer;</pCallback>
+              <pState>%Pointer;</pState>
+              <hrStatus>%UInt32;</hrStatus>
+            </MDE_Callback_>
+          </template>
+
+          <classification subType="End_Authenticate_Start"      subTypeValue="3"/>
+          <classification subType="End_Authenticate_Stop"       subTypeValue="4"/>
+          <classification subType="End_Authorize_Start"         subTypeValue="7"/>
+          <classification subType="End_Authorize_Stop"          subTypeValue="8"/>
+          <classification subType="End_Url_Transform_Start"     subTypeValue="11"/>
+          <classification subType="End_Url_Transform_Stop"      subTypeValue="12"/>
+          <classification subType="End_Select_Profile_Start"    subTypeValue="15"/>
+          <classification subType="End_Select_Profile_Stop"     subTypeValue="16"/>
+          <classification subType="End_Close_Start"             subTypeValue="25"/>
+          <classification subType="End_Close_Stop"              subTypeValue="26"/>
+
+          <template>
+            <MDE_Callback_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <pResult>%Pointer;</pResult>
+              <hrStatus>%UInt32;</hrStatus>
+            </MDE_Callback_>
+          </template>
+
+          <classification subType="Get_Local_Path_Start"        subTypeValue="17"/>
+          <classification subType="Get_Local_Path_Stop"         subTypeValue="18"/>
+
+          <template>
+            <MDE_Callback_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <fAlbumArt>%UInt32;</fAlbumArt>
+              <fIsStream>%UInt32;</fIsStream>
+              <hrStatus>%UInt32;</hrStatus>
+            </MDE_Callback_>
+          </template>
+
+          <classification subType="Get_Object_Start"            subTypeValue="19"/>
+          <classification subType="Get_Object_Stop"             subTypeValue="20"/>
+
+          <template>
+            <MDE_Callback_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <hrStatus>%UInt32;</hrStatus>
+            </MDE_Callback_>
+          </template>
+
+          <classification subType="Get_Profile_Start"           subTypeValue="21"/>
+          <classification subType="Get_Profile_Stop"            subTypeValue="22"/>
+
+          <template>
+            <MDE_Callback_>
+              <pObject>%UInt64;</pObject>
+              <dwReporterTag>%UInt32;</dwReporterTag>
+              <dwPadding>%UInt32;</dwPadding>
+              <fAlbumArt>%UInt32;</fAlbumArt>
+              <fTranscode>%UInt32;</fTranscode>
+              <dwFormatID>%UInt32;</dwFormatID>
+              <hrStatus>%UInt32;</hrStatus>
+            </MDE_Callback_>
+          </template>
+
+        </diagnosticInstance>
+      </event>
+
+    </events>
+
+</instrumentation>
+
+</assembly>

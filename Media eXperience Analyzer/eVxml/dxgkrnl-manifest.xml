@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!-- This is a manifest for standalone use with XPerfInfo for describing old ETW events. -->
+
+<!-- This manifest WILL NOT work as a fullfledged application manifest. Use the Crimson specification/guidelines to write a fullfledged application manifest. -->
+
+
+<!-- Attribute "manifestVersion" is currently ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+
+  <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+
+    <!-- Attribute "componentType" is ignored by XPerfInfo, but is required for fullfledged application manifests. -->
+
+    <events componentType="application">
+
+      <eventSubTypes>
+
+        <!-- Add an "subType" element for each non-standard subtype name.  Attribute "name" specifies the subtype name and attribute "value" attribute the corresponding numerical value. -->
+
+        <subType name="SampleType" value="101" /> 
+
+      </eventSubTypes>
+
+      <!-- Add an "event" element for each old ETW event.  Attribute "guid" specifies the event guid (in the {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX} format) for old ETW events.  Attributes "eventId" and "message" are ignored by XPerfInfo for old ETW events, but they are required for fullfledged application manifests. -->
+
+      <event eventID="1" message="$(string.ImageId)" guid="{4960fe6a-7e34-4a91-8719-9853b9c1b1ab}" level="1">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+
+        <diagnosticInstance version="0">
+
+          <!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+
+          <classification subType="Info" />
+
+          <!-- Add a single "template" element to specify the layout of the event for the subtypes declared in preceding "classification" elements. -->
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_PageFault>
+
+              <!-- Add an element for each field.  The element name is the declared field name, the content of the element is the field type name in %...; format. -->
+
+              <!-- XPerfInfo currently supports the following types: String, AnsiString, CountedString (BSTR), Guid, Byte/SByte, UInt16/32/64, Int16/32/64, Double, Float, Boolean (1 byte), Pointer -->
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationHandle>%Pointer;</AllocationHandle> 
+
+              <FaultType>%UInt32;</FaultType> 
+
+            </Dxgk_PageFault>
+
+          </template>
+
+          <!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+        </diagnosticInstance>
+
+      </event>
+
+      <event eventID="2" message="$(string.ImageId)" guid="{a4a7b1d0-a992-4fe4-93b4-ed13d90c1cf4}" level="1">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+
+        <diagnosticInstance version="0">
+
+          <!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+
+          <classification subType="Info" />
+
+          <!-- Add a single "template" element to specify the layout of the event for the subtypes declared in preceding "classification" elements. -->
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_PageFaultResolved>
+
+              <!-- Add an element for each field.  The element name is the declared field name, the content of the element is the field type name in %...; format. -->
+
+              <!-- XPerfInfo currently supports the following types: String, AnsiString, CountedString (BSTR), Guid, Byte/SByte, UInt16/32/64, Int16/32/64, Double, Float, Boolean (1 byte), Pointer -->
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationHandle>%Pointer;</AllocationHandle>
+ 
+              <NumPasses>%UInt32;</NumPasses> 
+ 
+              <EvictionLevel>%UInt32;</EvictionLevel>  
+
+            </Dxgk_PageFaultResolved>
+
+          </template>
+
+          <!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+        </diagnosticInstance>
+
+      </event>
+
+      <event eventID="3" message="$(string.ImageId)" guid="{e2e07a20-db80-476b-b796-e30814be1026}" level="1">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+
+        <diagnosticInstance version="0">
+
+          <!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+
+          <classification subType="Info" />
+
+          <!-- Add a single "template" element to specify the layout of the event for the subtypes declared in preceding "classification" elements. -->
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_CreateAllocation>
+
+              <!-- Add an element for each field.  The element name is the declared field name, the content of the element is the field type name in %...; format. -->
+
+              <!-- XPerfInfo currently supports the following types: String, AnsiString, CountedString (BSTR), Guid, Byte/SByte, UInt16/32/64, Int16/32/64, Double, Float, Boolean (1 byte), Pointer -->
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <Flags>%Pointer;</Flags>
+ 
+              <AllocationSize>%Pointer;</AllocationSize> 
+ 
+              <Alignment>%UInt32;</Alignment>
+              
+              <SupportedReadSegment>%UInt32;</SupportedReadSegment>
+
+              <SupportedWriteSegment>%UInt32;</SupportedWriteSegment>
+ 
+              <PreferredSegment>%UInt32;</PreferredSegment>
+
+              <HintedBank>%UInt32;</HintedBank>
+ 
+              <AllocationGlobalHandle>%Pointer;</AllocationGlobalHandle>
+
+            </Dxgk_CreateAllocation>
+
+          </template>
+
+          <!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+        </diagnosticInstance>
+
+      </event>
+
+     <event eventID="4" message="$(string.ImageId)" guid="{9c94956d-b0fb-4ef3-9482-966bb4c06b00}" level="1">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+
+        <diagnosticInstance version="0">
+
+          <!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+
+          <classification subType="Info" />
+
+          <!-- Add a single "template" element to specify the layout of the event for the subtypes declared in preceding "classification" elements. -->
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_OpenAllocation>
+
+              <!-- Add an element for each field.  The element name is the declared field name, the content of the element is the field type name in %...; format. -->
+
+              <!-- XPerfInfo currently supports the following types: String, AnsiString, CountedString (BSTR), Guid, Byte/SByte, UInt16/32/64, Int16/32/64, Double, Float, Boolean (1 byte), Pointer -->
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationHandle>%Pointer;</AllocationHandle>
+ 
+              <AllocationGlobalHandle>%Pointer;</AllocationGlobalHandle> 
+
+            </Dxgk_OpenAllocation>
+
+          </template>
+
+          <!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+        </diagnosticInstance>
+
+      </event>
+
+
+     <event eventID="5" message="$(string.ImageId)" guid="{7c8626bd-7e62-4c86-b5cd-c2681e5525ee}" level="1">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+
+        <diagnosticInstance version="0">
+
+          <!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+
+          <classification subType="Info" />
+
+          <!-- Add a single "template" element to specify the layout of the event for the subtypes declared in preceding "classification" elements. -->
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_CloseAllocation>
+
+              <!-- Add an element for each field.  The element name is the declared field name, the content of the element is the field type name in %...; format. -->
+
+              <!-- XPerfInfo currently supports the following types: String, AnsiString, CountedString (BSTR), Guid, Byte/SByte, UInt16/32/64, Int16/32/64, Double, Float, Boolean (1 byte), Pointer -->
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationHandle>%Pointer;</AllocationHandle>
+
+            </Dxgk_CloseAllocation>
+
+          </template>
+
+          <!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+        </diagnosticInstance>
+
+      </event>
+
+
+     <event eventID="6" message="$(string.ImageId)" guid="{0390d350-e281-4136-b09d-0cde53949e50}" level="1">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+
+        <diagnosticInstance version="0">
+
+          <!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+
+          <classification subType="Info" />
+
+          <!-- Add a single "template" element to specify the layout of the event for the subtypes declared in preceding "classification" elements. -->
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DestroyAllocation>
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+ 
+              <AllocationGlobalHandle>%Pointer;</AllocationGlobalHandle> 
+
+            </Dxgk_DestroyAllocation>
+
+          </template>
+
+          <!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+        </diagnosticInstance>
+
+      </event>
+
+
+     <event eventID="7" message="$(string.ImageId)" guid="{bcb426ae-e29c-4302-bbb6-4474918e1b31}" level="1">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+
+        <diagnosticInstance version="0">
+
+          <!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+
+          <classification subType="Info" />
+
+          <!-- Add a single "template" element to specify the layout of the event for the subtypes declared in preceding "classification" elements. -->
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_LockAllocation>
+
+              <!-- Add an element for each field.  The element name is the declared field name, the content of the element is the field type name in %...; format. -->
+
+              <!-- XPerfInfo currently supports the following types: String, AnsiString, CountedString (BSTR), Guid, Byte/SByte, UInt16/32/64, Int16/32/64, Double, Float, Boolean (1 byte), Pointer -->
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationHandle>%Pointer;</AllocationHandle>
+
+              <Flags>%UInt32;</Flags> 
+ 
+              <LockStatus>%UInt32;</LockStatus> 
+
+            </Dxgk_LockAllocation>
+
+          </template>
+
+          <!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+        </diagnosticInstance>
+
+      </event>
+
+
+     <event eventID="8" message="$(string.ImageId)" guid="{82a4a1ab-3603-445f-b739-91b4afe9e065}" level="1">
+
+        <!-- Add a "diagnosticInstance" element for each version of the event.  Attribute "version" specifies the version of the event. -->
+
+        <diagnosticInstance version="0">
+
+          <!-- Add a "classification" element for each event subtype that shares the same event layout.  Attribute "subType" specifies the subtype name.  Supported subtype names are the standard subtypes (Info, Start, End, DcStart, DcEnd, Extension, Reply, Dequeue, Checkpoint) and non-standard subtypes defined above in a eventSubTypes/subType element. -->
+
+          <classification subType="Info" />
+
+          <!-- Add a single "template" element to specify the layout of the event for the subtypes declared in preceding "classification" elements. -->
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_UnlockAllocation>
+
+              <!-- Add an element for each field.  The element name is the declared field name, the content of the element is the field type name in %...; format. -->
+
+              <!-- XPerfInfo currently supports the following types: String, AnsiString, CountedString (BSTR), Guid, Byte/SByte, UInt16/32/64, Int16/32/64, Double, Float, Boolean (1 byte), Pointer -->
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationGlobalHandle>%Pointer;</AllocationGlobalHandle>
+ 
+              <Flags>%UInt32;</Flags> 
+
+            </Dxgk_UnlockAllocation>
+
+          </template>
+
+          <!-- Add more runs of "classification" elements followed by a single "template" element for each event layout. -->
+
+        </diagnosticInstance>
+
+      </event>
+
+<event eventID="9" message="$(string.ImageId)" guid="{cf04fc0a-924e-4299-b5f6-79658d96d941}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_MemoryTransfer>
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <AllocationGlobalHandle>%Pointer;</AllocationGlobalHandle>
+
+<DmaBuffer>%Pointer;</DmaBuffer> 
+
+ 
+              <Offset>%Pointer;</Offset> 
+
+              <Size>%UInt32;</Size>
+
+              <Type>%UInt32;</Type>
+
+            </Dxgk_MemoryTransfer>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+      </event>
+
+<event eventID="10" message="$(string.ImageId)" guid="{46bd227f-0686-4c96-a998-38e657ce078c}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_ApertureMapping>
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationGlobalHandle>%Pointer;</AllocationGlobalHandle>
+ 
+              <Size>%Pointer;</Size> 
+
+              <AcceleratePaging>%Boolean;</AcceleratePaging>
+
+            </Dxgk_ApertureMapping>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+      </event>
+
+<event eventID="11" message="$(string.ImageId)" guid="{dd172168-3e92-4a38-a5cf-07ff1b9f61f5}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_ApertureUnmapping>
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationGlobalHandle>%Pointer;</AllocationGlobalHandle>
+ 
+              <Size>%Pointer;</Size> 
+
+              <AcceleratePaging>%Boolean;</AcceleratePaging>
+
+            </Dxgk_ApertureUnmapping>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+      </event>
+<event eventID="12" message="$(string.ImageId)" guid="{8bf76ffb-d03c-4f60-8985-9ca734ccf6ce}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmaPreparation>
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <DmaBufferHandle>%Pointer;</DmaBufferHandle>
+ 
+              <AllocationListLength>%Int32;</AllocationListLength> 
+
+            </Dxgk_DmaPreparation>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="13" message="$(string.ImageId)" guid="{8bf76ffb-d03c-4f60-8985-9ca734ccf6ce}" level="1">
+
+       
+        <diagnosticInstance version="0">
+      
+          <classification subType="End" />  
+
+          <template>
+
+             <Dxgk_DmaPreparation>
+ 
+              <Status>%Int32;</Status> 
+
+            </Dxgk_DmaPreparation>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="14" message="$(string.ImageId)" guid="{8bf76ffb-d03c-4f60-8985-9ca734ccf6ce}" level="1">
+
+       
+        <diagnosticInstance version="0">
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+              <Dxgk_DmaPreparationNewPass>
+ 
+              <Pass>%Int32;</Pass> 
+
+            </Dxgk_DmaPreparationNewPass>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="15" message="$(string.ImageId)" guid="{66a8c3d4-d204-406b-9df9-6be1dda93d9d}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_AllocationFault>
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationHandle>%Pointer;</AllocationHandle>
+ 
+              <Fault>%Int32;</Fault> 
+
+            </Dxgk_AllocationFault>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="16" message="$(string.ImageId)" guid="{80d7782b-b1d5-46d0-be75-abcf5b225d8b}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_MarkForEviction>
+
+               <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationHandle>%Pointer;</AllocationHandle>
+
+            </Dxgk_MarkForEviction>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+</event>
+<event eventID="17" message="$(string.ImageId)" guid="{cb1e1086-31d1-4873-8bc9-144dff752b58}" level="1">
+
+        <diagnosticInstance version="0">
+      
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_PageInAllocation>
+
+               <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationHandle>%Pointer;</AllocationHandle>
+
+               <SegmentId>%Int32;</SegmentId>
+
+              <Offset>%UInt64;</Offset>
+
+            </Dxgk_PageInAllocation>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="18" message="$(string.ImageId)" guid="{015c1be4-6b65-4115-bb6c-6f26ba6dc671}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_EvictAllocation>
+
+              <AllocationGlobalHandle>%Pointer;</AllocationGlobalHandle>
+
+            </Dxgk_EvictAllocation>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="19" message="$(string.ImageId)" guid="{2bd38d14-264f-441c-9b22-cf14ca38583e}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_AddDmaBuffer>
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <DmaBufferHandle>%Pointer;</DmaBufferHandle>
+
+            </Dxgk_AddDmaBuffer>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="20" message="$(string.ImageId)" guid="{2c4208fb-db1b-4657-9bc6-6841592cc0f5}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_RemoveDmaBuffer>
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <DmaBufferHandle>%Pointer;</DmaBufferHandle>
+
+            </Dxgk_RemoveDmaBuffer>
+
+          </template>
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="21" message="$(string.ImageId)" guid="{069f67f2-c380-4a65-8a61-071cd4a87275}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_Blt>
+
+              <Hwnd>%Pointer;</Hwnd> 
+
+              <DmaBuffer>%Pointer;</DmaBuffer>
+
+            </Dxgk_Blt>
+
+          </template>
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="22" message="$(string.ImageId)" guid="{22412531-670b-4cd3-81d1-e709c154ae3d}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_Flip>
+
+              <DmaBuffer>%Pointer;</DmaBuffer>
+
+            </Dxgk_Flip>
+
+          </template>
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="23" message="$(string.ImageId)" guid="{5365eddd-408c-4f67-b4fa-d26c6ac33962}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_Render>
+
+              <DmaBuffer>%Pointer;</DmaBuffer>
+
+            </Dxgk_Render>
+
+          </template>
+
+        </diagnosticInstance>
+
+ </event>
+
+<event eventID="24" message="$(string.ImageId)" guid="{4746dd2b-20d7-493f-bc1b-240397c85b25}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+           <classification subType="Start" />   
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_SchedulerSubmit>
+                 
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle>
+
+          <PacketType>%UInt32;</PacketType>
+    <SubmissionId>%UInt64;</SubmissionId>
+    <SubmissionSequence>%UInt32;</SubmissionSequence>
+
+              <DmaBuffer>%Pointer;</DmaBuffer>
+        
+
+              
+
+              
+              
+
+            </Dxgk_SchedulerSubmit>
+
+          </template>
+
+
+
+
+<classification subType="End" />  
+ <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_IsrComplete>
+
+             
+         
+              
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+
+              <DeviceHandle>%Pointer;</DeviceHandle>
+              
+              <PacketType>%UInt32;</PacketType>
+         <SubmissionId>%UInt64;</SubmissionId>
+        <SubmissionSequence>%UInt32;</SubmissionSequence>
+        <Preempted>%UInt32;</Preempted>
+
+            </Dxgk_IsrComplete>
+
+          </template>
+
+        </diagnosticInstance>
+
+ </event>
+<event eventID="25" message="$(string.ImageId)" guid="{bce3b4e3-4e48-4f3d-b10c-6d5771445c4a}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_ReportSegment>
+
+              <SegmentId>%UInt32;</SegmentId>
+          <BaseAddress>%UInt64;</BaseAddress>
+          <CpuTranslatedAddress>%UInt64;</CpuTranslatedAddress>
+          <Size>%Pointer;</Size>
+          <NbOfBanks>%UInt32;</NbOfBanks>   
+
+            </Dxgk_ReportSegment>
+
+          </template>
+
+        </diagnosticInstance>
+
+    </event>
+
+
+<event eventID="26" message="$(string.ImageId)" guid="{82e0337f-da98-4d82-b128-8aca368ebc0c}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Info" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_ReportAllocation>
+
+              <ProcessHandle>%Pointer;</ProcessHandle> 
+              <DeviceHandle>%Pointer;</DeviceHandle> 
+
+              <AllocationHandle>%Pointer;</AllocationHandle>
+
+          <Pinned>%Boolean;</Pinned>
+ 
+              <Size>%Pointer;</Size> 
+
+          <SegmentId>%UInt32;</SegmentId>
+
+          <SegmentOffset>%Pointer;</SegmentOffset>
+
+            </Dxgk_ReportAllocation>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+ </event>
+
+    <event eventID="27" message="$(string.ImageId)" guid="{8D967592-5A98-4774-A191-DE4112DEB67A}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DpiDriverUnload>
+
+                <DriverObject>%Pointer;</DriverObject>
+
+            </Dxgk_DpiDriverUnload>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+    <event eventID="28" message="$(string.ImageId)" guid="{C5CA877C-9260-4cda-9D0D-0AFB811E3DFE}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DpiAddDevice>
+
+                <DriverObject>%Pointer;</DriverObject>
+                <PhysicalDeviceObject>%Pointer;</PhysicalDeviceObject>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DpiAddDevice>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+    <event eventID="29" message="$(string.ImageId)" guid="{704345F8-59BB-41ef-9899-D4305C0865A1}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DpiDispatchCreate>
+
+                <DeviceObject>%Pointer;</DeviceObject>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DpiDispatchCreate>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+    <event eventID="30" message="$(string.ImageId)" guid="{0920AE82-6564-423e-84E5-FA5EE0C17F53}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DpiDispatchClose>
+
+                <DeviceObject>%Pointer;</DeviceObject>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DpiDispatchClose>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+    <event eventID="31" message="$(string.ImageId)" guid="{91C2B6A9-F568-4a37-AD51-17EA217B4F38}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DpiDispatchPnp>
+
+                <DeviceObject>%Pointer;</DeviceObject>
+                <!-- STEVEFIX: IO_STACK_LOCATION missing. -->
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DpiDispatchPnp>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+    <event eventID="32" message="$(string.ImageId)" guid="{D87441D2-04EC-4627-B63D-19E85FC59E77}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DpiDispatchPower>
+
+                <DeviceObject>%Pointer;</DeviceObject>
+                <!-- STEVEFIX: IO_STACK_LOCATION missing. -->
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DpiDispatchPower>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+
+    <event eventID="33" message="$(string.ImageId)" guid="{0D662B6B-E924-49dc-BA1C-FD1B51864030}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DpiDispatchIoctl>
+
+                <DeviceObject>%Pointer;</DeviceObject>
+                <!-- STEVEFIX: IO_STACK_LOCATION missing. -->
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DpiDispatchIoctl>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+    <event eventID="34" message="$(string.ImageId)" guid="{AC77B6CF-C906-451d-B23B-BEB6EA428733}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DpiDispatchInternalIoctl>
+
+                <DeviceObject>%Pointer;</DeviceObject>
+                <!-- STEVEFIX: IO_STACK_LOCATION missing. -->
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DpiDispatchInternalIoctl>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+    <event eventID="35" message="$(string.ImageId)" guid="{00A81E6F-5531-4c83-8980-EBD125B00C0C}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DpiDispatchSystemControl>
+
+                <DeviceObject>%Pointer;</DeviceObject>
+                <!-- STEVEFIX: IO_STACK_LOCATION missing. -->
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DpiDispatchSystemControl>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+    <event eventID="36" message="$(string.ImageId)" guid="{FD29CC3A-72F0-4134-9109-66388DDCE886}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmAddDevice>
+
+                <DeviceObject>%Pointer;</DeviceObject>
+                <MiniportContext>%Pointer;</MiniportContext>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DmAddDevice>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+
+    <event eventID="37" message="$(string.ImageId)" guid="{5DE9CF90-F79A-44fd-B38E-77AB4D366C40}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmStartDevice>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <NumVidPnSources>%Uint32;</NumVidPnSources>
+                <ChildCount>%Uint32;</ChildCount>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DmStartDevice>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>
+    
+    <event eventID="38" message="$(string.ImageId)" guid="{4C7DBA02-BFD3-4909-962D-B2F0E544B85D}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmStopDevice>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DmStopDevice>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>    
+    
+    <event eventID="39" message="$(string.ImageId)" guid="{BEA11B19-8572-4c29-9EFD-C6CABFE407D2}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmRemoveDevice>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DmRemoveDevice>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>        
+    
+    <event eventID="40" message="$(string.ImageId)" guid="{670C97C6-F30F-4c06-AD44-338E86802D46}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmDispatchIoRequest>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <VidPnSourceId>%Uint32;</VidPnSourceId>
+                <!-- STEVEFIX: VIDEO_REQUEST_PACKET missing. -->
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DmDispatchIoRequest>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>            
+
+    <event eventID="41" message="$(string.ImageId)" guid="{49B70EFC-B689-41d7-9332-E00ED43AEE58}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmQueryInterface>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <!-- STEVEFIX: QUERY_INTERFACE missing. -->
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DmQueryInterface>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>            
+
+    <event eventID="42" message="$(string.ImageId)" guid="{8E956800-6912-4262-9719-58893BBCEC62}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmQueryChildRelations>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <Status>%Uint32;</Status>
+                <ChildCount>%Uint32;</ChildCount>
+
+            </Dxgk_DmQueryChildRelations>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>            
+
+    <event eventID="43" message="$(string.ImageId)" guid="{9E6C88DA-3FE9-4237-9C23-1B41E7A86F28}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmQueryChildStatus>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <ChildStatus>%Uint32;</ChildStatus>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DmQueryChildStatus>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>           
+
+
+    <event eventID="44" message="$(string.ImageId)" guid="{D9C02857-6757-4b7b-A1BB-F32CBE59BA69}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmQueryDeviceDescriptor>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <ChildUid>%Uint32;</ChildUid>
+                <Status>%Uint32;</Status>
+                <!-- STEVEFIX: DXGK_DEVICE_DESCRIPTOR missing. -->                
+
+            </Dxgk_DmQueryDeviceDescriptor>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>           
+
+    <event eventID="45" message="$(string.ImageId)" guid="{4AA1D9E5-4929-494c-9D03-AC47394B8ACE}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmSetPowerState>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <DeviceUid>%Uint32;</DeviceUid>
+                <DevicePowerState>%Uint32;</DevicePowerState>
+                <ActionType>%Uint32;</ActionType>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DmSetPowerState>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>           
+    
+    <event eventID="46" message="$(string.ImageId)" guid="{EA64AFFD-5E5B-48fb-AE78-A7C3BB154109}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmNotifyAcpiEvent>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+                <EventType>%Uint32;</EventType>
+                <Event>%Uint32;</Event>
+                <Status>%Uint32;</Status>
+
+            </Dxgk_DmNotifyAcpiEvent>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event>           
+
+    <event eventID="47" message="$(string.ImageId)" guid="{3F48A8DA-2411-4c98-BF5F-6C53858AC28D}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmResetDevice>
+
+                <MiniportContext>%Pointer;</MiniportContext>
+            
+            </Dxgk_DmResetDevice>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event> 
+
+    <event eventID="48" message="$(string.ImageId)" guid="{702CAC4A-8113-4883-AA70-BC660CF60D78}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />  
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_DmUnload>
+
+            
+            </Dxgk_DmUnload>
+
+          </template>
+
+
+        </diagnosticInstance> 
+ 
+    </event> 
+
+    <event eventID="49" message="$(string.ImageId)" guid="{7C5b9f93-7b80-482d-b08a-d786e57ea5f3}" level="1">
+
+       
+        <diagnosticInstance version="0">
+
+       
+          <classification subType="Start" />  
+          <classification subType="End" />
+
+          <template>
+
+            <!-- Top level element of element layout specifies event name. -->
+
+            <Dxgk_Profiler>
+
+              <Function>%Uint32;</Function> 
+
+            </Dxgk_Profiler>
+
+          </template>
+
+
+        </diagnosticInstance>
+
+    </event>
+
+ 
+ </events>
+
+</instrumentation>
+
+</assembly>

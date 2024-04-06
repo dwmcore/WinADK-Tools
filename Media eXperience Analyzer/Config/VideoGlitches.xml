@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MAIN xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<PARSERS ConfigFolder="\config\">
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">Audio Engine</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="AE Events" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="false"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">Media Foundation Property Handler</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="MF PropertyHandler" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">DRM</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="DRM Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">Windows Media Connect</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="WMC Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">DX and DWM</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="DWM Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="DWMAPI Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="REDIR Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="Schedule Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="UCE Events" ></FILE>
+          <FILE  Name="EventSources.xml" EventSource="DXGKRNL Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">Multimedia Class Scheduler</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="MMCSS Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll"  DisableIdle="true"  ParserName="SchedulerParser" >
+          <PROPERTY Name="DataSetName" ParentName="Processes and Threads DataSet" GroupName="CPU" >Scheduler</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="CPU Utilization DataSet"  GroupName="Utilization">Power</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="SampledProfiles DataSet" GroupName="CPU" >Sampled Profiles</PROPERTY>          
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="audiodg.exe" Description="Audio Playback process"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="svchost.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="System"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="conhost.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="csrss.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="dwm.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="lsass.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="wininit.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="winlogon.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="dllhost.exe"></PARAMETER>  
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="WmiPrvSE.exe"></PARAMETER>  
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="WUDFHost.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="spoolsv.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="services.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="xperf.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="wpr.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="wprui.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="tracelog.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="SystemUI.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="TabTip.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="xam.exe"></PARAMETER>
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="nuiservice.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="eracontrol.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="eraproxyapp.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="XboxNetApiSvc.exe"></PARAMETER>          
+          <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="Home.exe"></PARAMETER>   
+          <PARAMETER Name="ProcessGroup" GroupName="Phone System Processes" Value="MobileUI.exe"></PARAMETER> 
+          <PARAMETER Name="OtherProcessGroup" Value="User Processes"></PARAMETER> 
+        </PARSER>
+        <PARSER ParserDll="XA_InfoSource.dll" ParserName="VideoCoreParser" >
+          <PROPERTY Name="DataSetName" ParentName="GPU run-time DataSet" GroupName="GPU">DMA Operations</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU Allocations Placement DataSet" GroupName="GPU">Used Allocations</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU Flip DataSet" GroupName="GPU">Flip Queue</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU Allocations Placement DataSet" GroupName="GPU">Allocations</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU DDI DataSet" GroupName="GPU">GPU: DDI Operations</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Memory Segment Utilization DataSet" GroupName="GPU">Segment Memory Utilization</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="GPU Queue DataSet" GroupName="GPU">Hardware Queues</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="MMCSSParser" >
+          <PROPERTY Name="DataSetName" ParentName="MMCSS Scheduler Dataset" GroupName="Media">Multimedia Class Scheduler (per process)</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEx" >
+            <PROPERTY Name="DataSetName" ParentName="Crimson Events Dataset" GroupName="Instrumentation">CrimsonEx</PROPERTY>
+            <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="AE4BD3BE-F36F-45B6-8D21-BDD6FB832853"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="E27950EB-1768-451F-96AC-CC4E14F6D3D0"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="A6A00EFD-21F2-4A99-807E-9B3BF1D90285"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="DDB6DA39-08A7-4579-8D0C-68011146E205"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="A011308E-E43B-4120-AD04-C023BB14F2B6"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="9502CBC6-AA74-4EFF-BA91-D9329BCCE758"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="71E0AC1E-CFA2-447C-91C7-4F307030F2FC"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="CA48BE7D-CE1C-4CA9-A00D-DB5359E3A9A1"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="9CA9745C-2667-4E74-8782-3811CE02BB0C"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="F3BEA907-0867-4A05-8DAB-556BF51BBEE2"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="3742BE72-99A9-42E6-9FD5-C01A330E3625"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="6F34C0F0-D9F6-40D3-A94C-419B50FD8407"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="C72D385E-3A63-4E6D-8393-9399A36BD6E4"></PARAMETER>
+            <PARAMETER Name="ShowGUID" Value="TRUE"></PARAMETER>
+        </PARSER> 
+          <PARSER ParserDll="XA_Core.dll" ParserName="BentoParserEx" >
+          <PROPERTY Name="DataSetName" ParentName="Crimson Events Dataset" GroupName="TraceLogging">BentoEx</PROPERTY>
+          <PARAMETER Name="HandlePIDTID" Value="false"></PARAMETER>
+          <!--PARAMETER Name="IgnorePIDTID" Value="AE4BD3BE-F36F-45B6-8D21-BDD6FB832853"></PARAMETER-->
+            <PARAMETER Name="HandlePIDTID" Value="0D641FB9-A0E3-42E3-9E9D-501D33A6FA79"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="f0372af2-cc46-56c0-2bb9-db2e31b2423d"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="6e7b1892-5288-5fe5-8f34-e3b0dc671fd2"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="d375f14e-9624-5a18-f53e-5bce2043a97f"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="64788b34-e8e5-5664-af50-45afb294a1dc"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="0e7e8596-d648-5c94-adbd-3d780faa58e8"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="46df03df-beab-5f0b-7eb2-e471c1bea993"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="553ca39b-c608-566d-18ae-7b9a03a39acd"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="1f930302-f484-4e01-a8a7-264354c4b8e3"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="bebd6159-6f76-5a22-366a-7753c2a63c3c"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="3d2b6366-47a4-5e10-6974-e5f7de0d3f28 "></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="9b9cc31d-1b96-508f-a8b2-616d8e962365"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="35b65f6b-fb4e-57d6-2927-7c63ad03dbcb"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="8f8942e2-66b4-5650-8cf1-de723ca48565"></PARAMETER>
+            <PARAMETER Name="HandlePIDTID" Value="c34eefdb-d72f-5786-6247-78a1e39be7fa"></PARAMETER>
+          <PARAMETER Name="ShowGUID" Value="FALSE"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXML2DParser"   >
+          <PROPERTY Name="DataSetName" ParentName="Dataflow Difference DataSet" GroupName="Media">Pipeline Dataflow</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="MFPARSER" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXML2DParser"  >
+          <PROPERTY Name="DataSetName" ParentName="AE Process Wake Pump DataSet" GroupName="Media">Audio Engine WakePump Process Time</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="AEPROCPASS" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvxCadence"  >
+          <PROPERTY Name="DataSetName" ParentName="DX Present DataSet" GroupName="GPU">DX Present Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="PRESENTCRIMSONCADENCE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLCadenceParser"  >
+          <PROPERTY Name="DataSetName" ParentName="DX VSync DataSet" GroupName="GPU">DX VSync ISR/DPC Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="CADENCE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvxCadence"  >
+          <PROPERTY Name="DataSetName" ParentName="DX VSync DataSet" GroupName="GPU">DX VSync ISR/DPC Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="CRIMSONCADENCE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLCadenceParser"  >
+          <PROPERTY Name="DataSetName" ParentName="AE Process Time DataSet" GroupName="Media">Audio Engine Process Wake Pump Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="AEPROCPASSCADENCE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLCadenceParser"  >
+          <PROPERTY Name="DataSetName" ParentName="EVR Render DataSet" GroupName="Media">Cadence: EVR Render End</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="CADENCE1" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLCadenceParser"   >
+          <PROPERTY Name="DataSetName" ParentName="DWM DataSet" GroupName="Media">Cadence: DWM Scheduler VBlank Present</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="CADENCE2" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLIntervalParser" >
+          <PROPERTY Name="DataSetName" ParentName="WMC DataSet" GroupName="Media">WMC Intervals</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="WMCINTERVAL"></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="WMC Dataset" GroupName="Media">WMC Ticks</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="WMC Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXML2DParser">
+          <PROPERTY Name="DataSetName" ParentName="Render Difference DataSet" GroupName="Media">Render Delay Difference</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="Render Actual End Delay" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">DVD Navigator</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="DVDNAV" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx" >
+          <PROPERTY Name="DataSetName" ParentName="Video Glitches Events Dataset" GroupName="Media">Video Glitches</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="VIDEOGLITCHES" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx" >
+          <PROPERTY Name="DataSetName" ParentName="Data Drops Events Dataset" GroupName="Media">Data Drops</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="MEDIADATADROPS" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx" >
+          <PROPERTY Name="DataSetName" ParentName="Audio Glitches Events Dataset" GroupName="Media">Audio Glitches</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="AUDIOGLITCHCRIMSON" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx" >
+          <PROPERTY Name="DataSetName" ParentName="DWM Glitches Events Dataset" GroupName="Media">DWM Schedule Glitches</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="DWMGLITCHES" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx2D" >
+          <PROPERTY Name="DataSetName" ParentName="GPU Power State Change Events Dataset" GroupName="GPU">F States</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="GPUPOWERSTATECHANGE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx2D" >
+          <PROPERTY Name="DataSetName" ParentName="GPU Latency State Change Events Dataset" GroupName="GPU">F States Latency </PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="GPULATENCYSTATECHANGE" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx2D" >
+          <PROPERTY Name="DataSetName" ParentName="Video Glitches Events Dataset" GroupName="Media">Video Glitches Severity</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="VIDEOGLITCHESSEVERITY" ></FILE>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvxCadence" >
+          <PROPERTY Name="DataSetName" ParentName="EVR Render DataSet" GroupName="Media">Video Render Cadence</PROPERTY>
+          <FILE  Name="EventSources.xml" Title="MF2D" EventSource="RENDER_CADENCE" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="Audio Glitches Events Dataset" GroupName="Media">Audio Glitches Classic</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="AE Glitches" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">PortCls</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="PortCls Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">HDAudio Bus</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="HDAudio Bus Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_Core.dll" ParserName="EVXMLParser">
+          <PROPERTY Name="DataSetName" ParentName="User defined (eVxml) Dataset" GroupName="Media">HDAudio</PROPERTY>
+          <FILE  Name="EventSources.xml" EventSource="HDAudio Events" ></FILE>
+        </PARSER>
+        <PARSER ParserDll="XA_RDP.dll" ParserName="XA_RDPParser" >
+          <PROPERTY Name="DataSetName" ParentName="RDP DataSet"  GroupName="RDP">Perf Counters Ex</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_RDP.dll" ParserName="GFXPipeParser" >
+          <PROPERTY Name="DataSetName" ParentName="GFXPIPE DataSet"   GroupName="RDP">GFX Pipe</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_VGPU.dll" ParserName="XA_VGPUParser" >
+          <PROPERTY Name="DataSetName" ParentName="VGPU DataSet"   GroupName="VGPU">Perf Counters Ex</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_VGPU.dll" ParserName="XA_VGPUParser2" >
+          <PROPERTY Name="DataSetName" ParentName="VGPU DataSet 2"  GroupName="VGPU">Counters 2</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_NDISRST.dll" ParserName="NDISRSTParser">
+          <PROPERTY Name="DataSetName" ParentName="NDISRST DataSet">NDIS RST</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_msmpeg2vdec.dll" ParserName="XA_msmpeg2vdecParser">
+          <PROPERTY Name="DataSetName" ParentName="MSMPEG2VDEC Dataset" GroupName="Media">MSMPEG2VDEC</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_RtMedia.dll" ParserName="XA_RtMediaParser">
+          <PROPERTY Name="DataSetName" ParentName="XA_RtMedia" GroupName="Media">real time media platform</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_InfoSource.dll" ParserName="PerfTrackParser">
+          <PROPERTY Name="DataSetName" ParentName="PerfTrack Dataset" GroupName="PerfTrack">PerfTrack</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_Video.dll" ParserName="PatternParser"  >
+          <PROPERTY Name="DataSetName" ParentName="FrameParser DataSet" GroupName="Media">Video Frames</PROPERTY>
+          <!--Value="0" means ignore-->
+          <PARAMETER Name="FrameWidth" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameHeight" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameStartTimeInMS" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameEndTimeInMS" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameStartIndex" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameEndIndex" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameTimeCompressionFactor" Value="1.0"></PARAMETER>
+          <PARAMETER Name="FrameFormat" Value="jpeg"></PARAMETER>
+          <PARAMETER Name="PSNRThreshold" Value="40.0"></PARAMETER>
+          <PARAMETER Name="AudioDetectionThreshold" Value="400000000"></PARAMETER>
+          <PARAMETER Name="CameraType" Value="REFERENCE"></PARAMETER>
+          <!--PARAMETER Name="CameraType" Value="UNDERTEST"></PARAMETER-->
+          <PARAMETER Name="PatternVersion" Value="V4"></PARAMETER>
+          <PARAMETER Name="CalibrationFrameRetries" Value="1"></PARAMETER>
+          <PARAMETER Name="PSNREnabled" Value="FALSE" />
+        </PARSER>
+        <PARSER ParserDll="XA_Media.dll" ParserName="WorkQueueParser" >
+          <PROPERTY Name="DataSetName" ParentName="Async Dataset" GroupName="Media">WorkQueues</PROPERTY>
+        </PARSER>
+        <PARSER parserDll="XA_EncoderFrame.dll" ParserName="EncoderParser"  >
+          <PROPERTY Name="DataSetName" ParentName="Encoder DataSet">Encoder Analysis</PROPERTY>
+        </PARSER>
+
+</PARSERS>
+<XDMS>
+      <XDM Dll="XA_VideoGlitchesDM.dll" Name="VideoGlitches" FriendlyName="Video Glitches" AutoRun="true" DelayedRun="false">
+        <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+      </XDM> 
+  
+</XDMS>
+</MAIN>
+

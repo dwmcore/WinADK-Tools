@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<MAIN xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+
+
+  <PARSERS ConfigFolder="\config\">
+    <PARSER ParserDll="XA_Kernel.dll"  DisableIdle="true"  ParserName="SchedulerParser" >
+      <PROPERTY Name="DataSetName" ParentName="Processes and Threads DataSet" GroupName="CPU" >Scheduler</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="CPU Utilization DataSet"  GroupName="Utilization">Power</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="SampledProfiles DataSet" GroupName="CPU" >Sampled Profiles</PROPERTY>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="audiodg.exe" Description="Audio Playback process"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="svchost.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="System"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="conhost.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="csrss.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="dwm.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="lsass.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="wininit.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="winlogon.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="dllhost.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="WmiPrvSE.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="WUDFHost.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="spoolsv.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="services.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="xperf.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="wpr.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="wprui.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Trace Processes" Value="tracelog.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="SystemUI.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Windows System Processes" Value="TabTip.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="xam.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="nuiservice.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="eracontrol.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="eraproxyapp.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="XboxNetApiSvc.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Xbox System Processes" Value="Home.exe"></PARAMETER>
+      <PARAMETER Name="ProcessGroup" GroupName="Phone System Processes" Value="MobileUI.exe"></PARAMETER>
+      <PARAMETER Name="OtherProcessGroup" Value="User Processes"></PARAMETER>
+    </PARSER>    
+    <PARSER ParserDll="XA_Media.dll" ParserName="OverlayParser" >
+      <PROPERTY Name="DataSetName" ParentName="Overlay Dataset" GroupName="Media">Multimedia Power Data</PROPERTY>
+    </PARSER>
+    <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx2D" >
+      <PROPERTY Name="DataSetName" ParentName="Power State Change Events Dataset" GroupName="Power">Processor Frequency (PerfStateChange)</PROPERTY>
+      <FILE  Name="EventSources.xml" Title="MF2D" EventSource="POWERSTATECHANGE" ></FILE>
+      <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+    </PARSER>
+    <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEvx2D" >
+      <PROPERTY Name="DataSetName" ParentName="Power State Change Events Dataset" GroupName="Power">Processor Frequency Recorded Utility</PROPERTY>
+      <FILE  Name="EventSources.xml" Title="MF2D" EventSource="POWERSTATECHANGE1" ></FILE>
+      <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+    </PARSER>
+    <PARSER ParserDll="XA_Kernel.dll" ParserName="BatteryParser" >
+      <PROPERTY Name="DataSetName" ParentName="Power Ticks DataSet" GroupName="Power">State Transitions</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="Power Intervals DataSet" GroupName="Power">CPU Idle States</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="Power States DataSet" GroupName="Power">(P) States</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="Power Frequency Classic DataSet" GroupName="Power">Processor Frequency Classic</PROPERTY>
+    </PARSER>    
+    <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEx" >
+      <PROPERTY Name="DataSetName" ParentName="Crimson Events Dataset">CrimsonEx</PROPERTY>
+      <PARAMETER Name="ShowGUID" Value="TRUE"></PARAMETER>
+      <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+    </PARSER>
+    <PARSER ParserDll="XA_InfoSource.dll" ParserName="VideoCoreParser" >
+      <PROPERTY Name="DataSetName" ParentName="GPU run-time DataSet" GroupName="GPU">DMA Operations</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="GPU Allocations Placement DataSet" GroupName="GPU">Used Allocations</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="GPU Flip DataSet" GroupName="GPU">Flip Queue</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="GPU Allocations Placement DataSet" GroupName="GPU">Allocations</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="GPU DDI DataSet" GroupName="GPU">GPU: DDI Operations</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="Memory Segment Utilization DataSet" GroupName="GPU">Segment Memory Utilization</PROPERTY>
+      <PROPERTY Name="DataSetName" ParentName="GPU Queue DataSet" GroupName="GPU">Hardware Queues</PROPERTY>
+    </PARSER>
+    <PARSER ParserDll="XA_Kernel.dll" ParserName="MMCSSParser" >
+      <PROPERTY Name="DataSetName" ParentName="MMCSS Scheduler Dataset">CPU: Multimedia Class Scheduler</PROPERTY>
+    </PARSER>
+  </PARSERS>
+  <XDMS>
+    <XDM Dll="XA_MediaDiagnosticsDM.dll" Name="XDMMediaDiagnostics" FriendlyName="Media Perf Diagnostics XDM" AutoRun="true" DelayedRun="false">
+      <PARAMETER Name="CurrentTrace"  Value="0"></PARAMETER>
+      <PARAMETER Name="LogLevel"      Value="0"></PARAMETER> <!-- 0 for "basic log", 1 for "verbose log" -->
+      <PARAMETER Name="ResultLogFolder" Value="C:\temp\MediaDiagnostics"></PARAMETER>
+
+      <PARAMETER Name="PlaybackInterval" Value="All"></PARAMETER> <!-- "All" for considering complete time interval, "Analyze" to look at trace events to determine the interval -->
+      
+      <PARAMETER Name="TestPowerProfile" Value="1"></PARAMETER> <!-- 0 for disable, 1 for enable -->
+      <PARAMETER Name="TestBacklightControl" Value="1"></PARAMETER>
+      <PARAMETER Name="TestDxgKrnlFlipEvents" Value="1"></PARAMETER>
+      <PARAMETER Name="TestRefreshRate" Value="1"></PARAMETER>
+      <PARAMETER Name="TestDwmProcessing" Value="1"></PARAMETER>
+      <PARAMETER Name="TestSchedulerProcessUtilization" Value="1"></PARAMETER>
+      <PARAMETER Name="TestAudioOffload" Value="1"></PARAMETER>
+      <PARAMETER Name="TestConfigureSwapchain" Value="1"></PARAMETER>
+      <PARAMETER Name="TestBatchingQuality" Value="1"></PARAMETER>
+      <PARAMETER Name="TestBatchingReason" Value="1"></PARAMETER>
+      <PARAMETER Name="TestVpBltParams" Value="1"></PARAMETER>
+      <PARAMETER Name="TestLatencySensitivityHint" Value="1"></PARAMETER>
+      <PARAMETER Name="Test3DDmaOperations" Value="1"></PARAMETER>
+      
+    </XDM>
+  </XDMS>
+</MAIN>
+

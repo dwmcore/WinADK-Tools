@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MAIN xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<PARSERS ConfigFolder="\config\">
+    <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEx" >
+    <PROPERTY Name="DataSetName" ParentName="Crimson Events Dataset" GroupName="Instrumentation">CrimsonEx</PROPERTY>
+    <PARAMETER Name="IgnorePIDTID" Value="false"></PARAMETER>
+    <PARAMETER Name="ShowGUID" Value="FALSE"></PARAMETER>
+  </PARSER>
+  <PARSER ParserDll="XA_Core.dll" ParserName="BentoParserEx" >
+    <PROPERTY Name="DataSetName" ParentName="Crimson Events Dataset" GroupName="TraceLogging">BentoEx</PROPERTY>
+    <PARAMETER Name="IgnorePIDTID" Value="false"></PARAMETER>
+    <PARAMETER Name="ShowGUID" Value="FALSE"></PARAMETER>
+  </PARSER>
+  <PARSER ParserDll="XA_Core.dll" ParserName="WPPParser" >
+    <PROPERTY Name="DataSetName" ParentName="WPP Dataset" GroupName="WPP">WPP Events</PROPERTY>
+    <PARAMETER Name="TraceFormatPath" >c:\windowsxray64\tmf</PARAMETER>
+    <PARAMETER Name="EnableWPP" Value="true"></PARAMETER>
+  </PARSER>
+</PARSERS>
+<XDMS>
+  <XDM Dll="XA_UserCreateDM.dll" Name="UserCreateDM" FriendlyName="WD_ConnectionCompleteError" AutoRun="true" DelayedRun="false" FingerPrintName="WD_ConnectionCompleteError" RegexGiven="False">
+      <PARAMETER Name="Criteria_Name" Value="ConnectionCompleteErrorNonZero" />
+      <PARAMETER Name="Dataset" Value="0:TraceLogging:WirelessDisplay" />
+      <PARAMETER Name="Task" Value="Task - ConnectionComplete" />
+      <PARAMETER Name="Attribute" Value="ErrorCode" />
+      <PARAMETER Name="Operation" Value="!=" />
+      <PARAMETER Name="valueInput" Value="0" />
+      <PARAMETER Name="INSTANCE" Value="" />
+      <PARAMETER Name="Relational_Operation" Value="" />
+  </XDM>
+  <XDM Dll="XA_UserCreateDM.dll" Name="UserCreateDM" FriendlyName="WD_PairingCompleteError" AutoRun="true" DelayedRun="false" FingerPrintName="WD_PairingCompleteError" RegexGiven="False">
+      <PARAMETER Name="Criteria_Name" Value="PairingCompleteError" />
+      <PARAMETER Name="Dataset" Value="0:TraceLogging:WirelessDisplay" />
+      <PARAMETER Name="Task" Value="Task - PairingComplete" />
+      <PARAMETER Name="Attribute" Value="ErrorCode" />
+      <PARAMETER Name="Operation" Value="!=" />
+      <PARAMETER Name="valueInput" Value="0" />
+      <PARAMETER Name="INSTANCE" Value="" />
+      <PARAMETER Name="Relational_Operation" Value="" />
+  </XDM>
+  <XDM Dll="XA_UserCreateDM.dll" Name="UserCreateDM" FriendlyName="WD_EnumerateCeremoniesError" AutoRun="true" DelayedRun="false" FingerPrintName="WD_EnumerateCeremoniesError" RegexGiven="False">
+      <PARAMETER Name="Criteria_Name" Value="EnumerateCeremoniesError" />
+      <PARAMETER Name="Dataset" Value="0:TraceLogging:WirelessDisplay" />
+      <PARAMETER Name="Task" Value="Task - EnumerateCeremoniesComplete" />
+      <PARAMETER Name="Attribute" Value="ErrorCode" />
+      <PARAMETER Name="Operation" Value="!=" />
+      <PARAMETER Name="valueInput" Value="0" />
+      <PARAMETER Name="INSTANCE" Value="" />
+      <PARAMETER Name="Relational_Operation" Value="" />
+  </XDM>
+  <XDM Dll="XA_UserCreateDM.dll" Name="UserCreateDM" FriendlyName="WD_SelectCeremonyCompleteError" AutoRun="true" DelayedRun="false" FingerPrintName="WD_SelectCeremonyCompleteError" RegexGiven="False">
+      <PARAMETER Name="Criteria_Name" Value="SelectCermonyCompleteError" />
+      <PARAMETER Name="Dataset" Value="0:TraceLogging:WirelessDisplay" />
+      <PARAMETER Name="Task" Value="Task - SelectCeremonyComplete" />
+      <PARAMETER Name="Attribute" Value="ErrorCode" />
+      <PARAMETER Name="Operation" Value="!=" />
+      <PARAMETER Name="valueInput" Value="0" />
+      <PARAMETER Name="INSTANCE" Value="" />
+      <PARAMETER Name="Relational_Operation" Value="" />
+  </XDM>
+  <XDM Dll="XA_UserCreateDM.dll" Name="UserCreateDM" FriendlyName="WD_DHCPCompleteError" AutoRun="true" DelayedRun="false" FingerPrintName="WD_DHCPCompleteError" RegexGiven="False">
+      <PARAMETER Name="Criteria_Name" Value="DHCP Complete Error" />
+      <PARAMETER Name="Dataset" Value="0:TraceLogging:WirelessDisplay" />
+      <PARAMETER Name="Task" Value="Task - DhcpComplete" />
+      <PARAMETER Name="Attribute" Value="ErrorCode" />
+      <PARAMETER Name="Operation" Value="!=" />
+      <PARAMETER Name="valueInput" Value="0" />
+      <PARAMETER Name="INSTANCE" Value="" />
+      <PARAMETER Name="Relational_Operation" Value="" />
+  </XDM>
+  <XDM Dll="XA_UserCreateDM.dll" Name="UserCreateDM" FriendlyName="Bug6809529" AutoRun="true" DelayedRun="false" FingerPrintName="Bug6809529" RegexGiven="False">
+      <PARAMETER Name="Criteria_Name" Value="ForgotPairing" />
+      <PARAMETER Name="Dataset" Value="0:WPP:WPP Events" />
+      <PARAMETER Name="Class" Value="wfdapiconnect_c1249" />
+      <PARAMETER Name="Attribute" Value="Time(ns)" />
+      <PARAMETER Name="Operation" Value="&gt;" />
+      <PARAMETER Name="valueInput" Value="0" />
+      <PARAMETER Name="INSTANCE" Value="" />
+      <PARAMETER Name="Relational_Operation" Value="" />
+  </XDM>
+  <XDM Dll="XA_UserCreateDM.dll" Name="UserCreateDM" FriendlyName="APDhcpStaticIpAddressQueryFail" AutoRun="true" DelayedRun="false" FingerPrintName="APDhcpStaticIpAddressQueryFail" RegexGiven="False">
+    <PARAMETER Name="Criteria_Name" Value="APDhcpGetStaticIPAddressEntry" />
+    <PARAMETER Name="Dataset" Value="0:WPP:WPP Events" />
+    <PARAMETER Name="Function" Value="--&gt; APDhcpGetStaticIPAddress" />
+    <PARAMETER Name="Attribute" Value="Time(ns)" />
+    <PARAMETER Name="Operation" Value="!=" />
+    <PARAMETER Name="valueInput" Value="0" />
+    <PARAMETER Name="INSTANCE" Value="" />
+    <PARAMETER Name="Relational_Operation" Value="before" />
+    <PARAMETER Name="Criteria_Name" Value="IpAddressQueryFailed" />
+    <PARAMETER Name="Dataset" Value="0:WPP:WPP Events" />
+    <PARAMETER Name="Function" Value="RegQueryValueExW failed with 2(ERROR_FILE_NOT_FOUND)" />
+    <PARAMETER Name="Attribute" Value="Time(ns)" />
+    <PARAMETER Name="Operation" Value="!=" />
+    <PARAMETER Name="valueInput" Value="" />
+    <PARAMETER Name="INSTANCE" Value="" />
+    <PARAMETER Name="Relational_Operation" Value="before" />
+    <PARAMETER Name="Criteria_Name" Value="APDhcpGetStaticIPAddressExit" />
+    <PARAMETER Name="Dataset" Value="0:WPP:WPP Events" />
+    <PARAMETER Name="Function" Value="&lt;-- APDhcpGetStaticIPAddress: 2"/>
+    <PARAMETER Name="Attribute" Value="Time(ns)" />
+    <PARAMETER Name="Operation" Value="!=" />
+    <PARAMETER Name="valueInput" Value="0" />
+    <PARAMETER Name="INSTANCE" Value="" />
+    <PARAMETER Name="Relational_Operation" Value="" />
+  </XDM>
+  <XDM Dll="XA_UserCreateDM.dll" Name="UserCreateDM" FriendlyName="AssocFail" AutoRun="true" DelayedRun="false" FingerPrintName="AssocFail" RegexGiven="False">
+    <PARAMETER Name="Criteria_Name" Value="AssocBeforeMac" />
+    <PARAMETER Name="Dataset" Value="0:WPP:WPP Events" />
+    <PARAMETER Name="Function" Value="EXTAP_ERROR: Receiving Assoc Started before cleaning MAC state." />
+    <PARAMETER Name="Attribute" Value="Time(ns)" />
+    <PARAMETER Name="Operation" Value="!=" />
+    <PARAMETER Name="valueInput" Value="" />
+    <PARAMETER Name="INSTANCE" Value="" />
+    <PARAMETER Name="Relational_Operation" Value="before" />
+    <PARAMETER Name="Criteria_Name" Value="AssocExistingPeer" />
+    <PARAMETER Name="Dataset" Value="0:WPP:WPP Events" />
+    <PARAMETER Name="Function" Value="EXTAP_ERROR: Receiving Assoc Request on existing peer."/>
+    <PARAMETER Name="Attribute" Value="Time(ns)" />
+    <PARAMETER Name="Operation" Value="!=" />
+    <PARAMETER Name="valueInput" Value="0" />
+    <PARAMETER Name="INSTANCE" Value="" />
+    <PARAMETER Name="Relational_Operation" Value="" />
+  </XDM>
+  <XDM Dll="XA_CastDebugDM.dll" Name="XDMCastDebug" FriendlyName="WhiteBox Casting" AutoRun="true" DelayedRun="false"/>  
+</XDMS>
+</MAIN>

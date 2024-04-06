@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<MAIN xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<PARSERS ConfigFolder="\config\">
+        <PARSER ParserDll="XA_Core.dll" ParserName="CrimsonParserEx" >
+          <PROPERTY Name="DataSetName" ParentName="Crimson Events Dataset" GroupName="Crimson">CrimsonEx</PROPERTY>
+          <PARAMETER Name="IgnorePIDTID" Value="true"></PARAMETER>
+          <PARAMETER Name="ShowGUID" Value="TRUE"></PARAMETER>
+        </PARSER>
+        <PARSER parserDll="XA_Video.dll" ParserName="PatternParser"  >
+          <PROPERTY Name="DataSetName" ParentName="FrameParser DataSet" GroupName="Media">Video Frames</PROPERTY>
+          <!--Value="0" means ignore-->
+          <PARAMETER Name="FrameWidth" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameHeight" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameStartTimeInMS" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameEndTimeInMS" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameStartIndex" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameEndIndex" Value="0"></PARAMETER>
+          <PARAMETER Name="FrameTimeCompressionFactor" Value="1.0"></PARAMETER>
+          <PARAMETER Name="FrameFormat" Value="jpeg"></PARAMETER>
+          <PARAMETER Name="PSNRThreshold" Value="40.0"></PARAMETER>
+          <PARAMETER Name="AudioDetectionThreshold" Value="400000000"></PARAMETER>
+          <PARAMETER Name="CameraType" Value="REFERENCE"></PARAMETER>
+          <!--PARAMETER Name="CameraType" Value="UNDERTEST"></PARAMETER-->
+          <PARAMETER Name="PatternVersion" Value="V3"></PARAMETER>
+          <!--<PARAMETER Name="DisableAudioDataUnits" Value="TRUE" />-->
+          <PARAMETER Name="CalibrationFrameRetries" Value="1"></PARAMETER>
+        </PARSER>
+        <PARSER ParserDll="XA_Kernel.dll" ParserName="MiracastParser" >
+          <PROPERTY Name="DataSetName" ParentName="Miracast Dataset" GroupName="Network">Frame Process</PROPERTY>
+          <PROPERTY Name="DataSetName" ParentName="Sequence Dataset" GroupName="Network">Sequence Frames</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_WLAN.dll" ParserName="CWlanDriverEventsParser">
+          <PROPERTY Name="DataSetName" ParentName="WLAN Frame Summary Dataset" GroupName="Network">WLAN Frame Summary</PROPERTY>
+        </PARSER>
+        <PARSER ParserDll="XA_WLAN.dll" ParserName="WlanFrameDensityParser">
+          <PROPERTY Name="DataSetName" ParentName="WLAN Frame Density Dataset" GroupName="Network">WLAN Frame Density</PROPERTY>
+          <PARAMETER Name="WindowInterval" Value="20000000"></PARAMETER>
+        </PARSER>
+</PARSERS>
+<XDMS>
+        <XDM Dll="XA_VideoBasicDM.dll" Name="XDMAudioBasic" FriendlyName="XDM Audio Basics" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="AudioFramesNodeName" Value="Audio Frames"></PARAMETER>
+          <PARAMETER Name="NumberOfChammels" Value="1"></PARAMETER>
+          <PARAMETER Name="MaxDropSize" Value="220000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_VideoBasicDM.dll" Name="XDMVideoBasic" FriendlyName="XDM Video Basics" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="VideoFramesNodeName" Value="Video Frames"></PARAMETER>
+          <PARAMETER Name="VideoFrameRate" Value="30"></PARAMETER>
+          <PARAMETER Name="VideoFrameRateError" Value="10"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMAVSync" FriendlyName="Visual Pattern AVSync Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+          <PARAMETER Name="AudioDataSet" Value="Audio Frames"></PARAMETER>          
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMAVSync" FriendlyName="Visual Pattern AVSync Analysis" AutoRun="false" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="1"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames which Played Audio to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+          <PARAMETER Name="AudioDataSet" Value="Audio Frames"></PARAMETER>          
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMPattern2Videos" FriendlyName="Visual Pattern Source Target Analysis" AutoRun="true" DelayedRun="false">
+          <PARAMETER Name="Video Input 1" Value="1"></PARAMETER>
+          <PARAMETER Name="Video Input 2" Value="2"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames  to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Pattern Version" Value="3"></PARAMETER>
+          <PARAMETER Name="VideoDataSet1" Value="Video Frames"></PARAMETER>
+          <PARAMETER Name="VideoDataSet2" Value="Video Frames"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMPatternVideo" FriendlyName="Visual Pattern Video Analysis" AutoRun="true" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="1"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames  to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Repeat Frame Min Threshold" Value="3"></PARAMETER>
+          <PARAMETER Name="Pattern Version" Value="3"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_AVSyncDM.dll" Name="XDMPatternVideo" FriendlyName="Visual Pattern Video Analysis" AutoRun="true" DelayedRun="false">
+          <PARAMETER Name="Video Input" Value="2"></PARAMETER>
+          <PARAMETER Name="Number of Audio Frames  to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Number of Video Frames to Skip at Beginning" Value="0"></PARAMETER>
+          <PARAMETER Name="Repeat Frame Min Threshold" Value="3"></PARAMETER>
+          <PARAMETER Name="Pattern Version" Value="3"></PARAMETER>
+          <PARAMETER Name="VideoDataSet" Value="Video Frames"></PARAMETER>
+        </XDM>
+        <XDM Dll="XDMNetwork.dll" Name="XDMNetwork" FriendlyName="XDM Network Miracast" AutoRun="true" DelayedRun="false">
+          <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+          <PARAMETER Name="Dataset" Value="Microsoft-Windows-WLAN-Driver - {DAA6A96B-F3E7-4D4D-A0D6-31A350E6A445}"></PARAMETER>
+          <PARAMETER Name="TxCompletedByNIC" Value="Event Id - 2"></PARAMETER>
+          <PARAMETER Name="TxSubmissionToNIC" Value="Event Id - 1"></PARAMETER>
+          <PARAMETER Name="TxFrameReceivedFromOS" Value="Event Id - 0"></PARAMETER>
+          <PARAMETER Name="MaxLatency" Value="10000000"></PARAMETER>
+        </XDM>
+        <XDM Dll="XA_WirelessMonitorDM.dll" Name="XDMMiracast" FriendlyName="XDM Miracast" AutoRun="true" DelayedRun="false">
+          <PARAMETER Name="OutputCsvFile" Value="Issues.csv"></PARAMETER>
+          <PARAMETER Name="StatsCsvFile" Value="Stats.csv"></PARAMETER>
+          <PARAMETER Name="MiracastEtwSetName" Value="Frame Process"></PARAMETER>
+          <PARAMETER Name="WifiSetName" Value="WLAN Frame Summary"></PARAMETER>
+          <PARAMETER Name="SequenceSetName" Value="Sequence Frames"></PARAMETER>
+        </XDM>
+      <XDM Dll="XA_WlanUtilizationDM.dll" Name="XDMMiracastWlanUtilization" FriendlyName="Miracast WLAN Utilization" AutoRun="true" DelayedRun="true">
+        <PARAMETER Name="CurrentTrace" Value="0"></PARAMETER>
+        <PARAMETER Name="FrameRate" Value="30"></PARAMETER>
+        <PARAMETER Name="MiracastFrameDataSet" Value="Frame Process"></PARAMETER>
+        <PARAMETER Name="WlanFrameDataSet" Value="WLAN Frame Summary"></PARAMETER>
+        <PARAMETER Name="WlanFrameDensityDataSet" Value="WLAN Frame Density"></PARAMETER>
+      </XDM>
+</XDMS>
+</MAIN>

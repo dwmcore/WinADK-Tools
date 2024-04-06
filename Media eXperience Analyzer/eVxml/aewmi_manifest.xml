@@ -1,0 +1,918 @@
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+	<assemblyIdentity version="1.0.0.0" processorArchitecture="x86" name="?????" type="win32"/>
+    <memberships>
+        <categoryMembership>
+            <id name="Microsoft.Windows.Event" version="1.0.0.0" publicKeyToken="################" />
+            <categoryInstance subcategory="{########-####-####-####-############}">
+            </categoryInstance>
+            <eventData>
+                <globalChannel name="Application"/>
+                <applicationChannel name="Operational"/>
+            </eventData>
+        </categoryMembership>
+    </memberships>
+    <instrumentation xmlns="urn:schemas-microsoft-com:asm.v1">
+        <events componentType="application">
+            <eventSubTypes>
+                <subType name= "_INSERTED" value="1" />
+                <subType name= "_REMOVED" value="2" />
+
+                <subType name="_KS" value="1" /> 
+                <subType name="_CP" value="2" /> 
+                <subType name="_RF" value="3" /> 
+                <subType name="_KS_Ext" value="4" /> 
+                <subType name="_KS_IRP" value="5" /> 
+                <subType name="_KS_Merged" value="6" /> 
+                <subType name="_CP_Order" value="7" /> 
+                <subType name="_APO" value="8" /> 
+                <subType name="_CP_POS_ERR" value="9" />
+                <subType name="_CP_CAP" value="10" />
+                <subType name="_KS_BUFINDX" value="11" />
+                <subType name="_CM_CAPTURE" value="12" />
+                <subType name="_CM_RENDER" value="13" />
+
+                <subType name= "_ENTER" value="1" />
+                <subType name= "_EXIT" value="2" />
+
+                <subType name= "_SKIP" value="3" />
+                <subType name= "_WAKEPUMP" value="4" />
+                <subType name= "_YIELDPUMP" value="5" />
+                <subType name= "_THREADSTART" value="6" />
+                <subType name= "_SKIP_STREAMS_INACTIVE" value="7" />
+                <subType name= "_BUFFER_COMPLETE_EVENT" value="8" />
+                <subType name= "_TIMER_EVENT" value="9" />
+                <subType name= "_DOUBLE_PUMP" value="10" />
+                <subType name="_GARSC" value="11" />
+                <subType name="_ORPHAN_LOOPBACK" value="12" />
+                <subType name="_SET_PIN_ACTIVE" value="13" />
+                <subType name="_SET_PIN_INACTIVE" value="14" />   
+                <subType name="_COUNTDOWN" value="15"   />
+                <subType name="_PIN_DESTROY" value="16" />
+                <subType name="_ORPHAN_PRIME" value="17" />  
+                <subType name="_BUF_INVALID" value="18" />
+                <subType name="_PUMP_PAUSED" value="19" />
+                <subType name="_PUMP_RESUMED" value="20" />
+
+                <subType name= "_PUMP_START" value="1" />
+                <subType name= "_PUMP_STOP" value="2" />
+                <subType name= "_EP_START" value="3" />
+                <subType name= "_EP_STOP" value="4" />
+                <subType name= "_EP_RESET" value="5" />
+                <subType name= "_CPEP_START" value="6" />
+                <subType name= "_CPEP_STOP" value="7" />
+                <subType name= "_CPEP_RESET" value="8" />
+                <subType name= "_PUMP_PRESTOP" value="9" />
+                <subType name= "_BEFORE_PIN_SET" value="10" />
+                <subType name= "_AFTER_PIN_SET" value="11" />
+                <subType name= "_BAD_PIN_STATE" value="12" />
+                <subType name= "_PIN_SET_ACTIVE_SPIN" value="13" />
+
+                <subType name= "_KS_REN" value="1" />
+                <subType name= "_KS_CAP" value="2" />
+                <subType name= "_CP_PADDING" value="3" />
+                <subType name= "_CP_PADDING_ERR" value="4" />
+                <subType name= "_CM_CAPTURE" value="5" />
+                <subType name= "_CM_RENDER" value="6" />
+                <subType name= "_CP_DEVPOS" value="6" />
+
+                <subType name= "_EA_CLASSIC" value="1" />
+
+                <subType name= "_AUDIODG_STREAM_START_STOP" value="1" />
+
+                <subType name= "_AUDIOSRV_SUSPENSION" value="1" />
+                <subType name= "_AUDIOSRV_STREAM_START_STOP" value="2" />
+                <subType name= "_AUDIOSRV_EPOCH_NOTIFICATION" value="3" />
+                <subType name= "_AUDIOSRV_AUDIO_POWER_REQUEST" value="4" />
+
+                <subType name= "_INPUT_GET" value="1" />
+                <subType name= "_INPUT_REL" value="2" />
+                <subType name= "_OUTPUT_GET" value="3" />
+                <subType name= "_OUTPUT_REL" value="4" />
+                <subType name= "_INPUT_GET_CP_S_IN" value="5" />
+                <subType name= "_INPUT_GET_CP_S_OUT" value="6" />
+                <subType name= "_INPUT_REL_CP_S_IN" value="7" />
+                <subType name= "_INPUT_REL_CP_S_OUT" value="8" />
+                <subType name= "_OUTPUT_GET_CP_S_IN" value="9" />
+                <subType name= "_OUTPUT_GET_CP_S_OUT" value="10" />
+                <subType name= "_OUTPUT_REL_CP_S_IN" value="11" />
+                <subType name= "_OUTPUT_REL_CP_S_OUT" value="12" />
+                <subType name= "_INPUT_GET_CP_C_IN" value="13" />
+                <subType name= "_INPUT_GET_CP_C_OUT" value="14" />
+                <subType name= "_INPUT_REL_CP_C_IN" value="15" />
+                <subType name= "_INPUT_REL_CP_C_OUT" value="16" />
+                <subType name= "_OUTPUT_GET_CP_C_IN" value="17" />
+                <subType name= "_OUTPUT_GET_CP_C_OUT" value="18" />
+                <subType name= "_OUTPUT_REL_CP_C_IN" value="19" />
+                <subType name= "_OUTPUT_REL_CP_C_OUT" value="20" />
+                <subType name= "_OUTPUT_PULL_GET" value="21" />
+                <subType name= "_OUTPUT_PULL_RELEASE" value="22" />
+                <subType name="_INPUT_GET_CP_S_SILENT" value="23" />
+                <subType name="_APO_SILENT" value="24" />
+                <subType name="_APO_MIXERCOPY" value="25" />
+                <subType name="_APO_MIXERMIX" value="26" />
+                <subType name="_APO_SRC_FLAGS" value="27" />
+                <subType name="_APO_LIMIT_FLAGS" value="28" />
+                <subType name="_APO_VOL_FLAGS" value="29" />
+                <subType name="_APO_CONSTRICT_FLAGS" value="30" />
+                <subType name="_APO_FORMAT_FLAGS" value="31" />
+                <subType name="_APO_MATRIX_FLAGS" value="32" />
+                <subType name="_APO_METER_FLAGS" value="33" />
+
+                <subType name= "_PRESUBMIT_REN" value="1" />
+                <subType name= "_SUBMIT_REN" value="2" />
+                <subType name= "_COMPLETE_REN" value="3" />
+                <subType name= "_PRESUBMIT_CAP" value="4" />
+                <subType name= "_SUBMIT_CAP" value="5" />
+                <subType name= "_COMPLETE_CAP" value="6" />
+                <subType name= "_NOTHING_COMPLETE" value="7" />
+                <subType name= "_EVENT_SET" value="8" />
+                <subType name= "_ERROR" value="9" />
+                <subType name= "_OUTSTANDING" value="10" />
+
+                <subType name= "_CP_INPUT" value="3" />
+                <subType name= "_CP_OUTPUT" value="4" />
+                <subType name= "_RT_CAP" value="5" />
+                <subType name= "_RT_REN" value="6" />
+                <subType name= "_EXCLUSIVE" value="7" />
+                <subType name= "_RT_OFFLOAD_REN" value="8" />
+
+
+                <subType name= "_THREAD" value="1" />
+                <subType name= "_INTERPOS" value="2" />
+                <subType name= "_OVERFLOW" value="3" />
+                <subType name= "_ERROR_INTERP" value="4" />
+                <subType name= "_START_INTERP" value="5" />
+                <subType name= "_THROWAWAY" value="6" />
+                <subType name= "_POS" value="7" />
+
+                <subType name= "_KSEP" value="1" />
+                <subType name= "_CPEP" value="2" />
+                <subType name= "_CPSETCUR" value="3" />
+
+                <subType name= "_POLL_ENTER" value="1" />
+                <subType name= "_POLL_EXIT" value="2" />
+                <subType name= "_IO_ENTER" value="3" />
+                <subType name= "_IO_EXIT" value="4" />
+                <subType name= "_VADINIT_ENTER" value="5" />
+                <subType name= "_VADINIT_EXIT" value="6" />
+                <subType name= "_GETSADEV_ENTER" value="7" />
+                <subType name= "_GETSADEV_EXIT" value="8" />
+                <subType name= "_SADINIT_ENTER" value="9" />
+                <subType name= "_SADINIT_EXIT" value="10" />
+                <subType name= "_BEFORE_IRP_COMPLETE" value="11" />
+                <subType name= "_AFTER_IRP_COMPLETE" value="12" />
+                <subType name= "_IRP_COMPLETE_QPC" value="13" />
+
+
+                <subType name= "_1" value="1" />
+                <subType name= "_2" value="2" />
+                <subType name= "_3" value="3" />
+                <subType name= "_4" value="4" />
+                <subType name= "_5" value="5" />
+                <subType name= "_6" value="6" />
+                <subType name= "_7" value="7" />
+                <subType name= "_8" value="8" />
+                <subType name= "_9" value="9" />
+                <subType name= "_10" value="10" />
+                <subType name= "_20" value="20" />
+                <subType name= "_21" value="21" />
+                <subType name= "_22" value="22" />
+                <subType name= "_30" value="30" />
+                <subType name= "_31" value="31" />
+                <subType name= "_40" value="40" />
+                <subType name= "_41" value="41" />
+                <subType name= "_42" value="42" />
+                <subType name= "_100" value="100" />
+                <subType name= "_101" value="101" />
+                <subType name= "_102" value="102" />
+
+                <subType name= "_INITIALIZE" value="1" />
+                <subType name= "_SHUTDOWN" value="2" />
+                <subType name= "_CREATEHEAP" value="3" />
+                <subType name= "_DESTROYHEAP" value="4" />
+                <subType name= "_EXTENDHEAP" value="5" />
+                <subType name= "_ALLOCATE" value="6" />
+                <subType name= "_FREE" value="7" />
+                <subType name= "_LOCKHEAP" value="8" />
+                <subType name= "_UNLOCKHEAP" value="9" />
+                <subType name= "_LOCKCODE" value="10" />
+                <subType name= "_UNLOCKCODE" value="11" />
+                <subType name= "_LOCKTHREAD" value="12" />
+                <subType name= "_UNLOCKTHREAD" value="13" />
+                <subType name= "_WORKSETINC" value="14" />
+                <subType name= "_STATS" value="15" />
+
+                <subType name="_MMCSS_START" value="32" />
+                <subType name="_MMCSS_STOP" value="33" />
+                <subType name="_SCHEDULER_EVENT" value="34" />
+                <subType name="_SCHEDULER_WAKEUP" value="35" />
+                <subType name="_SCHEDULER_SLEEP" value="36" />
+                <subType name="_SCHEDULER_SLEEP_RESP" value="37" />
+
+                <subType name="_RESET" value="1" />
+                <subType name="_START" value="2" />
+                <subType name="_STOP" value="3" />
+                <subType name="_POS_REG1" value="4" />
+                <subType name="_POS_REG2" value="5" />
+                <subType name="_BUF_PTR" value="6" />
+                <subType name="_GODP" value="7" />
+                <subType name="_GODP_TOTPOS" value="8" />
+                <subType name="_GODP_GLITCH" value="9" />
+                <subType name="_POS_LINEAR" value="10" />
+                <subType name="_PREROLL" value="11" />
+                <subType name="_WRITE_POS" value="12" />
+                <subType name="_BUFF_COMPLETED_EVENT" value="13" />
+                <subType name="_PRESENTATION_POS" value="14" />
+                <subType name="_WRITE_LASTBUFFER_POS" value="15" />
+
+                <subType name="_QNEXT" value="1" />
+                <subType name="_DRAIN" value="2" />
+                <subType name="_WAITEXIT" value="3" />
+
+                <subType name="_ALL_CHANNELS" value="1" />
+                <subType name="_PER_CHANNEL" value="2" />
+                <subType name="_UNIFORM" value="3" />
+
+                <subType name="_COEFFS" value="1" />
+                <subType name="_COEFF_TARGETS" value="2" />
+
+                <subType name="_INFO" value="0" />
+
+            </eventSubTypes>
+            
+            <event eventID="1" message="$(string.OBJECT)" guid="{E918C461-D445-48EE-B26A-FF8CCC797E36}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_INSERTED" />
+                    <classification subType="_REMOVED" />
+                    <template>
+                        <AE_OBJECT>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <clsIdObject>%Guid;</clsIdObject>
+                        </AE_OBJECT>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="2" message="$(string.GLITCH)" guid="{2013DBB2-2F76-4B2C-950A-0C9DFAC62398}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_KS" />
+                    <classification subType="_CP" />
+                    <classification subType="_RF" />
+                    <classification subType="_KS_Ext" />
+                    <classification subType="_KS_IRP" />
+                    <classification subType="_KS_Merged" />
+                    <classification subType="_CP_Order" />
+                    <classification subType="_APO" />
+                    <classification subType="_CP_POS_ERR" />
+                    <classification subType="_CP_CAP" />
+                    <classification subType="_KS_BUFINDX" />
+                    <classification subType="_CM_CAPTURE" />
+                    <classification subType="_CM_RENDER" />
+
+                    <template>
+                        <AE_GLITCH>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <WritePos>%UInt64;</WritePos>
+                            <PlayPos>%UInt64;</PlayPos>
+                            <StreamPos>%UInt64;</StreamPos>
+                            <GlitchFrameCount>%UInt64;</GlitchFrameCount>
+                        </AE_GLITCH>
+                    </template>
+                </diagnosticInstance>
+            </event>
+            
+            <event eventID="3" message="$(string.DROP)" guid="{F6C4E82E-4C40-4B08-A983-FFC0E63B7E03}" level="#">
+                <diagnosticInstance version="0">
+                  <classification subType="_INFO" />
+                  <template>
+                        <AE_DROP>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <ullSampleTime>%UInt64;</ullSampleTime>
+                            <u64ByteCount>%UInt64;</u64ByteCount>
+                        </AE_DROP>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="4" message="$(string.CPUUSAGE)" guid="{7768062C-700D-4479-8DDD-7E7F60CCB4B4}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_ENTER" />
+                    <classification subType="_EXIT" />
+                    <template>
+                        <AE_CPUUSAGE>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                        </AE_CPUUSAGE>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="5" message="$(string.PROCPASS)" guid="{810143B0-8898-433D-B00D-FBA5D05EDF6D}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_ENTER" />
+                    <classification subType="_EXIT" />
+                    <classification subType="_SKIP" />
+                    <classification subType="_WAKEPUMP" />
+                    <classification subType="_YIELDPUMP" />
+                    <classification subType="_THREADSTART" />
+                    <classification subType="_SKIP_STREAMS_INACTIVE" />
+                    <classification subType="_BUFFER_COMPLETE_EVENT" />
+                    <classification subType="_TIMER_EVENT" />
+                    <classification subType="_DOUBLE_PUMP" />
+                    <classification subType="_GARSC" />
+                    <classification subType="_ORPHAN_LOOPBACK" />
+                    <classification subType="_SET_PIN_ACTIVE" />
+                    <classification subType="_SET_PIN_INACTIVE" />
+                    <classification subType="_COUNTDOWN" />
+                    <classification subType="_PIN_DESTROY" />   
+                    <classification subType="_ORPHAN_PRIME" />   
+                    <classification subType="_BUF_INVALID" />
+                    <classification subType="_PUMP_PAUSED" />
+                    <classification subType="_PUMP_RESUMED" />
+                  <template>
+                        <AE_PROCPASS>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <ProcessDuration>%UInt64;</ProcessDuration>
+                            <ProcessTime>%UInt64;</ProcessTime>
+                        </AE_PROCPASS>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="6" message="$(string.CNTRL)" guid="{2F900642-1A32-408F-B286-E6A07A1750A5}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_PUMP_START" />
+                    <classification subType="_PUMP_STOP" />
+                    <classification subType="_EP_START" />
+                    <classification subType="_EP_STOP" />
+                    <classification subType="_EP_RESET" />
+                    <classification subType="_CPEP_START" />
+                    <classification subType="_CPEP_STOP" />
+                    <classification subType="_CPEP_RESET" />
+                    <classification subType="_PUMP_PRESTOP" />
+                    <classification subType="_BEFORE_PIN_SET" />
+                    <classification subType="_AFTER_PIN_SET" />
+                    <classification subType="_BAD_PIN_STATE" />
+                    <classification subType="_PIN_SET_ACTIVE_SPIN" />
+                    <template>
+                        <AE_CNTRL>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <Time>%UInt64;</Time>
+                        </AE_CNTRL>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="7" message="$(string.POSITION)" guid="{AE78763D-362E-49DC-8D07-AF87B3573D89}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_KS_REN" />
+                    <classification subType="_KS_CAP" />
+                    <classification subType="_CP_PADDING" />
+                    <classification subType="_CP_PADDING_ERR" />
+                    <classification subType="_CM_CAPTURE" />
+                    <classification subType="_CM_RENDER" />
+                    <classification subType="_CP_DEVPOS" />
+                    <template>
+                        <AE_POSITION>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <WritePos>%UInt64;</WritePos>
+                            <PlayPos>%UInt64;</PlayPos>
+                            <StreamPos>%UInt64;</StreamPos>
+                            <LoopPos>%UInt64;</LoopPos>
+                        </AE_POSITION>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="8" message="$(string.SECURITY)" guid="{432EA06E-2B00-4a58-846D-BE3AF44E0DF8}" level="#">
+                <diagnosticInstance version="0">
+                    <template>
+                        <AE_SECURITY>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                        </AE_SECURITY>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="9" message="$(string.DATA)" guid="{0D663B46-C4BF-4C22-9CB5-2F2C79BACBBB}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_INPUT_GET" />
+                    <classification subType="_INPUT_REL" />
+                    <classification subType="_OUTPUT_GET" />
+                    <classification subType="_OUTPUT_REL" />
+                    <classification subType="_INPUT_GET_CP_S_IN" />
+                    <classification subType="_INPUT_GET_CP_S_OUT" />
+                    <classification subType="_INPUT_REL_CP_S_IN" />
+                    <classification subType="_INPUT_REL_CP_S_OUT" />
+                    <classification subType="_OUTPUT_GET_CP_S_IN" />
+                    <classification subType="_OUTPUT_GET_CP_S_OUT" />
+                    <classification subType="_OUTPUT_REL_CP_S_IN" />
+                    <classification subType="_OUTPUT_REL_CP_S_OUT" />
+                    <classification subType="_INPUT_GET_CP_C_IN" />
+                    <classification subType="_INPUT_GET_CP_C_OUT" />
+                    <classification subType="_INPUT_REL_CP_C_IN" />
+                    <classification subType="_INPUT_REL_CP_C_OUT" />
+                    <classification subType="_OUTPUT_GET_CP_C_IN" />
+                    <classification subType="_OUTPUT_GET_CP_C_OUT" />
+                    <classification subType="_OUTPUT_REL_CP_C_IN" />
+                    <classification subType="_OUTPUT_REL_CP_C_OUT" />
+                    <classification subType="_OUTPUT_PULL_GET" />
+                    <classification subType="_OUTPUT_PULL_RELEASE" />
+                    <classification subType="_INPUT_GET_CP_S_SILENT" />
+                    <classification subType="_APO_SILENT" />
+                    <classification subType="_APO_MIXERCOPY" />
+                    <classification subType="_APO_MIXERMIX" />
+                    <classification subType="_APO_SRC_FLAGS" />
+                    <classification subType="_APO_LIMIT_FLAGS" />
+                    <classification subType="_APO_VOL_FLAGS" />
+                    <classification subType="_APO_CONSTRICT_FLAGS" />
+                    <classification subType="_APO_FORMAT_FLAGS" />
+                    <classification subType="_APO_MATRIX_FLAGS" />
+                    <classification subType="_APO_METER_FLAGS" />
+
+                    <template>
+                        <AE_DATA>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <Data1>%UInt64;</Data1>
+                            <Data2>%UInt64;</Data2>
+                            <Data3>%UInt64;</Data3>
+                        </AE_DATA>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="10" message="$(string.IRP)" guid="{FF9C1883-333A-4278-9D22-403B6F4F4957}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_PRESUBMIT_REN" />
+                    <classification subType="_SUBMIT_REN" />
+                    <classification subType="_COMPLETE_REN" />
+                    <classification subType="_PRESUBMIT_CAP" />
+                    <classification subType="_SUBMIT_CAP" />
+                    <classification subType="_COMPLETE_CAP" />
+                    <classification subType="_NOTHING_COMPLETE" />
+                    <classification subType="_EVENT_SET" />
+                    <classification subType="_ERROR" />
+                    <classification subType="_OUTSTANDING" />
+                    <template>
+                        <AE_IRP>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <Index>%UInt32;</Index>
+                            <OutStanding>%UInt32;</OutStanding>
+                            <FrameExtent>%UInt64;</FrameExtent>
+                        </AE_IRP>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="11" message="$(string.ENDPOINT)" guid="{EB224906-D375-4CC0-87EC-1EE4773DC5D2}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_KS_REN" />
+                    <classification subType="_KS_CAP" />
+                    <classification subType="_CP_INPUT" />
+                    <classification subType="_CP_OUTPUT" />
+                    <classification subType="_RT_CAP" />
+                    <classification subType="_RT_REN" />
+                    <classification subType="_EXCLUSIVE" />
+                    <classification subType="_RT_OFFLOAD_REN" />
+                    <template>
+                        <AE_ENDPOINT>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <PinHandle>%UInt64;</PinHandle>
+                            <FormatTag>%UInt32;</FormatTag>
+                            <SampleRate>%UInt32;</SampleRate>
+                            <BitsPerSample>%UInt32;</BitsPerSample>
+                            <Channels>%UInt32;</Channels>
+                            <Period>%UInt32;</Period>
+                            <Latency>%UInt32;</Latency>
+                            <BufferSize>%UInt32;</BufferSize>
+                        </AE_ENDPOINT>
+                    </template>
+                </diagnosticInstance>
+            </event>
+       
+            <event eventID="12" message="$(string.INTERP)" guid="{B3369E69-074D-4E14-A7BD-845BC1B47EE9}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_THREAD" />
+                    <classification subType="_INTERPOS" />
+                    <classification subType="_OVERFLOW" />
+                    <classification subType="_ERROR_INTERP" />
+                    <classification subType="_START_INTERP" />
+                    <classification subType="_THROWAWAY" />
+                    <classification subType="_POS" />
+                    <template>
+                        <AE_INTERP>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <InterpPlayPos>%UInt64;</InterpPlayPos>
+                            <InterpWritePos>%UInt64;</InterpWritePos>
+                            <RealPlayPos>%UInt64;</RealPlayPos>
+                            <RealWritePos>%UInt64;</RealWritePos>
+                            <SampleRate>%Float;</SampleRate>
+                            <FilteredError>%Float;</FilteredError>
+                        </AE_INTERP>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="13" message="$(string.TIMESTAMP)" guid="{41DBCB73-5A7F-476B-B844-61A49D724E3A}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_KSEP" />
+                    <classification subType="_CPEP" />
+                    <classification subType="_CPSETCUR" />
+                    <template>
+                        <AE_TIMESTAMP>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <Flag>%UInt64;</Flag>
+                            <Padding>%UInt64;</Padding>
+                            <QPCPos>%UInt64;</QPCPos>
+                            <DevPos>%UInt64;</DevPos>
+                            <StrmPos>%UInt64;</StrmPos>
+                        </AE_TIMESTAMP>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="14" message="$(string.PERF)" guid="{D1EDF991-708D-47DE-9697-DE950CFC6EEA}" level="#">
+                <diagnosticInstance version="0">
+                	<classification subType="_POLL_ENTER" />
+                    <classification subType="_POLL_EXIT" />
+                	<classification subType="_IO_ENTER" />
+                    <classification subType="_IO_EXIT" />
+                	<classification subType="_VADINIT_ENTER" />
+                    <classification subType="_VADINIT_EXIT" />
+                	<classification subType="_GETSADEV_ENTER" />
+                    <classification subType="_GETSADEV_EXIT" />
+                	<classification subType="_SADINIT_ENTER" />
+                    <classification subType="_SADINIT_EXIT" />
+                  <classification subType="_AFTER_IRP_COMPLETE" />
+                    <classification subType="_BEFORE_IRP_COMPLETE" />
+                  <classification subType="_IRP_COMPLETE_QPC" />
+                    <template>
+                        <AE_PERF>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <Custom1>%UInt64;</Custom1>
+                            <Custom2>%UInt64;</Custom2>
+                        </AE_PERF>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="15" message="$(string.GENERIC)" guid="{63327924-0dcc-418c-a5f0-5faf329f14ab}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_1" />
+                    <classification subType="_2" />
+                    <classification subType="_3" />
+                    <classification subType="_4" />
+                    <classification subType="_5" />
+                    <classification subType="_6" />
+                    <classification subType="_7" />
+                    <classification subType="_8" />
+                    <classification subType="_9" />
+                    <classification subType="_10" />
+                    <classification subType="_20" />
+                    <classification subType="_21" />
+                    <classification subType="_22" />
+                    <classification subType="_30" />
+                    <classification subType="_31" />
+                    <classification subType="_40" />
+                    <classification subType="_41" />
+                    <classification subType="_42" />
+                    <classification subType="_100" />
+                    <classification subType="_101" />
+                    <classification subType="_102" />
+
+                    <template>
+                        <AE_GENERIC>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <ullVal1>%UInt64;</ullVal1>
+                            <ullVal2>%UInt64;</ullVal2>
+                            <ullVal3>%UInt64;</ullVal3>
+                            <ullVal4>%UInt64;</ullVal4>
+                            <f64Val1>%Double;</f64Val1>
+                            <f64Val2>%Double;</f64Val2>
+                            <f64Val3>%Double;</f64Val3>
+                            <f64Val4>%Double;</f64Val4>                            
+                        </AE_GENERIC>
+                    </template>
+                </diagnosticInstance>
+            </event>
+            
+            <event eventID="16" message="$(string.MEMORY)" guid="{41916587-debb-4c34-b7fa-909301f128cd}" level="#">
+                <diagnosticInstance version="0">
+
+			<classification subType="_INITIALIZE" />
+			<classification subType="_SHUTDOWN" />
+			<classification subType="_CREATEHEAP" />
+			<classification subType="_DESTROYHEAP" />
+			<classification subType="_EXTENDHEAP" />
+			<classification subType="_ALLOCATE" />
+			<classification subType="_FREE" />
+			<classification subType="_LOCKHEAP" />
+			<classification subType="_UNLOCKHEAP" />
+			<classification subType="_LOCKCODE" />
+			<classification subType="_UNLOCKCODE" />
+			<classification subType="_LOCKTHREAD" />
+			<classification subType="_UNLOCKTHREAD" />
+			<classification subType="_WORKSETINC" />
+			<classification subType="_STATS" />
+			
+                    <template>
+                        <AE_MEMORY>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <hHeap>%UInt32;</hHeap>
+                            <ulAllocCount>%UInt32;</ulAllocCount>
+                            <ulExtendCount>%UInt32;</ulExtendCount>
+                            <ulInitial>%UInt32;</ulInitial>
+                            <ulMax>%UInt32;</ulMax>
+                            <ulMin>%UInt32;</ulMin>
+                            <ulTotalAlloc>%UInt32;</ulTotalAlloc>
+                        </AE_MEMORY>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="17" message="$(string.MMCSS)" guid="{f8f10121-b617-4a56-868b-9df1b27fe32c}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_MMCSS_START" />          <!-- 32-->
+                    <classification subType="_MMCSS_STOP" />           <!-- 33 -->
+                    <template>
+                        <MMCSS>
+                        </MMCSS>
+                    </template>
+                    <classification subType="_SCHEDULER_EVENT" />      <!-- 34 -->
+                    <template>
+                        <MMCSS>
+                            <pid>%UInt32;</pid>
+                            <tid>%UInt32;</tid>
+                            <priority>%UInt32;</priority>
+                            <taskIndex>%UInt32;</taskIndex>
+                        </MMCSS>
+                    </template>                     
+                    <classification subType="_SCHEDULER_WAKEUP" />     <!-- 35 -->
+                    <template>
+                        <MMCSS>
+                            <reason>%UInt32;</reason>
+                        </MMCSS>
+                    </template>
+
+                    <classification subType="_SCHEDULER_SLEEP" />      <!-- 36 -->
+                    <classification subType="_SCHEDULER_SLEEP_RESP" /> <!-- 37 -->
+                    <template>
+                        <MMCSS>
+                        </MMCSS>
+                    </template>
+                </diagnosticInstance>
+            </event>
+            
+            <event eventID="18" message="$(string.WAVERT)" guid="{5602AA38-C16D-461F-86B0-D78D7CD80A24}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_RESET" />
+                    <classification subType="_START" />
+                    <classification subType="_STOP" />
+                    <classification subType="_POS_REG1" />
+                    <classification subType="_POS_REG2" />
+                    <classification subType="_BUF_PTR" />
+                    <classification subType="_GODP" />
+                    <classification subType="_GODP_TOTPOS" />
+                    <classification subType="_GODP_GLITCH" />
+                    <classification subType="_POS_LINEAR" />
+                    <classification subType="_PREROLL" />
+                    <classification subType="_BUFF_COMPLETED_EVENT" />
+                    <template>
+                        <AE_WAVERT>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <ullVal1>%UInt64;</ullVal1>
+                            <ullVal2>%UInt64;</ullVal2>
+                            <ullVal3>%UInt64;</ullVal3>
+                            <ullVal4>%UInt64;</ullVal4>
+                        </AE_WAVERT>
+                    </template>
+                    <classification subType="_WRITE_POS" />
+                    <template>
+                      <AE_WAVERT>
+                        <pObject>%UInt64;</pObject>
+                        <dwReporterTag>%UInt32;</dwReporterTag>
+                        <dwPadding>%UInt32;</dwPadding>
+                        <ByteWritePosition>%UInt64;</ByteWritePosition>
+                        <StreamPosition>%UInt64;</StreamPosition>
+                        <BufferByteSize>%UInt64;</BufferByteSize>
+                        <pDataPointer>%UInt64;</pDataPointer>
+                     </AE_WAVERT>
+                    </template>
+                    <classification subType="_PRESENTATION_POS" />
+                    <template>
+                     <AE_WAVERT>
+                      <pObject>%UInt64;</pObject>
+                      <dwReporterTag>%UInt32;</dwReporterTag>
+                      <dwPadding>%UInt32;</dwPadding>
+                      <PresentationPosition>%UInt64;</PresentationPosition>
+                      <QPCPosition>%UInt64;</QPCPosition>
+                      <BufferByteSize>%UInt64;</BufferByteSize>
+                      <Reserved>%UInt64;</Reserved>
+                     </AE_WAVERT>
+                  </template>
+                    <classification subType="_WRITE_LASTBUFFER_POS" />
+                    <template>
+                      <AE_WAVERT>
+                        <pObject>%UInt64;</pObject>
+                        <dwReporterTag>%UInt32;</dwReporterTag>
+                        <dwPadding>%UInt32;</dwPadding>
+                        <ByteWritePosition>%UInt64;</ByteWritePosition>
+                        <StreamPosition>%UInt64;</StreamPosition>
+                        <BufferByteSize>%UInt64;</BufferByteSize>
+                        <ValidByteCount>%UInt64;</ValidByteCount>
+                     </AE_WAVERT>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="19" message="$(string.ASYNCIO)" guid="{A8B153AF-DA6C-4378-83DA-17E841E59B24}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_QNEXT" />
+                    <classification subType="_DRAIN" />
+                    <classification subType="_WAITEXIT" />
+                    <template>
+                        <AE_ASYNCIO>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <ullVal1>%UInt64;</ullVal1>
+                            <ullVal2>%UInt64;</ullVal2>
+                            <ullVal3>%UInt64;</ullVal3>
+                            <ullVal4>%UInt64;</ullVal4>
+                        </AE_ASYNCIO>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="20" message="$(string.VOLUMESET)" guid="{273091cb-bbef-4ef7-962e-9c80100576e1}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_ALL_CHANNELS" />
+                    <classification subType="_PER_CHANNEL" />
+                    <classification subType="_UNIFORM" />
+                    <template>
+                        <AE_VOLUMESET>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <Start>%UInt32;</Start>
+                            <NumChannels>%UInt32;</NumChannels>
+                        </AE_VOLUMESET>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="21" message="$(string.VOLUMECHANGE)" guid="{70930759-eda2-4551-a254-41c7cfc9e4b3}" level="#">
+                <diagnosticInstance version="0">
+                    <classification subType="_COEFFS" />
+                    <classification subType="_COEFF_TARGETS" />
+                    <template>
+                        <AE_VOLUMECHANGE>
+                            <pObject>%UInt64;</pObject> 
+                            <dwReporterTag>%UInt32;</dwReporterTag> 
+                            <dwPadding>%UInt32;</dwPadding>
+                            <f64Val1>%Double;</f64Val1>
+                            <f64Val2>%Double;</f64Val2>
+                            <f64Val3>%Double;</f64Val3>
+                            <f64Val4>%Double;</f64Val4>                            
+                            <f64Val5>%Double;</f64Val5>                            
+                            <f64Val6>%Double;</f64Val6>                            
+                        </AE_VOLUMECHANGE>
+                    </template>
+                </diagnosticInstance>
+            </event>
+
+            <event eventID="22" message="$(string.ENDPOINT_ACTIVATION)" guid="{64849457-134A-4f3a-8E35-93E91A61212B}" level="#">
+              <diagnosticInstance version="0">
+                <classification subType="_EA_CLASSIC" />
+                <template>
+                  <AE_ENDPOINT_ACTIVATION>
+                    <pObject>%UInt64;</pObject>
+                    <dwReporterTag>%UInt32;</dwReporterTag>
+                    <dwPadding>%UInt32;</dwPadding>
+                    <bEndpointHasHWAudioEngine>%UInt32;</bEndpointHasHWAudioEngine>
+                    <TargetPinType>%UInt32;</TargetPinType>
+                    <Direction>%UInt32;</Direction>
+                    <bDisableHwLfxGfx>%UInt32;</bDisableHwLfxGfx>
+                    <wFormatTag>%UInt32;</wFormatTag>
+                    <nSamplesPerSec>%UInt32;</nSamplesPerSec>
+                    <wBitsPerSample>%UInt32;</wBitsPerSample>
+                    <nChannels>%UInt32;</nChannels>
+                    <hnsPeriod>%UInt32;</hnsPeriod>
+                    <dwOriginalStreamFlags>%UInt32;</dwOriginalStreamFlags>
+                    <isSystemEffectsPresent>%UInt32;</isSystemEffectsPresent>
+                    <u32APOCount>%UInt32;</u32APOCount>
+                    <hResult>%UInt32;</hResult>
+                  </AE_ENDPOINT_ACTIVATION>
+                </template>
+              </diagnosticInstance>
+            </event>
+
+          <event eventID="23" message="$(string.AUDIOSRV_OPERATIONAL_EVENT)" guid="{92FE8747-E6B6-4aa8-8F1C-7CDD631B29A5}" level="#">
+            <diagnosticInstance version="0">
+              <classification subType="_AUDIOSRV_SUSPENSION" />
+              <template>
+                <AUDIOSRV_OPERATIONAL_SUSPENSION>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag>%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+
+                  <VadServer>%UInt64;</VadServer>
+                  <ClientProcessId>%UInt64;</ClientProcessId>
+                  <StreamHandle>%UInt64;</StreamHandle>
+                  <IsSuspended>%UInt64;</IsSuspended>
+                  <SubCode>%UInt64;</SubCode>
+                </AUDIOSRV_OPERATIONAL_SUSPENSION>
+              </template>
+              <classification subType="_AUDIOSRV_STREAM_START_STOP" />
+              <template>
+                <AUDIOSRV_OPERATIONAL_STREAM_START_STOP>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag>%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+                  <VadServer>%UInt64;</VadServer>
+                  <ClientProcessId>%UInt64;</ClientProcessId>
+                  <StreamHandle>%UInt64;</StreamHandle>
+                  <IsStreamCurrentlyStarted>%UInt64;</IsStreamCurrentlyStarted>
+                  <ToStartStream>%UInt64;</ToStartStream>
+                  <Reason>%UInt64;</Reason>
+                  <SubCode>%UInt64;</SubCode>
+                </AUDIOSRV_OPERATIONAL_STREAM_START_STOP>
+              </template>
+              <classification subType="_AUDIOSRV_EPOCH_NOTIFICATION" />
+              <template>
+                <AUDIOSRV_OPERATIONAL_EPOCH_NOTIFICATION>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag>%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+                  <LowPowerEpochEntered>%UInt64;</LowPowerEpochEntered>
+                </AUDIOSRV_OPERATIONAL_EPOCH_NOTIFICATION>
+              </template>
+                <classification subType="_AUDIOSRV_AUDIO_POWER_REQUEST" />
+                <template>
+                    <AUDIOSRV_OPERATIONAL_POWER_REQUEST>
+                        <pObject>%UInt64;</pObject>
+                        <dwReporterTag>%UInt32;</dwReporterTag>
+                        <dwPadding>%UInt32;</dwPadding>
+                        <AudioPowerScenarioRequested>%UInt64;</AudioPowerScenarioRequested>
+                    </AUDIOSRV_OPERATIONAL_POWER_REQUEST>
+                </template>
+            </diagnosticInstance>
+          </event>
+
+          <event eventID="24" message="$(string.AUDIODG_OPERATIONAL_EVENT)" guid="{0F14B37B-5195-44df-A1D9-BBA90B5135D2}" level="#">
+            <diagnosticInstance version="0">
+              <classification subType="_AUDIODG_STREAM_START_STOP" />
+              <template>
+                <AE_AUDIODG_OPERATIONAL>
+                  <pObject>%UInt64;</pObject>
+                  <dwReporterTag>%UInt32;</dwReporterTag>
+                  <dwPadding>%UInt32;</dwPadding>
+                  <SystemAudioDevice>%UInt64;</SystemAudioDevice>
+                  <StreamHandle>%UInt64;</StreamHandle>
+                  <RenderStreamCount>%UInt64;</RenderStreamCount>
+                  <CaptureStreamCount>%UInt64;</CaptureStreamCount>
+                  <ToStartStream>%UInt64;</ToStartStream>
+                  <SubCode>%UInt64;</SubCode>
+                </AE_AUDIODG_OPERATIONAL>
+              </template>
+            </diagnosticInstance>
+          </event>
+          
+          
+        </events>
+    </instrumentation>
+</assembly>
+
